@@ -19,6 +19,7 @@ public class Destroy : MonoBehaviour {
 		if (col.gameObject.name == "box(Clone)") {
 			Destroy (col.gameObject);
 			score++;
+			print (score);
 		}
 	}
 }
