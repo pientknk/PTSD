@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Destroy : MonoBehaviour {
+public class ScoreBlue : MonoBehaviour {
 
-	private float miss;
+	private float scoreBlue;
 
 	// Use this for initialization
 	void Start () {
-		miss = 0;
+		scoreBlue = 0;
 	}
 	
 	// Update is called once per frame
@@ -18,8 +18,8 @@ public class Destroy : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D col) {
 		if (col.gameObject.name == "box(Clone)") {
 			Destroy (col.gameObject);
-			miss++;
-			print ("MISS: " + miss);
+			scoreBlue++;
+			print ("BLUE: " + scoreBlue);
 		}
 	}
 }
