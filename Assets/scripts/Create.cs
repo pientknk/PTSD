@@ -5,7 +5,7 @@ public class Create : MonoBehaviour {
 
 	private GameObject location;
 	private float counter = 0;
-	public GameObject obj; 
+	public GameObject obj;
 	public float timeBetweenSpawns = 3.0f;
 
 	// Use this for initialization
