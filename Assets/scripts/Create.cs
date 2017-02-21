@@ -13,7 +13,7 @@ public class Create : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		location = GameObject.Find ("spawnPoint");
-		r [0] = 0;
+		r [0] = 1;
 		r [1] = 0;
 		r [2] = 1;
 		r [3] = 0;
