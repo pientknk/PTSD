@@ -15,10 +15,10 @@ public class Create : MonoBehaviour {
 		location = GameObject.Find ("spawnPoint");
 		r [0] = 1;
 		r [1] = 0;
-		r [2] = 1;
-		r [3] = 0;
-		r [4] = 1;
-		r [5] = 1;
+		r [2] = 3;
+		r [3] = 2;
+		r [4] = 2;
+		r [5] = 3;
 		r [6] = 1;
 		r [7] = 0;
 		r [8] = 1;

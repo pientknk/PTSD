@@ -443,7 +443,7 @@ MonoBehaviour:
   obj:
   - {fileID: 143962637}
   - {fileID: 1842091150}
-  timeBetweenSpawns: 8
+  timeBetweenSpawns: 1
 --- !u!1 &427866688
 GameObject:
   m_ObjectHideFlags: 0

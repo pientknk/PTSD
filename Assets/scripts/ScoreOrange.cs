@@ -17,9 +17,9 @@ public class ScoreOrange : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D col) {
-		if (col.gameObject.name == "boxOrange(Clone)") {
+		if ((col.gameObject.name == "boxOrange(Clone)") || (col.gameObject.name == "boxCircleOrange(Clone)")) {
 			scoreOrange++;
-		} else if (col.gameObject.name == "boxBlue(Clone)") {
+		} else if ((col.gameObject.name == "boxBlue(Clone)") || (col.gameObject.name == "boxCircleBlue(Clone)")) {
 			scoreOrange--;
 		}
 
