@@ -12,17 +12,17 @@ public class ScoreBlue : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		GameObject score = GameObject.Find ("blueScore");
+		score.GetComponent<TextMesh> ().text = scoreBlue.ToString();
 	}
 
 	void OnCollisionEnter2D(Collision2D col) {
-		if (col.gameObject.name == "boxBlue(Clone)") {
+		if ((col.gameObject.name == "boxBlue(Clone)") || (col.gameObject.name == "boxCircleBlue(Clone)")) {
 			scoreBlue++;
-			print ("BLUE: " + scoreBlue);
-		} else if(col.gameObject.name == "boxOrange(Clone)") {
-				scoreBlue--;
-				print ("NOTBLUE!");
+		} else if((col.gameObject.name == "boxOrange(Clone)") || (col.gameObject.name == "boxCircleOrange(Clone)"))  {
+			scoreBlue--;
 		}
+
 		Destroy (col.gameObject);
 	}
 }
