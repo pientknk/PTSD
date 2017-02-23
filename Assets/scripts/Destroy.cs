@@ -16,10 +16,9 @@ public class Destroy : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D col) {
-		if (col.gameObject.name == "box(Clone)") {
+		if ((col.gameObject.name == "boxBlue(Clone)") || (col.gameObject.name == "boxOrange(Clone)") || (col.gameObject.name == "boxCircleBlue(Clone)") || (col.gameObject.name == "boxCircleOrange(Clone)")) {
 			Destroy (col.gameObject);
 			miss++;
-			print ("MISS: " + miss);
 		}
 	}
 }
