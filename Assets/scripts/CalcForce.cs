@@ -3,7 +3,7 @@ using System.Collections;
 
 //The goal of this script is to ignore the collision of Orange packages so that the trampoline this will be attached to
 //will not bounce orange packages
-public class IgnoreOrangeCol : MonoBehaviour {
+public class CalcForce : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -16,13 +16,11 @@ public class IgnoreOrangeCol : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D col) {
-
-		if (col.gameObject.name == "boxBlue(Clone)") {
-		
-		} else if(col.gameObject.name == "boxOrange(Clone)") {
-			Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), col.gameObject.GetComponent<Collider2D>());
-		}
-
+		print (col.relativeVelocity);
+		//float velX = col.gameObject.GetComponent<Rigidbody2D> ().velocity.x;
+		//float velY = col.gameObject.GetComponent<Rigidbody2D> ().velocity.y;
+		//float mass = col.gameObject.GetComponent<Rigidbody2D> ().mass;
+		//print ("X: " + (velX*mass) + " Y:" + (velY*mass));
 	}
 
 }
