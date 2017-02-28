@@ -5,9 +5,14 @@ using System.Collections;
 //will not bounce orange packages
 public class CalcForce : MonoBehaviour {
 
+	private float health = 100;
+	public Sprite highHealth;
+	public Sprite lowHealth;
+	public string color;
+
 	// Use this for initialization
 	void Start () {
-	
+		gameObject.GetComponent<SpriteRenderer> ().sprite = highHealth;
 	}
 	
 	// Update is called once per frame
@@ -16,11 +21,14 @@ public class CalcForce : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D col) {
-		print (col.relativeVelocity);
-		//float velX = col.gameObject.GetComponent<Rigidbody2D> ().velocity.x;
-		//float velY = col.gameObject.GetComponent<Rigidbody2D> ().velocity.y;
-		//float mass = col.gameObject.GetComponent<Rigidbody2D> ().mass;
-		//print ("X: " + (velX*mass) + " Y:" + (velY*mass));
+		float speed = gameObject.GetComponent<Rigidbody2D> ().velocity.y;
+		if (col.gameObject.name != "truck" + color && speed < -1) {
+			health += (speed * 10);
+			print ("Speed: " + speed + " Collision: " + col.gameObject.name + " Health: " + health);
+			if (health <= 80) {
+				gameObject.GetComponent<SpriteRenderer> ().sprite = lowHealth;
+			}
+		}
 	}
 
 }
