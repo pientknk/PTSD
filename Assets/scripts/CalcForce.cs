@@ -25,7 +25,7 @@ public class CalcForce : MonoBehaviour {
 		if (col.gameObject.name != "truck" + color && speed < -1) {
 			health += (speed * 10);
 			print ("Speed: " + speed + " Collision: " + col.gameObject.name + " Health: " + health);
-			if (health <= 80) {
+			if (health <= 95) {
 				gameObject.GetComponent<SpriteRenderer> ().sprite = lowHealth;
 			}
 		}
