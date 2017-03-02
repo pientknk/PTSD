@@ -12,6 +12,9 @@ public class ConveyorSpeed : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        gameObject.GetComponent<Animator>().speed = gameObject.GetComponent<SurfaceEffector2D>().speed/10;
-	}
+        //if (gameObject.GetComponent<SurfaceEffector2D>().speed < 0)
+       // {
+            gameObject.GetComponent<Animator>().speed = gameObject.GetComponent<SurfaceEffector2D>().speed / 5;
+        //}
+   }
 }
