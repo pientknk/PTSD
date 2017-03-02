@@ -5,7 +5,7 @@ AnimationClip:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: ConveyorAnimation
+  m_Name: Conveyor
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -21,7 +21,7 @@ AnimationClip:
     - time: 0
       value: {fileID: 21300000, guid: 38015681861bc8e468224aead34decc9, type: 3}
     - time: 0.083333336
-      value: {fileID: 21300000, guid: 7270a006aa9886348bf465dab6c2fc0a, type: 3}
+      value: {fileID: 21300000, guid: 3e3bcff23be7bbf4ca2f7e96110fd6f6, type: 3}
     - time: 0.16666667
       value: {fileID: 21300000, guid: f65a62f0c5100ec4fadf9a94677b06a9, type: 3}
     - time: 0.25
@@ -45,7 +45,7 @@ AnimationClip:
       isPPtrCurve: 1
     pptrCurveMapping:
     - {fileID: 21300000, guid: 38015681861bc8e468224aead34decc9, type: 3}
-    - {fileID: 21300000, guid: 7270a006aa9886348bf465dab6c2fc0a, type: 3}
+    - {fileID: 21300000, guid: 3e3bcff23be7bbf4ca2f7e96110fd6f6, type: 3}
     - {fileID: 21300000, guid: f65a62f0c5100ec4fadf9a94677b06a9, type: 3}
     - {fileID: 21300000, guid: 3a27a3eb5b487174d9182634d2d37eb1, type: 3}
   m_AnimationClipSettings:
