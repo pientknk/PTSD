@@ -1,15 +1,10 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: 38015681861bc8e468224aead34decc9
-timeCreated: 1488303009
-licenseType: Pro
-=======
-guid: bae61c3c2e1fd4ee9aa0ef257d01363a
-timeCreated: 1488344244
+guid: fe477b307307446a0ab6ece05ff44834
+timeCreated: 1488863568
 licenseType: Free
->>>>>>> nickpientka
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: UIPanel_0
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -33,28 +28,20 @@ TextureImporter:
   textureFormat: 1
   maxTextureSize: 2048
   textureSettings:
-<<<<<<< HEAD
-    filterMode: 0
-=======
-    filterMode: 1
->>>>>>> nickpientka
+    filterMode: -1
     aniso: -1
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-<<<<<<< HEAD
-  spritePixelsToUnits: 50
-=======
   spritePixelsToUnits: 100
->>>>>>> nickpientka
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -82,7 +69,20 @@ TextureImporter:
     overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: UIPanel_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 4
+        width: 242
+        height: 245
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 12, y: 20, z: 12, w: 20}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 
