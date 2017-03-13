@@ -3,23 +3,58 @@ using System.Collections;
 
 public class Create : MonoBehaviour {
 
-	private GameObject location;
+	private static GameObject location;
+	public GameObject Location{
+		get{
+			return location;
+		}
+	}
 	private float counter = 0;
-	public GameObject obj;
-	public float timeBetweenSpawns = 3.0f;
+	public GameObject[] spawnOrder;
+	private int numObjects;
+	public int NumObjects{
+		get{
+			return numObjects;
+		}
+	}
+	public float secondsBetweenSpawns = 3.0f;
+	private int i;
 
 	// Use this for initialization
 	void Start () {
-		location = GameObject.Find ("spawnPoint");	
+		location = GameObject.Find ("Spawn Point");
+		i = 0;
+		numObjects = spawnOrder.Length;
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
-		counter += Time.deltaTime;
-		if (counter > timeBetweenSpawns) {
-			GameObject spawnedObject;
-			spawnedObject = Instantiate (obj, location.transform.position, Quaternion.identity) as GameObject;
-			counter = 0;
+		if (i != spawnOrder.Length) {
+			counter += Time.deltaTime;
+			if (counter > secondsBetweenSpawns) {
+				GameObject spawned = Instantiate (spawnOrder[i], location.transform.position, Quaternion.identity) as GameObject;
+				Transform clonetrans = spawned.GetComponent<Transform> ();
+				// if circle
+				if (spawned.GetComponent<CirclePackage> () != null) {
+					clonetrans.localScale = new Vector2 (1.25f, 1.25f);
+					CircleCollider2D spawnedCollider = spawned.GetComponent<CircleCollider2D> ();
+					//spawnedCollider.radius = clonetrans.localScale.x + 1.0f;
+					Vector2 S = spawned.GetComponent<SpriteRenderer>().sprite.bounds.size;
+					spawnedCollider.radius = (S.x / 2);
+				}
+				// if box
+				if (spawned.GetComponent<BoxPackage>() != null) {
+					clonetrans.localScale = new Vector2 (1.5f, 1.5f);
+					//BoxCollider2D spawnedCollider = spawned.GetComponent<BoxCollider2D> ();
+					Vector2 S = spawned.GetComponent<SpriteRenderer>().sprite.bounds.size;
+					spawned.GetComponent<BoxCollider2D>().size = S;
+					//spawned.GetComponent<BoxCollider2D>().offset = new Vector2 ((S.x / 2), 0);
+					//spawnedCollider.size = clonetrans.localScale * 2;
+				} 
+				numObjects--;
+				counter = 0;
+				i++;
+			}
 		}
 	}
 }

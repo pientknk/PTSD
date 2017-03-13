@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TheBank : MonoBehaviour {
-	public static int startingMoney = 5000;
-	public static int currentMoney = 5000;
-	public static int conveyorCost = 55;
-	public static int trampolineCost = 150;
-	public static int slideCost = 35;
-	public static int fanCost = 250;
-	public static int filterCost = 100;
+	public static int startingMoney = 4000;
+	public static int currentMoney = 4000;
+	public static int conveyorCost = 500;
+	public static int trampolineCost = 350;
+	public static int slideCost = 250;
+	public static int fanCost = 300;
+	public static int filterCost = 200;
 
 	public int StartingMoney{
 		get{

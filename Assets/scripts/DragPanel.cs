@@ -9,6 +9,7 @@ public class DragPanel : MonoBehaviour, IPointerDownHandler, IDragHandler {
 	private RectTransform canvasRectTransform;
 	private RectTransform panelRectTransform;
 
+
 	void Awake () {
 		Canvas canvas = GameObject.FindGameObjectWithTag("Canvas").GetComponent<Canvas>();
 		if (canvas != null) {
@@ -23,17 +24,35 @@ public class DragPanel : MonoBehaviour, IPointerDownHandler, IDragHandler {
 	}
 
 	public void OnDrag (PointerEventData data) {
-		if (panelRectTransform == null)
-			return;
+		if (this.tag == "inventory") {
+			if (panelRectTransform == null)
+				return;
 
-		Vector2 pointerPostion = ClampToWindow (data);
+			//Vector2 pointerPostion = ClampToWindow (data);
+			Vector2 pointerPostion = data.position;
+			Vector2 localPointerPosition;
+			if (RectTransformUtility.ScreenPointToLocalPointInRectangle (
+				canvasRectTransform, pointerPostion, data.pressEventCamera, out localPointerPosition
+			)) {
+				panelRectTransform.localPosition = localPointerPosition - pointerOffset;
+			}
+		} else {
+			if (PausePlay.Instance.Paused) {
+				if (panelRectTransform == null)
+					return;
 
-		Vector2 localPointerPosition;
-		if (RectTransformUtility.ScreenPointToLocalPointInRectangle (
-			canvasRectTransform, pointerPostion, data.pressEventCamera, out localPointerPosition
-		)) {
-			panelRectTransform.localPosition = localPointerPosition - pointerOffset;
+				//Vector2 pointerPostion = ClampToWindow (data);
+				Vector2 pointerPostion = data.position;
+
+				Vector2 localPointerPosition;
+				if (RectTransformUtility.ScreenPointToLocalPointInRectangle (
+					canvasRectTransform, pointerPostion, data.pressEventCamera, out localPointerPosition
+				)) {
+					panelRectTransform.localPosition = localPointerPosition - pointerOffset;
+				}
+			}
 		}
+
 	}
 
 	Vector2 ClampToWindow (PointerEventData data) {

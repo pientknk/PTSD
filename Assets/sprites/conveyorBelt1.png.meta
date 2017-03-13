@@ -1,7 +1,19 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: bae61c3c2e1fd4ee9aa0ef257d01363a
 timeCreated: 1488344244
 licenseType: Free
+=======
+<<<<<<< HEAD
+guid: 38015681861bc8e468224aead34decc9
+timeCreated: 1488303009
+licenseType: Pro
+=======
+guid: bae61c3c2e1fd4ee9aa0ef257d01363a
+timeCreated: 1488344244
+licenseType: Free
+>>>>>>> nickpientka
+>>>>>>> master
 TextureImporter:
   fileIDToRecycleName: {}
   serializedVersion: 4
@@ -27,7 +39,15 @@ TextureImporter:
   textureFormat: 1
   maxTextureSize: 2048
   textureSettings:
+<<<<<<< HEAD
     filterMode: 1
+=======
+<<<<<<< HEAD
+    filterMode: 0
+=======
+    filterMode: 1
+>>>>>>> nickpientka
+>>>>>>> master
     aniso: -1
     mipBias: -1
     wrapMode: 1
@@ -40,7 +60,15 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+<<<<<<< HEAD
   spritePixelsToUnits: 100
+=======
+<<<<<<< HEAD
+  spritePixelsToUnits: 50
+=======
+  spritePixelsToUnits: 100
+>>>>>>> nickpientka
+>>>>>>> master
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1

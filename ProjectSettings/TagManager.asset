@@ -11,6 +11,14 @@ TagManager:
   - Slide
   - Fan
   - Filter
+  - orange item
+  - blue item
+  - truck
+  - inventory
+  - spawn
+  - scaffold
+  - score blue
+  - score orange
   layers:
   - Default
   - TransparentFX
@@ -20,10 +28,10 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - trampoline o
+  - trampoline b
+  - blue items
+  - orange items
   - 
   - 
   - 

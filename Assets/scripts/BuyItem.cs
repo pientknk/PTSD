@@ -18,59 +18,69 @@ public class BuyItem : MonoBehaviour {
 	}
 
 	public void buyItem(){
-		switch (thisTag){
-		case "Conveyor":
-			bank.subtractMoney (bank.ConveyorCost);
-			break;
-		case "Trampoline":
-			bank.subtractMoney (bank.TrampolineCost);
-			break;
-		case "Slide":
-			bank.subtractMoney (bank.SlideCost);
-			break;
-		case "Fan":
-			bank.subtractMoney (bank.FanCost);
-			break;
-		case "Filter":
-			bank.subtractMoney (bank.FilterCost);
-			break;
-		default:
-			print ("Error: " + thisTag + " - must have an appropriate tag. e.g. Conveyor");
-			break;
-		}
+			switch (thisTag) {
+			case "Conveyor":
+				bank.subtractMoney (bank.ConveyorCost);
+				break;
+			case "Trampoline":
+				bank.subtractMoney (bank.TrampolineCost);
+				break;
+			case "Slide":
+				bank.subtractMoney (bank.SlideCost);
+				break;
+			case "Fan":
+				bank.subtractMoney (bank.FanCost);
+				break;
+			case "Filter":
+				bank.subtractMoney (bank.FilterCost);
+				break;
+			default:
+				print ("Error: " + thisTag + " - must have an appropriate tag. e.g. Conveyor");
+				break;
+			}
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		switch (thisTag){
-		case "Conveyor":
-			if (!bank.canBuyConveyor ()) {
+		if (PausePlay.Instance.Paused) {
+			switch (thisTag) {
+			case "Conveyor":
+				if (!bank.canBuyConveyor ()) {
+					button.interactable = false;
+				} else {
+					button.interactable = true;
+				}
+				break;
+			case "Trampoline":
+				if (!bank.canBuyTrampoline ()) {
+					button.interactable = false;
+				} else {
+					button.interactable = true;
+				}
+				break;
+			case "Slide":
+				if (!bank.canBuySlide ()) {
+					button.interactable = false;
+				} else {
+					button.interactable = true;
+				}
+				break;
+			case "Fan":
+				if (!bank.canBuyFan ()) {
+					button.interactable = false;
+				} else {
+					button.interactable = true;
+				}
+				break;
+			case "Filter":
 				button.interactable = false;
+				break;
+			default:
+				print ("Error: " + thisTag + " - must have an appropriate tag. e.g. Conveyor");
+				break;
 			}
-			break;
-		case "Trampoline":
-			if (!bank.canBuyTrampoline ()) {
-				button.interactable = false;
-			}
-			break;
-		case "Slide":
-			if (!bank.canBuySlide ()) {
-				button.interactable = false;
-			}
-			break;
-		case "Fan":
-			if (!bank.canBuyFan ()) {
-				button.interactable = false;
-			}
-			break;
-		case "Filter":
-			if (!bank.canbBuyFilter ()) {
-				button.interactable = false;
-			}
-			break;
-		default:
-			print ("Error: " + thisTag + " - must have an appropriate tag. e.g. Conveyor");
-			break;
+		} else {
+			button.interactable = false;
 		}
 	}
 }

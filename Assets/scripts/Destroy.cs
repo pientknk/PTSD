@@ -1,13 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(TheBank))]
 public class Destroy : MonoBehaviour {
 
 	private float miss;
+	private TheBank bank;
 
 	// Use this for initialization
 	void Start () {
 		miss = 0;
+		bank = GetComponent<TheBank> ();
 	}
 	
 	// Update is called once per frame
@@ -16,10 +19,8 @@ public class Destroy : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D col) {
-		if (col.gameObject.name == "box(Clone)") {
 			Destroy (col.gameObject);
+			bank.subtractMoney (50);
 			miss++;
-			print ("MISS: " + miss);
-		}
 	}
 }
