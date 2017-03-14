@@ -5,7 +5,7 @@ using System.Collections;
 //will not bounce orange packages
 public class CalcForce : MonoBehaviour {
 
-	private float health = 100;
+	private float health = 150;
 	private float maxHealth = 100;
 	public Sprite highHealth;
 	public Sprite lowHealth;
@@ -25,28 +25,22 @@ public class CalcForce : MonoBehaviour {
 		
 		float relVelocity = (float)(Mathf.Abs(col.relativeVelocity.y) + Mathf.Abs(col.relativeVelocity.x));
 		float mass = gameObject.GetComponent<Rigidbody2D> ().mass;
-		//print (gameObject.name + " hitting with force of: " + relVelocity);
 		relVelocity = relVelocity / ((Mathf.Sqrt(mass) / 2));
-		//print (gameObject.name + " hitting with CALCULATED force of: " + relVelocity);
 		if (col.gameObject.tag != "truck") {
-			//int vel = (int)relVelocity;
-			//FloatingTextController.CreateFloatingText (vel.ToString(), transform);
-			if (col.gameObject.tag == "Trampoline") {
-				health -= (relVelocity / 5);
-			} else {
-				health -= relVelocity;
-			}
-
-			//print ("Speed: " + speed + " Collision: " + col.gameObject.name + " Health: " + health);
-			if (health <= 70) {
-				gameObject.GetComponent<SpriteRenderer> ().sprite = lowHealth;
-			}
-			if (health <= 0) {
-				Destroy (gameObject);
-			}
+				if (col.gameObject.tag == "Trampoline") {
+					print ("doing " + relVelocity / 5 + " damage");
+					health -= (relVelocity / 5);
+				} else {
+					print ("doing " + relVelocity + " damage");
+					health -= relVelocity;
+				}
+				if (health <= 75) {
+					gameObject.GetComponent<SpriteRenderer> ().sprite = lowHealth;
+				}
+				if (health <= 0) {
+					Destroy (gameObject);
+				}
 		}
-		print (gameObject.name + " " + relVelocity + " health is: " + health);
-		//print (gameObject.name + "'s health is: " + health);
 	}
 
 	public float GetHealth(){
