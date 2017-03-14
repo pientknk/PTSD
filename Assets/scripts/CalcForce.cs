@@ -22,24 +22,30 @@ public class CalcForce : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D col) {
-		float relVelocity = (col.relativeVelocity.y) + (col.relativeVelocity.x / 2);
+		
+		float relVelocity = (float)(Mathf.Abs(col.relativeVelocity.y) + Mathf.Abs(col.relativeVelocity.x));
 		float mass = gameObject.GetComponent<Rigidbody2D> ().mass;
 		//print (gameObject.name + " hitting with force of: " + relVelocity);
-		relVelocity = relVelocity / ((Mathf.Sqrt(mass) / 1.5f));
+		relVelocity = relVelocity / ((Mathf.Sqrt(mass) / 2));
 		//print (gameObject.name + " hitting with CALCULATED force of: " + relVelocity);
-		relVelocity *= -1;
 		if (col.gameObject.tag != "truck") {
 			//int vel = (int)relVelocity;
 			//FloatingTextController.CreateFloatingText (vel.ToString(), transform);
-			health -= relVelocity;
+			if (col.gameObject.tag == "Trampoline") {
+				health -= (relVelocity / 5);
+			} else {
+				health -= relVelocity;
+			}
+
 			//print ("Speed: " + speed + " Collision: " + col.gameObject.name + " Health: " + health);
-			if (health <= 50) {
+			if (health <= 70) {
 				gameObject.GetComponent<SpriteRenderer> ().sprite = lowHealth;
 			}
 			if (health <= 0) {
 				Destroy (gameObject);
 			}
 		}
+		print (gameObject.name + " " + relVelocity + " health is: " + health);
 		//print (gameObject.name + "'s health is: " + health);
 	}
 

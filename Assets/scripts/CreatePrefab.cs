@@ -31,17 +31,8 @@ public class CreatePrefab : MonoBehaviour {
 				clone.GetComponent<BoxCollider2D> ().size = S;
 				break;
 			case "Fan":
-				CircleCollider2D spawnedCircleCollider = clone.GetComponent<CircleCollider2D> ();
-				//spawnedCollider.radius = clonetrans.localScale.x + 1.0f;
-				S = clone.GetComponent<RectTransform> ().sizeDelta;
-				// calculate radius based off of rect transform
-				float aSquared = S.x * S.x;
-				float bSquared = S.y * S.y;
-				float hypot = Mathf.Sqrt (aSquared + bSquared);
-				// subtract 15% to match with sprite
-				float fifteenPerc = hypot * 0.15f;
-				hypot -= fifteenPerc;
-				spawnedCircleCollider.radius = (hypot / 2);
+				S = clone.GetComponent<RectTransform>().sizeDelta;
+				clone.GetComponent<BoxCollider2D> ().size = S;
 				break;
 			case "Filter":
 				S = clone.GetComponent<RectTransform>().sizeDelta;

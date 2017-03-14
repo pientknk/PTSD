@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 212057049210950674}
   - component: {fileID: 114352328630815908}
   - component: {fileID: 114490667101778862}
+  - component: {fileID: 114133311883590826}
   m_Layer: 0
   m_Name: Usable Slide
   m_TagString: Untagged
@@ -64,6 +65,17 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 65, y: 15}
+--- !u!114 &114133311883590826
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1232233063960076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67466ec33c6e64d06b36fa4097b4641e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114223432434316056
 MonoBehaviour:
   m_ObjectHideFlags: 1

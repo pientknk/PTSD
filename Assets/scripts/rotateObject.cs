@@ -11,13 +11,13 @@ public class rotateObject : MonoBehaviour{
 		if (PausePlay.Instance.Paused) {
 
 			if (Input.GetKeyDown (KeyCode.LeftArrow)) {
-				Vector3 rotation = transform.rotation.eulerAngles;
-				rotation += (Vector3.forward * rotateAngle);
-				transform.eulerAngles = rotation;
+					Vector3 rotation = transform.rotation.eulerAngles;
+					rotation += (Vector3.forward * rotateAngle);
+					transform.eulerAngles = rotation;
 			} else if (Input.GetKeyDown (KeyCode.RightArrow)) {
-				Vector3 rotation = transform.rotation.eulerAngles;
-				rotation += (Vector3.back * rotateAngle);
-				transform.eulerAngles = rotation;
+					Vector3 rotation = transform.rotation.eulerAngles;
+					rotation += (Vector3.back * rotateAngle);
+					transform.eulerAngles = rotation;
 			}
 		}
 	}

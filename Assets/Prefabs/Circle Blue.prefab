@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highHealth: {fileID: 21300000, guid: dc1fd1b715e164efcb1bbcddb156bcbb, type: 3}
-  lowHealth: {fileID: 21300000, guid: dc1fd1b715e164efcb1bbcddb156bcbb, type: 3}
+  lowHealth: {fileID: 21300000, guid: 9e31ed14ae6bb40d194a256c32408a02, type: 3}
 --- !u!114 &114388007909014426
 MonoBehaviour:
   m_ObjectHideFlags: 1
