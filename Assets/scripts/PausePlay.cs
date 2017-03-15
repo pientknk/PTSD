@@ -47,9 +47,11 @@ public class PausePlay : MonoBehaviour {
 			}
 		} else if (buttonPressed.name == "Fast Forward Button") {
 			paused = false;
+			pausePlayButton.GetComponent<Image>().sprite = pauseImage;
 			Time.timeScale = 1.75f;
 		} else if (buttonPressed.name == "Super Fast Forward Button") {
 			paused = false;
+			pausePlayButton.GetComponent<Image>().sprite = pauseImage;
 			Time.timeScale = 2.5f;
 		} else {
 			print ("Button pressed doesn't match in PausePlay.cs");
