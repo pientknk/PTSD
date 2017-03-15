@@ -13,12 +13,12 @@ public class PackageCounter : MonoBehaviour {
 		creator = GameObject.FindGameObjectWithTag ("spawn").GetComponent<Create> ();
 		numPackages = creator.NumObjects;
 		label = GetComponent<Text> ();
-		label.text = "Packages Left: " + numPackages;
+		label.text = "x" + numPackages;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		numPackages = creator.NumObjects;
-		label.text = "Packages Left: " + numPackages;
+		label.text = "x" + numPackages;
 	}
 }

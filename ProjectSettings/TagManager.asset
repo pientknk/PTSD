@@ -19,6 +19,7 @@ TagManager:
   - scaffold
   - score blue
   - score orange
+  - successfailure
   layers:
   - Default
   - TransparentFX

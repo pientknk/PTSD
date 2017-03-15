@@ -4,12 +4,14 @@ using System.Collections;
 [RequireComponent(typeof(TheBank))]
 public class Destroy : MonoBehaviour {
 
-	private float miss;
+	private int fails;
 	private TheBank bank;
+
+	private DeliveringPackagesCounter dpc;
 
 	// Use this for initialization
 	void Start () {
-		miss = 0;
+		dpc = GameObject.FindGameObjectWithTag ("successfailure").GetComponent<DeliveringPackagesCounter> ();
 		bank = GetComponent<TheBank> ();
 	}
 	
@@ -19,8 +21,10 @@ public class Destroy : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D col) {
-			Destroy (col.gameObject);
-			bank.subtractMoney (50);
-			miss++;
+		fails = dpc.FailCount;
+		fails++;
+		dpc.FailCount = fails;
+		Destroy (col.gameObject);
+		bank.subtractMoney (50);
 	}
 }

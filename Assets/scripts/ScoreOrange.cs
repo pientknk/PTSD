@@ -5,8 +5,11 @@ using System.Collections;
 public class ScoreOrange : MonoBehaviour {
 
 	private float scoreOrange;
+	private int successes;
+	private int failures;
+
 	private TheBank bank;
-	private int worth = 50;
+	private int worth = 100;
 	private int profit;
 	public int Profit{
 		get{
@@ -16,9 +19,10 @@ public class ScoreOrange : MonoBehaviour {
 			profit = value;
 		}
 	}
-
+	private DeliveringPackagesCounter dpc;
 	// Use this for initialization
 	void Start () {
+		dpc = GameObject.FindGameObjectWithTag ("successfailure").GetComponent<DeliveringPackagesCounter> ();
 		scoreOrange = 0;
 		bank = GetComponent<TheBank> ();
 	}
@@ -34,18 +38,23 @@ public class ScoreOrange : MonoBehaviour {
 		CalcForce cf = col.gameObject.GetComponent<CalcForce>();
 		string tag = col.gameObject.tag;
 		if (tag == "orange item"){
+			successes = dpc.SuccessCount;
+			successes++;
+			dpc.SuccessCount = successes;
 			scoreOrange++;
 			int money = (int)(worth * (cf.GetHealth() / cf.GetMaxHealth()));
 			bank.addMoney (money);
 			Profit += money;
 		} else if(tag == "blue item"){
+			failures = dpc.FailCount;
+			failures++;
+			dpc.FailCount = failures;
 			scoreOrange--;
 			bank.subtractMoney (worth);
 			Profit -= worth;
 		}
 
-		print (col.gameObject.name + " had " + cf.GetHealth() + " health left");
-
+		//print (col.gameObject.name + " had " + cf.GetHealth() + " health left");
 		Destroy (col.gameObject);
 	}
 }
