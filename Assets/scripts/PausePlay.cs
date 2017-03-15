@@ -6,8 +6,12 @@ using UnityEngine.UI;
 public class PausePlay : MonoBehaviour {
 
 
+	private Image pausePlayImage;
 	public Sprite playImage;
 	public Sprite pauseImage;
+	public Sprite fastPlayImage;
+	public Sprite superFastImage;
+	public GameObject pausePlayButton;
 	private bool paused;
 
 	public bool Paused{
@@ -27,23 +31,28 @@ public class PausePlay : MonoBehaviour {
 	void Start () {
 		paused = true;
 		Time.timeScale = 0.0f;
-		GetComponent<Image> ().sprite = playImage;
-		//print ("Paused");
+		pausePlayButton.GetComponent<Image>().sprite = playImage;
 	}
 
-	public void Pause(){
-		paused = !paused;
-		if (paused) {
-			//print ("Pause");
-			Time.timeScale = 0.0f;
+	public void Pause(GameObject buttonPressed){
+		
+		if (buttonPressed.name == "Play Pause Button") {
+			paused = !paused;
+			if (paused) {
+				buttonPressed.GetComponent<Image>().sprite = playImage;
+				Time.timeScale = 0.0f;
+			} else {
+				buttonPressed.GetComponent<Image>().sprite = pauseImage;
+				Time.timeScale = 1.0f;
+			}
+		} else if (buttonPressed.name == "Fast Forward Button") {
+			paused = false;
+			Time.timeScale = 1.75f;
+		} else if (buttonPressed.name == "Super Fast Forward Button") {
+			paused = false;
+			Time.timeScale = 2.5f;
 		} else {
-			//print ("Play");
-			Time.timeScale = 1.0f;
-		}
-		if (GetComponent<Image> ().sprite == pauseImage) {
-			GetComponent<Image> ().sprite = playImage;
-		} else {
-			GetComponent<Image> ().sprite = pauseImage;
+			print ("Button pressed doesn't match in PausePlay.cs");
 		}
 	}
 }

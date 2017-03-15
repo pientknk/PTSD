@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 222591722613466464}
   - component: {fileID: 114800861204253450}
   - component: {fileID: 114766981204974710}
-  - component: {fileID: 114187797315845840}
   m_Layer: 5
   m_Name: Fast Forward Button
   m_TagString: Untagged
@@ -40,12 +39,12 @@ GameObject:
   - component: {fileID: 224412851999475688}
   - component: {fileID: 222945636708440582}
   - component: {fileID: 114714380151328000}
-  - component: {fileID: 114847383712834072}
   - component: {fileID: 114310675701099314}
   - component: {fileID: 212010562612693532}
+  - component: {fileID: 114073884676691618}
   m_Layer: 5
   m_Name: Speed Menu
-  m_TagString: successfailure
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,7 +60,6 @@ GameObject:
   - component: {fileID: 222013096539034648}
   - component: {fileID: 114731720568160586}
   - component: {fileID: 114821628736275404}
-  - component: {fileID: 114666963349855424}
   m_Layer: 5
   m_Name: Super Fast Forward Button
   m_TagString: Untagged
@@ -80,7 +78,6 @@ GameObject:
   - component: {fileID: 222999408672738902}
   - component: {fileID: 114011264560894218}
   - component: {fileID: 114801587854419462}
-  - component: {fileID: 114299204837005484}
   m_Layer: 5
   m_Name: Play Pause Button
   m_TagString: Untagged
@@ -115,12 +112,12 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114187797315845840
+--- !u!114 &114073884676691618
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1163704003110082}
+  m_GameObject: {fileID: 1363359746235622}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 985ddae03c9284272b7dba26372447ad, type: 3}
@@ -128,19 +125,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playImage: {fileID: 21300000, guid: 6644e8c1c112c492180ed1b38165f1e3, type: 3}
   pauseImage: {fileID: 21300000, guid: 41737f4f89bc3473caff078dc47b310e, type: 3}
---- !u!114 &114299204837005484
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1963800414381520}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 985ddae03c9284272b7dba26372447ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playImage: {fileID: 21300000, guid: 6644e8c1c112c492180ed1b38165f1e3, type: 3}
-  pauseImage: {fileID: 21300000, guid: 41737f4f89bc3473caff078dc47b310e, type: 3}
+  fastPlayImage: {fileID: 21300000, guid: 2479a66ab553a4ddab4a9295765953ef, type: 3}
+  superFastImage: {fileID: 21300000, guid: 692b2f9f65af341ac81b4f194b60e9cf, type: 3}
+  pausePlayButton: {fileID: 1963800414381520}
 --- !u!114 &114310675701099314
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -155,19 +142,6 @@ MonoBehaviour:
   m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
   m_EffectDistance: {x: 0, y: 0}
   m_UseGraphicAlpha: 0
---- !u!114 &114666963349855424
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1661603044123998}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 985ddae03c9284272b7dba26372447ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playImage: {fileID: 21300000, guid: 6644e8c1c112c492180ed1b38165f1e3, type: 3}
-  pauseImage: {fileID: 21300000, guid: 41737f4f89bc3473caff078dc47b310e, type: 3}
 --- !u!114 &114714380151328000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -214,7 +188,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 6644e8c1c112c492180ed1b38165f1e3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 692b2f9f65af341ac81b4f194b60e9cf, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -242,7 +216,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0, g: 1, b: 0.047058824, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -261,12 +235,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114187797315845840}
+      - m_Target: {fileID: 114073884676691618}
         m_MethodName: Pause
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1163704003110082}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -293,7 +267,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 6644e8c1c112c492180ed1b38165f1e3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2479a66ab553a4ddab4a9295765953ef, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -321,7 +295,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0, g: 1, b: 0.048275948, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -340,12 +314,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114299204837005484}
+      - m_Target: {fileID: 114073884676691618}
         m_MethodName: Pause
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1963800414381520}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -373,7 +347,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0, g: 1, b: 0.047058824, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -392,59 +366,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114666963349855424}
+      - m_Target: {fileID: 114073884676691618}
         m_MethodName: Pause
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1661603044123998}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!114 &114847383712834072
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1363359746235622}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 1, g: 0.5670415, b: 0.5670415, a: 1}
-    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
-    m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.2
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: fe477b307307446a0ab6ece05ff44834,
-      type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: c4d3a66e2184815418c26b58cd9a6b2e, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: fe477b307307446a0ab6ece05ff44834, type: 3}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_DisabledTrigger: Disabled
-  m_Interactable: 0
-  m_TargetGraphic: {fileID: 114714380151328000}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!212 &212010562612693532
@@ -521,8 +453,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -11.8, y: -9.1}
-  m_SizeDelta: {x: 18, y: 18}
+  m_AnchoredPosition: {x: -16.6, y: -11.2}
+  m_SizeDelta: {x: 27.6, y: 18}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224379852336245266
 RectTransform:
@@ -539,7 +471,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -39.6, y: -9.1}
+  m_AnchoredPosition: {x: -47.9, y: -11.2}
   m_SizeDelta: {x: 18, y: 18}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224412851999475688
@@ -560,8 +492,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 639.6, y: 0.000061035156}
-  m_SizeDelta: {x: 79.5, y: 20}
+  m_AnchoredPosition: {x: 633.9, y: 0.000061035156}
+  m_SizeDelta: {x: 85.2, y: 25}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &224662242945711166
 RectTransform:
@@ -578,6 +510,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -67.8, y: -9.1}
+  m_AnchoredPosition: {x: -73.8, y: -11.2}
   m_SizeDelta: {x: 18, y: 18}
   m_Pivot: {x: 0.5, y: 0.5}
