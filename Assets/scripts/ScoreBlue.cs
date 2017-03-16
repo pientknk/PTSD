@@ -48,6 +48,7 @@ public class ScoreBlue : MonoBehaviour {
 			//bank.addMoney (money);
 			//Profit += money;
 			mt.Money += money;
+			Destroy (col.gameObject);
 		} else if(tag == "orange item"){
 			dpc.FailCount += 1;
 //			failures = dpc.FailCount;
@@ -57,11 +58,11 @@ public class ScoreBlue : MonoBehaviour {
 			//bank.subtractMoney (worth);
 			//Profit -= worth;
 			mt.Money -= 50;
+			Destroy (col.gameObject);
 		}
 
 		//print (col.gameObject.name + " had " + cf.GetHealth() + " health left");
 
-		Destroy (col.gameObject);
 
 	}
 }
