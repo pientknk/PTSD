@@ -5,15 +5,26 @@ using UnityEngine.UI;
 
 public class PausePlay : MonoBehaviour {
 
-
+	private static float timeScale;
+	public float TimeScale{
+		get{
+			return timeScale;
+		}
+	}
 	private Image pausePlayImage;
 	public Sprite playImage;
 	public Sprite pauseImage;
 	public Sprite fastPlayImage;
 	public Sprite superFastImage;
 	public GameObject pausePlayButton;
-	private bool paused;
 
+	//speed variables used by buttons to change the time scale of the game
+	private float pauseSpeed = 0.0f;
+	private float regularSpeed = 1.0f;
+	private float fastSpeed = 2.0f;
+	private float superSpeed = 3.0f;
+
+	private bool paused;
 	public bool Paused{
 		get{ return paused; }
 	}
@@ -30,7 +41,8 @@ public class PausePlay : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		paused = true;
-		Time.timeScale = 0.0f;
+		Time.timeScale = pauseSpeed;
+		timeScale = pauseSpeed;
 		pausePlayButton.GetComponent<Image>().sprite = playImage;
 	}
 
@@ -40,19 +52,23 @@ public class PausePlay : MonoBehaviour {
 			paused = !paused;
 			if (paused) {
 				buttonPressed.GetComponent<Image>().sprite = playImage;
-				Time.timeScale = 0.0f;
+				Time.timeScale = pauseSpeed;
+				timeScale = pauseSpeed;
 			} else {
 				buttonPressed.GetComponent<Image>().sprite = pauseImage;
-				Time.timeScale = 1.0f;
+				Time.timeScale = regularSpeed;
+				timeScale = regularSpeed;
 			}
 		} else if (buttonPressed.name == "Fast Forward Button") {
 			paused = false;
 			pausePlayButton.GetComponent<Image>().sprite = pauseImage;
-			Time.timeScale = 1.75f;
+			Time.timeScale = fastSpeed;
+			timeScale = fastSpeed;
 		} else if (buttonPressed.name == "Super Fast Forward Button") {
 			paused = false;
 			pausePlayButton.GetComponent<Image>().sprite = pauseImage;
-			Time.timeScale = 2.5f;
+			Time.timeScale = superSpeed;
+			timeScale = superSpeed;
 		} else {
 			print ("Button pressed doesn't match in PausePlay.cs");
 		}

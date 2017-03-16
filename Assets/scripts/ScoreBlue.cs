@@ -18,13 +18,14 @@ public class ScoreBlue : MonoBehaviour {
 			profit = value;
 		}
 	}
-
+	private MoneyTracker mt;
 	private DeliveringPackagesCounter dpc;
 	// Use this for initialization
 	void Start () {
 		dpc = GameObject.FindGameObjectWithTag ("successfailure").GetComponent<DeliveringPackagesCounter> ();
 		scoreBlue = 0;
 		bank = GetComponent<TheBank> ();
+		mt = GameObject.FindGameObjectWithTag ("Money").GetComponent<MoneyTracker> ();
 	}
 	
 	// Update is called once per frame
@@ -38,20 +39,24 @@ public class ScoreBlue : MonoBehaviour {
 		CalcForce cf = col.gameObject.GetComponent<CalcForce>();
 		string tag = col.gameObject.tag;
 		if (tag == "blue item"){
-			successes = dpc.SuccessCount;
-			successes++;
-			dpc.SuccessCount = successes;
+			dpc.SuccessCount += 1;
+//			successes = dpc.SuccessCount;
+//			successes++;
+//			dpc.SuccessCount = successes;
 			scoreBlue++;
 			int money = (int)(worth * (cf.GetHealth() / cf.GetMaxHealth()));
-			bank.addMoney (money);
-			Profit += money;
+			//bank.addMoney (money);
+			//Profit += money;
+			mt.Money += money;
 		} else if(tag == "orange item"){
-			failures = dpc.FailCount;
-			failures++;
-			dpc.FailCount = failures;
+			dpc.FailCount += 1;
+//			failures = dpc.FailCount;
+//			failures++;
+//			dpc.FailCount = failures;
 			scoreBlue--;
-			bank.subtractMoney (worth);
-			Profit -= worth;
+			//bank.subtractMoney (worth);
+			//Profit -= worth;
+			mt.Money -= 50;
 		}
 
 		//print (col.gameObject.name + " had " + cf.GetHealth() + " health left");

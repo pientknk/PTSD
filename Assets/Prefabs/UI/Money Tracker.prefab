@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114111331977722936}
   m_Layer: 5
   m_Name: Money Tracker
-  m_TagString: Untagged
+  m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41,9 +41,10 @@ GameObject:
   - component: {fileID: 224936369982653210}
   - component: {fileID: 222009697846482316}
   - component: {fileID: 114402366197119498}
+  - component: {fileID: 114174959654795080}
   m_Layer: 5
-  m_Name: Package Count
-  m_TagString: Untagged
+  m_Name: 'Money '
+  m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104,6 +105,17 @@ MonoBehaviour:
   m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
   m_EffectDistance: {x: 0, y: 0}
   m_UseGraphicAlpha: 0
+--- !u!114 &114174959654795080
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1962082922992690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0d7ad0733a7e4bfbb0bb52db84296ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114346903644584226
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -228,7 +240,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 488.8, y: 0.000061035156}
-  m_SizeDelta: {x: 57.3, y: 20}
+  m_SizeDelta: {x: 60.5, y: 20}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &224936369982653210
 RectTransform:
@@ -245,6 +257,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 28.65, y: -9.15}
-  m_SizeDelta: {x: 57.3, y: 20}
+  m_AnchoredPosition: {x: 30.249998, y: -9.15}
+  m_SizeDelta: {x: 60.5, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}

@@ -20,6 +20,7 @@ TagManager:
   - score blue
   - score orange
   - successfailure
+  - Money
   layers:
   - Default
   - TransparentFX
