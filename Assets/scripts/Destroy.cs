@@ -24,9 +24,6 @@ public class Destroy : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D col) {
 		dpc.FailCount += 1;
-//		fails = dpc.FailCount;
-//		fails++;
-//		dpc.FailCount = fails;
 		Destroy (col.gameObject);
 		//bank.subtractMoney (50);
 		mt.Money -= 50;

@@ -40,9 +40,6 @@ public class ScoreBlue : MonoBehaviour {
 		string tag = col.gameObject.tag;
 		if (tag == "blue item"){
 			dpc.SuccessCount += 1;
-//			successes = dpc.SuccessCount;
-//			successes++;
-//			dpc.SuccessCount = successes;
 			scoreBlue++;
 			int money = (int)(worth * (cf.GetHealth() / cf.GetMaxHealth()));
 			//bank.addMoney (money);
@@ -51,9 +48,6 @@ public class ScoreBlue : MonoBehaviour {
 			Destroy (col.gameObject);
 		} else if(tag == "orange item"){
 			dpc.FailCount += 1;
-//			failures = dpc.FailCount;
-//			failures++;
-//			dpc.FailCount = failures;
 			scoreBlue--;
 			//bank.subtractMoney (worth);
 			//Profit -= worth;
