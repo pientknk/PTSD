@@ -38,18 +38,14 @@ public class Create : MonoBehaviour {
 				if (spawned.GetComponent<CirclePackage> () != null) {
 					clonetrans.localScale = new Vector2 (1.85f, 1.85f);
 					CircleCollider2D spawnedCollider = spawned.GetComponent<CircleCollider2D> ();
-					//spawnedCollider.radius = clonetrans.localScale.x + 1.0f;
 					Vector2 S = spawned.GetComponent<SpriteRenderer>().sprite.bounds.size;
 					spawnedCollider.radius = (S.x / 2);
 				}
 				// if box
 				if (spawned.GetComponent<BoxPackage>() != null) {
 					clonetrans.localScale = new Vector2 (2.35f, 2.35f);
-					//BoxCollider2D spawnedCollider = spawned.GetComponent<BoxCollider2D> ();
 					Vector2 S = spawned.GetComponent<SpriteRenderer>().sprite.bounds.size;
 					spawned.GetComponent<BoxCollider2D>().size = S;
-					//spawned.GetComponent<BoxCollider2D>().offset = new Vector2 ((S.x / 2), 0);
-					//spawnedCollider.size = clonetrans.localScale * 2;
 				} 
 				numObjects--;
 				counter = 0;

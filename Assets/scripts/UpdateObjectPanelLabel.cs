@@ -11,6 +11,7 @@ public class UpdateObjectPanelLabel : MonoBehaviour {
 		get{ return objectSelected; }
 		set{ objectSelected = value; }
 	}
+	private GetSelectedObject gso;
 
 	// Use this for initialization
 	void Start () {
@@ -19,11 +20,13 @@ public class UpdateObjectPanelLabel : MonoBehaviour {
 		if (label == null) {
 			print ("No text component found on object with UpdateObjectPanelLabel.cs attached");
 		}
+		gso = GameObject.FindGameObjectWithTag ("Canvas").GetComponent<GetSelectedObject> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (label != null) {
+			objectSelected = gso.NameObject;
 			label.text = "Selected: " + objectSelected;
 		}
 	}

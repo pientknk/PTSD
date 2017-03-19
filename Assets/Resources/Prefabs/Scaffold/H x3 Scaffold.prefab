@@ -40,7 +40,6 @@ GameObject:
   - component: {fileID: 224625072749473008}
   - component: {fileID: 114317404172153978}
   - component: {fileID: 114105916960522096}
-  - component: {fileID: 114425258795650520}
   - component: {fileID: 114940065137310834}
   m_Layer: 0
   m_Name: H x3 Scaffold
@@ -214,17 +213,6 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1349315851458544}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed013c94b878d466ca726bc73023504d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114425258795650520
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1438402128369392}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed013c94b878d466ca726bc73023504d, type: 3}

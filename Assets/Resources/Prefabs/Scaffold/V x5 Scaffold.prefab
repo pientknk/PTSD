@@ -59,7 +59,6 @@ GameObject:
   - component: {fileID: 224458698594213966}
   - component: {fileID: 114184034585255800}
   - component: {fileID: 114455162761979336}
-  - component: {fileID: 114471462634717526}
   - component: {fileID: 114244677958917866}
   m_Layer: 0
   m_Name: V x5 Scaffold
@@ -252,17 +251,6 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
---- !u!114 &114471462634717526
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1282205358692528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed013c94b878d466ca726bc73023504d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114529886544238936
 MonoBehaviour:
   m_ObjectHideFlags: 1
