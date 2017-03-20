@@ -22,6 +22,8 @@ public class CameraMove : MonoBehaviour {
 	private float baseOrth;
 	private float newOrth;
 
+	private Rigidbody2D r;
+
 	void Start() {
 		camX = transform.position.x;
 		camY = transform.position.y;
@@ -33,10 +35,19 @@ public class CameraMove : MonoBehaviour {
 	}
 
 	void Update() {
-
+	
+		RaycastHit2D hit = Physics2D.Raycast(Input.mousePosition, -Vector2.up);
 
 		if(Input.GetMouseButtonDown(0)) {
 			anchor = Input.mousePosition;
+			if (hit.collider.gameObject.GetComponent<Rigidbody2D>() != null) {
+				r = hit.collider.gameObject.GetComponent<Rigidbody2D>();
+				if (r.gameObject.tag == "Conveyor") {
+					print ("Conveyor!");
+				} else {
+					print ("Not Conveyor.");
+				}
+			}
 		}
 
 		if(Input.GetMouseButton(0)) {

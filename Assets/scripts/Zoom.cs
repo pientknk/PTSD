@@ -26,8 +26,6 @@ public class Zoom : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		camPos = transform.position;
-
 		if (Input.GetAxis ("Mouse ScrollWheel") < 0) {
 			if (newOrth < maxOrth) {
 				newOrth += 7.0f;
@@ -42,9 +40,9 @@ public class Zoom : MonoBehaviour {
 			camPos.y -= 70.0f;
 			gameObject.GetComponent<Camera> ().transform.position = camPos;
 		}
-
+	
 		gameObject.GetComponent<Camera> ().transform.position = camPos;
 		gameObject.GetComponent<Camera> ().orthographicSize = newOrth;
-		print ("yMax: " + yMax + ", curr Y: " + camPos.y*newOrth + ", New Orth: " + newOrth + " yCam: " + gameObject.GetComponent<Camera>().transform.position.y);
+		//print ("yMax: " + yMax + ", curr Y: " + camPos.y*newOrth + ", New Orth: " + newOrth + " yCam: " + gameObject.GetComponent<Camera>().transform.position.y);
 	}
 }
