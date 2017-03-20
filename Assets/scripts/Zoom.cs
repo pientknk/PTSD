@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class Zoom : MonoBehaviour {
 
-	private float yMax;
-
-	Vector3 camNewPos;
-	Vector3 camStartPos;
-
+	public float zoomSpeed = 7.0f;
 	private float maxOrth;
 	private float minOrth = 30.0f;
-
 	private float newOrth;
+	private float yMax;
+	Vector3 camNewPos;
+	Vector3 camStartPos;
 
 	// Use this for initialization
 	void Start () {
@@ -31,7 +29,7 @@ public class Zoom : MonoBehaviour {
 	
 		if (Input.GetAxis ("Mouse ScrollWheel") < 0) {
 			if (newOrth < maxOrth) {
-				newOrth += 7.0f;
+				newOrth += zoomSpeed;
 				//this will help so we always zoom out to the origial camera position.
 				//dividing by 4 helps smooth the process out
 				camNewPos.x = ((camStartPos.x - camNewPos.x) / 4.0f) + camNewPos.x;
@@ -39,12 +37,12 @@ public class Zoom : MonoBehaviour {
 			}
 		} else if (Input.GetAxis ("Mouse ScrollWheel") > 0) {
 			if (newOrth > minOrth) {
-				newOrth -= 7.0f;
+				newOrth -= zoomSpeed;
 				//this will help so that we zoom in where towards where the mouse is pointing.
 				//dividing by 4 helps smooth the process out
-				camNewPos.x = ((Input.mousePosition.x - camNewPos.x) / 25.0f) + camNewPos.x;
+				camNewPos.x = (((Input.mousePosition.x - 250.0f) - camNewPos.x) / 25.0f) + camNewPos.x;
 				camNewPos.y = ((Input.mousePosition.y - camNewPos.y) / 25.0f) + camNewPos.y;
-				print ("Mouse.x: " + Input.mousePosition.x + ", Mouse.y: " + Input.mousePosition.y + ", Cam.x: " + camNewPos.x + ", Cam.y: " + camNewPos.y);
+				//print ("Mouse.x: " + Input.mousePosition.x + ", Mouse.y: " + Input.mousePosition.y + ", Cam.x: " + camNewPos.x + ", Cam.y: " + camNewPos.y + ", Cam.y - 300.0f: " + (camNewPos.x - 300.0f) + " Transform.x: " + transform.position.x + " Transform.y: " + transform.position.y);
 			}
 		}
 				

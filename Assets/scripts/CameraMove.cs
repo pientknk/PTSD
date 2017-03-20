@@ -53,8 +53,8 @@ public class CameraMove : MonoBehaviour {
 			newOrth = gameObject.GetComponent<Camera> ().orthographicSize;
 
 			//without shrinking the difference the movement is way too fast
-			xDiff = (anchor.x - fromAnchor.x)/40.0f;
-			yDiff = (anchor.y - fromAnchor.y)/40.0f;
+			xDiff = (anchor.x - fromAnchor.x)/50.0f;
+			yDiff = (anchor.y - fromAnchor.y)/50.0f;
 
 			if(((camX + xDiff) * newOrth < xMax) && ((((xStart-camX) + xStart) + xDiff) * newOrth < xMax)) {
 				camX += xDiff;
