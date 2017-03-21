@@ -5,43 +5,28 @@ using UnityEngine.UI;
 
 public class ObjectPanelController : MonoBehaviour{
 
-	private GameObject objectPanel;
-	// Use this for initialization
-	void Start () {
-		RectTransform usableTransform = gameObject.GetComponent<RectTransform> ();
-		float height = usableTransform.rect.height / 2;
-		float width = usableTransform.rect.width / 2;
-		GameObject panel = GameObject.FindGameObjectWithTag ("Canvas");
-		objectPanel = (GameObject)Instantiate(Resources.Load("Prefabs/UI/Object Panel v2"), 
-								new Vector3(transform.position.x + width + 4, transform.position.y - height,
-								transform.position.z), Quaternion.identity, panel.transform);
-		if (objectPanel != null) {
-			// set panels transform to right position and set inactive initially
-			RectTransform objectRect = objectPanel.GetComponent<RectTransform> ();
-			float objHeight = objectRect.rect.height / 2;
-			Vector3 objVector = new Vector3 (objectPanel.transform.position.x, 
-				objectPanel.transform.position.y - objHeight, 
-				objectPanel.transform.position.z);
-			objectPanel.transform.position = objVector;
-			objectPanel.SetActive (false);
+	private static ModifyActions ma;
+	private static GameObject panel;
+	public static ModifyActions Ma{
+		get{ return ma; }
+	}
 
-		} else {
-			print ("Couldn't load object in ObjectPanelController.cs from specified directory");
-		}
-
+	void Start(){
+		panel = GameObject.FindGameObjectWithTag ("object panel");
+		ma = GetComponentInChildren<ModifyActions> ();
+		togglePanelInactive ();
 	}
 
 	public void togglePanel(){
-		if (objectPanel != null) {
-			objectPanel.SetActive (!objectPanel.activeSelf);
-		} else {
-			print ("Can't change active state of a null object in ObjectPanelController.cs");
-		}
-
+		panel.SetActive (!panel.activeSelf);
 	}
 
-	// Update is called once per frame
-	void Update () {
-		
+	public static void togglePanelActive(){
+		//print ("Setting object panel active");
+		panel.SetActive (true);
+	}
+
+	public static void togglePanelInactive(){
+		panel.SetActive (false);
 	}
 }

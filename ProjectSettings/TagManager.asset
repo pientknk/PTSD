@@ -22,6 +22,8 @@ TagManager:
   - successfailure
   - Money
   - Modifiers
+  - object panel
+  - Modify
   layers:
   - Default
   - TransparentFX

@@ -5,6 +5,11 @@ using UnityEngine.UI;
 
 public class ModifyActions : MonoBehaviour {
 
+	private string nameOfSelectedObject;
+	public string NameOfSelectedObject{
+		set{ nameOfSelectedObject = value; }
+		get{ return nameOfSelectedObject; }
+	}
 	private GameObject selectedObject;
 	public GameObject SelectedObject{
 		set{ selectedObject = value; }
@@ -14,10 +19,36 @@ public class ModifyActions : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		allButtons = GetComponentsInChildren<Button> ();
-		SetUpButtonActions ();
+		nameOfSelectedObject = "None";
+		UpdateButtons ();
 	}
 
-	private void SetUpButtonActions(){
+	// should update the name of selected object when called
+	public void ChangedSelectedObject(){
+		switch (selectedObject.tag) {
+		case "Conveyor":
+			nameOfSelectedObject = "Conveyor";
+			break;
+		case "Fan":
+			nameOfSelectedObject = "Fan";
+			break;
+		case "Slide":
+			nameOfSelectedObject = "Slide";
+			break;
+		case "Trampoline":
+			nameOfSelectedObject = "Trampoline";
+			break;
+		default:
+			nameOfSelectedObject = "None";
+			break;
+		}
+		UpdateButtons ();
+	}
+
+	public void SetUpButtonActions(){
+		foreach (Button button in allButtons) {
+			button.onClick.RemoveAllListeners();
+		}
 		allButtons[0].onClick.AddListener (delegate {
 			Sell(selectedObject);
 		});
@@ -44,44 +75,59 @@ public class ModifyActions : MonoBehaviour {
 		});
 	}
 
-	void Update(){
+	void UpdateButtons(){
 		// if the object selected is not a usable object then don't modify buttons and disable them
 		if (selectedObject == null) {
-			foreach (Button button in allButtons) {
-				button.interactable = false;
-			}
+				//print ("setting buttons not interactable");
+				foreach (Button button in allButtons) {
+					button.interactable = false;
+				}
 		// usable object selected so update buttons so that they will modify this selected object
 		} else {
-			foreach (Button button in allButtons) {
-				//SetUpButtonActions ();
-				button.interactable = true;
-			}
+				//print ("setting buttons interactable");
+				foreach (Button button in allButtons) {
+					button.interactable = true;
+				}
 		}
 	}
 
 	private void Sell(GameObject theObject){
-		//add to bank then destroy
-
-		Destroy (gameObject);
-
+		//add to bank then destroy then update panel label
+		if (PausePlay.Instance.Paused) {
+			Destroy (theObject);
+			nameOfSelectedObject = "None";
+			selectedObject = null;
+			UpdateButtons ();
+		}
 	}
 
+
 	private void HitOrange(GameObject theObject){
-		theObject.GetComponent<Image>().color = new Color(1.0f, .6f, 0.0f, 1.0f);
-		theObject.layer = 9;
+		//print ("Orange Filter On");
+		if (PausePlay.Instance.Paused) {
+			theObject.GetComponent<Image> ().color = new Color (1.0f, .6f, 0.0f, 1.0f);
+			theObject.layer = 9;
+		}
 	}
 
 	private void HitBlue(GameObject theObject){
-		theObject.GetComponent<Image>().color = Color.blue;
-		theObject.layer = 8;
+		//print ("blue Filter On");
+		if (PausePlay.Instance.Paused) {
+			theObject.GetComponent<Image> ().color = Color.blue;
+			theObject.layer = 8;
+		}
 	}
 
 	private void HitBoth(GameObject theObject){
-		theObject.GetComponent<Image>().color = originalObjectColor;
-		theObject.layer = 0;
+		//print ("no Filter On");
+		if (PausePlay.Instance.Paused) {
+			theObject.GetComponent<Image> ().color = originalObjectColor;
+			theObject.layer = 0;
+		}
 	}
 
 	private void RotateLeft(GameObject theObject) {
+		//print ("rotate left");
 		if (PausePlay.Instance.Paused) {
 			Vector3 rotation = theObject.transform.rotation.eulerAngles;
 			rotation += (Vector3.forward * 15.0f);
@@ -90,6 +136,7 @@ public class ModifyActions : MonoBehaviour {
 	}
 
 	private void RotateRight(GameObject theObject) {
+		//print ("rotate right");
 		if (PausePlay.Instance.Paused) {
 			Vector3 rotation = theObject.transform.rotation.eulerAngles;
 			rotation += (Vector3.back * 15.0f);
@@ -98,10 +145,16 @@ public class ModifyActions : MonoBehaviour {
 	}
 
 	private void Expand(GameObject theObject){
+		//print ("Expand");
+		if (PausePlay.Instance.Paused) {
 
+		}
 	}
 
 	private void Shrink(GameObject theObject){
+		//print ("shrink");
+		if (PausePlay.Instance.Paused) {
 
+		}
 	}
 }
