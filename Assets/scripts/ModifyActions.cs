@@ -98,6 +98,10 @@ public class ModifyActions : MonoBehaviour {
 			nameOfSelectedObject = "None";
 			selectedObject = null;
 			UpdateButtons ();
+
+			// update selector to be gone
+			SelectedShower.Instance.removeUI ();
+			SelectedShower.Instance.SelectedObject = null;
 		}
 	}
 

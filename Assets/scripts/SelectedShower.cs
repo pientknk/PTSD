@@ -25,7 +25,9 @@ public class SelectedShower : MonoBehaviour {
 		
 	void Start(){
 		selectedShow = Instantiate (selectedShow);
+		// set it to be in the canvas
 		selectedShow.transform.SetParent (transform);
+		selectedShow.transform.SetAsFirstSibling ();
 	}
 
 	//use to follow the object when it is dragged
@@ -45,11 +47,9 @@ public class SelectedShower : MonoBehaviour {
 		
 			Rect selectedObjectRect = SelectedObject.GetComponent<RectTransform> ().rect;
 			// add 10% of objects width for padding and to make it feel like its surrounding the object
-			float width = selectedObjectRect.width + (selectedObjectRect.width / 10);
-			float height = selectedObjectRect.height + (selectedObjectRect.height / 10);
+			float width = selectedObjectRect.width + (selectedObjectRect.width * .15f);
+			float height = selectedObjectRect.height + (selectedObjectRect.height * .15f);
 			selectedShow.GetComponent<RectTransform> ().sizeDelta = new Vector2(width, height);
-
-			//selectedObject.transform.SetParent(selectedShow.transform);
 		}
 	}
 

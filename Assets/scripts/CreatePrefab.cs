@@ -16,32 +16,13 @@ public class CreatePrefab : MonoBehaviour {
 			clone.transform.SetParent (canvas.transform);
 			clone.transform.localPosition = new Vector2(0.0f, 0.0f);
 
-			//check tag of object and make it the appropriate size
-			switch (this.tag){
-			case "Conveyor":
-				S = clone.GetComponent<RectTransform>().sizeDelta;
-				clone.GetComponent<BoxCollider2D> ().size = S;
-				break;
-			case "Trampoline":
-				S = clone.GetComponent<RectTransform>().sizeDelta;
-				clone.GetComponent<BoxCollider2D> ().size = S;
-				break;
-			case "Slide":
-				S = clone.GetComponent<RectTransform>().sizeDelta;
-				clone.GetComponent<BoxCollider2D> ().size = S;
-				break;
-			case "Fan":
-				S = clone.GetComponent<RectTransform>().sizeDelta;
-				clone.GetComponent<BoxCollider2D> ().size = S;
-				break;
-			case "Filter":
-				S = clone.GetComponent<RectTransform>().sizeDelta;
-				clone.GetComponent<BoxCollider2D> ().size = S;
-				break;
-			default:
-				print ("Error: unable to create an object in CreatePrefab.cs");
-				break;
-			}
+			// set the selector to be on the new bought object
+			SelectedShower.Instance.removeUI ();
+			SelectedShower.Instance.SelectedObject = clone;
+			SelectedShower.Instance.addUI ();
+
+			S = clone.GetComponent<RectTransform>().sizeDelta;
+			clone.GetComponent<BoxCollider2D> ().size = S;
 
 		}
 
