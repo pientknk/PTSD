@@ -3,28 +3,60 @@ using System.Collections;
 
 public class Create : MonoBehaviour {
 
+	// public 
 	public bool infiniteCreate = false;
+	public bool autoGenerate = false;
 	public GameObject location;
 	public GameObject Location{
 		get{
 			return location;
 		}
 	}
-	private float counter = 0;
 	public GameObject[] spawnOrder;
+	public float secondsBetweenSpawns = 3.0f;
+	public GameObject[] allSpawnedObjects;
+
+	//private
+	private GameObject canvas;
+	private float counter = 0;
+	private int i;
 	private int numObjects;
 	public int NumObjects{
 		get{
 			return numObjects;
 		}
 	}
-	public float secondsBetweenSpawns = 3.0f;
-	private int i;
 
 	// Use this for initialization
 	void Start () {
 		i = 0;
 		numObjects = spawnOrder.Length;
+		canvas = GameObject.Find ("Canvas");
+		AutoGenerate ();
+	}
+
+	private void AutoGenerate(){
+		if (autoGenerate) {
+			for (int z = 0; z < spawnOrder.Length; z++) {
+				switch (Random.Range (0, 4)){
+				case 0:
+					spawnOrder [z] = allSpawnedObjects [0];
+					break;
+				case 1:
+					spawnOrder [z] = allSpawnedObjects [1];
+					break;
+				case 2:
+					spawnOrder [z] = allSpawnedObjects [2];
+					break;
+				case 3:
+					spawnOrder [z] = allSpawnedObjects [3];
+					break;
+				default:
+					print ("Error, inded out of range");
+					break;
+				}
+			}
+		}
 	}
 
 	// Update is called once per frame
@@ -33,6 +65,7 @@ public class Create : MonoBehaviour {
 				counter += Time.deltaTime;
 				if (counter > secondsBetweenSpawns) {
 					GameObject spawned = Instantiate (spawnOrder [i], location.transform.position, Quaternion.identity) as GameObject;
+					spawned.transform.SetParent (canvas.transform);
 					Transform clonetrans = spawned.GetComponent<Transform> ();
 					// if circle
 					if (spawned.GetComponent<CirclePackage> () != null) {

@@ -22,10 +22,9 @@ GameObject:
   - component: {fileID: 212232814281295056}
   - component: {fileID: 61975393567874366}
   - component: {fileID: 114365954345172446}
-  - component: {fileID: 114261936514878646}
   m_Layer: 0
   m_Name: Scaffolding
-  m_TagString: Untagged
+  m_TagString: scaffold
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41,10 +40,9 @@ GameObject:
   - component: {fileID: 212984986702382948}
   - component: {fileID: 61261857157711380}
   - component: {fileID: 114827160449765284}
-  - component: {fileID: 114216615165811912}
   m_Layer: 0
   m_Name: Scaffolding (2)
-  m_TagString: Untagged
+  m_TagString: scaffold
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60,10 +58,9 @@ GameObject:
   - component: {fileID: 212493519780509994}
   - component: {fileID: 61380742212701538}
   - component: {fileID: 114514030186278492}
-  - component: {fileID: 114632541308746986}
   m_Layer: 0
   m_Name: Scaffolding (1)
-  m_TagString: Untagged
+  m_TagString: scaffold
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78,7 +75,6 @@ GameObject:
   - component: {fileID: 224229928215734072}
   - component: {fileID: 114620319395841460}
   - component: {fileID: 114374447537494870}
-  - component: {fileID: 114171389790772860}
   m_Layer: 0
   m_Name: V x3 Scaffold
   m_TagString: scaffold
@@ -128,39 +124,6 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 0.64, y: 0.64}
---- !u!114 &114171389790772860
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1987850551843810}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a33ec645d6ba55c4d8225e6708d3b5c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114216615165811912
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1363391962819810}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a33ec645d6ba55c4d8225e6708d3b5c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114261936514878646
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1187917381599880}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a33ec645d6ba55c4d8225e6708d3b5c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114365954345172446
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -218,17 +181,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numberOfPieces: 2
   scaffold: {fileID: 0}
---- !u!114 &114632541308746986
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1561037918364838}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a33ec645d6ba55c4d8225e6708d3b5c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114827160449765284
 MonoBehaviour:
   m_ObjectHideFlags: 1

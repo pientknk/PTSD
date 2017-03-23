@@ -10,7 +10,7 @@ public class CreatePrefab : MonoBehaviour {
 
 	public void createPrefab(GameObject prefab){
 		GameObject clone = Instantiate(prefab) as GameObject;
-		Canvas canvas = GameObject.FindGameObjectWithTag("Canvas").GetComponent<Canvas>();
+		GameObject canvas = GameObject.Find("Canvas");
 		Vector2 S;
 		if (canvas != null) {
 			clone.transform.SetParent (canvas.transform);
