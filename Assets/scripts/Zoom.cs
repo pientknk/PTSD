@@ -32,16 +32,16 @@ public class Zoom : MonoBehaviour {
 				newOrth += zoomSpeed;
 				//this will help so we always zoom out to the origial camera position.
 				//dividing by 4 helps smooth the process out
-				camNewPos.x = ((camStartPos.x - camNewPos.x) / 4.0f) + camNewPos.x;
-				camNewPos.y = ((camStartPos.y - camNewPos.y) / 4.0f) + camNewPos.y;
+				camNewPos.x = ((camStartPos.x - camNewPos.x) / 8.0f) + camNewPos.x;
+				camNewPos.y = ((camStartPos.y - camNewPos.y) / 8.0f) + camNewPos.y;
 			}
 		} else if (Input.GetAxis ("Mouse ScrollWheel") > 0) {
 			if (newOrth > minOrth) {
 				newOrth -= zoomSpeed;
 				//this will help so that we zoom in where towards where the mouse is pointing.
 				//dividing by 4 helps smooth the process out
-				camNewPos.x = (((Input.mousePosition.x - 250.0f) - camNewPos.x) / 25.0f) + camNewPos.x;
-				camNewPos.y = ((Input.mousePosition.y - camNewPos.y) / 25.0f) + camNewPos.y;
+				camNewPos.x = (((Input.mousePosition.x - 350.0f) - camNewPos.x) / 25.0f) + camNewPos.x;
+				camNewPos.y = (((Input.mousePosition.y - 150.0f) - camNewPos.y) / 25.0f) + camNewPos.y;
 				//print ("Mouse.x: " + Input.mousePosition.x + ", Mouse.y: " + Input.mousePosition.y + ", Cam.x: " + camNewPos.x + ", Cam.y: " + camNewPos.y + ", Cam.y - 300.0f: " + (camNewPos.x - 300.0f) + " Transform.x: " + transform.position.x + " Transform.y: " + transform.position.y);
 			}
 		}

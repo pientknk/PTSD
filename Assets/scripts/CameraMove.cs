@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraMove : MonoBehaviour {
-
+	
 	//Will be used for changing the position of the camera
 	private float camX;
 	private float camY;
@@ -28,6 +28,9 @@ public class CameraMove : MonoBehaviour {
 
 	private Rigidbody2D r;
 
+	private RaycastHit2D hit;
+	private bool scroll;
+
 	void Start() {
 		xStart = transform.position.x;
 		yStart = transform.position.y;
@@ -37,40 +40,54 @@ public class CameraMove : MonoBehaviour {
 
 		xMax = (transform.position.x * baseOrth);
 		yMax = (transform.position.y * baseOrth);
+		scroll = true;
 	}
 
 	void Update() {
 
-		camX = transform.position.x;
-		camY = transform.position.y;
+		hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
 
-		if(Input.GetMouseButtonDown(0)) {
-			anchor = Input.mousePosition;
+		if (hit.collider != null) {
+			if (hit.collider.tag == "Conveyor" || hit.collider.tag == "Fan" || hit.collider.tag != "Slide" || hit.collider.tag == "Trampoline") {
+				scroll = false;
+			} else {
+				scroll = true;
+			}
+		} else {
+			scroll = true;
 		}
 
-		if(Input.GetMouseButton(0)) {
-			fromAnchor = Input.mousePosition;
-			newOrth = gameObject.GetComponent<Camera> ().orthographicSize;
+		if(scroll == true) {
+			camX = transform.position.x;
+			camY = transform.position.y;
 
-			//without shrinking the difference the movement is way too fast
-			xDiff = (anchor.x - fromAnchor.x)/50.0f;
-			yDiff = (anchor.y - fromAnchor.y)/50.0f;
-
-			if(((camX + xDiff) * newOrth < xMax) && ((((xStart-camX) + xStart) + xDiff) * newOrth < xMax)) {
-				camX += xDiff;
+			if (Input.GetMouseButtonDown (0)) {
+				anchor = Input.mousePosition;
 			}
 
-			if ((((camY + yDiff) * newOrth) < yMax) && ((((yStart-camY) + yStart) + yDiff) * newOrth < yMax)) {
-				camY += yDiff;
-			}
+			if (Input.GetMouseButton (0)) {
+				fromAnchor = Input.mousePosition;
+				newOrth = gameObject.GetComponent<Camera> ().orthographicSize;
+
+				//without shrinking the difference the movement is way too fast
+				xDiff = (anchor.x - fromAnchor.x) / 50.0f;
+				yDiff = (anchor.y - fromAnchor.y) / 50.0f;
+
+				if (((camX + xDiff) * newOrth < xMax) && ((((xStart - camX) + xStart) + xDiff) * newOrth < xMax)) {
+					camX += xDiff;
+				}
+
+				if ((((camY + yDiff) * newOrth) < yMax) && ((((yStart - camY) + yStart) + yDiff) * newOrth < yMax)) {
+					camY += yDiff;
+				}
 				
-			newPos.x = camX;
-			newPos.y = camY;
+				newPos.x = camX;
+				newPos.y = camY;
 
-			transform.position = newPos;
-			//print ("New Pos: " + newPos + ", yMax: " + yMax + ", curr Y: " + camY*newOrth + ", Base Orth: " + baseOrth + ", New Orth: " + gameObject.GetComponent<Camera>().orthographicSize);
+				transform.position = newPos;
+				//print ("New Pos: " + newPos + ", yMax: " + yMax + ", curr Y: " + camY*newOrth + ", Base Orth: " + baseOrth + ", New Orth: " + gameObject.GetComponent<Camera>().orthographicSize);
+			}
 		}
-			
 	}
 }
 
