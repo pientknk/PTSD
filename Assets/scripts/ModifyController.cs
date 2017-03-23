@@ -15,6 +15,11 @@ public class ModifyController : MonoBehaviour {
 	// update modify action script and make sure the object panel is active
 	void OnMouseDown () {
 		updateOPC ();
+		if (SelectedShower.Instance.SelectedObject != gameObject) {
+			SelectedShower.Instance.removeUI ();
+			SelectedShower.Instance.SelectedObject = gameObject;
+			SelectedShower.Instance.addUI ();
+		}
 	}
 
 	private void updateOPC(){
