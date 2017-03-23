@@ -42,9 +42,7 @@ GameObject:
   - component: {fileID: 114961592201671998}
   - component: {fileID: 212997265300637610}
   - component: {fileID: 114959686655413842}
-  - component: {fileID: 114714989919880998}
   - component: {fileID: 114471755746790944}
-  - component: {fileID: 114497597628205980}
   - component: {fileID: 114283720711126398}
   m_Layer: 0
   m_Name: Usable Trampoline
@@ -89,17 +87,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb93e3fce58a94560aa0fcd5ddc9e4db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114497597628205980
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1706273141540254}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67466ec33c6e64d06b36fa4097b4641e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114703676284933664
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -111,18 +98,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d531962e9d1404f20804a58ddff9e357, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114714989919880998
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1706273141540254}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d261b5827679b40b28c395401a28d118, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotateAngle: 15
 --- !u!114 &114773330242205880
 MonoBehaviour:
   m_ObjectHideFlags: 1

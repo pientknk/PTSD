@@ -18,7 +18,9 @@ public class CalcForce : MonoBehaviour {
 		//FloatingTextController.Initialize ();
 		name = gameObject.name;
 		FloatingTextController.Initialize ();
-		mt = GameObject.FindGameObjectWithTag ("Money").GetComponent<MoneyTracker> ();
+		if (GameObject.FindGameObjectWithTag ("Money") != null) {
+			mt = GameObject.FindGameObjectWithTag ("Money").GetComponent<MoneyTracker> ();
+		}
 	}
 	
 	// Update is called once per frame
@@ -57,7 +59,9 @@ public class CalcForce : MonoBehaviour {
 		}
 		if (health <= 0) {
 			Destroy (gameObject);
-			mt.Money -= 50;
+			if (mt != null) {
+				mt.Money -= 50;
+			}
 		}
 	}
 

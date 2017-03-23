@@ -24,10 +24,8 @@ GameObject:
   - component: {fileID: 114286155252421678}
   - component: {fileID: 212279524458678278}
   - component: {fileID: 252408931803284034}
-  - component: {fileID: 114361569409514462}
   - component: {fileID: 114410382727871672}
   - component: {fileID: 114322437332893602}
-  - component: {fileID: 114362607725499742}
   - component: {fileID: 114633380458203952}
   m_Layer: 0
   m_Name: Usable Conveyor
@@ -131,29 +129,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a996117fb9e011f4d82976ef08e7f06f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114361569409514462
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1126207816648840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d261b5827679b40b28c395401a28d118, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotateAngle: 15
---- !u!114 &114362607725499742
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1126207816648840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67466ec33c6e64d06b36fa4097b4641e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114410382727871672
