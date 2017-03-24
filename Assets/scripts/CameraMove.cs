@@ -73,11 +73,11 @@ public class CameraMove : MonoBehaviour {
 				xDiff = (anchor.x - fromAnchor.x) / 50.0f;
 				yDiff = (anchor.y - fromAnchor.y) / 50.0f;
 
-				if (((camX + xDiff) * newOrth < xMax) && ((((xStart - camX) + xStart) + xDiff) * newOrth < xMax)) {
+				if (((camX + xDiff) * newOrth < xMax) && (((((xStart - camX) * 3.0) + xStart) + xDiff) * newOrth < xMax)) {
 					camX += xDiff;
 				}
 
-				if ((((camY + yDiff) * newOrth) < yMax) && ((((yStart - camY) + yStart) + yDiff) * newOrth < yMax)) {
+				if ((((camY + yDiff) * newOrth) < yMax) && ((((Mathf.Abs(yStart - camY) * 2.0) + yStart) + yDiff) * Mathf.Abs((baseOrth-newOrth)) < yMax)) {
 					camY += yDiff;
 				}
 				
@@ -85,7 +85,7 @@ public class CameraMove : MonoBehaviour {
 				newPos.y = camY;
 
 				transform.position = newPos;
-				//print ("New Pos: " + newPos + ", yMax: " + yMax + ", curr Y: " + camY*newOrth + ", Base Orth: " + baseOrth + ", New Orth: " + gameObject.GetComponent<Camera>().orthographicSize);
+				print ("New Pos: " + newPos + ", xMax: " + xMax + ", curr X: " + (((((xStart-camX)*2.0) + xStart) + xDiff) * newOrth) + ", yMax: " + yMax + ", curr Y: " + (((Mathf.Abs(yStart - camY) * 2.0) + yStart) + yDiff) * Mathf.Abs((baseOrth-newOrth)) + ", Base Orth: " + baseOrth + ", New Orth: " + gameObject.GetComponent<Camera>().orthographicSize);
 			}
 		}
 	}
