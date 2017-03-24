@@ -32,10 +32,9 @@ public class Create : MonoBehaviour {
 		i = 0;
 		numObjects = spawnOrder.Length;
 		canvas = GameObject.Find ("Canvas");
-		AutoGenerate ();
 	}
 
-	private void AutoGenerate(){
+	public void AutoGenerate(){
 		if (autoGenerate) {
 			for (int z = 0; z < spawnOrder.Length; z++) {
 				switch (Random.Range (0, 4)){
