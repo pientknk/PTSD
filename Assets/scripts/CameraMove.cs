@@ -3,7 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraMove : MonoBehaviour {
-	
+
+	public float panSpeed = -1;
+
+	Vector3 bottomLeft;
+	Vector3 topRight;
+
+	float camMaxY;
+	float camMinY;
+	float camMaxX;
+	float camMinX;
+
 	//Will be used for changing the position of the camera
 	private float camX;
 	private float camY;
@@ -73,11 +83,11 @@ public class CameraMove : MonoBehaviour {
 				xDiff = (anchor.x - fromAnchor.x) / 50.0f;
 				yDiff = (anchor.y - fromAnchor.y) / 50.0f;
 
-				if (((camX + xDiff) * newOrth < xMax) && (((((xStart - camX) * 3.0) + xStart) + xDiff) * newOrth < xMax)) {
+				if ((Mathf.Abs(camX + xDiff) * newOrth < xMax) && ((((Mathf.Abs(xStart - camX) * 3.0) + xStart) + xDiff) * newOrth < xMax)) {
 					camX += xDiff;
 				}
 
-				if ((((camY + yDiff) * newOrth) < yMax) && ((((Mathf.Abs(yStart - camY) * 2.0) + yStart) + yDiff) * Mathf.Abs((baseOrth-newOrth)) < yMax)) {
+				if (((Mathf.Abs(camY + yDiff) * newOrth) < yMax) && ((((Mathf.Abs(yStart - camY) * 2.0) + yStart) + yDiff) * Mathf.Abs((baseOrth-newOrth)) < yMax)) {
 					camY += yDiff;
 				}
 				
@@ -85,7 +95,8 @@ public class CameraMove : MonoBehaviour {
 				newPos.y = camY;
 
 				transform.position = newPos;
-				print ("New Pos: " + newPos + ", xMax: " + xMax + ", curr X: " + (((((xStart-camX)*2.0) + xStart) + xDiff) * newOrth) + ", yMax: " + yMax + ", curr Y: " + (((Mathf.Abs(yStart - camY) * 2.0) + yStart) + yDiff) * Mathf.Abs((baseOrth-newOrth)) + ", Base Orth: " + baseOrth + ", New Orth: " + gameObject.GetComponent<Camera>().orthographicSize);
+				print ("New Pos: " + newPos + ", xMax: " + xMax + ", curr X: " + (((((xStart-camX)*3.0) + xStart) + xDiff) * newOrth) + ", yMax: " + yMax + ", curr Y: " + (((Mathf.Abs(yStart - camY) * 2.0) + yStart) + yDiff) * Mathf.Abs((baseOrth-newOrth)) + ", Base Orth: " + baseOrth + ", New Orth: " + gameObject.GetComponent<Camera>().orthographicSize);
+				//print ("horzExtent: " + newOrth * Screen.width / Screen.height);
 			}
 		}
 	}
