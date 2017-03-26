@@ -9,6 +9,7 @@ public class CalcForce : MonoBehaviour {
 	private float maxHealth = 100;
 	public Sprite highHealth;
 	public Sprite lowHealth;
+	public GameObject explosion;
 	private string objectName;
 	private MoneyTracker mt;
 
@@ -58,7 +59,13 @@ public class CalcForce : MonoBehaviour {
 			gameObject.GetComponent<SpriteRenderer> ().sprite = lowHealth;
 		}
 		if (health <= 0) {
+			Vector2 currentLocation = gameObject.transform.position;
+			explosion = Instantiate (explosion);
+			explosion.transform.position = currentLocation;
 			Destroy (gameObject);
+			AnimatorClipInfo[] clipInfo = explosion.GetComponentInChildren<Animator> ().GetCurrentAnimatorClipInfo (0);
+			Destroy (explosion, clipInfo [0].clip.length);
+
 			if (mt != null) {
 				mt.Money -= 50;
 			}
