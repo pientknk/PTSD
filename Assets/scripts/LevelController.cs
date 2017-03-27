@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -70,4 +70,49 @@ public class LevelController : MonoBehaviour {
 	void Awake () {
 		controller = this;
 	}
+}
+
+[Serializable]
+class LevelData{
+	//static instance used for other scripts to reference
+	public static LevelController controller;
+
+	//canvas
+	public GameObject canvas;
+
+	//stars
+	public int starsEarned;
+	public int MoneyFor1Star;
+	public int packagesFor1Star;
+	public int maxObjectsUsedFor1Star;
+
+	//pause/play
+	public bool isPlaying;
+
+	//money
+	public int currentEarnedMoney;
+	public int startingMoney = 4000;
+
+	//buyable items
+	public int conveyorCost = 500;
+	public int trampolineCost = 350;
+	public int slideCost = 250;
+	public int fanCost = 300;
+
+
+	//create packages
+	public List<GameObject> allPackages;
+	public int numPackagesLeft;
+	public float spawnTime;
+	public bool autoPickPackages;
+	public List<GameObject> spawnPoints;
+
+	//delivered packages/progresses
+	public int successfulPackages;
+	public int failurePackages;
+	public int currentMoney;
+
+	//object panel
+	public GameObject selectedObject;
+	public bool isActive;
 }

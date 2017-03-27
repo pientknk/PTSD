@@ -11,6 +11,8 @@ public class GameController : MonoBehaviour {
 	public int totalStars;
 	public int money;
 	public int levelsUnlocked;
+	public int totalSuccessfulPackages;
+	public int totalFailurePackages;
 
 	public float health;
 	public float experience;
