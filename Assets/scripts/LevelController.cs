@@ -11,148 +11,130 @@ public class LevelController : MonoBehaviour {
 
 	//static instance used for other scripts to reference
 	public static LevelController instance;
-
-	private GameObject canvas;
 	/// <summary>
 	/// The main canvas which should be the parent for all spawned objects.
 	/// </summary>
-	public GameObject Canvas{
-		get{ return canvas; }
-		set{ canvas = value; }
-	}
-		
-	private int starsEarned;
+	public GameObject canvas;
 	/// <summary>
 	/// The stars earned for this level, determined by the 3 tracked progresses: money earned, packages delivered, 
 	/// and number of objects used.
-	/// </summary>
-	public int StarsEarned{
-		get{ return starsEarned; }
-		set{ starsEarned = value; }
-	}
-	private int moneyFor1Star;
+	/// </summary>	
+	public int starsEarned;
 	/// <summary>
 	/// The money needed in order to earn 1 star for this level.
 	/// </summary>
-	public int MoneyFor1Star{
-		get{ return moneyFor1Star; }
-		set{ moneyFor1Star = value; }
-	}
-	private int packagesFor1Star;
+	public int moneyFor1Star;
 	/// <summary>
 	/// The number of packages delivered to earn 1 star for this level.
 	/// </summary>
-	public int PackagesFor1Star{
-		get{ return packagesFor1Star; }
-		set{ packagesFor1Star = value; }
-	}
-	private int maxObjectsUsedFor1Star;
+	public int packagesFor1Star;
 	/// <summary>
 	/// The max number of objects a player can use before losing 1 star for this level.
 	/// </summary>
-	public int MaxObjectsUsedFor1Star{
-		get{ return maxObjectsUsedFor1Star; }
-		set{ maxObjectsUsedFor1Star = value; }
-	}
-	private int currentObjectCount;
+	public int maxObjectsUsedFor1Star;
 	/// <summary>
 	/// The current amount of bought objects on the level, compared against maxObjectsUsedFor1Star.
 	/// </summary>
-	public int CurrentObjectCount{
-		get{ return currentObjectCount; }
-		set{ currentObjectCount = value; }
-	}
+	public int currentObjectCount;
 
 	//pause/play
-	private float currentGameSpeed = 0.0f;
 	/// <summary>
 	/// The current game speed, set by the various play/pause buttons, where 0 means the game is "paused"
 	/// </summary>
-	public float CurrentGameSpeed{
-		get{ return currentGameSpeed; }
-		set{ currentGameSpeed = value; }
-	}
+	public float currentGameSpeed = 0.0f;
 
 	//money
-	private int startingMoney = 4000;
 	/// <summary>
-	/// The amount of money the player gets when the level first loads and is all the money they can spend on objects.
+	/// The amount of money the player gets when the level first loads and is all the money they can spend on objects. 
+	/// Should be updates whenever the user buys something.
 	/// </summary>
-	public int StartingMoney{
-		get{ return startingMoney; }
-		set{ startingMoney = value; }
-	}
-	private int currentMoney;
+	public int startingMoney = 4000;
 	/// <summary>
 	/// How much money the player has earned or lost as they play the level.
 	/// </summary>
-	public int CurrentMoney{
-		get{ return currentMoney; }
-		set{ currentMoney = value; }
-	}
+	public int currentMoney;
 
 	//buyable items - the cost for every object
-	private int conveyorCost = 500;
 	/// <summary>
 	/// The cost to buy one conveyor.
 	/// </summary>
-	public int ConveyorCost{
-		get{ return conveyorCost; }
-		set{ conveyorCost = value; }
-	}
-	private int trampolineCost = 350;
+	public int conveyorCost = 500;
 	/// <summary>
 	/// The cost to buy one trampoline.
 	/// </summary>
-	public int TrampolineCost{
-		get{ return trampolineCost; }
-		set{ trampolineCost = value; }
-	}
-	private int slideCost = 250;
+	public int trampolineCost = 350;
 	/// <summary>
 	/// The cost to buy one slide.
 	/// </summary>
-	public int SlideCost{
-		get{ return slideCost; }
-		set{ slideCost = value; }
-	}
-	private int fanCost = 300;
+	public int slideCost = 250;
 	/// <summary>
 	/// The cost to buy one fan.
 	/// </summary>
-	public int FanCost{
-		get{ return fanCost; }
-		set{ fanCost = value; }
-	}
-
+	public int fanCost = 300;
 
 	//create packages
+	/// <summary>
+	/// A reference to all of the objects bought by the player. Used to recreate a saved level.
+	/// </summary>
 	public List<GameObject> allPackages;
+	/// <summary>
+	/// The number of packages left to spawn before its the end of the level.
+	/// </summary>
 	public int numPackagesLeft;
+	/// <summary>
+	/// The time in seconds between packages spawning
+	/// </summary>
 	public float spawnTime;
+	/// <summary>
+	/// True if the packages for this level should be randomly generated, else false for manual selection of packages.
+	/// </summary>
 	public bool autoPickPackages;
+	/// <summary>
+	/// The objects where packages should spawn from, must be 1 or more
+	/// </summary>
 	public List<GameObject> spawnPoints;
 
 	//delivered packages/progresses
+	/// <summary>
+	/// The count of packages successfully delivered.
+	/// </summary>
 	public int successfulPackages;
+	/// <summary>
+	/// The count of packages that were not successfully delivered (destroyed or dropped into the wrong truck)
+	/// </summary>
 	public int failurePackages;
 
 	//object panel
+	/// <summary>
+	/// The current object selected, this object can then be modified by the object panel.
+	/// </summary>
 	public GameObject selectedObject;
-	public bool isObjectPanelActive;
+	/// <summary>
+	/// True if the object panel should be active and showing, else false to hide it.
+	/// </summary>
+	public bool isObjectPanelActive = false;
 
 	//inventroy panel
+	/// <summary>
+	/// True if the inventory panel should be active, else false to hide it.
+	/// </summary>
 	public bool isShopPanelActive = false;
 
 	//menu panel
+	/// <summary>
+	/// True if the menu panel should be active, else false to hide it.
+	/// </summary>
 	public bool isMenuPanelActive = false;
 
 	//called before any start methods
 	void Awake () {
-		controller = this;
+		instance = this;
 	}
 
 	//saves data out to a binary file
+	/// <summary>
+	/// Save this scene's data and write it to a binary file
+	/// </summary>
 	public void Save(){
 		//open file where data will be saved
 		BinaryFormatter bf = new BinaryFormatter();
@@ -162,8 +144,28 @@ public class LevelController : MonoBehaviour {
 		LevelData data = new LevelData();
 		data.canvas = canvas;
 		data.starsEarned = starsEarned;
-		data.MoneyFor1Star = MoneyFor1Star;
+		data.moneyFor1Star = moneyFor1Star;
 		data.packagesFor1Star = packagesFor1Star;
+		data.maxObjectsUsedFor1Star = maxObjectsUsedFor1Star;
+		data.currentObjectCount = currentObjectCount;
+		data.currentGameSpeed = 0.0f;
+		data.startingMoney = startingMoney;
+		data.currentMoney = currentMoney;
+		data.conveyorCost = conveyorCost;
+		data.slideCost = slideCost;
+		data.trampolineCost = trampolineCost;
+		data.fanCost = fanCost;
+		data.allPackages = allPackages;
+		data.numPackagesLeft = numPackagesLeft;
+		data.spawnTime = spawnTime;
+		data.autoPickPackages = autoPickPackages;
+		data.spawnPoints = spawnPoints;
+		data.successfulPackages = successfulPackages;
+		data.failurePackages = failurePackages;
+		data.selectedObject = null;
+		data.isObjectPanelActive = false;
+		data.isMenuPanelActive = false;
+		data.isShopPanelActive = false;
 
 
 		//write to file and close it
@@ -171,16 +173,43 @@ public class LevelController : MonoBehaviour {
 		file.Close ();
 	}
 
+	/// <summary>
+	/// Load the specified scene by using it's name and searchign for its binary file to load data from. 
+	/// </summary>
+	/// <param name="scene">Scene.</param>
 	public void Load(Scene scene){
 		if (File.Exists (Application.persistentDataPath + "/" + scene.name + ".dat")) {
 			BinaryFormatter bf = new BinaryFormatter ();
 			FileStream file = File.Open (Application.persistentDataPath + "/" + scene.name + ".dat", FileMode.Open);
 			LevelData data = (LevelData)bf.Deserialize (file);
-			file.Close();
+			file.Close ();
 
+			//load all the data from the save file
 			starsEarned = data.starsEarned;
-			MoneyFor1Star = data.MoneyFor1Star;
-		}
+			moneyFor1Star = data.moneyFor1Star;
+			packagesFor1Star = data.packagesFor1Star;
+			maxObjectsUsedFor1Star = data.maxObjectsUsedFor1Star;
+			currentObjectCount = data.currentObjectCount;
+			currentGameSpeed = data.currentGameSpeed;
+			startingMoney = data.startingMoney;
+			currentMoney = data.currentMoney;
+			conveyorCost = data.conveyorCost;
+			trampolineCost = data.trampolineCost;
+			slideCost = data.slideCost;
+			fanCost = data.fanCost;
+			allPackages = data.allPackages;
+			numPackagesLeft = data.numPackagesLeft;
+			spawnTime = data.spawnTime;
+			autoPickPackages = data.autoPickPackages;
+			spawnPoints = data.spawnPoints;
+			successfulPackages = data.successfulPackages;
+			failurePackages = data.failurePackages;
+			selectedObject = data.selectedObject;
+			isObjectPanelActive = data.isObjectPanelActive;
+			isMenuPanelActive = data.isMenuPanelActive;
+			isShopPanelActive = data.isShopPanelActive;
+		} 
+		SceneManager.LoadScene (scene.name);
 	}
 }
 
@@ -194,22 +223,22 @@ class LevelData{
 
 	//stars/progress panel
 	public int starsEarned;
-	public int MoneyFor1Star;
+	public int moneyFor1Star;
 	public int packagesFor1Star;
 	public int maxObjectsUsedFor1Star;
 	public int currentObjectCount;
 
 	//pause/play
-	public bool isPlaying;
+	public float currentGameSpeed;
 
 	//money
-	public int startingMoney = 4000;
+	public int startingMoney;
 
 	//buyable items
-	public int conveyorCost = 500;
-	public int trampolineCost = 350;
-	public int slideCost = 250;
-	public int fanCost = 300;
+	public int conveyorCost;
+	public int trampolineCost;
+	public int slideCost;
+	public int fanCost;
 
 
 	//create packages
@@ -226,5 +255,9 @@ class LevelData{
 
 	//object panel
 	public GameObject selectedObject;
-	public bool isActive;
+
+	//panel active
+	public bool isObjectPanelActive;
+	public bool isShopPanelActive;
+	public bool isMenuPanelActive;
 }

@@ -31,11 +31,10 @@ public class ProgressesController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-//		LevelController.instance.successfulPackages;
-//		currentPackages = LevelController.controller.successfulPackages;
-//		moneyNeeded = LevelController.controller.MoneyFor1Star;
-//		packagesNeeded = LevelController.controller.packagesFor1Star;
-//		currentMoney = LevelController.controller.currentMoney;
+//		currentPackages = LevelController.instance.successfulPackages;
+//		moneyNeeded = LevelController.instance.MoneyFor1Star;
+//		packagesNeeded = LevelController.instance.packagesFor1Star;
+//		currentMoney = LevelController.instance.currentMoney;
 		dpc = GameObject.FindGameObjectWithTag ("successfailure").GetComponent<DeliveringPackagesCounter>();
 		mt = GameObject.FindGameObjectWithTag ("Money").GetComponent<MoneyTracker> ();
 		currentMoney = mt.Money;
