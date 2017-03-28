@@ -26,8 +26,11 @@ public class DeliveringPackagesCounter : MonoBehaviour {
 
 	private Text successText;
 	private Text failText;
+
+	private ProgressesController pc;
 	// Use this for initialization
 	void Start () {
+		pc = GameObject.Find ("Progress Panel").GetComponent<ProgressesController>();
 		successCount = 0;
 		successText = GetComponentsInChildren<Text> ()[0];
 		failText = GetComponentsInChildren<Text> () [1];
@@ -35,6 +38,7 @@ public class DeliveringPackagesCounter : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		pc.UpdatePackageProgress();
 		successText.text = "x" + successCount;
 		failText.text = "x" + failCount;
 	}

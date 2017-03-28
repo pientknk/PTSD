@@ -36,18 +36,15 @@ public class ScoreOrange : MonoBehaviour {
 		string tag = col.gameObject.tag;
 		if (tag == "orange item"){
 			dpc.SuccessCount += 1;
-			int money = (int)(worth * (cf.GetHealth() / cf.GetMaxHealth()));
-			//bank.addMoney (money);
-			//Profit += money;
+			int money = (int)(cf.GetMaxHealth() * (cf.GetHealth() / cf.GetMaxHealth()));
 			mt.Money += money;
+			Destroy (col.gameObject);
 		} else if(tag == "blue item"){
 			dpc.FailCount += 1;
-			//bank.subtractMoney (worth);
-			//Profit -= worth;
 			mt.Money -= 50;
+			Destroy (col.gameObject);
 		}
 
 		//print (col.gameObject.name + " had " + cf.GetHealth() + " health left");
-		Destroy (col.gameObject);
 	}
 }

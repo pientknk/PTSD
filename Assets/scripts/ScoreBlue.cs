@@ -6,7 +6,6 @@ public class ScoreBlue : MonoBehaviour {
 
 	private float scoreBlue;
 	private TheBank bank;
-	private int worth = 100;
 	private int profit = 0;
 	private int successes;
 	private int failures;
@@ -40,28 +39,20 @@ public class ScoreBlue : MonoBehaviour {
 		string tag = col.gameObject.tag;
 		if (tag == "blue item"){
 			dpc.SuccessCount += 1;
-//			successes = dpc.SuccessCount;
-//			successes++;
-//			dpc.SuccessCount = successes;
 			scoreBlue++;
-			int money = (int)(worth * (cf.GetHealth() / cf.GetMaxHealth()));
-			//bank.addMoney (money);
-			//Profit += money;
+			float tempMoney = cf.GetMaxHealth() * (cf.GetHealth() / cf.GetMaxHealth());
+			int money = (int)tempMoney;
 			mt.Money += money;
+			Destroy (col.gameObject);
 		} else if(tag == "orange item"){
 			dpc.FailCount += 1;
-//			failures = dpc.FailCount;
-//			failures++;
-//			dpc.FailCount = failures;
 			scoreBlue--;
-			//bank.subtractMoney (worth);
-			//Profit -= worth;
 			mt.Money -= 50;
+			Destroy (col.gameObject);
 		}
 
 		//print (col.gameObject.name + " had " + cf.GetHealth() + " health left");
 
-		Destroy (col.gameObject);
 
 	}
 }

@@ -21,6 +21,9 @@ TagManager:
   - score orange
   - successfailure
   - Money
+  - Modifiers
+  - object panel
+  - Modify
   layers:
   - Default
   - TransparentFX

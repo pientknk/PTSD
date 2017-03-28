@@ -15,15 +15,18 @@ public class MoneyTracker : MonoBehaviour {
 			money = value;
 		}
 	}
+	private ProgressesController pc;
 
 	// Use this for initialization
 	void Start () {
 		moneyLabel = GetComponent<Text> ();
 		money = 0;
+		pc = GameObject.Find ("Progress Panel").GetComponent<ProgressesController>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		moneyLabel.text = "$" + money;
+		pc.updateMoneyProgress ();
 	}
 }
