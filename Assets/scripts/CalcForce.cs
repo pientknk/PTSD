@@ -9,13 +9,19 @@ public class CalcForce : MonoBehaviour {
 	private float maxHealth = 100;
 	public Sprite highHealth;
 	public Sprite lowHealth;
-	private string name;
+	public GameObject explosion;
+	private string objectName;
+	private MoneyTracker mt;
 
 	// Use this for initialization
 	void Start () {
 		gameObject.GetComponent<SpriteRenderer> ().sprite = highHealth;
 		//FloatingTextController.Initialize ();
-		name = gameObject.name;
+		objectName = gameObject.name;
+		FloatingTextController.Initialize ();
+		if (GameObject.FindGameObjectWithTag ("Money") != null) {
+			mt = GameObject.FindGameObjectWithTag ("Money").GetComponent<MoneyTracker> ();
+		}
 	}
 	
 	// Update is called once per frame
@@ -24,33 +30,51 @@ public class CalcForce : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D col) {
-		
-		float relVelocity = (float)(Mathf.Abs(col.relativeVelocity.y) + Mathf.Abs(col.relativeVelocity.x));
-		float mass = gameObject.GetComponent<Rigidbody2D> ().mass;
-		//relVelocity = relVelocity / ((Mathf.Sqrt(mass) / 2));
-		if (name == "Box Blue(Clone)" || name == "Box Orange(Clone)") {
-			relVelocity = (mass) / (Mathf.Sqrt (relVelocity));
+		if (col.gameObject.tag == "scaffold") {
+			takeDamage (100.0f);
 		} else {
-			relVelocity = (mass * 1.5f) / (Mathf.Sqrt(relVelocity));
-		}
+			float relVelocity = (float)(Mathf.Abs (col.relativeVelocity.y) + Mathf.Abs (col.relativeVelocity.x));
+			float mass = gameObject.GetComponent<Rigidbody2D> ().mass;
+			//relVelocity = relVelocity / ((Mathf.Sqrt(mass) / 2));
+			if (objectName == "Box Blue(Clone)" || objectName == "Box Orange(Clone)") {
+				relVelocity = (mass) / (Mathf.Sqrt (relVelocity));
+			} else {
+				relVelocity = (mass * 1.5f) / (Mathf.Sqrt (relVelocity));
+			}
 
-		if (col.gameObject.tag == "Trampoline") {
-			//print ("doing " + relVelocity / 8 + " damage");
-			health -= (relVelocity / 8);
-		} else if (col.gameObject.tag == "Conveyor") {
-			//print ("doing " + relVelocity + " damage");
-			health -= (relVelocity / 3);
-		} else if (col.gameObject.tag == "Slide") {
-			//print ("doing " + relVelocity / 2 + " damage");
-			health -= (relVelocity / 2);
+			if (col.gameObject.tag == "Trampoline") {
+				//print ("doing " + relVelocity / 8 + " damage");
+				takeDamage (relVelocity / 8);
+			} else if (col.gameObject.tag == "Conveyor") {
+				//print ("doing " + relVelocity + " damage");
+				takeDamage (relVelocity / 3);
+			} else if (col.gameObject.tag == "Slide") {
+				//print ("doing " + relVelocity / 2 + " damage");
+				takeDamage (relVelocity / 2);
+			} else {
+				takeDamage (relVelocity);
+			}
 		}
-
 		if (health <= 50) {
 			gameObject.GetComponent<SpriteRenderer> ().sprite = lowHealth;
 		}
 		if (health <= 0) {
+			Vector2 currentLocation = gameObject.transform.position;
+			explosion = Instantiate (explosion);
+			explosion.transform.position = currentLocation;
 			Destroy (gameObject);
+			AnimatorClipInfo[] clipInfo = explosion.GetComponentInChildren<Animator> ().GetCurrentAnimatorClipInfo (0);
+			Destroy (explosion, clipInfo [0].clip.length);
+
+			if (mt != null) {
+				mt.Money -= 50;
+			}
 		}
+	}
+
+	private void takeDamage(float amount){
+		FloatingTextController.CreateFloatingText (amount.ToString("F1"), transform.position);
+		health -= amount;
 	}
 
 	public float GetHealth(){

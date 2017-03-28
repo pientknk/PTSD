@@ -21,6 +21,10 @@ TagManager:
   - score orange
   - successfailure
   - Money
+  - Modifiers
+  - object panel
+  - Modify
+  - LevelButton
   layers:
   - Default
   - TransparentFX

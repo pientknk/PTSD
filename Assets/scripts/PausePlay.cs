@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class PausePlay : MonoBehaviour {
 
@@ -44,6 +45,10 @@ public class PausePlay : MonoBehaviour {
 		Time.timeScale = pauseSpeed;
 		timeScale = pauseSpeed;
 		pausePlayButton.GetComponent<Image>().sprite = playImage;
+	}
+
+	void Update(){
+		EventSystem.current.SetSelectedGameObject(null);
 	}
 
 	public void Pause(GameObject buttonPressed){
