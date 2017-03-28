@@ -191,6 +191,46 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b9e566690ca341ddb34dfac1518c792, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &194424544 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1005919849265222, guid: a5e75b08bfd884dc5897028a61129235,
+    type: 2}
+  m_PrefabInternal: {fileID: 1908464903}
+--- !u!114 &194424545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 194424544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 191e0c3173fa74daa890f69e441222ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 0}
+  starsEarned: 0
+  MoneyFor1Star: 0
+  packagesFor1Star: 0
+  maxObjectsUsedFor1Star: 0
+  currentObjectCount: 0
+  isPlaying: 0
+  startingMoney: 4000
+  conveyorCost: 500
+  trampolineCost: 350
+  slideCost: 250
+  fanCost: 300
+  allPackages: []
+  numPackagesLeft: 0
+  spawnTime: 0
+  autoPickPackages: 0
+  spawnPoints: []
+  successfulPackages: 0
+  failurePackages: 0
+  currentMoney: 0
+  selectedObject: {fileID: 0}
+  isObjectPanelActive: 0
+  isShopPanelActive: 0
+  isMenuPanelActive: 0
 --- !u!1 &238426124 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1136393961551128, guid: deb3da04a614143c08f1d8abafdf5a98,
@@ -4087,7 +4127,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 13
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114075319908442486, guid: a5e75b08bfd884dc5897028a61129235, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: a5e75b08bfd884dc5897028a61129235, type: 2}
   m_IsPrefabParent: 0
 --- !u!224 &1917001516 stripped
