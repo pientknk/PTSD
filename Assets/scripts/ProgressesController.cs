@@ -21,14 +21,20 @@ public class ProgressesController : MonoBehaviour {
 	private GameObject packageProgressBar;
 	private Image packageBarImage;
 
+	private Text objectCountLabel;
+	public GameObject objectCountProgressBar;
+	private int currentNumObjects;
+	private int maxObjectCount;
+
 	private MoneyTracker mt;
 	private DeliveringPackagesCounter dpc;
 
-	private bool completedMoney = false;
-	private bool completedPackages = false;
-
 	// Use this for initialization
 	void Start () {
+//		currentPackages = LevelController.instance.successfulPackages;
+//		moneyNeeded = LevelController.instance.MoneyFor1Star;
+//		packagesNeeded = LevelController.instance.packagesFor1Star;
+//		currentMoney = LevelController.instance.currentMoney;
 		dpc = GameObject.FindGameObjectWithTag ("successfailure").GetComponent<DeliveringPackagesCounter>();
 		mt = GameObject.FindGameObjectWithTag ("Money").GetComponent<MoneyTracker> ();
 		currentMoney = mt.Money;
@@ -36,6 +42,8 @@ public class ProgressesController : MonoBehaviour {
 		currentPackages = dpc.SuccessCount;
 		packagesNeeded = 20;
 		moneyProgressBar = GameObject.Find ("Money Progress Bar");
+		//might be a better solution
+//		moneyLabel = moneyProgressBar.transform.GetComponentInChildren<Text> ();
 		moneyLabel = moneyProgressBar.transform.GetChild (3).GetComponent<Text> ();
 		packageProgressBar = GameObject.Find ("Package Progress Bar");
 		packageLabel = packageProgressBar.transform.GetChild (3).GetComponent<Text> ();
@@ -50,7 +58,6 @@ public class ProgressesController : MonoBehaviour {
 		if (currentPackages >= packagesNeeded) {
 			currentPackages = packagesNeeded;
 			packageBarImage.color = Color.green;
-			completedPackages = true;
 		}
 		string packageCount = currentPackages + "/" + packagesNeeded;
 		packageLabel.text = packageCount;
@@ -66,18 +73,20 @@ public class ProgressesController : MonoBehaviour {
 			moneyCount = "0/" + moneyNeeded;
 			moneyBarImage.color = originalColor;
 			moneyBarImage.fillAmount = 0;
-			completedMoney = false;
 		} else if (currentMoney > moneyNeeded) {
 			moneyCount = moneyNeeded + "/" + moneyNeeded;
 			moneyBarImage.color = Color.green;
 			moneyBarImage.fillAmount = moneyNeeded;
-			completedMoney = true;
 		} else{
 			moneyCount = currentMoney + "/" + moneyNeeded;
 			moneyBarImage.fillAmount = currentMoney / moneyNeeded;
 			moneyBarImage.color = originalColor;
-			completedMoney = false;
 		}
 		moneyLabel.text = moneyCount;
+	}
+
+	public void updateObjectCountProgress(){
+		currentNumObjects = LevelController.instance.currentObjectCount;
+		maxObjectCount = LevelController.instance.packagesFor1Star;
 	}
 }

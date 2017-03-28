@@ -9,14 +9,15 @@ public class CalcForce : MonoBehaviour {
 	private float maxHealth = 100;
 	public Sprite highHealth;
 	public Sprite lowHealth;
-	private string name;
+	public GameObject explosion;
+	private string objectName;
 	private MoneyTracker mt;
 
 	// Use this for initialization
 	void Start () {
 		gameObject.GetComponent<SpriteRenderer> ().sprite = highHealth;
 		//FloatingTextController.Initialize ();
-		name = gameObject.name;
+		objectName = gameObject.name;
 		FloatingTextController.Initialize ();
 		if (GameObject.FindGameObjectWithTag ("Money") != null) {
 			mt = GameObject.FindGameObjectWithTag ("Money").GetComponent<MoneyTracker> ();
@@ -35,7 +36,7 @@ public class CalcForce : MonoBehaviour {
 			float relVelocity = (float)(Mathf.Abs (col.relativeVelocity.y) + Mathf.Abs (col.relativeVelocity.x));
 			float mass = gameObject.GetComponent<Rigidbody2D> ().mass;
 			//relVelocity = relVelocity / ((Mathf.Sqrt(mass) / 2));
-			if (name == "Box Blue(Clone)" || name == "Box Orange(Clone)") {
+			if (objectName == "Box Blue(Clone)" || objectName == "Box Orange(Clone)") {
 				relVelocity = (mass) / (Mathf.Sqrt (relVelocity));
 			} else {
 				relVelocity = (mass * 1.5f) / (Mathf.Sqrt (relVelocity));
@@ -58,7 +59,13 @@ public class CalcForce : MonoBehaviour {
 			gameObject.GetComponent<SpriteRenderer> ().sprite = lowHealth;
 		}
 		if (health <= 0) {
+			Vector2 currentLocation = gameObject.transform.position;
+			explosion = Instantiate (explosion);
+			explosion.transform.position = currentLocation;
 			Destroy (gameObject);
+			AnimatorClipInfo[] clipInfo = explosion.GetComponentInChildren<Animator> ().GetCurrentAnimatorClipInfo (0);
+			Destroy (explosion, clipInfo [0].clip.length);
+
 			if (mt != null) {
 				mt.Money -= 50;
 			}

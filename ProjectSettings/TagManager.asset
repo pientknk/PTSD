@@ -24,6 +24,7 @@ TagManager:
   - Modifiers
   - object panel
   - Modify
+  - LevelButton
   layers:
   - Default
   - TransparentFX
