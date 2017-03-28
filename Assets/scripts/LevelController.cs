@@ -10,29 +10,120 @@ using UnityEngine.SceneManagement;
 public class LevelController : MonoBehaviour {
 
 	//static instance used for other scripts to reference
-	public static LevelController controller;
+	public static LevelController instance;
 
-	//canvas - needed for adding children to canvas
-	public GameObject canvas;
-
-	//stars/progress panel
-	public int starsEarned;
-	public int MoneyFor1Star;
-	public int packagesFor1Star;
-	public int maxObjectsUsedFor1Star;
-	public int currentObjectCount;
+	private GameObject canvas;
+	/// <summary>
+	/// The main canvas which should be the parent for all spawned objects.
+	/// </summary>
+	public GameObject Canvas{
+		get{ return canvas; }
+		set{ canvas = value; }
+	}
+		
+	private int starsEarned;
+	/// <summary>
+	/// The stars earned for this level, determined by the 3 tracked progresses: money earned, packages delivered, 
+	/// and number of objects used.
+	/// </summary>
+	public int StarsEarned{
+		get{ return starsEarned; }
+		set{ starsEarned = value; }
+	}
+	private int moneyFor1Star;
+	/// <summary>
+	/// The money needed in order to earn 1 star for this level.
+	/// </summary>
+	public int MoneyFor1Star{
+		get{ return moneyFor1Star; }
+		set{ moneyFor1Star = value; }
+	}
+	private int packagesFor1Star;
+	/// <summary>
+	/// The number of packages delivered to earn 1 star for this level.
+	/// </summary>
+	public int PackagesFor1Star{
+		get{ return packagesFor1Star; }
+		set{ packagesFor1Star = value; }
+	}
+	private int maxObjectsUsedFor1Star;
+	/// <summary>
+	/// The max number of objects a player can use before losing 1 star for this level.
+	/// </summary>
+	public int MaxObjectsUsedFor1Star{
+		get{ return maxObjectsUsedFor1Star; }
+		set{ maxObjectsUsedFor1Star = value; }
+	}
+	private int currentObjectCount;
+	/// <summary>
+	/// The current amount of bought objects on the level, compared against maxObjectsUsedFor1Star.
+	/// </summary>
+	public int CurrentObjectCount{
+		get{ return currentObjectCount; }
+		set{ currentObjectCount = value; }
+	}
 
 	//pause/play
-	public bool isPlaying = false;
+	private float currentGameSpeed = 0.0f;
+	/// <summary>
+	/// The current game speed, set by the various play/pause buttons, where 0 means the game is "paused"
+	/// </summary>
+	public float CurrentGameSpeed{
+		get{ return currentGameSpeed; }
+		set{ currentGameSpeed = value; }
+	}
 
 	//money
-	public int startingMoney = 4000;
+	private int startingMoney = 4000;
+	/// <summary>
+	/// The amount of money the player gets when the level first loads and is all the money they can spend on objects.
+	/// </summary>
+	public int StartingMoney{
+		get{ return startingMoney; }
+		set{ startingMoney = value; }
+	}
+	private int currentMoney;
+	/// <summary>
+	/// How much money the player has earned or lost as they play the level.
+	/// </summary>
+	public int CurrentMoney{
+		get{ return currentMoney; }
+		set{ currentMoney = value; }
+	}
 
-	//buyable items
-	public int conveyorCost = 500;
-	public int trampolineCost = 350;
-	public int slideCost = 250;
-	public int fanCost = 300;
+	//buyable items - the cost for every object
+	private int conveyorCost = 500;
+	/// <summary>
+	/// The cost to buy one conveyor.
+	/// </summary>
+	public int ConveyorCost{
+		get{ return conveyorCost; }
+		set{ conveyorCost = value; }
+	}
+	private int trampolineCost = 350;
+	/// <summary>
+	/// The cost to buy one trampoline.
+	/// </summary>
+	public int TrampolineCost{
+		get{ return trampolineCost; }
+		set{ trampolineCost = value; }
+	}
+	private int slideCost = 250;
+	/// <summary>
+	/// The cost to buy one slide.
+	/// </summary>
+	public int SlideCost{
+		get{ return slideCost; }
+		set{ slideCost = value; }
+	}
+	private int fanCost = 300;
+	/// <summary>
+	/// The cost to buy one fan.
+	/// </summary>
+	public int FanCost{
+		get{ return fanCost; }
+		set{ fanCost = value; }
+	}
 
 
 	//create packages
@@ -43,31 +134,12 @@ public class LevelController : MonoBehaviour {
 	public List<GameObject> spawnPoints;
 
 	//delivered packages/progresses
-	private int successfulPackages;
-	private int failurePackages;
-	private int currentMoney;
-
-	public int SuccessfulPackages{
-		get{ return successfulPackages; }
-		set{ successfulPackages = value; }
-	}
-	public int FailurePackages{
-		get{ return failurePackages; }
-		set{ failurePackages = value; }
-	}
-	public int CurrentMoney{
-		get{ return currentMoney; }
-		set{ currentMoney = value; }
-	}
+	public int successfulPackages;
+	public int failurePackages;
 
 	//object panel
-	private GameObject selectedObject;
+	public GameObject selectedObject;
 	public bool isObjectPanelActive;
-
-	public GameObject SelectedObject{
-		get{ return selectedObject; }
-		set{ selectedObject = value; }
-	}
 
 	//inventroy panel
 	public bool isShopPanelActive = false;
