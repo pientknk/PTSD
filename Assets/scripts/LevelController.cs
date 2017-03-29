@@ -76,7 +76,15 @@ public class LevelController : MonoBehaviour {
 	/// <summary>
 	/// A reference to all of the objects bought by the player. Used to recreate a saved level.
 	/// </summary>
+	public List<GameObject> allBuyableObjects;
+	/// <summary>
+	/// All packages that will spawn for this level.
+	/// </summary>
 	public List<GameObject> allPackages;
+	/// <summary>
+	/// All the package types that can spawn on this level, ex. box blue and box orange.
+	/// </summary>
+	public List<GameObject> packageTypes;
 	/// <summary>
 	/// The number of packages left to spawn before its the end of the level.
 	/// </summary>
@@ -125,6 +133,12 @@ public class LevelController : MonoBehaviour {
 	/// True if the menu panel should be active, else false to hide it.
 	/// </summary>
 	public bool isMenuPanelActive = false;
+
+	/// <summary>
+	/// The GameObject that holds all the objects besides the ui canvas
+	/// </summary>
+	public GameObject theLevelObjects;
+
 
 	//called before any start methods
 	void Awake () {
