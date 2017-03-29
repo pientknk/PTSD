@@ -62,7 +62,7 @@ GameObject:
   - component: {fileID: 114519178649124578}
   - component: {fileID: 114048523626074898}
   m_Layer: 5
-  m_Name: Buy Conveyor Button
+  m_Name: Buy Slide Button
   m_TagString: Conveyor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,8 +78,7 @@ GameObject:
   - component: {fileID: 224009090101393808}
   - component: {fileID: 222813696248409472}
   - component: {fileID: 114078854744366384}
-  - component: {fileID: 114871248541698010}
-  - component: {fileID: 114916463448586894}
+  - component: {fileID: 114872111084467958}
   m_Layer: 5
   m_Name: Conveyor Label
   m_TagString: Conveyor
@@ -114,10 +113,9 @@ GameObject:
   - component: {fileID: 224429798711831426}
   - component: {fileID: 222666417259473338}
   - component: {fileID: 114705694887384786}
-  - component: {fileID: 114063072180443462}
-  - component: {fileID: 114549981932483640}
+  - component: {fileID: 114267974795738396}
   m_Layer: 5
-  m_Name: Conveyor Label
+  m_Name: Trampoline Label
   m_TagString: Conveyor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -151,10 +149,9 @@ GameObject:
   - component: {fileID: 224421872569567552}
   - component: {fileID: 222447251792239798}
   - component: {fileID: 114389678147539240}
-  - component: {fileID: 114706669449209772}
-  - component: {fileID: 114510904510577154}
+  - component: {fileID: 114334541091854696}
   m_Layer: 5
-  m_Name: Conveyor Label
+  m_Name: Magnet Label
   m_TagString: Conveyor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -262,7 +259,7 @@ GameObject:
   - component: {fileID: 114273192086757326}
   - component: {fileID: 114648228844626906}
   m_Layer: 5
-  m_Name: Buy Conveyor Button
+  m_Name: Buy Trampoline Button
   m_TagString: Conveyor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -296,10 +293,9 @@ GameObject:
   - component: {fileID: 224602890842131500}
   - component: {fileID: 222663721025526672}
   - component: {fileID: 114955347878396792}
-  - component: {fileID: 114863375902384520}
-  - component: {fileID: 114921071936707666}
+  - component: {fileID: 114006142443949936}
   m_Layer: 5
-  m_Name: Conveyor Label
+  m_Name: Slide Label
   m_TagString: Conveyor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -375,7 +371,7 @@ GameObject:
   - component: {fileID: 114096691032834658}
   - component: {fileID: 114814180945112630}
   m_Layer: 5
-  m_Name: Buy Conveyor Button
+  m_Name: Buy Magnet Button
   m_TagString: Conveyor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -413,7 +409,7 @@ GameObject:
   - component: {fileID: 114095291830675358}
   - component: {fileID: 114310937671736874}
   m_Layer: 5
-  m_Name: Buy Conveyor Button
+  m_Name: Buy Glue Button
   m_TagString: Conveyor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -429,10 +425,9 @@ GameObject:
   - component: {fileID: 224155628601905008}
   - component: {fileID: 222457552522175578}
   - component: {fileID: 114831975437455416}
-  - component: {fileID: 114185585729892928}
-  - component: {fileID: 114508920101558872}
+  - component: {fileID: 114270847652995156}
   m_Layer: 5
-  m_Name: Conveyor Label
+  m_Name: Glue Label
   m_TagString: Conveyor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -470,7 +465,7 @@ GameObject:
   - component: {fileID: 114237174927322344}
   - component: {fileID: 114279349155347188}
   m_Layer: 5
-  m_Name: Buy Conveyor Button
+  m_Name: Buy Fan Button
   m_TagString: Conveyor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -507,15 +502,25 @@ GameObject:
   - component: {fileID: 224541219221248682}
   - component: {fileID: 222903252600913516}
   - component: {fileID: 114417229283958998}
-  - component: {fileID: 114649339287282908}
-  - component: {fileID: 114675087129280064}
+  - component: {fileID: 114744997772282946}
   m_Layer: 5
-  m_Name: Conveyor Label
+  m_Name: Fan Label
   m_TagString: Conveyor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &114006142443949936
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1666194447263402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b6202ad8665249649d1ca4b70340a5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114012846392681982
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -629,17 +634,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c5914e79025d48eba3e4610e2c01bf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114063072180443462
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1234442987989130}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fe2ef9acb1e3421083571b5d22014ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114078854744366384
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -714,7 +708,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: dc7661f8a458e4b2491081fdf990b50e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1c4b73a57250d4350bcc69bc38541b20, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -785,17 +779,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f54e1fbae49e44430806695f1d49ce3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114185585729892928
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1897766634770488}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fe2ef9acb1e3421083571b5d22014ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114210314423964748
@@ -985,7 +968,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: dc7661f8a458e4b2491081fdf990b50e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 80af137fec30b4e94ac855898de171c5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -993,6 +976,28 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114267974795738396
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1234442987989130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b6202ad8665249649d1ca4b70340a5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114270847652995156
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1897766634770488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b6202ad8665249649d1ca4b70340a5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114273192086757326
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1150,6 +1155,17 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114334541091854696
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1298186861344056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b6202ad8665249649d1ca4b70340a5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114366234349301384
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1209,7 +1225,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Conveyor - $10
+  m_Text: Magnet - $10
 --- !u!114 &114410656441783300
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1275,7 +1291,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Conveyor - $10
+  m_Text: Fan - $10
 --- !u!114 &114460793972327814
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1347,45 +1363,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed013c94b878d466ca726bc73023504d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114508920101558872
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1897766634770488}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed013c94b878d466ca726bc73023504d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114510904510577154
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1298186861344056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed013c94b878d466ca726bc73023504d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114519178649124578
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1071626113079324}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed013c94b878d466ca726bc73023504d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114549981932483640
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1234442987989130}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed013c94b878d466ca726bc73023504d, type: 3}
@@ -1558,17 +1541,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c5914e79025d48eba3e4610e2c01bf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114649339287282908
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1966739436641322}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fe2ef9acb1e3421083571b5d22014ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114651617698624624
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1655,17 +1627,6 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
---- !u!114 &114675087129280064
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1966739436641322}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed013c94b878d466ca726bc73023504d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114705694887384786
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1698,18 +1659,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Conveyor - $10
---- !u!114 &114706669449209772
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1298186861344056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fe2ef9acb1e3421083571b5d22014ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Text: Trampoline - $10
 --- !u!114 &114713358600386676
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1719,6 +1669,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f54e1fbae49e44430806695f1d49ce3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114744997772282946
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1966739436641322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b6202ad8665249649d1ca4b70340a5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114752518542854836
@@ -1853,7 +1814,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: dc7661f8a458e4b2491081fdf990b50e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4ca8ee56304a04106be52a7c1458f16f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1920,18 +1881,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Conveyor - $10
---- !u!114 &114863375902384520
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1666194447263402}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fe2ef9acb1e3421083571b5d22014ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Text: Glue - $10
 --- !u!114 &114864700075039316
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1962,7 +1912,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: dc7661f8a458e4b2491081fdf990b50e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 54dc0a4ac90544dfbaf44187b8cb5a82, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1970,7 +1920,7 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114871248541698010
+--- !u!114 &114872111084467958
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1978,7 +1928,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1193640112453104}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fe2ef9acb1e3421083571b5d22014ae, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b6202ad8665249649d1ca4b70340a5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114887682917394302
@@ -2046,28 +1996,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f54e1fbae49e44430806695f1d49ce3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114916463448586894
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1193640112453104}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed013c94b878d466ca726bc73023504d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114921071936707666
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1666194447263402}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed013c94b878d466ca726bc73023504d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114952418316403000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2122,7 +2050,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Conveyor - $10
+  m_Text: Slide - $10
 --- !u!114 &114968901229681798
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2489,8 +2417,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.5, y: 1.6}
-  m_SizeDelta: {x: 146.5, y: 52.9}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 107, y: 73.283}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224219801761106708
 RectTransform:
@@ -2544,8 +2472,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.5, y: 1.6}
-  m_SizeDelta: {x: 146.5, y: 52.9}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 135, y: 29.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224382596501199164
 RectTransform:
@@ -2619,7 +2547,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 1.5, y: 1.6}
-  m_SizeDelta: {x: 146.5, y: 52.9}
+  m_SizeDelta: {x: 65, y: 65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224541219221248682
 RectTransform:
@@ -2788,8 +2716,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.5, y: 1.6}
-  m_SizeDelta: {x: 146.5, y: 52.9}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 135, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224942618265321762
 RectTransform:
@@ -2806,8 +2734,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.5, y: 1.6}
-  m_SizeDelta: {x: 146.5, y: 52.9}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 135, y: 24}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224970576455138850
 RectTransform:

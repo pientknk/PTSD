@@ -71,6 +71,14 @@ public class LevelController : MonoBehaviour {
 	/// The cost to buy one fan.
 	/// </summary>
 	public int fanCost = 300;
+	/// <summary>
+	/// Thec cost to buy one glue.
+	/// </summary>
+	public int glueCost = 350;
+	/// <summary>
+	/// The cost to buy one magnet.
+	/// </summary>
+	public int magnetCost = 300;
 
 	//create packages
 	/// <summary>

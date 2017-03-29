@@ -21,5 +21,39 @@ public class CreateBuyableObject : MonoBehaviour {
 
 		//set selected object to this new object so that way the showSelected will highlight it
 		LevelController.instance.selectedObject = clone;
+
+		SubtractAvailableMoney (clone);
+	}
+
+	/// <summary>
+	/// Subtracts the cost of the bought item from the available money.
+	/// </summary>
+	/// /// <param name="prefab">Parameter to pass.</param>
+	private void SubtractAvailableMoney(GameObject prefab){
+		int amount = 0;
+		switch (prefab.tag) {
+		case "Conveyor":
+			amount = LevelController.instance.conveyorCost;
+			break;
+		case "Trampoline":
+			amount = LevelController.instance.trampolineCost;
+			break;
+		case "Slide":
+			amount = LevelController.instance.slideCost;
+			break;
+		case "Fan":
+			amount = LevelController.instance.fanCost;
+			break;
+		case "Glue":
+			amount = LevelController.instance.glueCost;
+			break;
+		case "Magnet":
+			amount = LevelController.instance.magnetCost;
+			break;
+		default:
+			print ("Error in CreateBuyableObject.cs: " + this.tag + " - must have an appropriate tag. e.g. Conveyor");
+			break;
+		}
+		LevelController.instance.startingMoney -= amount;
 	}
 }

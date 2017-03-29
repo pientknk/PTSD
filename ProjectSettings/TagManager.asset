@@ -25,6 +25,8 @@ TagManager:
   - object panel
   - Modify
   - LevelButton
+  - Glue
+  - Magnet
   layers:
   - Default
   - TransparentFX
