@@ -100,7 +100,11 @@ public class LevelController : MonoBehaviour {
 	/// </summary>
 	public int magnetCost = 300;
 
-	//create packages
+	//packages
+	/// <summary>
+	/// The amount of money a regular package cost.
+	/// </summary>
+	public float packageWorth = 100.0f;
 	/// <summary>
 	/// A reference to all of the objects bought by the player. Used to recreate a saved level.
 	/// </summary>

@@ -4,10 +4,22 @@ using UnityEngine;
 
 public class PackageController : MonoBehaviour {
 
-	private float regularHealth = 100;
+	private float regularHealth;
+	/// <summary>
+	/// Gets the original health of this package
+	/// </summary>
+	/// <value>The value of regular health.</value>
+	public float RegularHealth{
+		get{ return regularHealth; }
+	}
 	private float currentHealth;
-	//private float weakHealth = 25;
-	//private float strongHealth = 150;
+	/// <summary>
+	/// Gets the current health of this package.
+	/// </summary>
+	/// <value>The current health.</value>
+	public float CurrentHealth{
+		get{ return currentHealth; }
+	}
 
 	public GameObject explosion;
 	//private string objectName;
@@ -15,6 +27,7 @@ public class PackageController : MonoBehaviour {
 	private Transform damageIndicator;
 	// Use this for initialization
 	void Start () {
+		regularHealth = LevelController.instance.packageWorth;
 		currentHealth = regularHealth;
 		//initialize the floating damage object for this package
 		FloatingTextController.Initialize ();
@@ -74,4 +87,5 @@ public class PackageController : MonoBehaviour {
 		FloatingTextController.CreateFloatingText (amount.ToString("F1"), transform.position);
 		currentHealth -= amount;
 	}
+
 }

@@ -26,12 +26,6 @@ public class ScoreBlue : MonoBehaviour {
 		bank = GetComponent<TheBank> ();
 		mt = GameObject.FindGameObjectWithTag ("Money").GetComponent<MoneyTracker> ();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		//GameObject score = GameObject.Find ("blueScore");
-		//score.GetComponent<TextMesh> ().text = scoreBlue.ToString();
-	}
 
 	void OnCollisionEnter2D(Collision2D col) {
 		// check what kind of item has entered
@@ -50,9 +44,6 @@ public class ScoreBlue : MonoBehaviour {
 			mt.Money -= 50;
 			Destroy (col.gameObject);
 		}
-
 		//print (col.gameObject.name + " had " + cf.GetHealth() + " health left");
-
-
 	}
 }
