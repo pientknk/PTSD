@@ -9,23 +9,23 @@ public class ModifyController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		updateOPC();
+//		updateOPC();
 	}
 
 	// update modify action script and make sure the object panel is active
 	void OnMouseDown () {
-		updateOPC ();
-		if (SelectedShower.Instance.SelectedObject != gameObject) {
-			SelectedShower.Instance.removeUI ();
-			SelectedShower.Instance.SelectedObject = gameObject;
-			SelectedShower.Instance.addUI ();
-		}
+//		updateOPC ();
+//		if (SelectedShower.Instance.SelectedObject != gameObject) {
+//			SelectedShower.Instance.removeUI ();
+//			SelectedShower.Instance.SelectedObject = gameObject;
+//			SelectedShower.Instance.addUI ();
+//		}
 	}
 
 	private void updateOPC(){
-		ObjectPanelController.togglePanelActive ();
-		ObjectPanelController.Ma.SelectedObject = gameObject;
-		ObjectPanelController.Ma.ChangedSelectedObject ();
-		ObjectPanelController.Ma.SetUpButtonActions ();
+//		ObjectPanelController.togglePanelActive ();
+//		ObjectPanelController.Ma.SelectedObject = gameObject;
+//		ObjectPanelController.Ma.ChangedSelectedObject ();
+//		ObjectPanelController.Ma.SetUpButtonActions ();
 	}
 }
