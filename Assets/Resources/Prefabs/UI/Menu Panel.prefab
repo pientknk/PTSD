@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 222381449910153920}
   - component: {fileID: 114382903481805858}
   m_Layer: 5
-  m_Name: Main Menu Text
+  m_Name: Reset Button Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -215,12 +215,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114806727805416206}
-        m_MethodName: QuitToMainLevel
+        m_MethodName: RestartCurrentLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -467,7 +467,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Reset
+  m_Text: Reset Level
 --- !u!114 &114456404697204506
 MonoBehaviour:
   m_ObjectHideFlags: 1
