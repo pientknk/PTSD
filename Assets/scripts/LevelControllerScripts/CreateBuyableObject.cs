@@ -15,8 +15,8 @@ public class CreateBuyableObject : MonoBehaviour {
 
 		//make it a child of TheLevelObjects and center it to where the camera is
 		clone.transform.SetParent (LevelController.instance.theLevelObjects.transform);
-		Camera cam = Camera.allCameras[1];
-		Vector2 center = cam.ScreenToWorldPoint (new Vector3 (Screen.width / 2, Screen.height / 2));
+		Camera cam = Camera.allCameras[0];
+		Vector2 center = cam.ViewportToWorldPoint (new Vector3(0.5f, 0.5f));
 		clone.transform.position = center;
 
 		//set selected object to this new object so that way the showSelected will highlight it
