@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 224162545115618352}
   - component: {fileID: 222283674128800992}
   - component: {fileID: 114980611353192036}
-  - component: {fileID: 114906181023280956}
+  - component: {fileID: 114218487009264564}
   m_Layer: 5
   m_Name: Object Label
   m_TagString: Untagged
@@ -94,7 +94,6 @@ GameObject:
   - component: {fileID: 224117385861182296}
   - component: {fileID: 222359840429047850}
   - component: {fileID: 114282618408374450}
-  - component: {fileID: 114368239164271602}
   m_Layer: 5
   m_Name: Object Panel v2
   m_TagString: object panel
@@ -490,6 +489,17 @@ MonoBehaviour:
   m_Spacing: {x: 4, y: 4}
   m_Constraint: 1
   m_ConstraintCount: 4
+--- !u!114 &114218487009264564
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1081691276690458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af2ce1c581c934b39ba5bd238ff10720, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114225651873985730
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -654,17 +664,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114368239164271602
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1194068595759840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18e9755bb49714941b8f8bd8c4908173, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114409328874956164
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1267,17 +1266,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114906181023280956
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1081691276690458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c202d3ddb7fe4cbdb1dbe11085d7a77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114912075321811274
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1531,8 +1519,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 58.70002, y: -29.2}
-  m_SizeDelta: {x: 117.4, y: 58.5}
+  m_AnchoredPosition: {x: 89.75, y: -41}
+  m_SizeDelta: {x: 179.5, y: 82.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224117385861182296
 RectTransform:
@@ -1551,8 +1539,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 333.5, y: -97.8}
-  m_SizeDelta: {x: 179.5, y: 113.6}
+  m_AnchoredPosition: {x: 330.4, y: -99.6}
+  m_SizeDelta: {x: 173.4, y: 117.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224119021837761518
 RectTransform:

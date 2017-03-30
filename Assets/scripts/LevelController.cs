@@ -16,6 +16,10 @@ public class LevelController : MonoBehaviour {
 	/// </summary>
 	public GameObject canvas;
 	/// <summary>
+	/// The GameObject that holds all the objects besides the ui canvas
+	/// </summary>
+	public GameObject theLevelObjects;
+	/// <summary>
 	/// The stars earned for this level, determined by the 3 tracked progresses: money earned, packages delivered, 
 	/// and number of objects used.
 	/// </summary>	
@@ -23,15 +27,15 @@ public class LevelController : MonoBehaviour {
 	/// <summary>
 	/// The money needed in order to earn 1 star for this level.
 	/// </summary>
-	public int moneyFor1Star;
+	public int moneyFor1Star = 1500;
 	/// <summary>
 	/// The number of packages delivered to earn 1 star for this level.
 	/// </summary>
-	public int packagesFor1Star;
+	public int packagesFor1Star = 25;
 	/// <summary>
 	/// The max number of objects a player can use before losing 1 star for this level.
 	/// </summary>
-	public int maxObjectsUsedFor1Star;
+	public int maxObjectsUsedFor1Star = 15;
 	/// <summary>
 	/// The current amount of bought objects on the level, compared against maxObjectsUsedFor1Star.
 	/// </summary>
@@ -39,14 +43,30 @@ public class LevelController : MonoBehaviour {
 
 	//pause/play
 	/// <summary>
-	/// The current game speed, set by the various play/pause buttons, where 0 means the game is "paused"
+	/// The bool to keep track of whether or not the level is paused.
 	/// </summary>
-	public float currentGameSpeed = 0.0f;
+	public bool isPaused = true;
+	/// <summary>
+	/// The paused game speed when the level starts and when the pause button is hit.
+	/// </summary>
+	public float pauseGameSpeed = 0.0f;
+	/// <summary>
+	/// The regular game speed when the play button is hit.
+	/// </summary>
+	public float regularGameSpeed = 1.0f;
+	/// <summary>
+	/// The fast game speed when the fast play button is hit.
+	/// </summary>
+	public float fastGameSpeed = 2.0f;
+	/// <summary>
+	/// The super fast game speed when the super fast button is hit.
+	/// </summary>
+	public float superGameSpeed = 3.0f;
 
 	//money
 	/// <summary>
 	/// The amount of money the player gets when the level first loads and is all the money they can spend on objects. 
-	/// Should be updates whenever the user buys something.
+	/// Should be updated whenever the user buys something.
 	/// </summary>
 	public int startingMoney = 4000;
 	/// <summary>
@@ -100,15 +120,23 @@ public class LevelController : MonoBehaviour {
 	/// <summary>
 	/// The time in seconds between packages spawning
 	/// </summary>
-	public float spawnTime;
+	public float spawnTime = 3.0f;
+	/// <summary>
+	/// The time that the game has been played, used for spawning packages on time
+	/// </summary>
+	public float timeCounter;
 	/// <summary>
 	/// True if the packages for this level should be randomly generated, else false for manual selection of packages.
 	/// </summary>
-	public bool autoPickPackages;
+	public bool autoPickPackages = false;
 	/// <summary>
 	/// The objects where packages should spawn from, must be 1 or more
 	/// </summary>
 	public List<GameObject> spawnPoints;
+	/// <summary>
+	/// True if the spawn points should infinitely create packages to keep spawning.
+	/// </summary>
+	public bool infiniteCreate = false;
 
 	//delivered packages/progresses
 	/// <summary>
@@ -142,12 +170,6 @@ public class LevelController : MonoBehaviour {
 	/// </summary>
 	public bool isMenuPanelActive = false;
 
-	/// <summary>
-	/// The GameObject that holds all the objects besides the ui canvas
-	/// </summary>
-	public GameObject theLevelObjects;
-
-
 	//called before any start methods
 	void Awake () {
 		instance = this;
@@ -170,7 +192,6 @@ public class LevelController : MonoBehaviour {
 		data.packagesFor1Star = packagesFor1Star;
 		data.maxObjectsUsedFor1Star = maxObjectsUsedFor1Star;
 		data.currentObjectCount = currentObjectCount;
-		data.currentGameSpeed = 0.0f;
 		data.startingMoney = startingMoney;
 		data.currentMoney = currentMoney;
 		data.conveyorCost = conveyorCost;
@@ -212,7 +233,6 @@ public class LevelController : MonoBehaviour {
 			packagesFor1Star = data.packagesFor1Star;
 			maxObjectsUsedFor1Star = data.maxObjectsUsedFor1Star;
 			currentObjectCount = data.currentObjectCount;
-			currentGameSpeed = data.currentGameSpeed;
 			startingMoney = data.startingMoney;
 			currentMoney = data.currentMoney;
 			conveyorCost = data.conveyorCost;
@@ -237,9 +257,6 @@ public class LevelController : MonoBehaviour {
 
 [Serializable]
 class LevelData{
-	//static instance used for other scripts to reference
-	public static LevelController controller;
-
 	//canvas
 	public GameObject canvas;
 
@@ -251,7 +268,6 @@ class LevelData{
 	public int currentObjectCount;
 
 	//pause/play
-	public float currentGameSpeed;
 
 	//money
 	public int startingMoney;

@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4816573979424034}
-  - component: {fileID: 114075319908442486}
+  - component: {fileID: 114181809960414324}
   m_Layer: 0
   m_Name: Level Manager
   m_TagString: Untagged
@@ -40,7 +40,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114075319908442486
+--- !u!114 &114181809960414324
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -52,20 +52,72 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
+  theLevelObjects: {fileID: 0}
   starsEarned: 0
-  MoneyFor1Star: 0
-  packagesFor1Star: 0
-  maxObjectsUsedFor1Star: 0
-  isPlaying: 0
-  currentEarnedMoney: 0
+  moneyFor1Star: 1500
+  packagesFor1Star: 25
+  maxObjectsUsedFor1Star: 15
+  currentObjectCount: 0
+  isPaused: 1
+  pauseGameSpeed: 0
+  regularGameSpeed: 1
+  fastGameSpeed: 2
+  superGameSpeed: 3
   startingMoney: 4000
+  currentMoney: 0
   conveyorCost: 500
   trampolineCost: 350
   slideCost: 250
   fanCost: 300
-  allPackages: []
-  numPackagesLeft: 0
-  spawnTime: 0
+  glueCost: 350
+  magnetCost: 300
+  allBuyableObjects: []
+  allPackages:
+  - {fileID: 1532709407171550, guid: 3f3a6a9ac7e5344c6a2b6f0935a6439e, type: 2}
+  - {fileID: 1676677734844086, guid: a778bde2994d54f469c9c374a521ceee, type: 2}
+  - {fileID: 1408981469626824, guid: e6ad98e04b6f04693b2ea73a25361c8c, type: 2}
+  - {fileID: 1760707812902458, guid: 614c5f5deb3dc4f1cacd349b8fca5d5b, type: 2}
+  - {fileID: 1532709407171550, guid: 3f3a6a9ac7e5344c6a2b6f0935a6439e, type: 2}
+  - {fileID: 1760707812902458, guid: 614c5f5deb3dc4f1cacd349b8fca5d5b, type: 2}
+  - {fileID: 1408981469626824, guid: e6ad98e04b6f04693b2ea73a25361c8c, type: 2}
+  - {fileID: 1676677734844086, guid: a778bde2994d54f469c9c374a521ceee, type: 2}
+  - {fileID: 1760707812902458, guid: 614c5f5deb3dc4f1cacd349b8fca5d5b, type: 2}
+  - {fileID: 1532709407171550, guid: 3f3a6a9ac7e5344c6a2b6f0935a6439e, type: 2}
+  - {fileID: 1676677734844086, guid: a778bde2994d54f469c9c374a521ceee, type: 2}
+  - {fileID: 1408981469626824, guid: e6ad98e04b6f04693b2ea73a25361c8c, type: 2}
+  - {fileID: 1408981469626824, guid: e6ad98e04b6f04693b2ea73a25361c8c, type: 2}
+  - {fileID: 1676677734844086, guid: a778bde2994d54f469c9c374a521ceee, type: 2}
+  - {fileID: 1760707812902458, guid: 614c5f5deb3dc4f1cacd349b8fca5d5b, type: 2}
+  - {fileID: 1676677734844086, guid: a778bde2994d54f469c9c374a521ceee, type: 2}
+  - {fileID: 1760707812902458, guid: 614c5f5deb3dc4f1cacd349b8fca5d5b, type: 2}
+  - {fileID: 1532709407171550, guid: 3f3a6a9ac7e5344c6a2b6f0935a6439e, type: 2}
+  - {fileID: 1532709407171550, guid: 3f3a6a9ac7e5344c6a2b6f0935a6439e, type: 2}
+  - {fileID: 1676677734844086, guid: a778bde2994d54f469c9c374a521ceee, type: 2}
+  - {fileID: 1760707812902458, guid: 614c5f5deb3dc4f1cacd349b8fca5d5b, type: 2}
+  - {fileID: 1408981469626824, guid: e6ad98e04b6f04693b2ea73a25361c8c, type: 2}
+  - {fileID: 1760707812902458, guid: 614c5f5deb3dc4f1cacd349b8fca5d5b, type: 2}
+  - {fileID: 1408981469626824, guid: e6ad98e04b6f04693b2ea73a25361c8c, type: 2}
+  - {fileID: 1532709407171550, guid: 3f3a6a9ac7e5344c6a2b6f0935a6439e, type: 2}
+  - {fileID: 1760707812902458, guid: 614c5f5deb3dc4f1cacd349b8fca5d5b, type: 2}
+  - {fileID: 1532709407171550, guid: 3f3a6a9ac7e5344c6a2b6f0935a6439e, type: 2}
+  - {fileID: 1760707812902458, guid: 614c5f5deb3dc4f1cacd349b8fca5d5b, type: 2}
+  - {fileID: 1408981469626824, guid: e6ad98e04b6f04693b2ea73a25361c8c, type: 2}
+  - {fileID: 1676677734844086, guid: a778bde2994d54f469c9c374a521ceee, type: 2}
+  packageTypes:
+  - {fileID: 1532709407171550, guid: 3f3a6a9ac7e5344c6a2b6f0935a6439e, type: 2}
+  - {fileID: 1676677734844086, guid: a778bde2994d54f469c9c374a521ceee, type: 2}
+  - {fileID: 1408981469626824, guid: e6ad98e04b6f04693b2ea73a25361c8c, type: 2}
+  - {fileID: 1760707812902458, guid: 614c5f5deb3dc4f1cacd349b8fca5d5b, type: 2}
+  numPackagesLeft: 30
+  spawnTime: 3
+  timeCounter: 0
   autoPickPackages: 0
-  spawnPoints: []
-  isActive: 0
+  spawnPoints:
+  - {fileID: 0}
+  infiniteCreate: 0
+  successfulPackages: 0
+  failurePackages: 0
+  selectedObject: {fileID: 0}
+  isObjectPanelActive: 0
+  isShopPanelActive: 0
+  isMenuPanelActive: 0

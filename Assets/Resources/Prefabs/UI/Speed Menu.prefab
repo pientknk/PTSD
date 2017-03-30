@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114149830254746020}
   - component: {fileID: 114613170670209214}
   - component: {fileID: 212197812513391718}
-  - component: {fileID: 114644032811995006}
+  - component: {fileID: 114030596694592548}
   m_Layer: 5
   m_Name: Speed Menu
   m_TagString: Untagged
@@ -95,7 +95,6 @@ GameObject:
   - component: {fileID: 224985618047631758}
   - component: {fileID: 222550023582527160}
   - component: {fileID: 114062637117084990}
-  - component: {fileID: 114853078973199566}
   m_Layer: 5
   m_Name: Speed
   m_TagString: Untagged
@@ -103,6 +102,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &114030596694592548
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1010805388204180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aacff5f1a432346fbb90dc307ed00b97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseImage: {fileID: 21300000, guid: 3c4c021181119a4469564fbde1165236, type: 3}
 --- !u!114 &114035461839162494
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -142,12 +153,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114644032811995006}
-        m_MethodName: Pause
+      - m_Target: {fileID: 114030596694592548}
+        m_MethodName: PauseOrPlay
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1473637276863732}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 114035461839162494}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -174,9 +185,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 692b2f9f65af341ac81b4f194b60e9cf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c108436554552644f9ac5a76dc8aec8c, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -281,12 +292,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114644032811995006}
-        m_MethodName: Pause
+      - m_Target: {fileID: 114030596694592548}
+        m_MethodName: PauseOrPlay
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1513814898360696}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 114276328813987040}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -308,22 +319,6 @@ MonoBehaviour:
   m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
   m_EffectDistance: {x: 0, y: 0}
   m_UseGraphicAlpha: 0
---- !u!114 &114644032811995006
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1010805388204180}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 985ddae03c9284272b7dba26372447ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playImage: {fileID: 21300000, guid: 6644e8c1c112c492180ed1b38165f1e3, type: 3}
-  pauseImage: {fileID: 21300000, guid: 41737f4f89bc3473caff078dc47b310e, type: 3}
-  fastPlayImage: {fileID: 21300000, guid: 2479a66ab553a4ddab4a9295765953ef, type: 3}
-  superFastImage: {fileID: 21300000, guid: 692b2f9f65af341ac81b4f194b60e9cf, type: 3}
-  pausePlayButton: {fileID: 1513814898360696}
 --- !u!114 &114661711801862210
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -363,12 +358,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114644032811995006}
-        m_MethodName: Pause
+      - m_Target: {fileID: 114030596694592548}
+        m_MethodName: PauseOrPlay
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1136781712742212}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 114661711801862210}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -395,25 +390,14 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 2479a66ab553a4ddab4a9295765953ef, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d5d704fee5bbd034891c628e281d1413, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114853078973199566
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1899018506466208}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2999e4a58cd524edb94b86dd4fb418ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114859876343963450
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -433,9 +417,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 6644e8c1c112c492180ed1b38165f1e3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2eb434c7959bc7246993c446cb212b75, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -519,10 +503,10 @@ RectTransform:
   m_Father: {fileID: 224954790291370458}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -47.9, y: -11.2}
-  m_SizeDelta: {x: 18, y: 18}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 20.900002, y: 1.8999996}
+  m_SizeDelta: {x: 25, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224283179581187862
 RectTransform:
@@ -537,10 +521,10 @@ RectTransform:
   m_Father: {fileID: 224954790291370458}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -16.6, y: -11.2}
-  m_SizeDelta: {x: 27.6, y: 18}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 64.8, y: 1.8999996}
+  m_SizeDelta: {x: 25, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224590724231524310
 RectTransform:
@@ -555,10 +539,10 @@ RectTransform:
   m_Father: {fileID: 224954790291370458}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -73.8, y: -11.2}
-  m_SizeDelta: {x: 18, y: 18}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -23.199997, y: 1.8999996}
+  m_SizeDelta: {x: 25, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224954790291370458
 RectTransform:
@@ -568,7 +552,7 @@ RectTransform:
   m_GameObject: {fileID: 1010805388204180}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9999999, y: 0.9999999, z: 0.9999999}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224985618047631758}
   - {fileID: 224590724231524310}
@@ -579,8 +563,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 604.8, y: 0.000061035156}
-  m_SizeDelta: {x: 114.3, y: 25}
+  m_AnchoredPosition: {x: 1029.599, y: 0}
+  m_SizeDelta: {x: 175, y: 35}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &224985618047631758
 RectTransform:
@@ -595,8 +579,8 @@ RectTransform:
   m_Father: {fileID: 224954790291370458}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 15.4, y: -11.799999}
-  m_SizeDelta: {x: 27.7, y: 21.5}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -65.7, y: 1.8999996}
+  m_SizeDelta: {x: 41.600006, y: 30.1}
   m_Pivot: {x: 0.5, y: 0.5}

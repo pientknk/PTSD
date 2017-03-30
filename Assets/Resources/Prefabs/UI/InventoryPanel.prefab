@@ -58,9 +58,7 @@ GameObject:
   - component: {fileID: 222528129376338950}
   - component: {fileID: 114968901229681798}
   - component: {fileID: 114028857614010190}
-  - component: {fileID: 114166149499986776}
-  - component: {fileID: 114519178649124578}
-  - component: {fileID: 114048523626074898}
+  - component: {fileID: 114143141532836156}
   m_Layer: 5
   m_Name: Buy Slide Button
   m_TagString: Conveyor
@@ -255,9 +253,7 @@ GameObject:
   - component: {fileID: 222418259023551980}
   - component: {fileID: 114640778291796942}
   - component: {fileID: 114583323167515180}
-  - component: {fileID: 114292989844405418}
-  - component: {fileID: 114273192086757326}
-  - component: {fileID: 114648228844626906}
+  - component: {fileID: 114367528038211962}
   m_Layer: 5
   m_Name: Buy Trampoline Button
   m_TagString: Conveyor
@@ -347,8 +343,7 @@ GameObject:
   - component: {fileID: 224764610248774932}
   - component: {fileID: 222106733159231418}
   - component: {fileID: 114460793972327814}
-  - component: {fileID: 114504561245908976}
-  - component: {fileID: 114624253587122960}
+  - component: {fileID: 114633973671404132}
   m_Layer: 5
   m_Name: Bank Info
   m_TagString: Bank
@@ -367,9 +362,7 @@ GameObject:
   - component: {fileID: 222053507688517500}
   - component: {fileID: 114566931092300564}
   - component: {fileID: 114225381005415734}
-  - component: {fileID: 114012846392681982}
-  - component: {fileID: 114096691032834658}
-  - component: {fileID: 114814180945112630}
+  - component: {fileID: 114072875987169992}
   m_Layer: 5
   m_Name: Buy Magnet Button
   m_TagString: Conveyor
@@ -405,9 +398,7 @@ GameObject:
   - component: {fileID: 222936735263360344}
   - component: {fileID: 114036001878487190}
   - component: {fileID: 114651617698624624}
-  - component: {fileID: 114864700075039316}
-  - component: {fileID: 114095291830675358}
-  - component: {fileID: 114310937671736874}
+  - component: {fileID: 114062516069874596}
   m_Layer: 5
   m_Name: Buy Glue Button
   m_TagString: Conveyor
@@ -461,9 +452,7 @@ GameObject:
   - component: {fileID: 222072698914669226}
   - component: {fileID: 114887682917394302}
   - component: {fileID: 114801789876463858}
-  - component: {fileID: 114713358600386676}
-  - component: {fileID: 114237174927322344}
-  - component: {fileID: 114279349155347188}
+  - component: {fileID: 114645067965257634}
   m_Layer: 5
   m_Name: Buy Fan Button
   m_TagString: Conveyor
@@ -482,9 +471,7 @@ GameObject:
   - component: {fileID: 222336566002182956}
   - component: {fileID: 114576688057955636}
   - component: {fileID: 114326264314739900}
-  - component: {fileID: 114909986910479232}
-  - component: {fileID: 114412683226728760}
-  - component: {fileID: 114796482066532066}
+  - component: {fileID: 114446765648787410}
   m_Layer: 5
   m_Name: Buy Conveyor Button
   m_TagString: Conveyor
@@ -519,17 +506,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b6202ad8665249649d1ca4b70340a5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114012846392681982
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1771685882347606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f54e1fbae49e44430806695f1d49ce3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114028857614010190
@@ -571,24 +547,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114166149499986776}
-        m_MethodName: createPrefab
+      - m_Target: {fileID: 114143141532836156}
+        m_MethodName: CreateUsableObject
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1126207816648840, guid: 2cb001fb3783f4699890625d1544dced,
+          m_ObjectArgument: {fileID: 1232233063960076, guid: b00f3c284df114ee08ebd149ae162d00,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 114048523626074898}
-        m_MethodName: buyItem
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -623,15 +588,26 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114048523626074898
+--- !u!114 &114062516069874596
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1071626113079324}
+  m_GameObject: {fileID: 1882694556811516}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c5914e79025d48eba3e4610e2c01bf1, type: 3}
+  m_Script: {fileID: 11500000, guid: 0c9115427a7104859a95ddb419714263, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114072875987169992
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1771685882347606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c9115427a7104859a95ddb419714263, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114078854744366384
@@ -667,26 +643,15 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Conveyor - $10
---- !u!114 &114095291830675358
+--- !u!114 &114143141532836156
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1882694556811516}
+  m_GameObject: {fileID: 1071626113079324}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed013c94b878d466ca726bc73023504d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114096691032834658
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1771685882347606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed013c94b878d466ca726bc73023504d, type: 3}
+  m_Script: {fileID: 11500000, guid: 0c9115427a7104859a95ddb419714263, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114143743007050028
@@ -770,17 +735,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114166149499986776
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1071626113079324}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f54e1fbae49e44430806695f1d49ce3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114210314423964748
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -842,24 +796,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114012846392681982}
-        m_MethodName: createPrefab
+      - m_Target: {fileID: 114072875987169992}
+        m_MethodName: CreateUsableObject
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1126207816648840, guid: 2cb001fb3783f4699890625d1544dced,
+          m_ObjectArgument: {fileID: 1214338442320212, guid: 78821a1ce8d3b4fc48b3bc006907a775,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 114814180945112630}
-        m_MethodName: buyItem
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -894,17 +837,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114237174927322344
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1923312538799140}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed013c94b878d466ca726bc73023504d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114245532051106758
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -998,50 +930,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b6202ad8665249649d1ca4b70340a5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114273192086757326
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1591686647031508}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed013c94b878d466ca726bc73023504d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114279349155347188
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1923312538799140}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c5914e79025d48eba3e4610e2c01bf1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114292989844405418
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1591686647031508}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f54e1fbae49e44430806695f1d49ce3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114310937671736874
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1882694556811516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c5914e79025d48eba3e4610e2c01bf1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114317829552223638
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1103,24 +991,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114909986910479232}
-        m_MethodName: createPrefab
+      - m_Target: {fileID: 114446765648787410}
+        m_MethodName: CreateUsableObject
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1126207816648840, guid: 2cb001fb3783f4699890625d1544dced,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 114796482066532066}
-        m_MethodName: buyItem
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1193,6 +1070,17 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114367528038211962
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1591686647031508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c9115427a7104859a95ddb419714263, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114389678147539240
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1248,17 +1136,6 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
---- !u!114 &114412683226728760
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1931003293139736}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed013c94b878d466ca726bc73023504d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114417229283958998
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1292,6 +1169,17 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Fan - $10
+--- !u!114 &114446765648787410
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1931003293139736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c9115427a7104859a95ddb419714263, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114460793972327814
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1324,7 +1212,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'FUNDS: $1000'
+  m_Text: 'Funds: $1000'
 --- !u!114 &114493876131050646
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1352,28 +1240,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114504561245908976
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1766472765842988}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed013c94b878d466ca726bc73023504d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114519178649124578
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1071626113079324}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed013c94b878d466ca726bc73023504d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114566931092300564
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1467,11 +1333,11 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114292989844405418}
-        m_MethodName: createPrefab
+      - m_Target: {fileID: 114367528038211962}
+        m_MethodName: CreateUsableObject
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1126207816648840, guid: 2cb001fb3783f4699890625d1544dced,
+          m_ObjectArgument: {fileID: 1706273141540254, guid: 16722c4b653bb4856ae39485add18d58,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
@@ -1479,20 +1345,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 114648228844626906}
-        m_MethodName: buyItem
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114624253587122960
+--- !u!114 &114633973671404132
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1500,7 +1355,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1766472765842988}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e8898c46bfd740599e9a81430800cbb, type: 3}
+  m_Script: {fileID: 11500000, guid: fd7da7b72f41d4c9994612ec3ce43684, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114640778291796942
@@ -1530,15 +1385,15 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114648228844626906
+--- !u!114 &114645067965257634
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1591686647031508}
+  m_GameObject: {fileID: 1923312538799140}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c5914e79025d48eba3e4610e2c01bf1, type: 3}
+  m_Script: {fileID: 11500000, guid: 0c9115427a7104859a95ddb419714263, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114651617698624624
@@ -1580,24 +1435,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114864700075039316}
-        m_MethodName: createPrefab
+      - m_Target: {fileID: 114062516069874596}
+        m_MethodName: CreateUsableObject
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1126207816648840, guid: 2cb001fb3783f4699890625d1544dced,
+          m_ObjectArgument: {fileID: 1092530382922200, guid: eb03709cc1b4944038b56ccfd5ddd9fc,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 114310937671736874}
-        m_MethodName: buyItem
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1660,17 +1504,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Trampoline - $10
---- !u!114 &114713358600386676
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1923312538799140}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f54e1fbae49e44430806695f1d49ce3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114744997772282946
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1709,17 +1542,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114796482066532066
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1931003293139736}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c5914e79025d48eba3e4610e2c01bf1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114801789876463858
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1759,11 +1581,11 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114713358600386676}
-        m_MethodName: createPrefab
+      - m_Target: {fileID: 114645067965257634}
+        m_MethodName: CreateUsableObject
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1126207816648840, guid: 2cb001fb3783f4699890625d1544dced,
+          m_ObjectArgument: {fileID: 1023594189939098, guid: eaa5ff354cb804068bc6971724d82d1d,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
@@ -1771,30 +1593,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 114279349155347188}
-        m_MethodName: buyItem
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114814180945112630
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1771685882347606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c5914e79025d48eba3e4610e2c01bf1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114821367464475156
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1882,17 +1682,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Glue - $10
---- !u!114 &114864700075039316
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1882694556811516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f54e1fbae49e44430806695f1d49ce3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114867067566140682
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1985,17 +1774,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114909986910479232
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1931003293139736}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f54e1fbae49e44430806695f1d49ce3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114952418316403000
 MonoBehaviour:
   m_ObjectHideFlags: 1
