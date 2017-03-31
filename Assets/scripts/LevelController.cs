@@ -66,7 +66,7 @@ public class LevelController : MonoBehaviour {
 	//money
 	/// <summary>
 	/// The amount of money the player gets when the level first loads and is all the money they can spend on objects. 
-	/// Should be updated whenever the user buys something.
+	/// Should be updated whenever the user buys or sells something.
 	/// </summary>
 	public int startingMoney = 4000;
 	/// <summary>

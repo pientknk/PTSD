@@ -19,9 +19,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224268570964379104}
-  - component: {fileID: 58791469099279250}
+  - component: {fileID: 114021802534986452}
   m_Layer: 0
-  m_Name: Magnet
+  m_Name: Usable Magnet
   m_TagString: Fan
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -131,9 +131,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224070611879668200}
-  - component: {fileID: 114582359784974198}
-  - component: {fileID: 222501924669267802}
-  - component: {fileID: 114561886491407110}
+  - component: {fileID: 114980370179216930}
   m_Layer: 0
   m_Name: Drag Zone
   m_TagString: Untagged
@@ -347,53 +345,23 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_IsTrigger: 1
+  m_UsedByEffector: 1
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 125
---- !u!58 &58791469099279250
-CircleCollider2D:
+--- !u!114 &114021802534986452
+MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1214338442320212}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 25
---- !u!114 &114561886491407110
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1689524585140102}
-  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 4ba25c98b6ddb4627b7d4c518a1bbc19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.08737024, g: 0.74264705, b: 0.11900435, a: 0}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
---- !u!114 &114582359784974198
+--- !u!114 &114980370179216930
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -401,7 +369,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1689524585140102}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d531962e9d1404f20804a58ddff9e357, type: 3}
+  m_Script: {fileID: 11500000, guid: 899947bb85b784eeea05e820dddb435d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &212028458830444612
@@ -719,12 +687,6 @@ SpriteRenderer:
   m_Color: {r: 0.90344834, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
---- !u!222 &222501924669267802
-CanvasRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1689524585140102}
 --- !u!224 &224070611879668200
 RectTransform:
   m_ObjectHideFlags: 1
@@ -776,7 +738,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1214338442320212}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.7963599, y: 0.7963599, z: 0.79635996}
   m_Children:
   - {fileID: 224392979766082800}
@@ -788,7 +750,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -74, y: 145}
+  m_AnchoredPosition: {x: -62.2, y: 198}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224392979766082800
@@ -820,11 +782,11 @@ PointEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_ForceMagnitude: -10000
+  m_ForceMagnitude: 10000
   m_ForceVariation: 0
   m_DistanceScale: 2
-  m_ForceSource: 0
+  m_ForceSource: 1
   m_ForceTarget: 0
-  m_ForceMode: 1
-  m_Drag: 1
-  m_AngularDrag: 1
+  m_ForceMode: 2
+  m_Drag: 0
+  m_AngularDrag: 0

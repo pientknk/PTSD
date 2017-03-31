@@ -1,22 +1,32 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ShowSelectedObject : MonoBehaviour {
 
 	public GameObject showSelectedIndicator;
+	private GameObject selectedObject;
 	// Use this for initialization
 	void Start () {
+		selectedObject = LevelController.instance.selectedObject;
 		showSelectedIndicator = Instantiate (showSelectedIndicator);
 		showSelectedIndicator.transform.SetParent (LevelController.instance.canvas.transform);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		showSelectedIndicator.transform.position = Vector3.MoveTowards (
-			showSelectedIndicator.transform.position, 
-			LevelController.instance.selectedObject.transform.position, 15f);
-		
+		if (LevelController.instance.selectedObject != null) {
+			//only update ui if the selected object has changed
+			if (selectedObject != LevelController.instance.selectedObject) {
+				selectedObject = LevelController.instance.selectedObject;
+				UpdateUI ();
+			}
+			gameObject.SetActive (true);
+			showSelectedIndicator.transform.position = Vector3.MoveTowards (
+				showSelectedIndicator.transform.position, 
+				LevelController.instance.selectedObject.transform.position, 15f);
+		} else {
+			gameObject.SetActive (false);
+			selectedObject = LevelController.instance.selectedObject;
+		}
 	}
 
 	/// <summary>
