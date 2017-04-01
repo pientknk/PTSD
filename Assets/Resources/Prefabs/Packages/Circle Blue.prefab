@@ -23,8 +23,7 @@ GameObject:
   - component: {fileID: 58147795597905384}
   - component: {fileID: 222067985055953328}
   - component: {fileID: 212880581305759726}
-  - component: {fileID: 114337606197421640}
-  - component: {fileID: 114295935208675152}
+  - component: {fileID: 114566127401533036}
   m_Layer: 10
   m_Name: Circle Blue
   m_TagString: blue item
@@ -39,8 +38,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1408981469626824}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.2, y: -1.3, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 1}
+  m_LocalPosition: {x: -931.8, y: 237, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -79,7 +78,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2.15
---- !u!114 &114295935208675152
+--- !u!114 &114566127401533036
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -87,22 +86,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1408981469626824}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b832bd6c807cf40078b008eeb2af72f1, type: 3}
+  m_Script: {fileID: 11500000, guid: db64c3ba288ca4b2ca0a44b0a5e62556, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114337606197421640
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1408981469626824}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f3e5c463f31f3842ab3bdba3e396dd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highHealth: {fileID: 21300000, guid: dc1fd1b715e164efcb1bbcddb156bcbb, type: 3}
-  lowHealth: {fileID: 21300000, guid: 9e31ed14ae6bb40d194a256c32408a02, type: 3}
   explosion: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 2}
 --- !u!212 &212880581305759726
 SpriteRenderer:

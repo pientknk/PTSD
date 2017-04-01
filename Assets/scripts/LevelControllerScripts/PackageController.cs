@@ -32,7 +32,7 @@ public class PackageController : MonoBehaviour {
 		//initialize the floating damage object for this package
 		FloatingTextController.Initialize ();
 		//get the damage indicator so that it can be updated after collisions
-		damageIndicator = gameObject.transform.GetComponentInParent<Transform>().GetChild(0);
+//		damageIndicator = gameObject.transform.GetComponentInParent<Transform>().GetChild(0);
 		//objectName = gameObject.name;
 	}
 
@@ -62,9 +62,9 @@ public class PackageController : MonoBehaviour {
 			}
 		}
 		//update the damage indicator
-		Vector3 startingScale = damageIndicator.transform.localScale;
-		startingScale *= (currentHealth / regularHealth);
-		damageIndicator.transform.localScale = startingScale;
+//		Vector3 startingScale = damageIndicator.transform.localScale;
+//		startingScale *= (currentHealth / regularHealth);
+//		damageIndicator.transform.localScale = startingScale;
 
 		// once the object has no health it should be destroyed, an explosion occurs, and money is reduced
 		if (currentHealth <= 0) {

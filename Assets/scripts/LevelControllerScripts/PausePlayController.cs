@@ -13,7 +13,7 @@ public class PausePlayController : MonoBehaviour {
 	void Start () {
 		// get the label for the current speed so that it can be updated
 		speedLabel = transform.GetComponentInChildren<Text> ();
-		speedLabel.text = "x" + Time.timeScale;
+		speedLabel.text = "x" + LevelController.instance.pauseGameSpeed;
 		// get the 2nd child which is the play/pause button
 		playImage = transform.GetChild (1).GetComponent<Image> ().sprite;
 		pausePlayButton = transform.GetChild (1).gameObject;

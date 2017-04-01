@@ -5,36 +5,26 @@ public class DragObject : MonoBehaviour{
 	private Vector3 screenPoint;
 	private Vector3 offset;
 
-	private RectTransform levelObjectTransform;
+	//when the user clicke on this object it should update the level controller
+	void OnMouseDown()
+	{
+		LevelController.instance.selectedObject = gameObject;
+		screenPoint = Camera.allCameras[0].WorldToScreenPoint(gameObject.transform.position);
 
-	void Start(){
-		levelObjectTransform = LevelController.instance.theLevelObjects.GetComponent<RectTransform> ();
+		offset = gameObject.transform.position - Camera.allCameras[0].ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
+
 	}
 
+	//drags the object anywhere on screen, then it should check with the camera to find if the 
+	//dragged object is close to being off screen and move camera in that direction
 	void OnMouseDrag()
 	{
-		Vector2 localPointerPosition;
-		Vector2 mousePos = new Vector2 (Input.mousePosition.x, Input.mousePosition.y);
-		//allCameras[0] is the map camera
-		mousePos = ClampToWindow(mousePos);
-		Vector2 pos_move = Camera.allCameras[0].ScreenToWorldPoint(mousePos);
-			
-		transform.position = new Vector2(pos_move.x, pos_move.y);
-	}
+		Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
 
-	Vector2 ClampToWindow (Vector2 position) {
-//		Vector3 pos = Camera.allCameras[0].WorldToScreenPoint (position);
-//		pos.x = Mathf.Clamp(pos.x);
-//		pos.y = Mathf.Clamp(pos.y);
-//		transform.position = Camera.allCameras[0].ViewportToWorldPoint(pos);
+		Vector3 curPosition = Camera.allCameras[0].ScreenToWorldPoint (curScreenPoint) + offset;
 
-		Vector3[] canvasCorners = new Vector3[4];
-		levelObjectTransform.GetWorldCorners (canvasCorners);
+		transform.position = curPosition;
 
-		float clampedX = Mathf.Clamp (position.x, canvasCorners[0].x, canvasCorners[2].x);
-		float clampedY = Mathf.Clamp (position.y, canvasCorners[0].y, canvasCorners[2].y);
 
-		Vector2 newPointerPosition = new Vector2 (clampedX, clampedY);
-		return position;
 	}
 }

@@ -9,12 +9,8 @@ public class CreateBuyableObject : MonoBehaviour {
 	public void CreateUsableObject(GameObject prefab){
 		GameObject clone = Instantiate (prefab);
 
-		// set new objects box collider to match its size
-		Vector2 s = clone.GetComponent<RectTransform> ().sizeDelta;
-		clone.GetComponent<BoxCollider2D>().size = s;
-
 		//make it a child of TheLevelObjects and center it to where the camera is
-		clone.transform.SetParent (LevelController.instance.theLevelObjects.transform);
+		clone.transform.SetParent (LevelController.instance.theLevelObjects.transform, false);
 		Camera cam = Camera.allCameras[0];
 		Vector2 center = cam.ViewportToWorldPoint (new Vector3(0.5f, 0.5f));
 		clone.transform.position = center;

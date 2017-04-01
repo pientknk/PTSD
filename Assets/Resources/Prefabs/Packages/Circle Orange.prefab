@@ -23,8 +23,7 @@ GameObject:
   - component: {fileID: 58873820057526714}
   - component: {fileID: 222835170441768788}
   - component: {fileID: 212761432921859972}
-  - component: {fileID: 114697586325043776}
-  - component: {fileID: 114398648615957422}
+  - component: {fileID: 114425746757284034}
   m_Layer: 11
   m_Name: Circle Orange
   m_TagString: orange item
@@ -40,7 +39,7 @@ Transform:
   m_GameObject: {fileID: 1760707812902458}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.2, y: -1.3, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -79,7 +78,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2.15
---- !u!114 &114398648615957422
+--- !u!114 &114425746757284034
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -87,22 +86,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1760707812902458}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b832bd6c807cf40078b008eeb2af72f1, type: 3}
+  m_Script: {fileID: 11500000, guid: db64c3ba288ca4b2ca0a44b0a5e62556, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114697586325043776
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1760707812902458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f3e5c463f31f3842ab3bdba3e396dd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highHealth: {fileID: 21300000, guid: 3400103e167ad4a208d05cc12bfcefea, type: 3}
-  lowHealth: {fileID: 21300000, guid: 3cb28a085032f4d1da8924a3e2cb234d, type: 3}
   explosion: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 2}
 --- !u!212 &212761432921859972
 SpriteRenderer:
