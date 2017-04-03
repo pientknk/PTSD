@@ -12,6 +12,7 @@ public class DragObject : MonoBehaviour{
 		screenPoint = Camera.allCameras[0].WorldToScreenPoint(gameObject.transform.position);
 
 		offset = gameObject.transform.position - Camera.allCameras[0].ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
+		transform.SetAsLastSibling ();
 
 	}
 
@@ -24,7 +25,6 @@ public class DragObject : MonoBehaviour{
 		Vector3 curPosition = Camera.allCameras[0].ScreenToWorldPoint (curScreenPoint) + offset;
 
 		transform.position = curPosition;
-
 
 	}
 }

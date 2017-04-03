@@ -84,7 +84,7 @@ public class ProgressController : MonoBehaviour {
 	/// Updates the package progress bar and label.
 	/// </summary>
 	private void UpdatePackageProgress(){
-		int successPackages = LevelController.instance.successfulPackages;
+		int successPackages = LevelController.instance.SuccessfulPackages;
 		int packagesNeeded = LevelController.instance.packagesFor1Star;
 		if (successPackages >= packagesNeeded) {
 			packageBarImage.color = completedColor;

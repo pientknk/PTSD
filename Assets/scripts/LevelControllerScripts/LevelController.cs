@@ -20,6 +20,15 @@ public class LevelController : MonoBehaviour {
 	/// </summary>
 	public GameObject theLevelObjects;
 	/// <summary>
+	/// The canvas overlapping theLevelObjects in order for ui elements to overlap the game objects such as the 
+	/// show selected object and package damage indicator to work correctly.
+	/// </summary>
+	public GameObject levelCanvas;
+	/// <summary>
+	/// The object panel to update and modify objects.
+	/// </summary>
+	public GameObject objectPanel;
+	/// <summary>
 	/// The stars earned for this level, determined by the 3 tracked progresses: money earned, packages delivered, 
 	/// and number of objects used.
 	/// </summary>	
@@ -40,28 +49,6 @@ public class LevelController : MonoBehaviour {
 	/// The current amount of bought objects on the level, compared against maxObjectsUsedFor1Star.
 	/// </summary>
 	public int currentObjectCount;
-
-	//pause/play
-	/// <summary>
-	/// The bool to keep track of whether or not the level is paused.
-	/// </summary>
-	public bool isPaused = true;
-	/// <summary>
-	/// The paused game speed when the level starts and when the pause button is hit.
-	/// </summary>
-	public float pauseGameSpeed = 0.0f;
-	/// <summary>
-	/// The regular game speed when the play button is hit.
-	/// </summary>
-	public float regularGameSpeed = 1.0f;
-	/// <summary>
-	/// The fast game speed when the fast play button is hit.
-	/// </summary>
-	public float fastGameSpeed = 2.0f;
-	/// <summary>
-	/// The super fast game speed when the super fast button is hit.
-	/// </summary>
-	public float superGameSpeed = 3.0f;
 
 	//money
 	/// <summary>
@@ -99,16 +86,36 @@ public class LevelController : MonoBehaviour {
 	/// The cost to buy one magnet.
 	/// </summary>
 	public int magnetCost = 300;
-
 	//packages
 	/// <summary>
 	/// The amount of money a regular package cost.
 	/// </summary>
 	public float packageWorth = 100.0f;
 	/// <summary>
+	/// The paused game speed when the level starts and when the pause button is hit.
+	/// </summary>
+	public float pauseGameSpeed = 0.0f;
+	/// <summary>
+	/// The regular game speed when the play button is hit.
+	/// </summary>
+	public float regularGameSpeed = 1.0f;
+	/// <summary>
+	/// The fast game speed when the fast play button is hit.
+	/// </summary>
+	public float fastGameSpeed = 2.0f;
+	/// <summary>
+	/// The super fast game speed when the super fast button is hit.
+	/// </summary>
+	public float superGameSpeed = 3.0f;
+	//pause/play
+	/// <summary>
+	/// The bool to keep track of whether or not the level is paused.
+	/// </summary>
+	public bool isPaused = true;
+	/// <summary>
 	/// A reference to all of the objects bought by the player. Used to recreate a saved level.
 	/// </summary>
-	public List<GameObject> allBuyableObjects;
+	public List<GameObject> allBoughtObjects;
 	/// <summary>
 	/// All packages that will spawn for this level.
 	/// </summary>
@@ -120,7 +127,11 @@ public class LevelController : MonoBehaviour {
 	/// <summary>
 	/// The number of packages left to spawn before its the end of the level.
 	/// </summary>
-	public int numPackagesLeft;
+	private int numPackagesLeft;
+	public int NumPackagesLeft{
+		get{ return numPackagesLeft; }
+		set{ numPackagesLeft = value; }
+	}
 	/// <summary>
 	/// The time in seconds between packages spawning
 	/// </summary>
@@ -128,7 +139,11 @@ public class LevelController : MonoBehaviour {
 	/// <summary>
 	/// The time that the game has been played, used for spawning packages on time
 	/// </summary>
-	public float timeCounter;
+	private float timeCounter;
+	public float TimeCounter{
+		get{ return timeCounter; }
+		set{ timeCounter = value; }
+	}
 	/// <summary>
 	/// True if the packages for this level should be randomly generated, else false for manual selection of packages.
 	/// </summary>
@@ -146,22 +161,29 @@ public class LevelController : MonoBehaviour {
 	/// <summary>
 	/// The count of packages successfully delivered.
 	/// </summary>
-	public int successfulPackages;
+	private int successfulPackages;
+	public int SuccessfulPackages{
+		get{ return successfulPackages; }
+		set{ successfulPackages = value; }
+	}
 	/// <summary>
 	/// The count of packages that were not successfully delivered (destroyed or dropped into the wrong truck)
 	/// </summary>
-	public int failurePackages;
+	private int failurePackages;
+	public int FailurePackages{
+		get{ return failurePackages; }
+		set{ failurePackages = value; }
+	}
 
 	//object panel
 	/// <summary>
 	/// The current object selected, this object can then be modified by the object panel.
 	/// </summary>
-	public GameObject selectedObject;
+	public GameObject selectedObject = null;
 	/// <summary>
 	/// True if the object panel should be active and showing, else false to hide it.
 	/// </summary>
 	public bool isObjectPanelActive = false;
-
 	//inventroy panel
 	/// <summary>
 	/// True if the inventory panel should be active, else false to hide it.
@@ -177,6 +199,20 @@ public class LevelController : MonoBehaviour {
 	//called before any start methods
 	void Awake () {
 		instance = this;
+	}
+
+	void Start(){
+		numPackagesLeft = allPackages.Count;
+	}
+
+	public void AutoGenerate(){
+		if (autoPickPackages) {
+			for (int z = 0; z < allPackages.Count; z++) {
+				//pick a random package from all the possible packages on the level
+				int random = UnityEngine.Random.Range (0, packageTypes.Count);
+				allPackages [z] = packageTypes [random];
+			}
+		}
 	}
 
 	//saves data out to a binary file

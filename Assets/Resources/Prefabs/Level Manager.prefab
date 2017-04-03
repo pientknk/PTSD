@@ -53,16 +53,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
   theLevelObjects: {fileID: 0}
+  levelCanvas: {fileID: 0}
+  objectPanel: {fileID: 0}
   starsEarned: 0
   moneyFor1Star: 1500
   packagesFor1Star: 25
   maxObjectsUsedFor1Star: 15
   currentObjectCount: 0
-  isPaused: 1
-  pauseGameSpeed: 0
-  regularGameSpeed: 1
-  fastGameSpeed: 2
-  superGameSpeed: 3
   startingMoney: 4000
   currentMoney: 0
   conveyorCost: 500
@@ -71,52 +68,54 @@ MonoBehaviour:
   fanCost: 300
   glueCost: 350
   magnetCost: 300
+  packageWorth: 100
+  pauseGameSpeed: 0
+  regularGameSpeed: 1
+  fastGameSpeed: 2
+  superGameSpeed: 3
+  isPaused: 1
   allBuyableObjects: []
   allPackages:
-  - {fileID: 1532709407171550, guid: 3f3a6a9ac7e5344c6a2b6f0935a6439e, type: 2}
-  - {fileID: 1676677734844086, guid: a778bde2994d54f469c9c374a521ceee, type: 2}
-  - {fileID: 1408981469626824, guid: e6ad98e04b6f04693b2ea73a25361c8c, type: 2}
-  - {fileID: 1760707812902458, guid: 614c5f5deb3dc4f1cacd349b8fca5d5b, type: 2}
-  - {fileID: 1532709407171550, guid: 3f3a6a9ac7e5344c6a2b6f0935a6439e, type: 2}
-  - {fileID: 1760707812902458, guid: 614c5f5deb3dc4f1cacd349b8fca5d5b, type: 2}
-  - {fileID: 1408981469626824, guid: e6ad98e04b6f04693b2ea73a25361c8c, type: 2}
-  - {fileID: 1676677734844086, guid: a778bde2994d54f469c9c374a521ceee, type: 2}
-  - {fileID: 1760707812902458, guid: 614c5f5deb3dc4f1cacd349b8fca5d5b, type: 2}
-  - {fileID: 1532709407171550, guid: 3f3a6a9ac7e5344c6a2b6f0935a6439e, type: 2}
-  - {fileID: 1676677734844086, guid: a778bde2994d54f469c9c374a521ceee, type: 2}
-  - {fileID: 1408981469626824, guid: e6ad98e04b6f04693b2ea73a25361c8c, type: 2}
-  - {fileID: 1408981469626824, guid: e6ad98e04b6f04693b2ea73a25361c8c, type: 2}
-  - {fileID: 1676677734844086, guid: a778bde2994d54f469c9c374a521ceee, type: 2}
-  - {fileID: 1760707812902458, guid: 614c5f5deb3dc4f1cacd349b8fca5d5b, type: 2}
-  - {fileID: 1676677734844086, guid: a778bde2994d54f469c9c374a521ceee, type: 2}
-  - {fileID: 1760707812902458, guid: 614c5f5deb3dc4f1cacd349b8fca5d5b, type: 2}
-  - {fileID: 1532709407171550, guid: 3f3a6a9ac7e5344c6a2b6f0935a6439e, type: 2}
-  - {fileID: 1532709407171550, guid: 3f3a6a9ac7e5344c6a2b6f0935a6439e, type: 2}
-  - {fileID: 1676677734844086, guid: a778bde2994d54f469c9c374a521ceee, type: 2}
-  - {fileID: 1760707812902458, guid: 614c5f5deb3dc4f1cacd349b8fca5d5b, type: 2}
-  - {fileID: 1408981469626824, guid: e6ad98e04b6f04693b2ea73a25361c8c, type: 2}
-  - {fileID: 1760707812902458, guid: 614c5f5deb3dc4f1cacd349b8fca5d5b, type: 2}
-  - {fileID: 1408981469626824, guid: e6ad98e04b6f04693b2ea73a25361c8c, type: 2}
-  - {fileID: 1532709407171550, guid: 3f3a6a9ac7e5344c6a2b6f0935a6439e, type: 2}
-  - {fileID: 1760707812902458, guid: 614c5f5deb3dc4f1cacd349b8fca5d5b, type: 2}
-  - {fileID: 1532709407171550, guid: 3f3a6a9ac7e5344c6a2b6f0935a6439e, type: 2}
-  - {fileID: 1760707812902458, guid: 614c5f5deb3dc4f1cacd349b8fca5d5b, type: 2}
-  - {fileID: 1408981469626824, guid: e6ad98e04b6f04693b2ea73a25361c8c, type: 2}
-  - {fileID: 1676677734844086, guid: a778bde2994d54f469c9c374a521ceee, type: 2}
+  - {fileID: 1062990845778250, guid: c66f67b6a181948edab26ef1ace326b6, type: 2}
+  - {fileID: 1990624977569622, guid: 6c991d1005b994bb0aaa95f8814f8a34, type: 2}
+  - {fileID: 1282100170459668, guid: 1053e2a8522374288bb426e0c1c9c09c, type: 2}
+  - {fileID: 1145781593532140, guid: 2c3990cafdfc2474e897c1575df1d197, type: 2}
+  - {fileID: 1282100170459668, guid: 1053e2a8522374288bb426e0c1c9c09c, type: 2}
+  - {fileID: 1990624977569622, guid: 6c991d1005b994bb0aaa95f8814f8a34, type: 2}
+  - {fileID: 1145781593532140, guid: 2c3990cafdfc2474e897c1575df1d197, type: 2}
+  - {fileID: 1062990845778250, guid: c66f67b6a181948edab26ef1ace326b6, type: 2}
+  - {fileID: 1282100170459668, guid: 1053e2a8522374288bb426e0c1c9c09c, type: 2}
+  - {fileID: 1990624977569622, guid: 6c991d1005b994bb0aaa95f8814f8a34, type: 2}
+  - {fileID: 1145781593532140, guid: 2c3990cafdfc2474e897c1575df1d197, type: 2}
+  - {fileID: 1990624977569622, guid: 6c991d1005b994bb0aaa95f8814f8a34, type: 2}
+  - {fileID: 1145781593532140, guid: 2c3990cafdfc2474e897c1575df1d197, type: 2}
+  - {fileID: 1062990845778250, guid: c66f67b6a181948edab26ef1ace326b6, type: 2}
+  - {fileID: 1990624977569622, guid: 6c991d1005b994bb0aaa95f8814f8a34, type: 2}
+  - {fileID: 1282100170459668, guid: 1053e2a8522374288bb426e0c1c9c09c, type: 2}
+  - {fileID: 1145781593532140, guid: 2c3990cafdfc2474e897c1575df1d197, type: 2}
+  - {fileID: 1990624977569622, guid: 6c991d1005b994bb0aaa95f8814f8a34, type: 2}
+  - {fileID: 1062990845778250, guid: c66f67b6a181948edab26ef1ace326b6, type: 2}
+  - {fileID: 1990624977569622, guid: 6c991d1005b994bb0aaa95f8814f8a34, type: 2}
+  - {fileID: 1145781593532140, guid: 2c3990cafdfc2474e897c1575df1d197, type: 2}
+  - {fileID: 1282100170459668, guid: 1053e2a8522374288bb426e0c1c9c09c, type: 2}
+  - {fileID: 1062990845778250, guid: c66f67b6a181948edab26ef1ace326b6, type: 2}
+  - {fileID: 1990624977569622, guid: 6c991d1005b994bb0aaa95f8814f8a34, type: 2}
+  - {fileID: 1062990845778250, guid: c66f67b6a181948edab26ef1ace326b6, type: 2}
+  - {fileID: 1145781593532140, guid: 2c3990cafdfc2474e897c1575df1d197, type: 2}
+  - {fileID: 1282100170459668, guid: 1053e2a8522374288bb426e0c1c9c09c, type: 2}
+  - {fileID: 1145781593532140, guid: 2c3990cafdfc2474e897c1575df1d197, type: 2}
+  - {fileID: 1062990845778250, guid: c66f67b6a181948edab26ef1ace326b6, type: 2}
+  - {fileID: 1990624977569622, guid: 6c991d1005b994bb0aaa95f8814f8a34, type: 2}
   packageTypes:
-  - {fileID: 1532709407171550, guid: 3f3a6a9ac7e5344c6a2b6f0935a6439e, type: 2}
-  - {fileID: 1676677734844086, guid: a778bde2994d54f469c9c374a521ceee, type: 2}
-  - {fileID: 1408981469626824, guid: e6ad98e04b6f04693b2ea73a25361c8c, type: 2}
-  - {fileID: 1760707812902458, guid: 614c5f5deb3dc4f1cacd349b8fca5d5b, type: 2}
-  numPackagesLeft: 30
+  - {fileID: 1062990845778250, guid: c66f67b6a181948edab26ef1ace326b6, type: 2}
+  - {fileID: 1145781593532140, guid: 2c3990cafdfc2474e897c1575df1d197, type: 2}
+  - {fileID: 1990624977569622, guid: 6c991d1005b994bb0aaa95f8814f8a34, type: 2}
+  - {fileID: 1282100170459668, guid: 1053e2a8522374288bb426e0c1c9c09c, type: 2}
   spawnTime: 3
-  timeCounter: 0
-  autoPickPackages: 0
+  autoPickPackages: 1
   spawnPoints:
   - {fileID: 0}
   infiniteCreate: 0
-  successfulPackages: 0
-  failurePackages: 0
   selectedObject: {fileID: 0}
   isObjectPanelActive: 0
   isShopPanelActive: 0

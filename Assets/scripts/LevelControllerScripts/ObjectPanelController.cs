@@ -6,15 +6,34 @@ public class ObjectPanelController : MonoBehaviour {
 
 	private Button[] allButtons;
 	private GameObject selectedObject;
+	public Sprite switchRight;
+	public Sprite switchLeft;
 	// Use this for initialization
 	void Start () {
-		allButtons = transform.GetChild (0).GetComponentsInChildren<Button> ();
+		allButtons = transform.GetComponentsInChildren<Button> ();
 		selectedObject = LevelController.instance.selectedObject;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		UpdateButtons ();
+		if (LevelController.instance.selectedObject != null) {
+			if (LevelController.instance.isPaused) {
+				if (LevelController.instance.selectedObject.tag == "Conveyor"
+				   || LevelController.instance.selectedObject.tag == "Fan") {
+					allButtons [6].interactable = true;
+				} else {
+					allButtons [6].interactable = false;
+				}
+				if (getSelectedObjectCost () > LevelController.instance.startingMoney) {
+					allButtons [7].interactable = false;
+				}
+				if (getSelectedObjectCost () > LevelController.instance.startingMoney) {
+					allButtons [0].interactable = false;
+				}
+			}
+		}
+			
 		if (selectedObject != LevelController.instance.selectedObject) {
 			selectedObject = LevelController.instance.selectedObject;
 			SetUpButtonActions ();
@@ -34,53 +53,41 @@ public class ObjectPanelController : MonoBehaviour {
 	}
 
 	private void Sell(GameObject theObject){
-			GameObject selectedObject = LevelController.instance.selectedObject;
-			string tag = selectedObject.tag;
-			int objectCost;
-			switch (tag) {
-			case "Conveyor":
-				objectCost = LevelController.instance.conveyorCost;
-				break;
-			case "Trampoline":
-				objectCost = LevelController.instance.trampolineCost;
-				break;
-			case "Slide":
-				objectCost = LevelController.instance.slideCost;
-				break;
-			case "Fan":
-				objectCost = LevelController.instance.fanCost;
-				break;
-			case "Glue":
-				objectCost = LevelController.instance.glueCost;
-				break;
-			case "Magnet":
-				objectCost = LevelController.instance.magnetCost;
-				break;
-			default:
-				objectCost = 0;
-				break;
-			}
-			Destroy (theObject);
-			LevelController.instance.selectedObject = null;
-
-			LevelController.instance.startingMoney += objectCost / 2;
-			UpdateButtons ();
-
+		LevelController.instance.startingMoney += getSelectedObjectCost() / 2;
+		Destroy (theObject);
+		LevelController.instance.selectedObject = null;
+		UpdateButtons ();
 	}
 
 	private void HitOrange(GameObject theObject){
 		theObject.layer = 9;
-		theObject.transform.GetComponentInChildren<Image> ().color = new Color (1.0f, 0.6f, 0.0f, 0.9f);
+		foreach (Transform child in theObject.transform) {
+			child.gameObject.layer = 9;
+		}
+		foreach (SpriteRenderer sprite in theObject.transform.GetComponentsInChildren<SpriteRenderer> ()) {
+			sprite.color = new Color (1.0f, 0.6f, 0.0f, 0.5f);
+		}
 	}
 
 	private void HitBlue(GameObject theObject){
 		theObject.layer = 8;
-		theObject.transform.GetComponentInChildren<Image> ().color = Color.blue;
+		foreach (Transform child in theObject.transform) {
+			child.gameObject.layer = 8;
+		}
+		foreach (SpriteRenderer sprite in theObject.transform.GetComponentsInChildren<SpriteRenderer> ()) {
+			sprite.color = new Color(0.0f, 0.0f, 1.0f, 0.5f);
+		}
 	}
 
 	private void HitBoth(GameObject theObject){
 		theObject.layer = 0;
-		theObject.transform.GetComponentInChildren<Image> ().color = Color.white;
+		foreach (Transform child in theObject.transform) {
+			child.gameObject.layer = 0;
+		}
+		foreach (SpriteRenderer sprite in theObject.transform.GetComponentsInChildren<SpriteRenderer> ()) {
+			sprite.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+		}
+
 	}
 
 	private void RotateLeft(GameObject theObject){
@@ -96,11 +103,24 @@ public class ObjectPanelController : MonoBehaviour {
 	}
 
 	private void Switch(GameObject theObject){
-
+		SurfaceEffector2D surface = theObject.GetComponent<SurfaceEffector2D> ();
+		if (surface != null) {
+			surface.speed *= -1;
+			if (surface.speed < 0) {
+				allButtons [6].GetComponentsInChildren<Image>()[1].sprite = switchLeft;
+			} else {
+				allButtons [6].GetComponentsInChildren<Image>()[1].sprite = switchRight;
+			}
+		}
 	}
 
 	private void Duplicate(GameObject theObject){
-
+		int cost = getSelectedObjectCost ();
+		LevelController.instance.startingMoney -= cost;
+		GameObject clone = Instantiate (theObject);
+		Vector3 pos = new Vector3 (theObject.transform.position.x + 20.0f, theObject.transform.position.y + 20.0f);
+		clone.transform.position = pos;
+		LevelController.instance.selectedObject = clone;
 	}
 
 	private void SetUpButtonActions(){
@@ -131,5 +151,42 @@ public class ObjectPanelController : MonoBehaviour {
 		allButtons[7].onClick.AddListener (delegate {
 			Duplicate(selectedObject);
 		});
+	}
+
+	private int getSelectedObjectCost(){
+		
+		GameObject selectedObject = LevelController.instance.selectedObject;
+		if (selectedObject != null) {
+			string tag = selectedObject.tag;
+			int objectCost;
+			switch (tag) {
+			case "Conveyor":
+				objectCost = LevelController.instance.conveyorCost;
+				break;
+			case "Trampoline":
+				objectCost = LevelController.instance.trampolineCost;
+				break;
+			case "Slide":
+				objectCost = LevelController.instance.slideCost;
+				break;
+			case "Fan":
+				objectCost = LevelController.instance.fanCost;
+				break;
+			case "Glue":
+				objectCost = LevelController.instance.glueCost;
+				break;
+			case "Magnet":
+				objectCost = LevelController.instance.magnetCost;
+				break;
+			default:
+				objectCost = 0;
+				break;
+			}
+			return objectCost;
+		} else {
+			print ("Error: no selected object...objectpanelcontroller.cs");
+			return 0;
+		}
+
 	}
 }

@@ -10,29 +10,29 @@ public class PackageDelivered : MonoBehaviour {
 	/// </summary>
 	/// <param name="col">Col.</param>
 	void OnCollisionEnter2D(Collision2D col){
-		PackageController pc = GetComponent<Collider>().gameObject.GetComponent<PackageController> ();
-		string tag = GetComponent<Collider>().gameObject.tag;
+		PackageController pc = col.gameObject.GetComponent<PackageController> ();
+		string tag = col.gameObject.tag;
 		if (tag == "blue item") {
 			if (scoreBlue) {
-				LevelController.instance.successfulPackages++;
+				LevelController.instance.SuccessfulPackages++;
 				float reducedMoney = pc.RegularHealth * (pc.CurrentHealth / pc.RegularHealth);
 				int intReducedMoney = (int)reducedMoney;
 				LevelController.instance.currentMoney += intReducedMoney;
 				Destroy (col.gameObject);
 			} else {
-				LevelController.instance.failurePackages++;
+				LevelController.instance.FailurePackages++;
 				LevelController.instance.currentMoney -= (int)LevelController.instance.packageWorth / 2;
 				Destroy (col.gameObject);
 			}
 		} else if (tag == "orange item") {
 			if (scoreOrange) {
-				LevelController.instance.successfulPackages++;
+				LevelController.instance.SuccessfulPackages++;
 				float reducedMoney = pc.RegularHealth * (pc.CurrentHealth / pc.RegularHealth);
 				int intReducedMoney = (int)reducedMoney;
 				LevelController.instance.currentMoney += intReducedMoney;
 				Destroy (col.gameObject);
 			} else {
-				LevelController.instance.failurePackages++;
+				LevelController.instance.FailurePackages++;
 				LevelController.instance.currentMoney -= (int)LevelController.instance.packageWorth / 2;
 				Destroy (col.gameObject);
 			}

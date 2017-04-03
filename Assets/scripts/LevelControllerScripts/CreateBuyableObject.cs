@@ -19,6 +19,7 @@ public class CreateBuyableObject : MonoBehaviour {
 		LevelController.instance.selectedObject = clone;
 
 		SubtractAvailableMoney (clone);
+		LevelController.instance.allBoughtObjects.Add (clone);
 	}
 
 	/// <summary>

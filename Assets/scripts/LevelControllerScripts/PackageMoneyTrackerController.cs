@@ -15,8 +15,8 @@ public class PackageMoneyTrackerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		successText.text = "x" + LevelController.instance.successfulPackages;
-		failText.text = "x" + LevelController.instance.failurePackages;
+		successText.text = "x" + LevelController.instance.SuccessfulPackages;
+		failText.text = "x" + LevelController.instance.FailurePackages;
 		moneyText.text = "$" + LevelController.instance.currentMoney;
 	}
 }

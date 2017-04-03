@@ -24,15 +24,13 @@ public class PackageController : MonoBehaviour {
 	public GameObject explosion;
 	//private string objectName;
 
-	private Transform damageIndicator;
+	public Transform damageIndicator;
 	// Use this for initialization
 	void Start () {
 		regularHealth = LevelController.instance.packageWorth;
 		currentHealth = regularHealth;
 		//initialize the floating damage object for this package
 		FloatingTextController.Initialize ();
-		//get the damage indicator so that it can be updated after collisions
-//		damageIndicator = gameObject.transform.GetComponentInParent<Transform>().GetChild(0);
 		//objectName = gameObject.name;
 	}
 
@@ -61,10 +59,7 @@ public class PackageController : MonoBehaviour {
 				TakeDamage (relVelocity);
 			}
 		}
-		//update the damage indicator
-//		Vector3 startingScale = damageIndicator.transform.localScale;
-//		startingScale *= (currentHealth / regularHealth);
-//		damageIndicator.transform.localScale = startingScale;
+
 
 		// once the object has no health it should be destroyed, an explosion occurs, and money is reduced
 		if (currentHealth <= 0) {
@@ -84,6 +79,14 @@ public class PackageController : MonoBehaviour {
 	/// </summary>
 	/// <param name="amount">Amount.</param>
 	private void TakeDamage(float amount){
+		//update the damage indicator
+		if (damageIndicator != null) {
+			Vector3 startingScale = damageIndicator.transform.localScale;
+			startingScale *= (currentHealth / regularHealth);
+			damageIndicator.transform.localScale = startingScale;
+		} else {
+			print ("Damage indicator not set in packagcontroller, you must set it on each package in the inspector.");
+		}
 		FloatingTextController.CreateFloatingText (amount.ToString("F1"), transform.position);
 		currentHealth -= amount;
 	}

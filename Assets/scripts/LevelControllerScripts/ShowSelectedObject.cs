@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class ShowSelectedObject : MonoBehaviour {
 
@@ -8,7 +9,9 @@ public class ShowSelectedObject : MonoBehaviour {
 	void Start () {
 		selectedObject = LevelController.instance.selectedObject;
 		showSelectedIndicator = Instantiate (showSelectedIndicator);
-		showSelectedIndicator.transform.SetParent (LevelController.instance.canvas.transform);
+		showSelectedIndicator.GetComponent<Image> ().color = new Color (1.0f, 1.0f, 1.0f, 0.35f);
+		GameObject levelCanvas = gameObject;
+		showSelectedIndicator.transform.SetParent (levelCanvas.transform);
 	}
 	
 	// Update is called once per frame
@@ -23,10 +26,11 @@ public class ShowSelectedObject : MonoBehaviour {
 			showSelectedIndicator.transform.position = Vector3.MoveTowards (
 				showSelectedIndicator.transform.position, 
 				LevelController.instance.selectedObject.transform.position, 15f);
-		} else {
-			gameObject.SetActive (false);
-			selectedObject = LevelController.instance.selectedObject;
-		}
+		} 
+//		else {
+//			gameObject.SetActive (false);
+//			selectedObject = LevelController.instance.selectedObject;
+//		}
 	}
 
 	/// <summary>
@@ -38,8 +42,13 @@ public class ShowSelectedObject : MonoBehaviour {
 
 		Rect selectedObjectRect = LevelController.instance.selectedObject.GetComponent<RectTransform> ().rect;
 		// add 15% of the selected objects width and height to surround it with the indicator
-		float width = selectedObjectRect.width + (selectedObjectRect.width * .15f);
-		float height = selectedObjectRect.height + (selectedObjectRect.height * .15f);
+		float width = selectedObjectRect.width + (selectedObjectRect.width * .50f);
+		float height = selectedObjectRect.height + (selectedObjectRect.height * .50f);
+		if (height < width) {
+			height = width;
+		} else {
+			width = height;
+		}
 		showSelectedIndicator.GetComponent<RectTransform> ().sizeDelta = new Vector2(width, height);
 	}
 }

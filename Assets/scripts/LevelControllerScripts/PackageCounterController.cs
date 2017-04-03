@@ -11,6 +11,6 @@ public class PackageCounterController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		label.text = "x" + LevelController.instance.numPackagesLeft;
+		label.text = "x" + LevelController.instance.NumPackagesLeft;
 	}
 }
