@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 50534461727539434}
   - component: {fileID: 114982617042149850}
   - component: {fileID: 58316083133463358}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Blue Circle
   m_TagString: blue item
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4950989596679798}
   - component: {fileID: 212336538739761538}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Damage Indicator fg
   m_TagString: Untagged
   m_Icon: {fileID: 0}

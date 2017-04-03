@@ -29,6 +29,11 @@ public class LevelController : MonoBehaviour {
 	/// </summary>
 	public GameObject objectPanel;
 	/// <summary>
+	/// The summary canvas is the canvas that overlays the camera with a summary of how the player did for this level,
+	/// and should only be set active after all packages have been destroyed.
+	/// </summary>
+	public GameObject summaryCanvas;
+	/// <summary>
 	/// The stars earned for this level, determined by the 3 tracked progresses: money earned, packages delivered, 
 	/// and number of objects used.
 	/// </summary>	

@@ -8,7 +8,7 @@ public class CreateBuyableObject : MonoBehaviour {
 	/// <param name="prefab">Parameter to pass.</param>
 	public void CreateUsableObject(GameObject prefab){
 		GameObject clone = Instantiate (prefab);
-
+		LevelController.instance.currentObjectCount++;
 		//make it a child of TheLevelObjects and center it to where the camera is
 		clone.transform.SetParent (LevelController.instance.theLevelObjects.transform, false);
 		Camera cam = Camera.allCameras[0];

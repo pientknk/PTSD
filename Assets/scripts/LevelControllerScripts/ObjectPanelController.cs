@@ -16,11 +16,9 @@ public class ObjectPanelController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		UpdateButtons ();
 		if (LevelController.instance.selectedObject != null) {
 			if (LevelController.instance.isPaused) {
-				if (LevelController.instance.selectedObject.tag == "Conveyor"
-				   || LevelController.instance.selectedObject.tag == "Fan") {
+				if (LevelController.instance.selectedObject.tag == "Conveyor") {
 					allButtons [6].interactable = true;
 				} else {
 					allButtons [6].interactable = false;
@@ -36,8 +34,9 @@ public class ObjectPanelController : MonoBehaviour {
 			
 		if (selectedObject != LevelController.instance.selectedObject) {
 			selectedObject = LevelController.instance.selectedObject;
-			SetUpButtonActions ();
 		}
+		SetUpButtonActions ();
+		UpdateButtons ();
 	}
 
 	void UpdateButtons(){

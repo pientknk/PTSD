@@ -27,16 +27,18 @@ public class ShowSelectedObject : MonoBehaviour {
 				showSelectedIndicator.transform.position, 
 				LevelController.instance.selectedObject.transform.position, 15f);
 		} 
-//		else {
-//			gameObject.SetActive (false);
-//			selectedObject = LevelController.instance.selectedObject;
-//		}
+		//if selected object is null, hide the indicator
+		else {
+			showSelectedIndicator.SetActive (false);
+			selectedObject = LevelController.instance.selectedObject;
+		}
 	}
 
 	/// <summary>
 	/// Updates the selected object indicator, should be called anytime selected object changes.
 	/// </summary>
 	public void UpdateUI(){
+		showSelectedIndicator.SetActive (true);
 		showSelectedIndicator.transform.position = LevelController.instance.selectedObject.transform.position;
 		showSelectedIndicator.transform.localScale = LevelController.instance.selectedObject.transform.localScale;
 

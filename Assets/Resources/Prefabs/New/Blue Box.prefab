@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 50313228567656246}
   - component: {fileID: 61145565447819710}
   - component: {fileID: 114403291805105110}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Blue Box
   m_TagString: blue item
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4466544685099772}
   - component: {fileID: 212898965268074620}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Damage Indicator fg
   m_TagString: Untagged
   m_Icon: {fileID: 0}

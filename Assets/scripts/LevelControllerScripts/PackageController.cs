@@ -41,7 +41,7 @@ public class PackageController : MonoBehaviour {
 	/// <param name="col">Col.</param>
 	void OnCollisionEnter2D(Collision2D col) {
 		if (col.gameObject.tag == "scaffold") {
-			Destroy (gameObject);
+			TakeDamage (currentHealth);
 		} else {
 			// calcuates the force of impact on the package based on its velocity
 			float relVelocity = (float)(Mathf.Abs (col.relativeVelocity.y) + Mathf.Abs (col.relativeVelocity.x));

@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224716455502146818}
   - component: {fileID: 212294022274497096}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Circle Image
   m_TagString: blue item
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 50796856116525402}
   - component: {fileID: 114333459448907592}
   - component: {fileID: 58925999345825438}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Orange Circle
   m_TagString: blue item
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4270113523463868}
   - component: {fileID: 212559644415334776}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Damage Indicator fg
   m_TagString: Untagged
   m_Icon: {fileID: 0}

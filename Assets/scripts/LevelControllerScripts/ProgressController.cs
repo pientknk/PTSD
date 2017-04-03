@@ -112,7 +112,7 @@ public class ProgressController : MonoBehaviour {
 		int maxObjects = LevelController.instance.maxObjectsUsedFor1Star;
 		if (curObjectCount > maxObjects) {
 			objectBarImage.fillAmount = 0;
-			objectCountLabel.text = "0 Item(s) Left";
+			objectCountLabel.text = (maxObjects - curObjectCount) + " Item(s) Left";
 			objectStatus.sprite = redX;
 			objectStatus.color = redXColor;
 		} else {
