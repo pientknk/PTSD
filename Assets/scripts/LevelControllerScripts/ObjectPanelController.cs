@@ -53,8 +53,10 @@ public class ObjectPanelController : MonoBehaviour {
 
 	private void Sell(GameObject theObject){
 		LevelController.instance.startingMoney += getSelectedObjectCost() / 2;
+		LevelController.instance.allBoughtObjects.Remove (theObject);
 		Destroy (theObject);
 		LevelController.instance.selectedObject = null;
+		LevelController.instance.currentObjectCount--;
 		UpdateButtons ();
 	}
 
@@ -120,6 +122,8 @@ public class ObjectPanelController : MonoBehaviour {
 		Vector3 pos = new Vector3 (theObject.transform.position.x + 20.0f, theObject.transform.position.y + 20.0f);
 		clone.transform.position = pos;
 		LevelController.instance.selectedObject = clone;
+		LevelController.instance.currentObjectCount++;
+		LevelController.instance.allBoughtObjects.Add (clone);
 	}
 
 	private void SetUpButtonActions(){

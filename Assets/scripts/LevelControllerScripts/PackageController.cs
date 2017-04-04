@@ -31,7 +31,6 @@ public class PackageController : MonoBehaviour {
 		currentHealth = regularHealth;
 		//initialize the floating damage object for this package
 		FloatingTextController.Initialize ();
-		//objectName = gameObject.name;
 	}
 
 	/// <summary>
@@ -69,8 +68,9 @@ public class PackageController : MonoBehaviour {
 			Destroy (gameObject);
 			AnimatorClipInfo[] clipInfo = explosion.GetComponentInChildren<Animator> ().GetCurrentAnimatorClipInfo (0);
 			Destroy (explosion, clipInfo [0].clip.length);
-
+			LevelController.instance.PackagesDestroyed++;
 			LevelController.instance.currentMoney -= 50;
+			checkPackageDestructionCount ();
 		}
 	}
 
@@ -89,6 +89,14 @@ public class PackageController : MonoBehaviour {
 		}
 		FloatingTextController.CreateFloatingText (amount.ToString("F1"), transform.position);
 		currentHealth -= amount;
+	}
+
+	private void checkPackageDestructionCount(){
+		if (LevelController.instance.PackagesDestroyed == LevelController.instance.allPackages.Count) {
+			print ("Done with level");
+			LevelController.instance.summaryCanvas.SetActive (true);
+			LevelController.instance.canvas.GetComponent<CanvasGroup> ().interactable = false;
+		}
 	}
 
 }

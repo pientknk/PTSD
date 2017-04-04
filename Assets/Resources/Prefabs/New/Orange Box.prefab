@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212944342138590402}
   m_Layer: 11
   m_Name: Box Image
-  m_TagString: blue item
+  m_TagString: orange item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 212142897657059422}
   m_Layer: 11
   m_Name: Damage Indicator fg
-  m_TagString: Untagged
+  m_TagString: orange item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 114937935416289864}
   m_Layer: 11
   m_Name: Orange Box
-  m_TagString: blue item
+  m_TagString: orange item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

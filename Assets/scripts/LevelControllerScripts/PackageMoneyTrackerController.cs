@@ -19,7 +19,6 @@ public class PackageMoneyTrackerController : MonoBehaviour {
 	void Update () {
 		int successCount = LevelController.instance.SuccessfulPackages;
 		int failureCount = LevelController.instance.FailurePackages;
-		packagesDestroyed = successCount + failureCount;
 		successText.text = "x" + successCount;
 		failText.text = "x" + failureCount;
 		if (money != LevelController.instance.currentMoney) {
@@ -28,12 +27,6 @@ public class PackageMoneyTrackerController : MonoBehaviour {
 			gameObject.AddComponent<TextChangeController> ().Create (moneyLabel, initial, money);
 		} else {
 			moneyLabel.text = money.ToString ();
-		}
-
-		if (packagesDestroyed == LevelController.instance.allPackages.Count) {
-			print ("Done with level");
-			LevelController.instance.summaryCanvas.SetActive (true);
-			LevelController.instance.canvas.GetComponent<CanvasGroup> ().interactable = false;
 		}
 	}
 }

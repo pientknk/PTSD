@@ -8,6 +8,7 @@ public class TextChangeController : MonoBehaviour {
 	private int finalValue;
 	private float duration = 150.0f;
 	private float timeElapsed;
+	private bool addedDif = false;
 
 	public void Create(Text textLabel, int initial, int final){
 		label = textLabel;
@@ -23,6 +24,12 @@ public class TextChangeController : MonoBehaviour {
 			label.text = finalValue.ToString ();
 			Destroy (this);
 		} else {
+			if (!addedDif) {
+				float valDif = Mathf.Abs (initialValue - finalValue);
+				duration += valDif;
+				addedDif = true;
+			}
+			//print ("Valdif: " + valDif + " time/durartion: " + (timeElapsed / duration));
 			float value = Mathf.Lerp (initialValue, finalValue, (timeElapsed / duration));
 			label.text = value.ToString ("####");
 		}

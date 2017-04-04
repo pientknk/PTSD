@@ -25,6 +25,7 @@ public class ProgressController : MonoBehaviour {
 	private Color completedColor = Color.green;
 	private Color redXColor = new Color32(110, 110, 110, 255);
 	private Color checkColor = Color.white;
+
 	// Use this for initialization
 	void Start () {
 		// get access to the labels on each progress bar

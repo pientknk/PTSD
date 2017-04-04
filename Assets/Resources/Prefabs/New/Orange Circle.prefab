@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212294022274497096}
   m_Layer: 11
   m_Name: Circle Image
-  m_TagString: blue item
+  m_TagString: orange item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 58925999345825438}
   m_Layer: 11
   m_Name: Orange Circle
-  m_TagString: blue item
+  m_TagString: orange item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 212559644415334776}
   m_Layer: 11
   m_Name: Damage Indicator fg
-  m_TagString: Untagged
+  m_TagString: orange item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -137,6 +137,11 @@ public class LevelController : MonoBehaviour {
 		get{ return numPackagesLeft; }
 		set{ numPackagesLeft = value; }
 	}
+	private int packagesDestroyed;
+	public int PackagesDestroyed{
+		get{ return packagesDestroyed; }
+		set{ packagesDestroyed = value; }
+	}
 	/// <summary>
 	/// The time in seconds between packages spawning
 	/// </summary>
@@ -208,6 +213,10 @@ public class LevelController : MonoBehaviour {
 
 	void Start(){
 		numPackagesLeft = allPackages.Count;
+	}
+
+	void Update(){
+		print (LevelController.instance.PackagesDestroyed);
 	}
 
 	public void AutoGenerate(){
