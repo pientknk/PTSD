@@ -32,8 +32,8 @@ public class ZoomCam : MonoBehaviour {
 				zoomScale.x -= 0.1F;
 				zoomScale.y -= 0.1F;
 
-				newPos.x += (originalPos.x - newPos.x) / 5f;
-				newPos.y += (originalPos.y - newPos.y) / 5f;
+				newPos.x += (originalPos.x - newPos.x) / (zoomScale.y * 5f);
+				newPos.y += (originalPos.y - newPos.y) / (zoomScale.y * 5f);
 			}			
 		} else if (Input.GetAxis ("Mouse ScrollWheel") > 0) {
 
@@ -41,20 +41,22 @@ public class ZoomCam : MonoBehaviour {
 			zoomScale.y += 0.1F;
 
 			//1250 seems to be the required mouse delay to properly zoom in on the mouse position
-			newPos.x -= ((Input.mousePosition.x-1250) - newPos.x) / 10f;
+			newPos.x -= ((Input.mousePosition.x-1250) - newPos.x) / (zoomScale.x * 10f);
 
 			//400 seems to be the Y delay
-			newPos.y -= ((Input.mousePosition.y-400) - newPos.y) / 10.0f;
+			newPos.y -= ((Input.mousePosition.y-400) - newPos.y) / (zoomScale.y * 10.0f);
 		}
 
 		gameObject.GetComponent<RectTransform> ().localScale = zoomScale;
 
-		if (zoomScale.x == 1) {
+		if (zoomScale.x <= 1) {
 			newPos = originalPos;
+			zoomScale.x = 1;
+			zoomScale.y = 1;
 		}
 
 		gameObject.GetComponent<RectTransform> ().position = newPos;
-
+		//print ("Original: " + originalPos + " Zoom: " + zoomScale.x + ", " + zoomScale.y);
 	}
 }
 

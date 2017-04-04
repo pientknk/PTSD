@@ -41,17 +41,19 @@ public class CheckBounds : MonoBehaviour {
 		Vector3 upperPos = camera.WorldToViewportPoint(upperBound.transform.position);
 		Vector3 lowerPos = camera.WorldToViewportPoint(lowerBound.transform.position);
 
+		print ("Right pos: " + rightPos.x + ", Left pos:" + leftPos.x);
+
 		objPos = lvlRect.localPosition;
 
 		if (rightPos.x < -0.065F) {
-			objPos.x += 25;
+			objPos.x += 5;
 			inBounds = false;
 		} else {
 			inBounds = true;
 		}
 
 		if (leftPos.x > -0.95F) {
-			objPos.x -= 25;
+			objPos.x -= 5;
 			inBounds = false;
 		} else {
 			inBounds = true;
@@ -65,11 +67,11 @@ public class CheckBounds : MonoBehaviour {
 		}
 
 		if (lowerPos.y > -0.250F) {
-			print ("On screen: " + lowerPos.y);
+			//print ("On screen: " + lowerPos.y);
 			objPos.y -= 5;
 			inBounds = false;
 		} else {
-			print ("Off screen: " + lowerPos.y);
+			//print ("Off screen: " + lowerPos.y);
 			inBounds = true;
 		}
 
