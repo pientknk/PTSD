@@ -47,6 +47,9 @@ public class CreateBuyableObject : MonoBehaviour {
 		case "Magnet":
 			amount = LevelController.instance.magnetCost;
 			break;
+		case "Funnel":
+			amount = LevelController.instance.funnelCost;
+			break;
 		default:
 			print ("Error in CreateBuyableObject.cs: " + this.tag + " - must have an appropriate tag. e.g. Conveyor");
 			break;

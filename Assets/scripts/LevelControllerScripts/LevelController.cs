@@ -80,6 +80,10 @@ public class LevelController : MonoBehaviour {
 	/// </summary>
 	public int slideCost = 250;
 	/// <summary>
+	/// The cost to buy one funnel.
+	/// </summary>
+	public int funnelCost = 300;
+	/// <summary>
 	/// The cost to buy one fan.
 	/// </summary>
 	public int fanCost = 300;

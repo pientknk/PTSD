@@ -8,6 +8,7 @@ public class ObjectPanelController : MonoBehaviour {
 	private GameObject selectedObject;
 	public Sprite switchRight;
 	public Sprite switchLeft;
+	public Sprite switchDisabled;
 	// Use this for initialization
 	void Start () {
 		allButtons = transform.GetComponentsInChildren<Button> ();
@@ -20,7 +21,16 @@ public class ObjectPanelController : MonoBehaviour {
 			if (LevelController.instance.isPaused) {
 				if (LevelController.instance.selectedObject.tag == "Conveyor") {
 					allButtons [6].interactable = true;
+					SurfaceEffector2D surface = LevelController.instance.selectedObject.GetComponent<SurfaceEffector2D> ();
+					if (surface != null) {
+						if (surface.speed < 0) {
+							allButtons [6].GetComponentsInChildren<Image> () [1].sprite = switchLeft;
+						} else {
+							allButtons [6].GetComponentsInChildren<Image> () [1].sprite = switchRight;
+						}
+					} 
 				} else {
+					allButtons [6].GetComponentsInChildren<Image> () [1].sprite = switchDisabled;
 					allButtons [6].interactable = false;
 				}
 				if (getSelectedObjectCost () > LevelController.instance.startingMoney) {
@@ -108,10 +118,12 @@ public class ObjectPanelController : MonoBehaviour {
 		if (surface != null) {
 			surface.speed *= -1;
 			if (surface.speed < 0) {
-				allButtons [6].GetComponentsInChildren<Image>()[1].sprite = switchLeft;
+				allButtons [6].GetComponentsInChildren<Image> () [1].sprite = switchLeft;
 			} else {
-				allButtons [6].GetComponentsInChildren<Image>()[1].sprite = switchRight;
+				allButtons [6].GetComponentsInChildren<Image> () [1].sprite = switchRight;
 			}
+		} else {
+			allButtons [6].GetComponentsInChildren<Image> () [1].sprite = switchDisabled;
 		}
 	}
 
@@ -121,6 +133,7 @@ public class ObjectPanelController : MonoBehaviour {
 		GameObject clone = Instantiate (theObject);
 		Vector3 pos = new Vector3 (theObject.transform.position.x + 20.0f, theObject.transform.position.y + 20.0f);
 		clone.transform.position = pos;
+		clone.transform.SetParent (LevelController.instance.theLevelObjects.transform);
 		LevelController.instance.selectedObject = clone;
 		LevelController.instance.currentObjectCount++;
 		LevelController.instance.allBoughtObjects.Add (clone);
@@ -180,6 +193,9 @@ public class ObjectPanelController : MonoBehaviour {
 				break;
 			case "Magnet":
 				objectCost = LevelController.instance.magnetCost;
+				break;
+			case "Funnel":
+				objectCost = LevelController.instance.funnelCost;
 				break;
 			default:
 				objectCost = 0;

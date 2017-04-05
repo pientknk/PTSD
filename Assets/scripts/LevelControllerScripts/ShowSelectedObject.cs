@@ -16,21 +16,26 @@ public class ShowSelectedObject : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (LevelController.instance.selectedObject != null) {
-			//only update ui if the selected object has changed
-			if (selectedObject != LevelController.instance.selectedObject) {
-				selectedObject = LevelController.instance.selectedObject;
-				UpdateUI ();
-			}
-			gameObject.SetActive (true);
-			showSelectedIndicator.transform.position = Vector3.MoveTowards (
-				showSelectedIndicator.transform.position, 
-				LevelController.instance.selectedObject.transform.position, 15f);
-		} 
-		//if selected object is null, hide the indicator
-		else {
+		if (!LevelController.instance.isPaused) {
 			showSelectedIndicator.SetActive (false);
-			selectedObject = LevelController.instance.selectedObject;
+		} else {
+			if (LevelController.instance.selectedObject != null) {
+				//only update ui if the selected object has changed
+				if (selectedObject != LevelController.instance.selectedObject) {
+					selectedObject = LevelController.instance.selectedObject;
+					UpdateUI ();
+				}
+				showSelectedIndicator.SetActive (true);
+				gameObject.SetActive (true);
+				showSelectedIndicator.transform.position = Vector3.MoveTowards (
+					showSelectedIndicator.transform.position, 
+					LevelController.instance.selectedObject.transform.position, 15f);
+			} 
+			//if selected object is null, hide the indicator
+			else {
+				showSelectedIndicator.SetActive (false);
+				selectedObject = LevelController.instance.selectedObject;
+			}
 		}
 	}
 
