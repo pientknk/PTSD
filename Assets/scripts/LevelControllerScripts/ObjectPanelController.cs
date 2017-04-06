@@ -17,31 +17,6 @@ public class ObjectPanelController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (LevelController.instance.selectedObject != null) {
-			if (LevelController.instance.isPaused) {
-				if (LevelController.instance.selectedObject.tag == "Conveyor") {
-					allButtons [6].interactable = true;
-					SurfaceEffector2D surface = LevelController.instance.selectedObject.GetComponent<SurfaceEffector2D> ();
-					if (surface != null) {
-						if (surface.speed < 0) {
-							allButtons [6].GetComponentsInChildren<Image> () [1].sprite = switchLeft;
-						} else {
-							allButtons [6].GetComponentsInChildren<Image> () [1].sprite = switchRight;
-						}
-					} 
-				} else {
-					allButtons [6].GetComponentsInChildren<Image> () [1].sprite = switchDisabled;
-					allButtons [6].interactable = false;
-				}
-				if (getSelectedObjectCost () > LevelController.instance.startingMoney) {
-					allButtons [7].interactable = false;
-				}
-				if (getSelectedObjectCost () > LevelController.instance.startingMoney) {
-					allButtons [0].interactable = false;
-				}
-			}
-		}
-			
 		if (selectedObject != LevelController.instance.selectedObject) {
 			selectedObject = LevelController.instance.selectedObject;
 		}
@@ -55,8 +30,36 @@ public class ObjectPanelController : MonoBehaviour {
 				button.interactable = false;
 			}
 		} else {
+			//set all to interactable but then check what the selected object is an update buttons accordingly.
 			foreach (Button button in allButtons) {
 				button.interactable = true;
+			}
+				if (LevelController.instance.isPaused) {
+					if (LevelController.instance.selectedObject.tag == "Conveyor") {
+						allButtons [6].interactable = true;
+						SurfaceEffector2D surface = LevelController.instance.selectedObject.GetComponent<SurfaceEffector2D> ();
+						if (surface != null) {
+							if (surface.speed < 0) {
+								allButtons [6].GetComponentsInChildren<Image> () [1].sprite = switchLeft;
+							} else {
+								allButtons [6].GetComponentsInChildren<Image> () [1].sprite = switchRight;
+							}
+						} 
+					} else {
+						allButtons [6].GetComponentsInChildren<Image> () [1].sprite = switchDisabled;
+						allButtons [6].interactable = false;
+					}
+					if (LevelController.instance.selectedObject.tag == "Funnel") {
+						allButtons [1].interactable = false;
+						allButtons [2].interactable = false;
+						allButtons [3].interactable = false;
+					}
+					if (getSelectedObjectCost () > LevelController.instance.startingMoney) {
+						allButtons [7].interactable = false;
+					}
+					if (getSelectedObjectCost () > LevelController.instance.startingMoney) {
+						allButtons [0].interactable = false;
+					}
 			}
 		}
 	}

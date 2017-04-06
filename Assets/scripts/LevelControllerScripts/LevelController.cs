@@ -218,11 +218,7 @@ public class LevelController : MonoBehaviour {
 	void Start(){
 		numPackagesLeft = allPackages.Count;
 	}
-
-	void Update(){
-		print (LevelController.instance.PackagesDestroyed);
-	}
-
+		
 	public void AutoGenerate(){
 		if (autoPickPackages) {
 			for (int z = 0; z < allPackages.Count; z++) {

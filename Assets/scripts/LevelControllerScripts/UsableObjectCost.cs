@@ -25,6 +25,9 @@ public class UsableObjectCost : MonoBehaviour {
 		case "Magnet":
 			label.text = "Magnet - $" + LevelController.instance.magnetCost;
 			break;
+		case "Funnel":
+			label.text = "Funnel - $" + LevelController.instance.funnelCost;
+			break;
 		default:
 			label.text = "Unknown";
 			print ("Error: " + this.tag + " - must have an appropriate tag. e.g. Conveyor");
