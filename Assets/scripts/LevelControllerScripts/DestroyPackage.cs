@@ -12,10 +12,14 @@ public class DestroyPackage : MonoBehaviour {
 	}
 
 	private void checkPackageDestructionCount(){
-		if (LevelController.instance.PackagesDestroyed == LevelController.instance.allPackages.Count) {
-			print ("Done with level");
-			LevelController.instance.summaryCanvas.SetActive (true);
-			LevelController.instance.canvas.GetComponent<CanvasGroup> ().interactable = false;
+		if (LevelController.instance.summaryCanvas != null) {
+			if (LevelController.instance.PackagesDestroyed == LevelController.instance.allPackages.Count) {
+				print ("Done with level");
+				LevelController.instance.summaryCanvas.SetActive (true);
+				LevelController.instance.canvas.GetComponent<CanvasGroup> ().interactable = false;
+			}
+		} else {
+			print ("Summary canvas is not set");
 		}
 	}
 }

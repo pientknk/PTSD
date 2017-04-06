@@ -20,18 +20,21 @@ public class SummaryController : MonoBehaviour {
 			if (LevelController.instance.SuccessfulPackages >= LevelController.instance.packagesFor1Star) {
 				packageImage.sprite = greenCheck;
 				packageImage.color = Color.white;
+				LevelController.instance.starsEarned++;
 			}
 		} else if (money) {
 			label.text = LevelController.instance.currentMoney.ToString();
 			if (LevelController.instance.currentMoney >= LevelController.instance.moneyFor1Star) {
 				moneyImage.sprite = greenCheck;
 				moneyImage.color = Color.white;
+				LevelController.instance.starsEarned++;
 			}
 		} else if (items) {
 			label.text = LevelController.instance.currentObjectCount.ToString();
 			if (LevelController.instance.currentObjectCount <= LevelController.instance.currentObjectCount) {
 				itemsImage.sprite = greenCheck;
 				itemsImage.color = Color.white;
+				LevelController.instance.starsEarned++;
 			}
 		} else {
 			print ("you must select one of the public bools to true in the summary panel");
