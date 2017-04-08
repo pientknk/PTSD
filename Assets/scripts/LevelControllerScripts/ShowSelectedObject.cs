@@ -16,7 +16,7 @@ public class ShowSelectedObject : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (!LevelController.instance.isPaused) {
+		if (!LevelController.instance.IsPaused) {
 			showSelectedIndicator.SetActive (false);
 		} else {
 			if (LevelController.instance.selectedObject != null) {
@@ -45,8 +45,12 @@ public class ShowSelectedObject : MonoBehaviour {
 	public void UpdateUI(){
 		showSelectedIndicator.SetActive (true);
 		showSelectedIndicator.transform.position = LevelController.instance.selectedObject.transform.position;
-		showSelectedIndicator.transform.localScale = LevelController.instance.selectedObject.transform.localScale;
-
+		Vector3 scale = LevelController.instance.selectedObject.transform.localScale;
+		if (scale.x > scale.y) {
+			showSelectedIndicator.transform.localScale = new Vector3 (scale.x, scale.x, scale.z);
+		} else {
+			showSelectedIndicator.transform.localScale = new Vector3 (scale.y, scale.y, scale.z);
+		}
 		Rect selectedObjectRect = LevelController.instance.selectedObject.GetComponent<RectTransform> ().rect;
 		// add 15% of the selected objects width and height to surround it with the indicator
 		float width = selectedObjectRect.width + (selectedObjectRect.width * .50f);

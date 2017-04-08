@@ -39,7 +39,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4227572341844768}
   - component: {fileID: 61123190903331202}
-  - component: {fileID: 250036567180499710}
+  - component: {fileID: 249660832832945176}
   m_Layer: 0
   m_Name: Wind area
   m_TagString: Fan
@@ -347,22 +347,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0.6, y: 41.2}
   m_SizeDelta: {x: 48.5, y: 49.1}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!250 &250036567180499710
-PointEffector2D:
+--- !u!249 &249660832832945176
+AreaEffector2D:
+  serializedVersion: 2
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1095048507164158}
   m_Enabled: 1
-  m_UseColliderMask: 0
+  m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_ForceMagnitude: 6500
-  m_ForceVariation: 0
-  m_DistanceScale: 2
-  m_ForceSource: 0
+  m_UseGlobalAngle: 0
+  m_ForceAngle: 180
+  m_ForceMagnitude: 7500
+  m_ForceVariation: 50
   m_ForceTarget: 0
-  m_ForceMode: 0
-  m_Drag: 1
-  m_AngularDrag: 1
+  m_Drag: 0.5
+  m_AngularDrag: 0.5

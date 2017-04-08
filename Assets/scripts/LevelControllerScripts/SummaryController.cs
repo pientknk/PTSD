@@ -23,15 +23,15 @@ public class SummaryController : MonoBehaviour {
 				LevelController.instance.starsEarned++;
 			}
 		} else if (money) {
-			label.text = LevelController.instance.currentMoney.ToString();
-			if (LevelController.instance.currentMoney >= LevelController.instance.moneyFor1Star) {
+			label.text = LevelController.instance.CurrentMoney.ToString();
+			if (LevelController.instance.CurrentMoney >= LevelController.instance.moneyFor1Star) {
 				moneyImage.sprite = greenCheck;
 				moneyImage.color = Color.white;
 				LevelController.instance.starsEarned++;
 			}
 		} else if (items) {
-			label.text = LevelController.instance.currentObjectCount.ToString();
-			if (LevelController.instance.currentObjectCount <= LevelController.instance.currentObjectCount) {
+			label.text = LevelController.instance.CurrentObjectCount.ToString();
+			if (LevelController.instance.CurrentObjectCount <= LevelController.instance.CurrentObjectCount) {
 				itemsImage.sprite = greenCheck;
 				itemsImage.color = Color.white;
 				LevelController.instance.starsEarned++;

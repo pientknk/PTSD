@@ -8,25 +8,25 @@ public class UsableObjectCost : MonoBehaviour {
 		Text label = GetComponent<Text> ();
 		switch (this.tag){
 		case "Conveyor":
-			label.text = "Conveyor - $" + LevelController.instance.conveyorCost;
+			label.text = "Conveyor - $" + LevelController.instance.ConveyorCost;
 			break;
 		case "Trampoline":
-			label.text = "Trampoline - $" + LevelController.instance.trampolineCost;
+			label.text = "Trampoline - $" + LevelController.instance.TrampolineCost;
 			break;
 		case "Slide":
-			label.text = "Slide - $" + LevelController.instance.slideCost;
+			label.text = "Slide - $" + LevelController.instance.SlideCost;
 			break;
 		case "Fan":
-			label.text = "Fan - $" + LevelController.instance.fanCost;
+			label.text = "Fan - $" + LevelController.instance.FanCost;
 			break;
 		case "Glue":
-			label.text = "Glue - $" + LevelController.instance.glueCost;
+			label.text = "Glue - $" + LevelController.instance.GlueCost;
 			break;
 		case "Magnet":
-			label.text = "Magnet - $" + LevelController.instance.magnetCost;
+			label.text = "Magnet - $" + LevelController.instance.MagnetCost;
 			break;
 		case "Funnel":
-			label.text = "Funnel - $" + LevelController.instance.funnelCost;
+			label.text = "Funnel - $" + LevelController.instance.FunnelCost;
 			break;
 		default:
 			label.text = "Unknown";

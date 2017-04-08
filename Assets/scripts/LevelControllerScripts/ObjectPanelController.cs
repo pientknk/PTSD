@@ -25,7 +25,7 @@ public class ObjectPanelController : MonoBehaviour {
 	}
 
 	void UpdateButtons(){
-		if (LevelController.instance.selectedObject == null || !LevelController.instance.isPaused) {
+		if (LevelController.instance.selectedObject == null || !LevelController.instance.IsPaused) {
 			foreach (Button button in allButtons) {
 				button.interactable = false;
 			}
@@ -34,7 +34,7 @@ public class ObjectPanelController : MonoBehaviour {
 			foreach (Button button in allButtons) {
 				button.interactable = true;
 			}
-				if (LevelController.instance.isPaused) {
+				if (LevelController.instance.IsPaused) {
 					if (LevelController.instance.selectedObject.tag == "Conveyor") {
 						allButtons [6].interactable = true;
 						SurfaceEffector2D surface = LevelController.instance.selectedObject.GetComponent<SurfaceEffector2D> ();
@@ -69,7 +69,7 @@ public class ObjectPanelController : MonoBehaviour {
 		LevelController.instance.allBoughtObjects.Remove (theObject);
 		Destroy (theObject);
 		LevelController.instance.selectedObject = null;
-		LevelController.instance.currentObjectCount--;
+		LevelController.instance.CurrentObjectCount--;
 		UpdateButtons ();
 	}
 
@@ -138,7 +138,7 @@ public class ObjectPanelController : MonoBehaviour {
 		clone.transform.position = pos;
 		clone.transform.SetParent (LevelController.instance.theLevelObjects.transform);
 		LevelController.instance.selectedObject = clone;
-		LevelController.instance.currentObjectCount++;
+		LevelController.instance.CurrentObjectCount++;
 		LevelController.instance.allBoughtObjects.Add (clone);
 	}
 
@@ -180,25 +180,25 @@ public class ObjectPanelController : MonoBehaviour {
 			int objectCost;
 			switch (tag) {
 			case "Conveyor":
-				objectCost = LevelController.instance.conveyorCost;
+				objectCost = LevelController.instance.ConveyorCost;
 				break;
 			case "Trampoline":
-				objectCost = LevelController.instance.trampolineCost;
+				objectCost = LevelController.instance.TrampolineCost;
 				break;
 			case "Slide":
-				objectCost = LevelController.instance.slideCost;
+				objectCost = LevelController.instance.SlideCost;
 				break;
 			case "Fan":
-				objectCost = LevelController.instance.fanCost;
+				objectCost = LevelController.instance.FanCost;
 				break;
 			case "Glue":
-				objectCost = LevelController.instance.glueCost;
+				objectCost = LevelController.instance.GlueCost;
 				break;
 			case "Magnet":
-				objectCost = LevelController.instance.magnetCost;
+				objectCost = LevelController.instance.MagnetCost;
 				break;
 			case "Funnel":
-				objectCost = LevelController.instance.funnelCost;
+				objectCost = LevelController.instance.FunnelCost;
 				break;
 			default:
 				objectCost = 0;

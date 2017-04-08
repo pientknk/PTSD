@@ -3,12 +3,16 @@
 public class DestroyPackage : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D col){
-		LevelController.instance.FailurePackages++;
-		LevelController.instance.currentMoney -= (int)LevelController.instance.packageWorth / 2;
-		Destroy (col.gameObject);
-		LevelController.instance.PackagesDestroyed++;
-		checkPackageDestructionCount ();
-
+		if (col.gameObject.tag == "blue item" || col.gameObject.tag == "orange item") {
+			LevelController.instance.FailurePackages++;
+			LevelController.instance.CurrentMoney -= (int)LevelController.instance.packageWorth / 2;
+			Destroy (col.gameObject);
+			LevelController.instance.PackagesDestroyed++;
+			checkPackageDestructionCount ();
+		} else {
+			print ("Unknown object colliding with DestroyPackage Script");
+			Destroy (col.gameObject);
+		}
 	}
 
 	private void checkPackageDestructionCount(){

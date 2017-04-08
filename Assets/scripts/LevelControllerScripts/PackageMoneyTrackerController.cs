@@ -12,7 +12,7 @@ public class PackageMoneyTrackerController : MonoBehaviour {
 	void Start () {
 		successText = GetComponentsInChildren<Text> () [0];
 		failText = GetComponentsInChildren<Text> () [1];
-		money = LevelController.instance.currentMoney;
+		money = LevelController.instance.CurrentMoney;
 	}
 	
 	// Update is called once per frame
@@ -21,9 +21,9 @@ public class PackageMoneyTrackerController : MonoBehaviour {
 		int failureCount = LevelController.instance.FailurePackages;
 		successText.text = "x" + successCount;
 		failText.text = "x" + failureCount;
-		if (money != LevelController.instance.currentMoney) {
+		if (money != LevelController.instance.CurrentMoney) {
 			int initial = money;
-			money = LevelController.instance.currentMoney;
+			money = LevelController.instance.CurrentMoney;
 			gameObject.AddComponent<TextChangeController> ().Create (moneyLabel, initial, money);
 		} else {
 			moneyLabel.text = money.ToString ();

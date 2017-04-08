@@ -13,12 +13,12 @@ public class PausePlayController : MonoBehaviour {
 	void Start () {
 		// get the label for the current speed so that it can be updated
 		speedLabel = transform.GetComponentInChildren<Text> ();
-		speedLabel.text = "x" + LevelController.instance.pauseGameSpeed;
+		speedLabel.text = "x" + LevelController.instance.PauseGameSpeed;
 		// get the 2nd child which is the play/pause button
 		playImage = transform.GetChild (1).GetComponent<Image> ().sprite;
 		pausePlayButton = transform.GetChild (1).gameObject;
 		//start the game paused
-		Time.timeScale = LevelController.instance.pauseGameSpeed;
+		Time.timeScale = LevelController.instance.PauseGameSpeed;
 	}
 
 	/// <summary>
@@ -27,22 +27,22 @@ public class PausePlayController : MonoBehaviour {
 	/// <param name="buttonPressed">Button pressed.</param>
 	public void PauseOrPlay(Button buttonPressed){
 		if (buttonPressed.name == "Play Pause Button") {
-			LevelController.instance.isPaused = !LevelController.instance.isPaused;
-			if (LevelController.instance.isPaused) {
+			LevelController.instance.IsPaused = !LevelController.instance.IsPaused;
+			if (LevelController.instance.IsPaused) {
 				buttonPressed.GetComponent<Image> ().sprite = playImage;
-				Time.timeScale = LevelController.instance.pauseGameSpeed;
+				Time.timeScale = LevelController.instance.PauseGameSpeed;
 			} else {
 				buttonPressed.GetComponent<Image> ().sprite = pauseImage;
-				Time.timeScale = LevelController.instance.regularGameSpeed;
+				Time.timeScale = LevelController.instance.RegularGameSpeed;
 			}
 		} else if (buttonPressed.name == "Fast Forward Button") {
-			LevelController.instance.isPaused = false;
+			LevelController.instance.IsPaused = false;
 			pausePlayButton.GetComponent<Image> ().sprite = pauseImage;
-			Time.timeScale = LevelController.instance.fastGameSpeed;
+			Time.timeScale = LevelController.instance.FastGameSpeed;
 		} else {
-			LevelController.instance.isPaused = false;
+			LevelController.instance.IsPaused = false;
 			pausePlayButton.GetComponent<Image> ().sprite = pauseImage;
-			Time.timeScale = LevelController.instance.superGameSpeed;
+			Time.timeScale = LevelController.instance.SuperGameSpeed;
 		}
 		speedLabel.text = "x" + Time.timeScale;
 	}

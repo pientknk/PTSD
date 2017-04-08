@@ -17,6 +17,6 @@ public class LevelMenuController : MonoBehaviour {
 	}
 
     public void RestartCurrentLevel(){
-		Application.LoadLevel (Application.loadedLevelName);
+		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

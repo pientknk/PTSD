@@ -54,7 +54,7 @@ public class ProgressController : MonoBehaviour {
 	/// </summary>
 	private void UpdateMoneyProgress(){
 		string moneyCount;
-		int currentMoney = LevelController.instance.currentMoney;
+		int currentMoney = LevelController.instance.CurrentMoney;
 		int moneyNeeded = LevelController.instance.moneyFor1Star;
 		if (currentMoney < 0) {
 			moneyCount = "0/" + moneyNeeded;
@@ -109,7 +109,7 @@ public class ProgressController : MonoBehaviour {
 	/// Updates the package progress bar and label.
 	/// </summary>
 	private void UpdateObjectProgress(){
-		int curObjectCount = LevelController.instance.currentObjectCount;
+		int curObjectCount = LevelController.instance.CurrentObjectCount;
 		int maxObjects = LevelController.instance.maxObjectsUsedFor1Star;
 		if (curObjectCount > maxObjects) {
 			objectBarImage.fillAmount = 0;
