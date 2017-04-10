@@ -24,8 +24,8 @@ public class UpdateObjectPanelLabel : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (label != null) {
-			objectSelected = ObjectPanelController.Ma.NameOfSelectedObject;
-			label.text = "Selected: " + objectSelected;
+//			objectSelected = ObjectPanelController.Ma.NameOfSelectedObject;
+//			label.text = "Selected: " + objectSelected;
 		}
 	}
 }

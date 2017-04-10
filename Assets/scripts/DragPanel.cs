@@ -11,7 +11,7 @@ public class DragPanel : MonoBehaviour, IPointerDownHandler, IDragHandler {
 
 
 	void Awake () {
-		Canvas canvas = GameObject.FindGameObjectWithTag("Canvas").GetComponent<Canvas>();
+		GameObject canvas = LevelController.instance.canvas;
 		if (canvas != null) {
 			canvasRectTransform = canvas.transform as RectTransform;
 			panelRectTransform = transform.parent as RectTransform;
@@ -28,8 +28,7 @@ public class DragPanel : MonoBehaviour, IPointerDownHandler, IDragHandler {
 			if (panelRectTransform == null)
 				return;
 
-			//Vector2 pointerPostion = ClampToWindow (data);
-			Vector2 pointerPostion = data.position;
+			Vector2 pointerPostion = ClampToWindow (data);
 			Vector2 localPointerPosition;
 			if (RectTransformUtility.ScreenPointToLocalPointInRectangle (
 				canvasRectTransform, pointerPostion, data.pressEventCamera, out localPointerPosition
@@ -37,7 +36,6 @@ public class DragPanel : MonoBehaviour, IPointerDownHandler, IDragHandler {
 				panelRectTransform.localPosition = localPointerPosition - pointerOffset;
 			}
 		} else {
-			if (PausePlay.Instance.Paused) {
 				if (panelRectTransform == null)
 					return;
 
@@ -50,7 +48,6 @@ public class DragPanel : MonoBehaviour, IPointerDownHandler, IDragHandler {
 				)) {
 					panelRectTransform.localPosition = localPointerPosition - pointerOffset;
 				}
-			}
 		}
 
 	}

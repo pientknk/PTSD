@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4816573979424034}
-  - component: {fileID: 114075319908442486}
+  - component: {fileID: 114181809960414324}
   m_Layer: 0
   m_Name: Level Manager
   m_TagString: Untagged
@@ -40,7 +40,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114075319908442486
+--- !u!114 &114181809960414324
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -52,20 +52,71 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
+  theLevelObjects: {fileID: 0}
+  levelCanvas: {fileID: 0}
+  objectPanel: {fileID: 0}
   starsEarned: 0
-  MoneyFor1Star: 0
-  packagesFor1Star: 0
-  maxObjectsUsedFor1Star: 0
-  isPlaying: 0
-  currentEarnedMoney: 0
+  moneyFor1Star: 1500
+  packagesFor1Star: 25
+  maxObjectsUsedFor1Star: 15
+  currentObjectCount: 0
   startingMoney: 4000
+  currentMoney: 0
   conveyorCost: 500
   trampolineCost: 350
   slideCost: 250
   fanCost: 300
-  allPackages: []
-  numPackagesLeft: 0
-  spawnTime: 0
-  autoPickPackages: 0
-  spawnPoints: []
-  isActive: 0
+  glueCost: 350
+  magnetCost: 300
+  packageWorth: 100
+  pauseGameSpeed: 0
+  regularGameSpeed: 1
+  fastGameSpeed: 2
+  superGameSpeed: 3
+  isPaused: 1
+  allBuyableObjects: []
+  allPackages:
+  - {fileID: 1062990845778250, guid: c66f67b6a181948edab26ef1ace326b6, type: 2}
+  - {fileID: 1990624977569622, guid: 6c991d1005b994bb0aaa95f8814f8a34, type: 2}
+  - {fileID: 1282100170459668, guid: 1053e2a8522374288bb426e0c1c9c09c, type: 2}
+  - {fileID: 1145781593532140, guid: 2c3990cafdfc2474e897c1575df1d197, type: 2}
+  - {fileID: 1282100170459668, guid: 1053e2a8522374288bb426e0c1c9c09c, type: 2}
+  - {fileID: 1990624977569622, guid: 6c991d1005b994bb0aaa95f8814f8a34, type: 2}
+  - {fileID: 1145781593532140, guid: 2c3990cafdfc2474e897c1575df1d197, type: 2}
+  - {fileID: 1062990845778250, guid: c66f67b6a181948edab26ef1ace326b6, type: 2}
+  - {fileID: 1282100170459668, guid: 1053e2a8522374288bb426e0c1c9c09c, type: 2}
+  - {fileID: 1990624977569622, guid: 6c991d1005b994bb0aaa95f8814f8a34, type: 2}
+  - {fileID: 1145781593532140, guid: 2c3990cafdfc2474e897c1575df1d197, type: 2}
+  - {fileID: 1990624977569622, guid: 6c991d1005b994bb0aaa95f8814f8a34, type: 2}
+  - {fileID: 1145781593532140, guid: 2c3990cafdfc2474e897c1575df1d197, type: 2}
+  - {fileID: 1062990845778250, guid: c66f67b6a181948edab26ef1ace326b6, type: 2}
+  - {fileID: 1990624977569622, guid: 6c991d1005b994bb0aaa95f8814f8a34, type: 2}
+  - {fileID: 1282100170459668, guid: 1053e2a8522374288bb426e0c1c9c09c, type: 2}
+  - {fileID: 1145781593532140, guid: 2c3990cafdfc2474e897c1575df1d197, type: 2}
+  - {fileID: 1990624977569622, guid: 6c991d1005b994bb0aaa95f8814f8a34, type: 2}
+  - {fileID: 1062990845778250, guid: c66f67b6a181948edab26ef1ace326b6, type: 2}
+  - {fileID: 1990624977569622, guid: 6c991d1005b994bb0aaa95f8814f8a34, type: 2}
+  - {fileID: 1145781593532140, guid: 2c3990cafdfc2474e897c1575df1d197, type: 2}
+  - {fileID: 1282100170459668, guid: 1053e2a8522374288bb426e0c1c9c09c, type: 2}
+  - {fileID: 1062990845778250, guid: c66f67b6a181948edab26ef1ace326b6, type: 2}
+  - {fileID: 1990624977569622, guid: 6c991d1005b994bb0aaa95f8814f8a34, type: 2}
+  - {fileID: 1062990845778250, guid: c66f67b6a181948edab26ef1ace326b6, type: 2}
+  - {fileID: 1145781593532140, guid: 2c3990cafdfc2474e897c1575df1d197, type: 2}
+  - {fileID: 1282100170459668, guid: 1053e2a8522374288bb426e0c1c9c09c, type: 2}
+  - {fileID: 1145781593532140, guid: 2c3990cafdfc2474e897c1575df1d197, type: 2}
+  - {fileID: 1062990845778250, guid: c66f67b6a181948edab26ef1ace326b6, type: 2}
+  - {fileID: 1990624977569622, guid: 6c991d1005b994bb0aaa95f8814f8a34, type: 2}
+  packageTypes:
+  - {fileID: 1062990845778250, guid: c66f67b6a181948edab26ef1ace326b6, type: 2}
+  - {fileID: 1145781593532140, guid: 2c3990cafdfc2474e897c1575df1d197, type: 2}
+  - {fileID: 1990624977569622, guid: 6c991d1005b994bb0aaa95f8814f8a34, type: 2}
+  - {fileID: 1282100170459668, guid: 1053e2a8522374288bb426e0c1c9c09c, type: 2}
+  spawnTime: 3
+  autoPickPackages: 1
+  spawnPoints:
+  - {fileID: 0}
+  infiniteCreate: 0
+  selectedObject: {fileID: 0}
+  isObjectPanelActive: 0
+  isShopPanelActive: 0
+  isMenuPanelActive: 0

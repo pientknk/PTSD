@@ -86,7 +86,7 @@ public class ProgressesController : MonoBehaviour {
 	}
 
 	public void updateObjectCountProgress(){
-		currentNumObjects = LevelController.instance.currentObjectCount;
+		currentNumObjects = LevelController.instance.CurrentObjectCount;
 		maxObjectCount = LevelController.instance.packagesFor1Star;
 	}
 }

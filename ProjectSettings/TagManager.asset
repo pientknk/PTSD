@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Conveyor
   - Canvas
-  - Bank
   - Trampoline
   - Slide
   - Fan
@@ -14,8 +13,6 @@ TagManager:
   - orange item
   - blue item
   - truck
-  - inventory
-  - spawn
   - scaffold
   - score blue
   - score orange
@@ -25,6 +22,10 @@ TagManager:
   - object panel
   - Modify
   - LevelButton
+  - Glue
+  - Magnet
+  - Funnel
+  - Explosion
   layers:
   - Default
   - TransparentFX
@@ -38,7 +39,7 @@ TagManager:
   - trampoline b
   - blue items
   - orange items
-  - 
+  - funnel
   - 
   - 
   - 
@@ -62,6 +63,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: New Layer
+  - name: UI
     uniqueID: 2475740561
     locked: 0
