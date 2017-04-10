@@ -4,27 +4,22 @@ using UnityEngine;
 
 public class SpriteCycler : MonoBehaviour {
 
-	public float resetTime = 0.5f;
+	public float resetTime = 0.25f;
 	public List<Sprite> sprites;
 
 	private int i = 0;
-	private Sprite originalSprite;
-	// Use this for initialization
-	void Awake(){
-		originalSprite = gameObject.GetComponent<Sprite> ();
-		StartCoroutine ("ChangeSprites");
-		print ("Starting coroutine");
-	}
-	
-	private IEnumerator ChangeSprites(){
-		while (true) {
-			print ("in loop");
-			if (!LevelController.instance.IsPaused) {
-					print ("Changing sprite");
-					originalSprite = sprites [i];
-					i++;
-					yield return new WaitForSeconds (resetTime);
-			}
+	private float currentTime = 0.0f;
+
+	void Update(){
+		currentTime += Time.deltaTime;
+		if (currentTime >= resetTime) {
+			gameObject.GetComponent<SpriteRenderer> ().sprite = sprites [i];
+			i++;
+			currentTime = 0;
+		}
+
+		if (i == sprites.Count) {
+			i = 0;
 		}
 	}
 }

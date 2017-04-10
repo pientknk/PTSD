@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db64c3ba288ca4b2ca0a44b0a5e62556, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 2}
+  explosion: {fileID: 1297998436798794, guid: ae68ef5a3bd104a7f90d143020b4679b, type: 2}
   damageIndicator: {fileID: 4450121728598110}
 --- !u!212 &212142897657059422
 SpriteRenderer:

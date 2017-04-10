@@ -181,6 +181,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224528375776481718}
+  - component: {fileID: 114478744491832072}
   m_Layer: 0
   m_Name: Arrow
   m_TagString: Untagged
@@ -401,6 +402,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 899947bb85b784eeea05e820dddb435d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114478744491832072
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1793975161435220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fac8ce377c9b4256887fd43cec68d88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 200
 --- !u!114 &114877986141626258
 MonoBehaviour:
   m_ObjectHideFlags: 1
