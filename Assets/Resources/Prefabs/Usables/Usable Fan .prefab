@@ -188,6 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fac8ce377c9b4256887fd43cec68d88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: -550
 --- !u!114 &114106324745990654
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -354,7 +355,7 @@ AreaEffector2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1095048507164158}
-  m_Enabled: 1
+  m_Enabled: 0
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
