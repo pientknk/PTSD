@@ -178,94 +178,53 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &226184281
-GameObject:
+--- !u!1001 &534123999
+Prefab:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 226184283}
-  - component: {fileID: 226184282}
-  m_Layer: 0
-  m_Name: Level Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &226184282
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 226184281}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7414cba1aa0a4ec69f91074bec8760c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelList:
-  - levelText: Level 1
-    unlocked: 1
-    isInteractable: 1
-  - levelText: Level 2
-    unlocked: 0
-    isInteractable: 0
-  - levelText: Level 3
-    unlocked: 0
-    isInteractable: 0
-  - levelText: Level4
-    unlocked: 0
-    isInteractable: 0
-  - levelText: Level 5
-    unlocked: 0
-    isInteractable: 0
-  - levelText: Level 6
-    unlocked: 0
-    isInteractable: 0
-  - levelText: Level 7
-    unlocked: 0
-    isInteractable: 0
-  - levelText: Level 8
-    unlocked: 0
-    isInteractable: 0
-  - levelText: Level 9
-    unlocked: 0
-    isInteractable: 0
-  - levelText: Level 10
-    unlocked: 0
-    isInteractable: 0
-  - levelText: Level 11
-    unlocked: 0
-    isInteractable: 0
-  - levelText: Level 12
-    unlocked: 0
-    isInteractable: 0
-  - levelText: Level 13
-    unlocked: 0
-    isInteractable: 0
-  - levelText: Level 14
-    unlocked: 0
-    isInteractable: 0
-  - levelText: Level 15
-    unlocked: 0
-    isInteractable: 0
-  button: {fileID: 1189554032339390, guid: bfba78ab8e3fb43f1b1a7c2dace8c29e, type: 2}
-  spacer: {fileID: 872774531}
---- !u!4 &226184283
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 226184281}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -191.22516, y: 50.536007, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4150640430365950, guid: f8f95cca008c84e00b148d54b40d390f, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -191.22516
+      objectReference: {fileID: 0}
+    - target: {fileID: 4150640430365950, guid: f8f95cca008c84e00b148d54b40d390f, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 50.536007
+      objectReference: {fileID: 0}
+    - target: {fileID: 4150640430365950, guid: f8f95cca008c84e00b148d54b40d390f, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4150640430365950, guid: f8f95cca008c84e00b148d54b40d390f, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4150640430365950, guid: f8f95cca008c84e00b148d54b40d390f, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4150640430365950, guid: f8f95cca008c84e00b148d54b40d390f, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4150640430365950, guid: f8f95cca008c84e00b148d54b40d390f, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4150640430365950, guid: f8f95cca008c84e00b148d54b40d390f, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114077374176647616, guid: f8f95cca008c84e00b148d54b40d390f,
+        type: 2}
+      propertyPath: spacer
+      value: 
+      objectReference: {fileID: 872774531}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f8f95cca008c84e00b148d54b40d390f, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &620701424
 GameObject:
   m_ObjectHideFlags: 0

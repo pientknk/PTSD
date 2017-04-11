@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 224449171966398998}
   - component: {fileID: 50575935763310926}
   - component: {fileID: 60340572800908576}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: piece 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4573445762204548}
   - component: {fileID: 212121029918127544}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Color image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4832180082686394}
   - component: {fileID: 212247104863240080}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Piece 4 image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4162134276693430}
   - component: {fileID: 212757800027081332}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Color image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224082108038517614}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wrecked Orange Package
   m_TagString: blue item
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 224491951349960232}
   - component: {fileID: 50109736709076454}
   - component: {fileID: 60523231583500318}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: piece 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4138642461799320}
   - component: {fileID: 212192775406916202}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Piece 2 image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4781242808641152}
   - component: {fileID: 212391010547822246}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Color image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150,7 +150,7 @@ GameObject:
   - component: {fileID: 224456028261945330}
   - component: {fileID: 50646510030230648}
   - component: {fileID: 61542072590855624}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: piece 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,7 +166,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4825527930666896}
   - component: {fileID: 212942973005366078}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Piece 5 image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,7 +183,7 @@ GameObject:
   - component: {fileID: 224656375592682616}
   - component: {fileID: 50575606285930696}
   - component: {fileID: 61033540579391382}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: piece 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -199,7 +199,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4949093874766854}
   - component: {fileID: 212242755396146786}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Piece 1 image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -215,7 +215,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4971222550381088}
   - component: {fileID: 212404403601528858}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Piece 3 image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -232,7 +232,7 @@ GameObject:
   - component: {fileID: 224733957194538914}
   - component: {fileID: 50329348655185320}
   - component: {fileID: 61826943620551980}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: piece 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -248,7 +248,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4081883828200862}
   - component: {fileID: 212261695576029124}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Color image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -265,7 +265,7 @@ GameObject:
   - component: {fileID: 224730388494357280}
   - component: {fileID: 50992450641122930}
   - component: {fileID: 61097819030799882}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: piece 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -281,7 +281,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4910221395972694}
   - component: {fileID: 212658685108165600}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Piece 6 image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -436,7 +436,7 @@ Rigidbody2D:
   m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 3
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -456,7 +456,7 @@ Rigidbody2D:
   m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 3
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -476,7 +476,7 @@ Rigidbody2D:
   m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 3
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -496,7 +496,7 @@ Rigidbody2D:
   m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 3
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -516,7 +516,7 @@ Rigidbody2D:
   m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 3
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -536,7 +536,7 @@ Rigidbody2D:
   m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 3
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1

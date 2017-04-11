@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,10 +22,15 @@ public class CheckBounds : MonoBehaviour {
 	void Start () {
 		camera = GetComponent<Camera>();
 
-		rightBound = GameObject.Find ("RightBound");
-		leftBound = GameObject.Find ("LeftBound");
-		upperBound = GameObject.Find ("UpperBound");
-		lowerBound = GameObject.Find ("LowerBound");
+		//rightBound = GameObject.Find ("RightBound");
+		//leftBound = GameObject.Find ("LeftBound");
+		//upperBound = GameObject.Find ("UpperBound");
+		//lowerBound = GameObject.Find ("LowerBound");
+
+		rightBound = GameObject.Find ("Kill Zone Right");
+		leftBound = GameObject.Find ("Kill Zone Left");
+		upperBound = GameObject.Find ("Kill Zone Ceiling");
+		lowerBound = GameObject.Find ("Kill Zone Floor");
 
 		lvlObjects = GameObject.Find ("TheLevelObjects");
 		lvlRect = lvlObjects.GetComponent<RectTransform>();
@@ -41,37 +46,35 @@ public class CheckBounds : MonoBehaviour {
 		Vector3 upperPos = camera.WorldToViewportPoint(upperBound.transform.position);
 		Vector3 lowerPos = camera.WorldToViewportPoint(lowerBound.transform.position);
 
-		print ("Right pos: " + rightPos.x + ", Left pos:" + leftPos.x);
+		print ("Right pos: " + rightPos.x + ", Left pos:" + leftPos.x + " Upper Pos: " + upperPos.y + " Lower Pos: " + lowerPos.y  + " In Bounds: " + inBounds);
 
 		objPos = lvlRect.localPosition;
 
-		if (rightPos.x < -0.065F) {
-			objPos.x += 5;
+		if (rightPos.x < 0.265F) {
+			objPos.x += 12;
 			inBounds = false;
 		} else {
 			inBounds = true;
 		}
 
-		if (leftPos.x > -0.95F) {
-			objPos.x -= 5;
+		if (leftPos.x > -0.15F) {
+			objPos.x -= 12;
 			inBounds = false;
 		} else {
 			inBounds = true;
 		}
 
-		if (upperPos.y < 0.675F) {
-			objPos.y += 5;
+		if (upperPos.y < 0.59F) {
+			objPos.y += 12;
 			inBounds = false;
 		} else {
 			inBounds = true;
 		}
 
-		if (lowerPos.y > -0.250F) {
-			//print ("On screen: " + lowerPos.y);
-			objPos.y -= 5;
+		if (lowerPos.y > 0.159F) {
+			objPos.y -= 12;
 			inBounds = false;
 		} else {
-			//print ("Off screen: " + lowerPos.y);
 			inBounds = true;
 		}
 

@@ -100,7 +100,6 @@ GameObject:
   m_Component:
   - component: {fileID: 224970158633010582}
   - component: {fileID: 212431550738126302}
-  - component: {fileID: 114253991525128794}
   m_Layer: 0
   m_Name: Spawn Point
   m_TagString: Untagged
@@ -193,17 +192,6 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.7}
---- !u!114 &114253991525128794
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1948631899887346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 201118c5cd6c44c4eb19070433141626, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &212431550738126302
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -368,6 +356,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -132, y: 287}
+  m_AnchoredPosition: {x: -153, y: 306}
   m_SizeDelta: {x: 1.28, y: 1.28}
   m_Pivot: {x: 0.5, y: 0.5}

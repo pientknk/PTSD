@@ -64,6 +64,7 @@ public class PackageController : MonoBehaviour {
 		if (currentHealth <= 0) {
 			Vector2 currentLocation = gameObject.transform.position;
 			explosion = Instantiate (explosion);
+			explosion.transform.SetParent (LevelController.instance.theLevelObjects.transform);
 			explosion.transform.position = currentLocation;
 			if (explosion.gameObject.tag == "Explosion") {
 				AnimatorClipInfo[] clipInfo = explosion.GetComponentInChildren<Animator> ().GetCurrentAnimatorClipInfo (0);
