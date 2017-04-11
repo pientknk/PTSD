@@ -26,6 +26,7 @@ TagManager:
   - Magnet
   - Funnel
   - Explosion
+  - Pieces
   layers:
   - Default
   - TransparentFX

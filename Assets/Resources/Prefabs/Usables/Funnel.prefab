@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114635171435912496}
   - component: {fileID: 114766946361748854}
   - component: {fileID: 60326651110306412}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Funnel
   m_TagString: Funnel
   m_Icon: {fileID: 0}

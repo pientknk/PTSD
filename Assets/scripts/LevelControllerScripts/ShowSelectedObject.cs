@@ -52,13 +52,19 @@ public class ShowSelectedObject : MonoBehaviour {
 			showSelectedIndicator.transform.localScale = new Vector3 (scale.y, scale.y, scale.z);
 		}
 		Rect selectedObjectRect = LevelController.instance.selectedObject.GetComponent<RectTransform> ().rect;
-		// add 15% of the selected objects width and height to surround it with the indicator
-		float width = selectedObjectRect.width + (selectedObjectRect.width * .50f);
-		float height = selectedObjectRect.height + (selectedObjectRect.height * .50f);
-		if (height < width) {
-			height = width;
+		float width = 0;
+		float height = 0;
+		if (LevelController.instance.selectedObject.tag != "Glue") {
+			width = selectedObjectRect.width + (selectedObjectRect.width * .5f);
+			height = selectedObjectRect.height + (selectedObjectRect.height * .5f);
+			if (height < width) {
+				height = width;
+			} else {
+				width = height;
+			}
 		} else {
-			width = height;
+			width = selectedObjectRect.width * 2;
+			height = selectedObjectRect.height * 2;
 		}
 		showSelectedIndicator.GetComponent<RectTransform> ().sizeDelta = new Vector2(width, height);
 	}
