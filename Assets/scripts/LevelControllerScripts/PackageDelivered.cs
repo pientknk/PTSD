@@ -17,13 +17,13 @@ public class PackageDelivered : MonoBehaviour {
 				LevelController.instance.SuccessfulPackages++;
 				float reducedMoney = pc.RegularHealth * (pc.CurrentHealth / pc.RegularHealth);
 				int intReducedMoney = (int)reducedMoney;
-				LevelController.instance.currentMoney += intReducedMoney;
+				LevelController.instance.CurrentMoney += intReducedMoney;
 				Destroy (col.gameObject);
 				LevelController.instance.PackagesDestroyed++;
 				checkPackageDestructionCount ();
 			} else {
 				LevelController.instance.FailurePackages++;
-				LevelController.instance.currentMoney -= (int)LevelController.instance.packageWorth / 2;
+				LevelController.instance.CurrentMoney -= (int)LevelController.instance.packageWorth / 2;
 				Destroy (col.gameObject);
 				LevelController.instance.PackagesDestroyed++;
 				checkPackageDestructionCount ();
@@ -33,19 +33,20 @@ public class PackageDelivered : MonoBehaviour {
 				LevelController.instance.SuccessfulPackages++;
 				float reducedMoney = pc.RegularHealth * (pc.CurrentHealth / pc.RegularHealth);
 				int intReducedMoney = (int)reducedMoney;
-				LevelController.instance.currentMoney += intReducedMoney;
+				LevelController.instance.CurrentMoney += intReducedMoney;
 				Destroy (col.gameObject);
 				LevelController.instance.PackagesDestroyed++;
 				checkPackageDestructionCount ();
 			} else {
 				LevelController.instance.FailurePackages++;
-				LevelController.instance.currentMoney -= (int)LevelController.instance.packageWorth / 2;
+				LevelController.instance.CurrentMoney -= (int)LevelController.instance.packageWorth / 2;
 				Destroy (col.gameObject);
 				LevelController.instance.PackagesDestroyed++;
 				checkPackageDestructionCount ();
 			}
 		} else {
 			print ("Unknown object colliding with PackageDelivered Script");
+			Destroy (col.gameObject);
 		}
 	}
 

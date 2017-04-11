@@ -11,3 +11,4 @@ public class TogglePanelButton : MonoBehaviour {
 		panel.SetActive (true);
 	}
 }
+

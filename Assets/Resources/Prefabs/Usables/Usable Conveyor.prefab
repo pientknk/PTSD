@@ -40,6 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4546057910000932}
   - component: {fileID: 212012889247157480}
+  - component: {fileID: 114944962399071210}
   m_Layer: 0
   m_Name: conveyor Image
   m_TagString: Untagged
@@ -54,7 +55,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1746642126691352}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.4, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 150, y: 215.14154, z: 1}
   m_Children: []
   m_Father: {fileID: 224231337363914610}
@@ -107,6 +108,23 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
   m_ChildControlHeight: 1
+--- !u!114 &114944962399071210
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1746642126691352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9550cc599500e43a7aab5dfdab9709d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resetTime: 0.2
+  sprites:
+  - {fileID: 21300000, guid: 0173a80b087047b46af6db134f7f521a, type: 3}
+  - {fileID: 21300000, guid: 3e3bcff23be7bbf4ca2f7e96110fd6f6, type: 3}
+  - {fileID: 21300000, guid: f65a62f0c5100ec4fadf9a94677b06a9, type: 3}
+  - {fileID: 21300000, guid: 3a27a3eb5b487174d9182634d2d37eb1, type: 3}
 --- !u!114 &114966597341085222
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -149,7 +167,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: dc7661f8a458e4b2491081fdf990b50e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0173a80b087047b46af6db134f7f521a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

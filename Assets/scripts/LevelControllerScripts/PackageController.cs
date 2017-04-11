@@ -64,12 +64,20 @@ public class PackageController : MonoBehaviour {
 		if (currentHealth <= 0) {
 			Vector2 currentLocation = gameObject.transform.position;
 			explosion = Instantiate (explosion);
+			explosion.transform.SetParent (LevelController.instance.theLevelObjects.transform);
 			explosion.transform.position = currentLocation;
+			if (explosion.gameObject.tag == "Explosion") {
+				AnimatorClipInfo[] clipInfo = explosion.GetComponentInChildren<Animator> ().GetCurrentAnimatorClipInfo (0);
+				Destroy (explosion, clipInfo [0].clip.length);
+			} else {
+				foreach (Rigidbody2D body in explosion.GetComponentsInChildren<Rigidbody2D>()) {
+					body.velocity = GetComponent<Rigidbody2D> ().velocity;
+				}
+				Destroy (explosion, 12.0f);
+			}
 			Destroy (gameObject);
-			AnimatorClipInfo[] clipInfo = explosion.GetComponentInChildren<Animator> ().GetCurrentAnimatorClipInfo (0);
-			Destroy (explosion, clipInfo [0].clip.length);
 			LevelController.instance.PackagesDestroyed++;
-			LevelController.instance.currentMoney -= 50;
+			LevelController.instance.CurrentMoney -= 50;
 			checkPackageDestructionCount ();
 		}
 	}
@@ -85,7 +93,7 @@ public class PackageController : MonoBehaviour {
 			startingScale *= (currentHealth / regularHealth);
 			damageIndicator.transform.localScale = startingScale;
 		} else {
-			print ("Damage indicator not set in packagcontroller, you must set it on each package in the inspector.");
+			print ("Damage indicator not set in packagecontroller, you must set it on each package in the inspector.");
 		}
 		FloatingTextController.CreateFloatingText (amount.ToString("F1"), transform.position);
 		currentHealth -= amount;
@@ -93,7 +101,6 @@ public class PackageController : MonoBehaviour {
 
 	private void checkPackageDestructionCount(){
 		if (LevelController.instance.PackagesDestroyed == LevelController.instance.allPackages.Count) {
-			print ("Done with level");
 			LevelController.instance.summaryCanvas.SetActive (true);
 			LevelController.instance.canvas.GetComponent<CanvasGroup> ().interactable = false;
 		}

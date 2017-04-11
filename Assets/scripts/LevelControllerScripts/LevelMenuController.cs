@@ -7,8 +7,12 @@ public class LevelMenuController : MonoBehaviour {
 	public void SaveLevel(){
 		LevelController.instance.Save ();
 	}
+
+	public void NewGame(){
+		SceneManager.LoadScene ("Level 1");
+	}
 	
-	public void QuitLevel(){
+	public void LoadLevelSelector(){
 		SceneManager.LoadScene ("LevelSelector");
 	}
 
@@ -17,6 +21,10 @@ public class LevelMenuController : MonoBehaviour {
 	}
 
     public void RestartCurrentLevel(){
-		Application.LoadLevel (Application.loadedLevelName);
+		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+	public void LoadSettings(){
+		SceneManager.LoadScene ("Settings");
+	}
 }
