@@ -184,7 +184,6 @@ GameObject:
   - component: {fileID: 53260650}
   - component: {fileID: 53260649}
   - component: {fileID: 53260648}
-  - component: {fileID: 53260646}
   - component: {fileID: 53260647}
   m_Layer: 5
   m_Name: Canvas
@@ -193,17 +192,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &53260646
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 53260645}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9957977948c24627af9337bffe27440, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!225 &53260647
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -544,6 +532,7 @@ GameObject:
   - component: {fileID: 519359094}
   - component: {fileID: 519359096}
   - component: {fileID: 519359095}
+  - component: {fileID: 519359098}
   m_Layer: 0
   m_Name: Map Camera
   m_TagString: Untagged
@@ -569,7 +558,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 131
+  field of view: 34.101856
   orthographic: 1
   orthographic size: 300
   m_Depth: 0
@@ -612,6 +601,20 @@ Transform:
   m_Father: {fileID: 1849100175}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519359098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 519359093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbbbe618ec1fb4af18557a9e5d5a3c8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boundary: 50
+  speed: 10
+  fastSpeed: 100
 --- !u!1001 &528818563
 Prefab:
   m_ObjectHideFlags: 0
@@ -1627,7 +1630,7 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 53260646}
+      objectReference: {fileID: 0}
     - target: {fileID: 114784718866104892, guid: 6708a480dbe7f45cd9cab8bd755737e6,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1637,7 +1640,7 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 53260646}
+      objectReference: {fileID: 0}
     - target: {fileID: 223069261981488816, guid: 6708a480dbe7f45cd9cab8bd755737e6,
         type: 2}
       propertyPath: m_Camera
