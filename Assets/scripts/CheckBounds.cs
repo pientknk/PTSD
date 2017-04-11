@@ -15,7 +15,14 @@ public class CheckBounds : MonoBehaviour {
 	private RectTransform lvlRect;
 	private Vector3 objPos;
 
-	private bool inBounds;
+	//From ZoomCam script
+	private float xDiff;
+	private float yDiff;
+
+	public bool inBoundsUp;
+	public bool inBoundsDown;
+	public bool inBoundsLeft;
+	public bool inBoundsRight;
 
 
 	// Use this for initialization
@@ -36,48 +43,53 @@ public class CheckBounds : MonoBehaviour {
 		lvlRect = lvlObjects.GetComponent<RectTransform>();
 		objPos = lvlRect.localPosition;
 
-		inBounds = true;
+		inBoundsUp = true;
+		inBoundsDown = true;
+		inBoundsLeft = true;
+		inBoundsRight = true;
 	}
 
 	// Update is called once per frame
 	void Update () {
+		//xDiff = GameObject.Find("TheLevelObjects").GetComponent<ZoomCam> ().xDiff;
+		//yDiff = GameObject.Find("TheLevelObjects").GetComponent<ZoomCam> ().yDiff;
+
 		Vector3 rightPos = camera.WorldToViewportPoint(rightBound.transform.position);
 		Vector3 leftPos = camera.WorldToViewportPoint(leftBound.transform.position);
 		Vector3 upperPos = camera.WorldToViewportPoint(upperBound.transform.position);
 		Vector3 lowerPos = camera.WorldToViewportPoint(lowerBound.transform.position);
 
-		print ("Right pos: " + rightPos.x + ", Left pos:" + leftPos.x + " Upper Pos: " + upperPos.y + " Lower Pos: " + lowerPos.y  + " In Bounds: " + inBounds);
+		//print ("Right pos: " + rightPos.x + ", Left pos:" + leftPos.x + " Upper Pos: " + upperPos.y + " Lower Pos: " + lowerPos.y);
 
 		objPos = lvlRect.localPosition;
 
-		if (rightPos.x < 0.265F) {
-			objPos.x += 12;
-			inBounds = false;
+		if (rightPos.x < 0.1F) {
+			//objPos.x += 12;
+			inBoundsRight = false;
 		} else {
-			inBounds = true;
+			inBoundsRight = true;
 		}
 
-		if (leftPos.x > -0.15F) {
-			objPos.x -= 12;
-			inBounds = false;
+		if (leftPos.x > -1.165F) {
+			//objPos.x -= 12;
+			inBoundsLeft = false;
 		} else {
-			inBounds = true;
+			inBoundsLeft = true;
 		}
 
-		if (upperPos.y < 0.59F) {
-			objPos.y += 12;
-			inBounds = false;
+		if (upperPos.y < 0.825F) {
+			//objPos.y += 12;
+			inBoundsUp = false;
 		} else {
-			inBounds = true;
+			inBoundsUp = true;
 		}
 
-		if (lowerPos.y > 0.159F) {
-			objPos.y -= 12;
-			inBounds = false;
+		if (lowerPos.y > -0.45F) {
+			//objPos.y -= 12;
+			inBoundsDown = false;
 		} else {
-			inBounds = true;
+			inBoundsDown = true;
 		}
-
 
 		lvlRect.localPosition = objPos;
 
