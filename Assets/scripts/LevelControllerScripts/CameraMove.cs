@@ -6,7 +6,7 @@ public class CameraMove : MonoBehaviour {
 
 	//camera boundary and movement
 	public float boundary = 50.0f; // distance from edge scrolling starts
-	public int speed = 50;
+	public int speed = 20;
 	public int fastSpeed = 100;
 	private int theScreenWidth;
 	private int theScreenHeight;
@@ -30,47 +30,83 @@ public class CameraMove : MonoBehaviour {
 		theScreenWidth = Screen.width;
 		theScreenHeight = Screen.height;
 		screenRect = new Rect(0, 0, Screen.width, Screen.height);
-		Rect levelObjectsRect = LevelController.instance.theLevelObjects.GetComponent<RectTransform> ().rect;
-		Rect cameraRect = Camera.allCameras [0].rect;
-		minX = levelObjectsRect.xMin;
-		maxX = levelObjectsRect.xMax;
-		minY = levelObjectsRect.yMin;
-		maxY = levelObjectsRect.yMax;
-		print ("Thelevelobjects locations: " + minX + " " + maxX + " " + minY + " " + maxY);
+		GameObject theLevelObject = LevelController.instance.theLevelObjects;
+		Vector3 levelObjectsRect = theLevelObject.GetComponent<RectTransform> ().position;
+		Rect levelObjectRect = theLevelObject.GetComponent<RectTransform> ().rect;
+
+		minX = levelObjectsRect.x - levelObjectRect.width / 2;
+		maxX = levelObjectsRect.x + levelObjectRect.width / 2;
+		minY = levelObjectsRect.y - levelObjectRect.height / 2;
+		maxY = levelObjectsRect.y + levelObjectRect.height / 2;
 	}
 
 	void Update() 
 	{
 		if (screenRect.Contains (Input.mousePosition)) {
-			if (Input.mousePosition.x > theScreenWidth - boundary) {
-				Vector3 newPos = transform.position;
-				//newPos.x += speed * Time.deltaTime;
-				newPos.x += speed;
-				transform.position = newPos; // move on +X axis
-			}
-			if (Input.mousePosition.x < 0 + boundary) {
-				Vector3 newPos = transform.position;
-				//newPos.x -= speed * Time.deltaTime;
-				newPos.x -= speed;
-				transform.position = newPos; // move on -X axis
-			}
-			if (Input.mousePosition.y > theScreenHeight - boundary) {
-				Vector3 newPos = transform.position;
-				//newPos.y += speed * Time.deltaTime;
-				newPos.y += speed;
-				transform.position = newPos; // move on +Z axis
-			}
-			if (Input.mousePosition.y < 0 + boundary) {
-				Vector3 newPos = transform.position;
-				//newPos.y -= speed * Time.deltaTime;
-				newPos.y -= speed;
-				transform.position = newPos; // move on -Z axis
-			}
+			camMinX = Camera.allCameras [0].ScreenToWorldPoint(new Vector3(0,0)).x;
+			camMaxX = Camera.allCameras [0].ScreenToWorldPoint (new Vector3 (theScreenWidth, 0)).x;
+			camMinY = Camera.allCameras [0].ScreenToWorldPoint (new Vector3 (0, 0)).y;
+			camMaxY = Camera.allCameras [0].ScreenToWorldPoint (new Vector3 (0, theScreenHeight)).y;
 
+			if (Input.mousePosition.x > theScreenWidth - boundary && camMaxX != maxX) {
+				Vector3 newPos = transform.position;
+
+				//move on the +X axis
+				if(camMaxX < maxX){
+					if (camMaxX + speed > maxX) {
+						newPos.x += maxX - camMaxX;
+
+					} else {
+						newPos.x += speed;
+					}
+					transform.position = newPos;
+				}
+			}
+			if (Input.mousePosition.x < 0 + boundary && camMinX != minX) {
+				Vector3 newPos = transform.position;
+
+				// move on -X axis
+				if (camMinX > minX) {
+					if (camMinX - speed < minX) {
+						newPos.x -= camMinX - minX;
+					} else {
+						newPos.x -= speed;
+					}
+					transform.position = newPos; 
+				}
+			}
+			if (Input.mousePosition.y > theScreenHeight - boundary && camMaxY != maxY) {
+				Vector3 newPos = transform.position;
+				//move on the +Y axis
+				if(camMaxY < maxY){
+					if (camMaxY + speed > maxY) {
+						newPos.y += maxY - camMaxY;
+					} else {
+						newPos.y += speed;
+					}
+					transform.position = newPos;
+				}
+			}
+			if (Input.mousePosition.y < 0 + boundary && camMinY != minY) {
+				Vector3 newPos = transform.position;
+
+				// move on -Y axis
+				if (camMinY > minY) {
+					if (camMinY - speed < minY) {
+						newPos.y -= camMinY - minY;
+					} else {
+						newPos.y -= speed;
+					}
+					transform.position = newPos; 
+				}
+			}
+			//zoom in and out
+			/*
 			float size = Camera.allCameras [0].orthographicSize;
 			size += Input.GetAxis ("Mouse ScrollWheel") * sensitivity;
 			size = Mathf.Clamp (size, minSize, maxSize);
 			Camera.allCameras [0].orthographicSize = size;
+			*/
 		}
 	}
 
