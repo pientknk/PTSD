@@ -13,10 +13,12 @@ public class LevelMenuController : MonoBehaviour {
 	}
 	
 	public void LoadLevelSelector(){
+		Time.timeScale = 1.0f;
 		SceneManager.LoadScene ("LevelSelector");
 	}
 
 	public void QuitToMainLevel(){
+		Time.timeScale = 1.0f;
 		SceneManager.LoadScene ("MainMenu");
 	}
 
@@ -25,6 +27,7 @@ public class LevelMenuController : MonoBehaviour {
     }
 
 	public void LoadSettings(){
+		Time.timeScale = 1.0f;
 		SceneManager.LoadScene ("Settings");
 	}
 }

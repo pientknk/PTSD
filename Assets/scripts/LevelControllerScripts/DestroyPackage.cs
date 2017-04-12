@@ -7,7 +7,7 @@ public class DestroyPackage : MonoBehaviour {
 			LevelController.instance.FailurePackages++;
 			LevelController.instance.CurrentMoney -= (int)LevelController.instance.packageWorth / 2;
 			Destroy (col.gameObject);
-			LevelController.instance.PackagesDestroyed++;
+			LevelController.instance.NumPackagesLeft--;
 			checkPackageDestructionCount ();
 		} else {
 			print ("Unknown object colliding with DestroyPackage Script");
@@ -17,7 +17,7 @@ public class DestroyPackage : MonoBehaviour {
 
 	private void checkPackageDestructionCount(){
 		if (LevelController.instance.summaryCanvas != null) {
-			if (LevelController.instance.PackagesDestroyed == LevelController.instance.allPackages.Count) {
+			if (LevelController.instance.NumPackagesLeft == 0) {
 				print ("Done with level");
 				LevelController.instance.summaryCanvas.SetActive (true);
 				LevelController.instance.canvas.GetComponent<CanvasGroup> ().interactable = false;
