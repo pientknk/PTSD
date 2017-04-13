@@ -25,6 +25,9 @@ public class CameraMove : MonoBehaviour {
 	private float camMinY;
 	private float camMaxY;
 
+	private Vector3 startPos;
+	private Vector3 newPos;
+
 	void Start() 
 	{
 		theScreenWidth = Screen.width;
@@ -38,10 +41,15 @@ public class CameraMove : MonoBehaviour {
 		maxX = levelObjectsRect.x + levelObjectRect.width / 2;
 		minY = levelObjectsRect.y - levelObjectRect.height / 2;
 		maxY = levelObjectsRect.y + levelObjectRect.height / 2;
+
+		startPos = Camera.allCameras [0].transform.position;
 	}
 
 	void Update() 
 	{
+
+		newPos = transform.position;
+
 		if (screenRect.Contains (Input.mousePosition)) {
 			camMinX = Camera.allCameras [0].ScreenToWorldPoint(new Vector3(0,0)).x;
 			camMaxX = Camera.allCameras [0].ScreenToWorldPoint (new Vector3 (theScreenWidth, 0)).x;
@@ -49,7 +57,7 @@ public class CameraMove : MonoBehaviour {
 			camMaxY = Camera.allCameras [0].ScreenToWorldPoint (new Vector3 (0, theScreenHeight)).y;
 
 			if (Input.mousePosition.x > theScreenWidth - boundary && camMaxX != maxX) {
-				Vector3 newPos = transform.position;
+				newPos = transform.position;
 
 				//move on the +X axis
 				if(camMaxX < maxX){
@@ -63,7 +71,7 @@ public class CameraMove : MonoBehaviour {
 				}
 			}
 			if (Input.mousePosition.x < 0 + boundary && camMinX != minX) {
-				Vector3 newPos = transform.position;
+				newPos = transform.position;
 
 				// move on -X axis
 				if (camMinX > minX) {
@@ -76,7 +84,7 @@ public class CameraMove : MonoBehaviour {
 				}
 			}
 			if (Input.mousePosition.y > theScreenHeight - boundary && camMaxY != maxY) {
-				Vector3 newPos = transform.position;
+				newPos = transform.position;
 				//move on the +Y axis
 				if(camMaxY < maxY){
 					if (camMaxY + speed > maxY) {
@@ -88,7 +96,7 @@ public class CameraMove : MonoBehaviour {
 				}
 			}
 			if (Input.mousePosition.y < 0 + boundary && camMinY != minY) {
-				Vector3 newPos = transform.position;
+				newPos = transform.position;
 
 				// move on -Y axis
 				if (camMinY > minY) {
@@ -100,13 +108,21 @@ public class CameraMove : MonoBehaviour {
 					transform.position = newPos; 
 				}
 			}
+
 			//zoom in and out
-			/*
 			float size = Camera.allCameras [0].orthographicSize;
-			size += Input.GetAxis ("Mouse ScrollWheel") * sensitivity;
+			size -= Input.GetAxis ("Mouse ScrollWheel") * sensitivity;
 			size = Mathf.Clamp (size, minSize, maxSize);
 			Camera.allCameras [0].orthographicSize = size;
-			*/
+
+			if (Input.GetAxis ("Mouse ScrollWheel") < 0) {
+				newPos.x += ((startPos.x - newPos.x) / 60f);
+				newPos.y += ((startPos.y - newPos.y) / 60f);
+			}
+
+			print (newPos);
+			transform.position = newPos;
+
 		}
 	}
 
