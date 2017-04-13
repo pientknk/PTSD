@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 224552585396919704}
   m_Layer: 10
   m_Name: Wrecked Blue Package
-  m_TagString: blue item
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

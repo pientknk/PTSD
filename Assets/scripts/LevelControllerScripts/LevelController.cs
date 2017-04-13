@@ -9,6 +9,10 @@ using UnityEngine.SceneManagement;
  * setting instance variables that will be referenced by all other objects */
 public class LevelController : MonoBehaviour {
 
+	public class AllPackages{
+		public List<GameObject> packages;
+	}
+
 /* ==================== BEGIN MEMBER VARIABLES ====================== */
 
 	//static instance used for other scripts to reference
@@ -42,11 +46,6 @@ public class LevelController : MonoBehaviour {
 	/// and should only be set active after all packages have been destroyed.
 	/// </summary>
 	public GameObject summaryCanvas;
-
-	/// <summary>
-	/// The objects where packages should spawn from, must be 1 or more
-	/// </summary>
-	public List<GameObject> spawnPoints;
 
 	/// <summary>
 	/// A reference to all of the objects bought by the player. Used to recreate a saved level.
@@ -175,24 +174,9 @@ public class LevelController : MonoBehaviour {
 /* =============== PACKAGES ================= */
 
 	/// <summary>
-	/// All the package types that can spawn on this level, ex. box blue and box orange.
-	/// </summary>
-	public List<GameObject> packageTypes;
-
-	/// <summary>
-	/// All packages that will spawn for this level.
-	/// </summary>
-	public List<GameObject> allPackages;
-
-	/// <summary>
 	/// The amount of money a regular package cost.
 	/// </summary>
 	public float packageWorth = 100.0f;
-
-	/// <summary>
-	/// The time in seconds between packages spawning
-	/// </summary>
-	public float spawnTime = 3.0f;
 
 	private float timeCounter;
 	/// <summary>
@@ -202,16 +186,6 @@ public class LevelController : MonoBehaviour {
 		get{ return timeCounter; }
 		set{ timeCounter = value; }
 	}
-
-	/// <summary>
-	/// True if the spawn points should infinitely create packages to keep spawning.
-	/// </summary>
-	public bool infiniteCreate = false;
-		
-	/// <summary>
-	/// True if the packages for this level should be randomly generated, else false for manual selection of packages.
-	/// </summary>
-	public bool autoPickPackages = false;
 
 /* =============== PACKAGE TRACKING ================= */
 
@@ -240,17 +214,6 @@ public class LevelController : MonoBehaviour {
 	public int NumPackagesLeft{
 		get{ return numPackagesLeft; }
 		set{ numPackagesLeft = value; }
-	}
-
-	private int packagesDestroyed;
-	/// <summary>
-	/// The current count of packages destroyed, packages should always be destroyed when they either 
-	/// take too much damage, go into a truck, go out of bounds, or hit an obstacle
-	/// </summary>
-	/// <value>The packages destroyed.</value>
-	public int PackagesDestroyed{
-		get{ return packagesDestroyed; }
-		set{ packagesDestroyed = value; }
 	}
 
 /* =============== GAME SPEED ================= */
@@ -345,23 +308,6 @@ public class LevelController : MonoBehaviour {
 		instance = this;
 	}
 
-	void Start(){
-		numPackagesLeft = allPackages.Count;
-	}
-		
-	/// <summary>
-	/// Auto generates the amount of packages specified by allPackages
-	/// </summary>
-	public void AutoGenerate(){
-		if (autoPickPackages) {
-			for (int z = 0; z < allPackages.Count; z++) {
-				//pick a random package from all the possible packages on the level
-				int random = UnityEngine.Random.Range (0, packageTypes.Count);
-				allPackages [z] = packageTypes [random];
-			}
-		}
-	}
-
 	//saves data out to a binary file
 	/// <summary>
 	/// Save this scene's data and write it to a binary file
@@ -385,11 +331,7 @@ public class LevelController : MonoBehaviour {
 		data.slideCost = slideCost;
 		data.trampolineCost = trampolineCost;
 		data.fanCost = fanCost;
-		data.allPackages = allPackages;
 		data.numPackagesLeft = numPackagesLeft;
-		data.spawnTime = spawnTime;
-		data.autoPickPackages = autoPickPackages;
-		data.spawnPoints = spawnPoints;
 		data.successfulPackages = successfulPackages;
 		data.failurePackages = failurePackages;
 		data.selectedObject = null;
@@ -426,11 +368,7 @@ public class LevelController : MonoBehaviour {
 			trampolineCost = data.trampolineCost;
 			slideCost = data.slideCost;
 			fanCost = data.fanCost;
-			allPackages = data.allPackages;
 			numPackagesLeft = data.numPackagesLeft;
-			spawnTime = data.spawnTime;
-			autoPickPackages = data.autoPickPackages;
-			spawnPoints = data.spawnPoints;
 			successfulPackages = data.successfulPackages;
 			failurePackages = data.failurePackages;
 			selectedObject = data.selectedObject;
