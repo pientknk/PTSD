@@ -355,13 +355,8 @@ AreaEffector2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1095048507164158}
-<<<<<<< HEAD
-  m_Enabled: 0
-  m_UseColliderMask: 1
-=======
   m_Enabled: 1
   m_UseColliderMask: 0
->>>>>>> refs/remotes/origin/master
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294967295
