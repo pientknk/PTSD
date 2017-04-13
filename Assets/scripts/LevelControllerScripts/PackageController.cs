@@ -75,8 +75,9 @@ public class PackageController : MonoBehaviour {
 				}
 				Destroy (explosion, 12.0f);
 			}
+			LevelController.instance.NumPackagesLeft--;
 			Destroy (gameObject);
-			LevelController.instance.PackagesDestroyed++;
+			LevelController.instance.FailurePackages++;
 			LevelController.instance.CurrentMoney -= 50;
 			checkPackageDestructionCount ();
 		}
@@ -100,7 +101,7 @@ public class PackageController : MonoBehaviour {
 	}
 
 	private void checkPackageDestructionCount(){
-		if (LevelController.instance.PackagesDestroyed == LevelController.instance.allPackages.Count) {
+		if (LevelController.instance.NumPackagesLeft == 0) {
 			LevelController.instance.summaryCanvas.SetActive (true);
 			LevelController.instance.canvas.GetComponent<CanvasGroup> ().interactable = false;
 		}
