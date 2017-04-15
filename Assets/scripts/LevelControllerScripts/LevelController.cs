@@ -108,7 +108,7 @@ public class LevelController : MonoBehaviour {
 		
 /* =============== OBJECT COSTS ================= */
 
-	private int conveyorCost = 500;
+	private int conveyorCost = 450;
 	/// <summary>
 	/// The cost to buy one conveyor.
 	/// </summary>
@@ -126,7 +126,7 @@ public class LevelController : MonoBehaviour {
 		set{ trampolineCost = value; }
 	}
 
-	private int slideCost = 250;
+	private int slideCost = 275;
 	/// <summary>
 	/// The cost to buy one slide.
 	/// </summary>
@@ -135,7 +135,7 @@ public class LevelController : MonoBehaviour {
 		set{ slideCost = value; }
 	}
 
-	private int funnelCost = 300;
+	private int funnelCost = 400;
 	/// <summary>
 	/// The cost to buy one funnel.
 	/// </summary>
@@ -176,7 +176,7 @@ public class LevelController : MonoBehaviour {
 	/// <summary>
 	/// The amount of money a regular package cost.
 	/// </summary>
-	public float packageWorth = 100.0f;
+	public float packageWorth = 150.0f;
 
 	private float timeCounter;
 	/// <summary>
