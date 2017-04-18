@@ -10,7 +10,7 @@ public class DragPanel : MonoBehaviour, IPointerDownHandler, IDragHandler {
 	private RectTransform panelRectTransform;
 
 
-	void Awake () {
+	void Start () {
 		GameObject canvas = LevelController.instance.canvas;
 		if (canvas != null) {
 			canvasRectTransform = canvas.transform as RectTransform;
