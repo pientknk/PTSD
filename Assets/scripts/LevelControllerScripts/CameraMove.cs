@@ -154,9 +154,9 @@ public class CameraMove : MonoBehaviour {
 			newPos.y += ((startPos.y - newPos.y) / 5f);
 		}
 
-		if (size == maxSize) {
-			newPos = startPos;
-		}
+		//if (size == maxSize) {
+		//	newPos = startPos;
+		//}
 			
 		transform.position = newPos;
 	}
