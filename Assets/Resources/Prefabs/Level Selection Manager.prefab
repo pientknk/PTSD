@@ -56,11 +56,11 @@ MonoBehaviour:
     unlocked: 1
     isInteractable: 1
   - levelText: Level 2
-    unlocked: 0
-    isInteractable: 0
+    unlocked: 1
+    isInteractable: 1
   - levelText: Level 3
-    unlocked: 0
-    isInteractable: 0
+    unlocked: 1
+    isInteractable: 1
   - levelText: Level4
     unlocked: 0
     isInteractable: 0
@@ -68,14 +68,14 @@ MonoBehaviour:
     unlocked: 0
     isInteractable: 0
   - levelText: Level 6
-    unlocked: 0
-    isInteractable: 0
+    unlocked: 1
+    isInteractable: 1
   - levelText: Level 7
-    unlocked: 0
-    isInteractable: 0
+    unlocked: 1
+    isInteractable: 1
   - levelText: Level 8
-    unlocked: 0
-    isInteractable: 0
+    unlocked: 1
+    isInteractable: 1
   - levelText: Level 9
     unlocked: 0
     isInteractable: 0
@@ -83,14 +83,14 @@ MonoBehaviour:
     unlocked: 0
     isInteractable: 0
   - levelText: Level 11
-    unlocked: 0
-    isInteractable: 0
+    unlocked: 1
+    isInteractable: 1
   - levelText: Level 12
-    unlocked: 0
-    isInteractable: 0
+    unlocked: 1
+    isInteractable: 1
   - levelText: Level 13
-    unlocked: 0
-    isInteractable: 0
+    unlocked: 1
+    isInteractable: 1
   - levelText: Level 14
     unlocked: 0
     isInteractable: 0
