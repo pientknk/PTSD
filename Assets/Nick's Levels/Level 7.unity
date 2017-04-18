@@ -3773,7 +3773,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 643286878}
-  - component: {fileID: 643286879}
   m_Layer: 0
   m_Name: TheLevelObjects
   m_TagString: Untagged
@@ -3810,25 +3809,6 @@ RectTransform:
   m_AnchoredPosition: {x: -844.0103, y: -21.012684}
   m_SizeDelta: {x: 979, y: 629}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &643286879
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 643286877}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20294c307a0fc6c4ab13a90b2a08d8ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  xLimit: 600
-  yLimit: 400
-  xDiff: 0
-  yDiff: 0
-  inBoundsUp: 0
-  inBoundsDown: 0
-  inBoundsLeft: 0
-  inBoundsRight: 0
 --- !u!1 &656111242
 GameObject:
   m_ObjectHideFlags: 0
@@ -6470,7 +6450,6 @@ GameObject:
   - component: {fileID: 1152578061}
   - component: {fileID: 1152578060}
   - component: {fileID: 1152578059}
-  - component: {fileID: 1152578058}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -6512,21 +6491,6 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
---- !u!114 &1152578058
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1152578056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc90c038e11393d488f4ff60df5a7671, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inBoundsUp: 0
-  inBoundsDown: 0
-  inBoundsLeft: 0
-  inBoundsRight: 0
 --- !u!81 &1152578059
 AudioListener:
   m_ObjectHideFlags: 0
@@ -7244,6 +7208,7 @@ GameObject:
   - component: {fileID: 1257114326}
   - component: {fileID: 1257114328}
   - component: {fileID: 1257114327}
+  - component: {fileID: 1257114330}
   m_Layer: 0
   m_Name: Map Camera
   m_TagString: Untagged
@@ -7312,6 +7277,20 @@ Transform:
   m_Father: {fileID: 1983945482}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1257114330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1257114325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbbbe618ec1fb4af18557a9e5d5a3c8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boundary: 50
+  speed: 20
+  fastSpeed: 100
 --- !u!1 &1272732650 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1948631899887346, guid: 4c9e435af0aa74b44948c2d5e627bbe0,
