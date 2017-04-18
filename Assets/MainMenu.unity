@@ -2434,7 +2434,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1109131283}
-        m_MethodName: NewGame
+        m_MethodName: LoadLevelSelector
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3223,70 +3223,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114388391860296852, guid: 4c9e435af0aa74b44948c2d5e627bbe0,
-        type: 2}
-      propertyPath: infiniteCreate
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114388391860296852, guid: 4c9e435af0aa74b44948c2d5e627bbe0,
-        type: 2}
-      propertyPath: spawnTime
-      value: 2.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 114388391860296852, guid: 4c9e435af0aa74b44948c2d5e627bbe0,
-        type: 2}
-      propertyPath: allPackages.Array.data[5]
-      value: 
-      objectReference: {fileID: 1145781593532140, guid: 2c3990cafdfc2474e897c1575df1d197,
-        type: 2}
-    - target: {fileID: 114388391860296852, guid: 4c9e435af0aa74b44948c2d5e627bbe0,
-        type: 2}
-      propertyPath: allPackages.Array.data[2]
-      value: 
-      objectReference: {fileID: 1062990845778250, guid: c66f67b6a181948edab26ef1ace326b6,
-        type: 2}
-    - target: {fileID: 114388391860296852, guid: 4c9e435af0aa74b44948c2d5e627bbe0,
-        type: 2}
-      propertyPath: allPackages.Array.data[8]
-      value: 
-      objectReference: {fileID: 1990624977569622, guid: 6c991d1005b994bb0aaa95f8814f8a34,
-        type: 2}
-    - target: {fileID: 114388391860296852, guid: 4c9e435af0aa74b44948c2d5e627bbe0,
-        type: 2}
-      propertyPath: allPackages.Array.data[10]
-      value: 
-      objectReference: {fileID: 1282100170459668, guid: 1053e2a8522374288bb426e0c1c9c09c,
-        type: 2}
-    - target: {fileID: 114388391860296852, guid: 4c9e435af0aa74b44948c2d5e627bbe0,
-        type: 2}
-      propertyPath: allPackages.Array.data[17]
-      value: 
-      objectReference: {fileID: 1990624977569622, guid: 6c991d1005b994bb0aaa95f8814f8a34,
-        type: 2}
-    - target: {fileID: 114388391860296852, guid: 4c9e435af0aa74b44948c2d5e627bbe0,
-        type: 2}
-      propertyPath: allPackages.Array.data[14]
-      value: 
-      objectReference: {fileID: 1145781593532140, guid: 2c3990cafdfc2474e897c1575df1d197,
-        type: 2}
-    - target: {fileID: 114388391860296852, guid: 4c9e435af0aa74b44948c2d5e627bbe0,
-        type: 2}
-      propertyPath: allPackages.Array.data[0]
-      value: 
-      objectReference: {fileID: 1990624977569622, guid: 6c991d1005b994bb0aaa95f8814f8a34,
-        type: 2}
-    - target: {fileID: 114388391860296852, guid: 4c9e435af0aa74b44948c2d5e627bbe0,
-        type: 2}
-      propertyPath: allPackages.Array.data[20]
-      value: 
-      objectReference: {fileID: 1282100170459668, guid: 1053e2a8522374288bb426e0c1c9c09c,
-        type: 2}
-    - target: {fileID: 114388391860296852, guid: 4c9e435af0aa74b44948c2d5e627bbe0,
-        type: 2}
-      propertyPath: allPackages.Array.data[29]
-      value: 
-      objectReference: {fileID: 1062990845778250, guid: c66f67b6a181948edab26ef1ace326b6,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4c9e435af0aa74b44948c2d5e627bbe0, type: 2}
   m_IsPrefabParent: 0

@@ -1,8 +1,8 @@
-﻿using System.Collections;
+﻿#if UNITY_EDITOR
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
-
 [CustomEditor(typeof(Create))]
 public class SpawnEditor : Editor{
 
@@ -18,3 +18,5 @@ public class SpawnEditor : Editor{
 		}
 	}
 }
+
+#endif

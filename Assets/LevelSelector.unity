@@ -296,6 +296,16 @@ Prefab:
       propertyPath: spacer
       value: 
       objectReference: {fileID: 872774531}
+    - target: {fileID: 114077374176647616, guid: f8f95cca008c84e00b148d54b40d390f,
+        type: 2}
+      propertyPath: levelList.Array.data[5].unlocked
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114077374176647616, guid: f8f95cca008c84e00b148d54b40d390f,
+        type: 2}
+      propertyPath: levelList.Array.data[5].isInteractable
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f8f95cca008c84e00b148d54b40d390f, type: 2}
   m_IsPrefabParent: 0

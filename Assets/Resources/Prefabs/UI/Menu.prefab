@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 222334632717993448}
   - component: {fileID: 114655560136020796}
   m_Layer: 5
-  m_Name: Menu Label
+  m_Name: Progress Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,7 +111,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'MENU
+  m_Text: 'PROGRESS
+
 
 '
 --- !u!114 &114764512358754256
@@ -206,14 +207,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.44852942, g: 0.45512545, b: 0.45512545, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: bf8b79acdef5f408b94469ba7257c2f8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e2f7a8bed65c947b5acd5b9e6d2418a0, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -289,8 +290,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 43.000015, y: -15.5}
-  m_SizeDelta: {x: 86, y: 31}
+  m_AnchoredPosition: {x: 69.35002, y: -15.5}
+  m_SizeDelta: {x: 128.4, y: 31}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224839414813572678
 RectTransform:
@@ -300,17 +301,17 @@ RectTransform:
   m_GameObject: {fileID: 1752062606426970}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9999999, y: 0.9999999, z: 0.9999999}
+  m_LocalScale: {x: 1.0000024, y: 1.0000024, z: 1.0000024}
   m_Children:
   - {fileID: 224260593812372776}
   - {fileID: 224985307136612174}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 120.6, y: 0}
-  m_SizeDelta: {x: 120, y: 35}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -165.9, y: -3}
+  m_SizeDelta: {x: 165, y: 35}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &224985307136612174
 RectTransform:
@@ -327,6 +328,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 102.3, y: -15.499996}
+  m_AnchoredPosition: {x: 147.8, y: -15.499996}
   m_SizeDelta: {x: 28.5, y: 25.3}
   m_Pivot: {x: 0.5, y: 0.5}

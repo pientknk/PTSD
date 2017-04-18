@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿#if UNITY_EDITOR
+using UnityEngine;
 using UnityEditor;
 
 [CustomEditor(typeof(SpawningController))]
@@ -13,3 +14,5 @@ public class SpawningControllerEditor : Editor {
 		}
 	}
 }
+
+#endif
