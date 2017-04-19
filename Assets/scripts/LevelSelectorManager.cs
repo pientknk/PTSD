@@ -20,7 +20,9 @@ public class LevelSelectorManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		FillList ();
+		if (button != null) {
+			FillList ();
+		}
 	}
 
 	void FillList(){
@@ -66,7 +68,7 @@ public class LevelSelectorManager : MonoBehaviour {
 
 	void SaveAll(){
 		if (!PlayerPrefs.HasKey ("Level 1")) {
-			GameObject[] allButtons = GameObject.FindGameObjectsWithTag ("LevelButton");
+			GameObject[] allButtons = GameObject.FindGameObjectsWithTag ("LevelButton(Clone)");
 			foreach (GameObject button in allButtons) {
 				LevelSelector levelSelect = button.GetComponent<LevelSelector> ();
 				PlayerPrefs.SetInt (levelSelect.levelText.text, levelSelect.unlocked);
@@ -82,14 +84,24 @@ public class LevelSelectorManager : MonoBehaviour {
 		SceneManager.LoadScene(value);
 	}
 
-	// to unlock a level, add this script somewhere in each level and set public variables from another script:
-//	public int stars;
-//	public int levelToUnlock;
-//
-//	public void unLockNextLevel(){
-//		PlayerPrefs.SetInt ("Level " + levelToUnlock.ToString (), 1);
-		//set scores key so that way the stars can be activated accordingly
-//		PlayerPrefs.SetInt("Level " + (levelToUnlock - 1).ToString() + " stars", stars);
-//	}
+	public int starsEarnedForLevel(int level){
+		if (PlayerPrefs.HasKey ("Level " + (level).ToString () + " stars")) {
+			return PlayerPrefs.GetInt ("Level " + (level).ToString () + " stars");
+		} else {
+			return -1;
+		}
+	}
 
+	public void setStarsForLevel(int level, int stars){
+		PlayerPrefs.SetInt("Level " + (level).ToString() + " stars", stars);
+	}
+
+	// to unlock a level, set parameters appropriately
+	public void unlockNextLevel(int levelToUnlock){
+		if (levelToUnlock != 0) {
+			PlayerPrefs.SetInt ("Level " + levelToUnlock.ToString (), 1);
+			//set scores key so that way the stars can be activated accordingly
+			PlayerPrefs.SetInt("Level " + (levelToUnlock).ToString() + " stars", 0);
+		}
+	}
 }

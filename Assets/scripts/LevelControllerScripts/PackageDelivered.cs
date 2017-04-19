@@ -52,6 +52,7 @@ public class PackageDelivered : MonoBehaviour {
 		if (LevelController.instance.NumPackagesLeft == 0) {
 			print ("Done with level");
 			LevelController.instance.summaryCanvas.SetActive (true);
+			Time.timeScale = LevelController.instance.PauseGameSpeed;
 			LevelController.instance.canvas.GetComponent<CanvasGroup> ().interactable = false;
 		}
 	}

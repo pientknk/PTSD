@@ -16,11 +16,9 @@ public class CreateBuyableObject : MonoBehaviour {
 		Vector2 center = cam.ViewportToWorldPoint (new Vector3(0.5f, 0.5f));
 		Vector3 centerWithZ = new Vector3 (center.x, center.y, zPos);
 		clone.transform.position = centerWithZ;
-		//get z pos
 
 		//set selected object to this new object so that way the showSelected will highlight it
 		LevelController.instance.selectedObject = clone;
-
 		SubtractAvailableMoney (clone);
 		LevelController.instance.allBoughtObjects.Add (clone);
 	}

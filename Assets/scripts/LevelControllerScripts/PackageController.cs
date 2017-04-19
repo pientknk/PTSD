@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PackageController : MonoBehaviour {
 
@@ -24,13 +25,28 @@ public class PackageController : MonoBehaviour {
 	public GameObject explosion;
 	//private string objectName;
 
-	public Transform damageIndicator;
+	public Image healthBar;
+
+	private float relVelocity;
+	private float timeBetweenDamage = 0.3f;
+	private float timeSinceLastDamage = 0.0f;
+	private bool tookDamage = false;
 	// Use this for initialization
 	void Start () {
 		regularHealth = LevelController.instance.packageWorth;
 		currentHealth = regularHealth;
 		//initialize the floating damage object for this package
 		FloatingTextController.Initialize ();
+	}
+
+	void Update(){
+		if (tookDamage) {
+			timeSinceLastDamage += Time.deltaTime;
+		}
+		if (timeSinceLastDamage >= timeBetweenDamage) {
+			tookDamage = false;
+			timeSinceLastDamage = 0.0f;
+		}
 	}
 
 	/// <summary>
@@ -41,21 +57,31 @@ public class PackageController : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D col) {
 		if (col.gameObject.tag == "scaffold") {
 			TakeDamage (currentHealth);
-		} else {
-			// calcuates the force of impact on the package based on its velocity
-			float relVelocity = (float)(Mathf.Abs (col.relativeVelocity.y) + Mathf.Abs (col.relativeVelocity.x));
-			float mass = gameObject.GetComponent<Rigidbody2D> ().mass;
-			relVelocity = (mass) / (Mathf.Sqrt (relVelocity));
+		} else { 
+			if (!tookDamage) {
+				Rigidbody2D rb = gameObject.GetComponent<Rigidbody2D> ();
 
-			// reduced damage taken from these objects
-			if (col.gameObject.tag == "Trampoline") {
-				TakeDamage (relVelocity / 5.5f);
-			} else if (col.gameObject.tag == "Conveyor") {
-				TakeDamage (relVelocity / 2.5f);
-			} else if (col.gameObject.tag == "Slide") {
-				TakeDamage (relVelocity / 1.5f);
-			} else {
-				TakeDamage (relVelocity);
+				// calcuates the force of impact on the package based on its velocity
+				relVelocity = (float)(Mathf.Abs (col.relativeVelocity.y) + Mathf.Abs (col.relativeVelocity.x));
+				//Vector2 currentVel = col.relativeVelocity.normalized;
+				//print (col.relativeVelocity.x + " " + col.relativeVelocity.y + " " + currentVel.x + " " + currentVel.y);
+
+
+				float mass = rb.mass;
+				relVelocity = (mass) / (Mathf.Sqrt (relVelocity));
+
+				// reduced damage taken from these objects
+				if (col.gameObject.tag == "Trampoline") {
+					TakeDamage (relVelocity / 5.5f);
+				} else if (col.gameObject.tag == "Conveyor") {
+				
+					TakeDamage (relVelocity / 2.5f);
+				} else if (col.gameObject.tag == "Slide") {
+					TakeDamage (relVelocity / 1.5f);
+				} else {
+					TakeDamage (relVelocity);
+				}
+				tookDamage = true;
 			}
 		}
 
@@ -88,13 +114,10 @@ public class PackageController : MonoBehaviour {
 	/// </summary>
 	/// <param name="amount">Amount.</param>
 	private void TakeDamage(float amount){
-		//update the damage indicator
-		if (damageIndicator != null) {
-			Vector3 startingScale = damageIndicator.transform.localScale;
-			startingScale *= (currentHealth / regularHealth);
-			damageIndicator.transform.localScale = startingScale;
+		if (healthBar != null) {
+			healthBar.fillAmount = currentHealth / regularHealth; 
 		} else {
-			print ("Damage indicator not set in packagecontroller, you must set it on each package in the inspector.");
+			print ("Health bar image not set in packagecontroller, you must set it on each package in the inspector.");
 		}
 		FloatingTextController.CreateFloatingText (amount.ToString("F1"), transform.position);
 		currentHealth -= amount;
@@ -103,6 +126,7 @@ public class PackageController : MonoBehaviour {
 	private void checkPackageDestructionCount(){
 		if (LevelController.instance.NumPackagesLeft == 0) {
 			LevelController.instance.summaryCanvas.SetActive (true);
+			Time.timeScale = LevelController.instance.PauseGameSpeed;
 			LevelController.instance.canvas.GetComponent<CanvasGroup> ().interactable = false;
 		}
 	}
