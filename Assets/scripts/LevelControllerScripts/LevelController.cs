@@ -314,7 +314,9 @@ public class LevelController : MonoBehaviour {
 	}
 
 	void Start(){
-		objectPanel.SetActive (false);
+		if (objectPanel != null) {
+			objectPanel.SetActive (false);
+		}
 	}
 
 	/// <summary>

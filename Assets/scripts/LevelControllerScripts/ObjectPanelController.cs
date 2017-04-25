@@ -22,6 +22,38 @@ public class ObjectPanelController : MonoBehaviour {
 		}
 		SetUpButtonActions ();
 		UpdateButtons ();
+		//if/else statements on input keypresses so multiple keys can't be pressed at the same time
+		if (selectedObject != null && LevelController.instance.IsPaused) {
+			if (Input.GetKeyDown (KeyCode.Delete) || Input.GetKeyDown(KeyCode.Backspace)) {
+				Sell (selectedObject);
+			} else if (Input.GetKeyDown (KeyCode.O)) {
+				HitOrange (selectedObject);
+			} else if (Input.GetKeyDown (KeyCode.B)) {
+				HitBlue (selectedObject);
+			} else if (Input.GetKeyDown (KeyCode.N)) {
+				HitBoth (selectedObject);
+			} else if (Input.GetKeyDown (KeyCode.LeftArrow)) {
+				RotateLeft (selectedObject);
+			} else if (Input.GetKeyDown (KeyCode.RightArrow)) {
+				RotateRight (selectedObject);
+			} else if (Input.GetKeyDown (KeyCode.S)) {
+				if (allButtons [6].IsInteractable()) {
+					Switch (selectedObject);
+				}
+			} else if (Input.GetKeyDown (KeyCode.Space)) {
+				if (allButtons [7].IsInteractable()) {
+					Duplicate (selectedObject);
+				}
+			}
+
+			//freely rotate left or right instead of fixed 15 degree rotation
+			if (Input.GetKey(KeyCode.A)) {
+				FreeRotateLeft (selectedObject);
+			} else if (Input.GetKey(KeyCode.D)) {
+				FreeRotateRight (selectedObject);
+			}
+
+		}
 	}
 
 	void UpdateButtons(){
@@ -110,9 +142,21 @@ public class ObjectPanelController : MonoBehaviour {
 		theObject.transform.eulerAngles = rotation;
 	}
 
+	private void FreeRotateLeft(GameObject theObject){
+		Vector3 rotation = theObject.transform.rotation.eulerAngles;
+		rotation += (Vector3.forward * 1.0f);
+		theObject.transform.eulerAngles = rotation;
+	}
+
 	private void RotateRight(GameObject theObject){
 		Vector3 rotation = theObject.transform.rotation.eulerAngles;
 		rotation += (Vector3.back * 15.0f);
+		theObject.transform.eulerAngles = rotation;
+	}
+
+	private void FreeRotateRight(GameObject theObject){
+		Vector3 rotation = theObject.transform.rotation.eulerAngles;
+		rotation += (Vector3.back * 1.0f);
 		theObject.transform.eulerAngles = rotation;
 	}
 

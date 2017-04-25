@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class CreateBuyableObject : MonoBehaviour {
 
@@ -28,33 +29,31 @@ public class CreateBuyableObject : MonoBehaviour {
 	/// </summary>
 	/// /// <param name="prefab">Parameter to pass.</param>
 	private void SubtractAvailableMoney(GameObject prefab){
-		int amount = 0;
 		switch (prefab.tag) {
 		case "Conveyor":
-			amount = LevelController.instance.ConveyorCost;
+			LevelController.instance.startingMoney -= LevelController.instance.ConveyorCost;
 			break;
 		case "Trampoline":
-			amount = LevelController.instance.TrampolineCost;
+			LevelController.instance.startingMoney -= LevelController.instance.TrampolineCost;
 			break;
 		case "Slide":
-			amount = LevelController.instance.SlideCost;
+			LevelController.instance.startingMoney -= LevelController.instance.SlideCost;
 			break;
 		case "Fan":
-			amount = LevelController.instance.FanCost;
+			LevelController.instance.startingMoney -= LevelController.instance.FanCost;
 			break;
 		case "Glue":
-			amount = LevelController.instance.GlueCost;
+			LevelController.instance.startingMoney -= LevelController.instance.GlueCost;
 			break;
 		case "Magnet":
-			amount = LevelController.instance.MagnetCost;
+			LevelController.instance.startingMoney -= LevelController.instance.MagnetCost;
 			break;
 		case "Funnel":
-			amount = LevelController.instance.FunnelCost;
+			LevelController.instance.startingMoney -= LevelController.instance.FunnelCost;
 			break;
 		default:
 			print ("Error in CreateBuyableObject.cs: " + this.tag + " - must have an appropriate tag. e.g. Conveyor");
 			break;
 		}
-		LevelController.instance.startingMoney -= amount;
 	}
 }

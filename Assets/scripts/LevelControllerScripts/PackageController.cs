@@ -31,6 +31,8 @@ public class PackageController : MonoBehaviour {
 	private float timeBetweenDamage = 0.3f;
 	private float timeSinceLastDamage = 0.0f;
 	private bool tookDamage = false;
+
+	private float timeOnContact = 0.0f;
 	// Use this for initialization
 	void Start () {
 		regularHealth = LevelController.instance.packageWorth;
@@ -46,6 +48,31 @@ public class PackageController : MonoBehaviour {
 		if (timeSinceLastDamage >= timeBetweenDamage) {
 			tookDamage = false;
 			timeSinceLastDamage = 0.0f;
+		}
+	}
+
+	/// <summary>
+	/// Called every frame the collider is in contact with another collider. 
+	/// Checks if it's touching a magnet consecutively for 2 seconds, if so destroy the package
+	/// </summary>
+	/// <param name="col">Col.</param>
+	void OnCollisionStay2D(Collision2D col){
+		if (col.gameObject.tag == "Magnet") {
+			timeOnContact += Time.deltaTime;
+			if (timeOnContact >= 2.0f) {
+				TakeDamage (currentHealth);
+			}
+		} 
+	}
+
+	/// <summary>
+	/// Called when the collider stops touching another collider. 
+	/// Used to reset the timeOnContact parameter in case the package bounces off of a magnet but hits another later.
+	/// </summary>
+	/// <param name="col">Col.</param>
+	void OnCollisonExit2D(Collision2D col){
+		if (col.gameObject.tag == "Magnet") {
+			timeOnContact = 0.0f;
 		}
 	}
 
@@ -66,26 +93,25 @@ public class PackageController : MonoBehaviour {
 				//Vector2 currentVel = col.relativeVelocity.normalized;
 				//print (col.relativeVelocity.x + " " + col.relativeVelocity.y + " " + currentVel.x + " " + currentVel.y);
 
-
 				float mass = rb.mass;
 				relVelocity = (mass) / (Mathf.Sqrt (relVelocity));
-
-				// reduced damage taken from these objects
-				if (col.gameObject.tag == "Trampoline") {
-					TakeDamage (relVelocity / 5.5f);
-				} else if (col.gameObject.tag == "Conveyor") {
-				
-					TakeDamage (relVelocity / 2.5f);
-				} else if (col.gameObject.tag == "Slide") {
-					TakeDamage (relVelocity / 1.5f);
-				} else {
+				if (relVelocity > 4) {
+					// reduced damage taken from these objects
+					if (col.gameObject.tag == "Trampoline") {
+						TakeDamage (relVelocity / 5.0f);
+					} else if (col.gameObject.tag == "Conveyor") {
+						TakeDamage (relVelocity / 2.5f);
+					} else if (col.gameObject.tag == "Slide") {
+						TakeDamage (relVelocity / 1.5f);
+					}
 					TakeDamage (relVelocity);
 				}
 				tookDamage = true;
 			}
 		}
+	}
 
-
+	private void CheckHealth(){
 		// once the object has no health it should be destroyed, an explosion occurs, and money is reduced
 		if (currentHealth <= 0) {
 			Vector2 currentLocation = gameObject.transform.position;
@@ -121,6 +147,7 @@ public class PackageController : MonoBehaviour {
 		}
 		FloatingTextController.CreateFloatingText (amount.ToString("F1"), transform.position);
 		currentHealth -= amount;
+		CheckHealth ();
 	}
 
 	private void checkPackageDestructionCount(){
