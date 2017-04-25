@@ -57,9 +57,6 @@ public class ObjectPanelController : MonoBehaviour {
 					if (getSelectedObjectCost () > LevelController.instance.startingMoney) {
 						allButtons [7].interactable = false;
 					}
-					if (getSelectedObjectCost () > LevelController.instance.startingMoney) {
-						allButtons [0].interactable = false;
-					}
 			}
 		}
 	}
