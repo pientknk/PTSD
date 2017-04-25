@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PackageController : MonoBehaviour {
 
@@ -24,13 +25,55 @@ public class PackageController : MonoBehaviour {
 	public GameObject explosion;
 	//private string objectName;
 
-	public Transform damageIndicator;
+	public Image healthBar;
+
+	private float relVelocity;
+	private float timeBetweenDamage = 0.3f;
+	private float timeSinceLastDamage = 0.0f;
+	private bool tookDamage = false;
+
+	private float timeOnContact = 0.0f;
 	// Use this for initialization
 	void Start () {
 		regularHealth = LevelController.instance.packageWorth;
 		currentHealth = regularHealth;
 		//initialize the floating damage object for this package
 		FloatingTextController.Initialize ();
+	}
+
+	void Update(){
+		if (tookDamage) {
+			timeSinceLastDamage += Time.deltaTime;
+		}
+		if (timeSinceLastDamage >= timeBetweenDamage) {
+			tookDamage = false;
+			timeSinceLastDamage = 0.0f;
+		}
+	}
+
+	/// <summary>
+	/// Called every frame the collider is in contact with another collider. 
+	/// Checks if it's touching a magnet consecutively for 2 seconds, if so destroy the package
+	/// </summary>
+	/// <param name="col">Col.</param>
+	void OnCollisionStay2D(Collision2D col){
+		if (col.gameObject.tag == "Magnet") {
+			timeOnContact += Time.deltaTime;
+			if (timeOnContact >= 2.0f) {
+				TakeDamage (currentHealth);
+			}
+		} 
+	}
+
+	/// <summary>
+	/// Called when the collider stops touching another collider. 
+	/// Used to reset the timeOnContact parameter in case the package bounces off of a magnet but hits another later.
+	/// </summary>
+	/// <param name="col">Col.</param>
+	void OnCollisonExit2D(Collision2D col){
+		if (col.gameObject.tag == "Magnet") {
+			timeOnContact = 0.0f;
+		}
 	}
 
 	/// <summary>
@@ -41,25 +84,34 @@ public class PackageController : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D col) {
 		if (col.gameObject.tag == "scaffold") {
 			TakeDamage (currentHealth);
-		} else {
-			// calcuates the force of impact on the package based on its velocity
-			float relVelocity = (float)(Mathf.Abs (col.relativeVelocity.y) + Mathf.Abs (col.relativeVelocity.x));
-			float mass = gameObject.GetComponent<Rigidbody2D> ().mass;
-			relVelocity = (mass) / (Mathf.Sqrt (relVelocity));
+		} else { 
+			if (!tookDamage) {
+				Rigidbody2D rb = gameObject.GetComponent<Rigidbody2D> ();
 
-			// reduced damage taken from these objects
-			if (col.gameObject.tag == "Trampoline") {
-				TakeDamage (relVelocity / 5.5f);
-			} else if (col.gameObject.tag == "Conveyor") {
-				TakeDamage (relVelocity / 2.5f);
-			} else if (col.gameObject.tag == "Slide") {
-				TakeDamage (relVelocity / 1.5f);
-			} else {
-				TakeDamage (relVelocity);
+				// calcuates the force of impact on the package based on its velocity
+				relVelocity = (float)(Mathf.Abs (col.relativeVelocity.y) + Mathf.Abs (col.relativeVelocity.x));
+				//Vector2 currentVel = col.relativeVelocity.normalized;
+				//print (col.relativeVelocity.x + " " + col.relativeVelocity.y + " " + currentVel.x + " " + currentVel.y);
+
+				float mass = rb.mass;
+				relVelocity = (mass) / (Mathf.Sqrt (relVelocity));
+				if (relVelocity > 4) {
+					// reduced damage taken from these objects
+					if (col.gameObject.tag == "Trampoline") {
+						TakeDamage (relVelocity / 5.0f);
+					} else if (col.gameObject.tag == "Conveyor") {
+						TakeDamage (relVelocity / 2.5f);
+					} else if (col.gameObject.tag == "Slide") {
+						TakeDamage (relVelocity / 1.5f);
+					}
+					TakeDamage (relVelocity);
+				}
+				tookDamage = true;
 			}
 		}
+	}
 
-
+	private void CheckHealth(){
 		// once the object has no health it should be destroyed, an explosion occurs, and money is reduced
 		if (currentHealth <= 0) {
 			Vector2 currentLocation = gameObject.transform.position;
@@ -88,21 +140,20 @@ public class PackageController : MonoBehaviour {
 	/// </summary>
 	/// <param name="amount">Amount.</param>
 	private void TakeDamage(float amount){
-		//update the damage indicator
-		if (damageIndicator != null) {
-			Vector3 startingScale = damageIndicator.transform.localScale;
-			startingScale *= (currentHealth / regularHealth);
-			damageIndicator.transform.localScale = startingScale;
+		if (healthBar != null) {
+			healthBar.fillAmount = currentHealth / regularHealth; 
 		} else {
-			print ("Damage indicator not set in packagecontroller, you must set it on each package in the inspector.");
+			print ("Health bar image not set in packagecontroller, you must set it on each package in the inspector.");
 		}
 		FloatingTextController.CreateFloatingText (amount.ToString("F1"), transform.position);
 		currentHealth -= amount;
+		CheckHealth ();
 	}
 
 	private void checkPackageDestructionCount(){
 		if (LevelController.instance.NumPackagesLeft == 0) {
 			LevelController.instance.summaryCanvas.SetActive (true);
+			Time.timeScale = LevelController.instance.PauseGameSpeed;
 			LevelController.instance.canvas.GetComponent<CanvasGroup> ().interactable = false;
 		}
 	}

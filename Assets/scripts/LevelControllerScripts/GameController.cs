@@ -28,11 +28,6 @@ public class GameController : MonoBehaviour {
 		}
 	}
 
-	void OnGUI(){
-		GUI.Label(new Rect(10, 10, 100, 30), "Health: " + health);
-		GUI.Label(new Rect(10, 40, 150, 30), "Exp: " + experience);
-	}
-
 	//saves data out to a binary file
 	public void Save(){
 		//open file where data will be saved

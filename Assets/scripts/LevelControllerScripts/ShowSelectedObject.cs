@@ -9,7 +9,7 @@ public class ShowSelectedObject : MonoBehaviour {
 	void Start () {
 		selectedObject = LevelController.instance.selectedObject;
 		showSelectedIndicator = Instantiate (showSelectedIndicator);
-		showSelectedIndicator.GetComponent<Image> ().color = new Color (1.0f, 1.0f, 1.0f, 0.6f);
+		showSelectedIndicator.GetComponent<Image> ().color = new Color (1.0f, 1.0f, 1.0f, 0.5f);
 		GameObject levelCanvas = gameObject;
 		showSelectedIndicator.transform.SetParent (levelCanvas.transform);
 	}

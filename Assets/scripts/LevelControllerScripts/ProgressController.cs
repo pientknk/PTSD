@@ -3,8 +3,8 @@ using UnityEngine.UI;
 
 public class ProgressController : MonoBehaviour {
 
-	public Sprite checkMark;
-	public Sprite redX;
+	public Sprite filledStar;
+	public Sprite emptyStar;
 	public Image moneyStatus;
 	public Image packageStatus;
 	public Image objectStatus;
@@ -59,13 +59,13 @@ public class ProgressController : MonoBehaviour {
 		if (currentMoney < 0) {
 			moneyCount = "0/" + moneyNeeded;
 			moneyBarImage.fillAmount = 0;
-			moneyStatus.sprite = redX;
+			moneyStatus.sprite = emptyStar;
 			moneyStatus.color = redXColor;
 		} else if(currentMoney >= moneyNeeded){
 			moneyCount = currentMoney + "/" + moneyNeeded;
 			moneyBarImage.color = completedColor;
 			moneyBarImage.fillAmount = 1;
-			moneyStatus.sprite = checkMark;
+			moneyStatus.sprite = filledStar;
 			moneyStatus.color = checkColor;
 		} else{
 			moneyCount = currentMoney + "/" + moneyNeeded;
@@ -75,7 +75,7 @@ public class ProgressController : MonoBehaviour {
 			} else {
 				moneyBarImage.fillAmount = currentMoney / moneyNeeded;
 			}
-			moneyStatus.sprite = redX;
+			moneyStatus.sprite = emptyStar;
 			moneyStatus.color = redXColor;
 		}
 		moneyLabel.text = moneyCount;
@@ -90,7 +90,7 @@ public class ProgressController : MonoBehaviour {
 		if (successPackages >= packagesNeeded) {
 			packageBarImage.color = completedColor;
 			packageBarImage.fillAmount = 1;
-			packageStatus.sprite = checkMark;
+			packageStatus.sprite = filledStar;
 			packageStatus.color = checkColor;
 		} else {
 			packageBarImage.color = originalColor;
@@ -99,7 +99,7 @@ public class ProgressController : MonoBehaviour {
 			} else {
 				packageBarImage.fillAmount = (float)successPackages / (float)packagesNeeded;
 			}
-			packageStatus.sprite = redX;
+			packageStatus.sprite = emptyStar;
 			packageStatus.color = redXColor;
 		}
 		packageLabel.text = successPackages + "/" + packagesNeeded;
@@ -114,7 +114,7 @@ public class ProgressController : MonoBehaviour {
 		if (curObjectCount > maxObjects) {
 			objectBarImage.fillAmount = 0;
 			objectCountLabel.text = (maxObjects - curObjectCount) + " Item(s) Left";
-			objectStatus.sprite = redX;
+			objectStatus.sprite = emptyStar;
 			objectStatus.color = redXColor;
 		} else {
 			if (curObjectCount == 0) {
@@ -123,7 +123,7 @@ public class ProgressController : MonoBehaviour {
 				float percentUsed = (float)curObjectCount / (float)maxObjects;
 				objectBarImage.fillAmount = 1.0f - percentUsed;
 			}
-			objectStatus.sprite = checkMark;
+			objectStatus.sprite = filledStar;
 			objectStatus.color = checkColor;
 			objectCountLabel.text = (maxObjects - curObjectCount) + " Item(s) Left";
 		}

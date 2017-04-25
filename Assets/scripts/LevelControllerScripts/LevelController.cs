@@ -63,7 +63,7 @@ public class LevelController : MonoBehaviour {
 	/// The stars earned for this level, determined by the 3 tracked progresses: money earned, packages delivered, 
 	/// and number of objects used.
 	/// </summary>	
-	public int starsEarned;
+	public int starsEarned = 0;
 
 	/// <summary>
 	/// The money needed in order to earn 1 star for this level.
@@ -88,6 +88,11 @@ public class LevelController : MonoBehaviour {
 		get{ return currentObjectCount; }
 		set{ currentObjectCount = value; }
 	}
+
+	/// <summary>
+	/// The index of the level, starting at 1. e.g. level 1's levelIndex should be 1.
+	/// </summary>
+	public int levelIndex = 0;
 
 /* =============== MONEY ================= */
 
@@ -306,6 +311,36 @@ public class LevelController : MonoBehaviour {
 	//called before any start methods
 	void Awake () {
 		instance = this;
+	}
+
+	void Start(){
+		if (objectPanel != null) {
+			objectPanel.SetActive (false);
+		}
+	}
+
+	/// <summary>
+	/// Called when this script will be destroyed, used to check how many stars were earned.
+	/// </summary>
+	void OnDestroy(){
+		if (numPackagesLeft == 0) {
+			if (currentMoney >= moneyFor1Star) {
+				starsEarned += 1;
+			}
+			if (allBoughtObjects.Count <= maxObjectsUsedFor1Star) {
+				starsEarned += 1;
+			}
+			if (successfulPackages >= packagesFor1Star) {
+				starsEarned += 1;
+			}
+		} 
+		int previousStars = gameObject.GetComponent<LevelSelectorManager> ().starsEarnedForLevel (levelIndex);
+		if (starsEarned > previousStars) {
+			gameObject.GetComponent<LevelSelectorManager> ().setStarsForLevel (levelIndex, starsEarned);
+			if (starsEarned > 1) {
+				gameObject.GetComponent<LevelSelectorManager> ().unlockNextLevel (levelIndex + 1);
+			}
+		}
 	}
 
 	//saves data out to a binary file
