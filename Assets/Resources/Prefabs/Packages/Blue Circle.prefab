@@ -263,7 +263,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 2}
-  damageIndicator: {fileID: 4950989596679798}
   healthBar: {fileID: 114650855038926542}
 --- !u!212 &212336538739761538
 SpriteRenderer:

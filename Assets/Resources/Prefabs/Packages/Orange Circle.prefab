@@ -215,7 +215,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 2}
-  damageIndicator: {fileID: 4270113523463868}
   healthBar: {fileID: 114697728006448780}
 --- !u!114 &114633642408673140
 MonoBehaviour:
