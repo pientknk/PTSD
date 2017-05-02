@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 223230539179671068}
   - component: {fileID: 114923968118459276}
   - component: {fileID: 114842050601234206}
+  - component: {fileID: 114159172833619768}
   m_Layer: 0
   m_Name: Health Canvas
   m_TagString: Untagged
@@ -160,6 +161,17 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 13, y: 13}
+--- !u!114 &114159172833619768
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1046375926716030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c451945843dbe49078bfe5f8c93d2dbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114398355041095902
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -199,7 +211,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1246795467329858, guid: 111ea63e853a54e8b9f15acd801bf037, type: 2}
-  damageIndicator: {fileID: 4466544685099772}
   healthBar: {fileID: 114398355041095902}
 --- !u!114 &114563479443724036
 MonoBehaviour:
@@ -402,8 +413,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5.1, y: 23.5}
-  m_SizeDelta: {x: 13.1, y: 13.5}
+  m_AnchoredPosition: {x: 5.100006, y: 0}
+  m_SizeDelta: {x: 13.100006, y: 13.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224724378834339134
 RectTransform:
@@ -419,9 +430,9 @@ RectTransform:
   m_Father: {fileID: 224578342785641188}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.0000065267, y: 8.2}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.0000065267, y: 17.9}
   m_SizeDelta: {x: 46.8, y: 7.700001}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!224 &224775989694991992

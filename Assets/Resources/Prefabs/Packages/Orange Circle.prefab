@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 223947657044331384}
   - component: {fileID: 114633642408673140}
   - component: {fileID: 114116092842140766}
+  - component: {fileID: 114904887765814858}
   m_Layer: 0
   m_Name: Health Canvas
   m_TagString: Untagged
@@ -215,7 +216,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 2}
-  damageIndicator: {fileID: 4270113523463868}
   healthBar: {fileID: 114697728006448780}
 --- !u!114 &114633642408673140
 MonoBehaviour:
@@ -265,6 +265,17 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114904887765814858
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1312894900581980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c451945843dbe49078bfe5f8c93d2dbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212294022274497096
 SpriteRenderer:
   m_ObjectHideFlags: 1

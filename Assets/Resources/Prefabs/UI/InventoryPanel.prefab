@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 114968901229681798}
   - component: {fileID: 114028857614010190}
   - component: {fileID: 114143141532836156}
+  - component: {fileID: 114974061590523652}
   m_Layer: 5
   m_Name: Buy Slide Button
   m_TagString: Slide
@@ -391,6 +392,7 @@ GameObject:
   - component: {fileID: 114640778291796942}
   - component: {fileID: 114583323167515180}
   - component: {fileID: 114367528038211962}
+  - component: {fileID: 114379028370769564}
   m_Layer: 5
   m_Name: Buy Trampoline Button
   m_TagString: Trampoline
@@ -567,6 +569,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224764610248774932}
   - component: {fileID: 222106733159231418}
+  - component: {fileID: 114129856548246340}
   m_Layer: 5
   m_Name: Bank Info
   m_TagString: Untagged
@@ -586,6 +589,7 @@ GameObject:
   - component: {fileID: 114566931092300564}
   - component: {fileID: 114225381005415734}
   - component: {fileID: 114072875987169992}
+  - component: {fileID: 114936576256501982}
   m_Layer: 5
   m_Name: Buy Funnel Button
   m_TagString: Funnel
@@ -622,6 +626,7 @@ GameObject:
   - component: {fileID: 114239171035145686}
   - component: {fileID: 114398032790837654}
   - component: {fileID: 114820958310113202}
+  - component: {fileID: 114333346839905434}
   m_Layer: 5
   m_Name: Buy Magnet Button
   m_TagString: Magnet
@@ -641,6 +646,7 @@ GameObject:
   - component: {fileID: 114036001878487190}
   - component: {fileID: 114651617698624624}
   - component: {fileID: 114062516069874596}
+  - component: {fileID: 114867285391513142}
   m_Layer: 5
   m_Name: Buy Glue Button
   m_TagString: Glue
@@ -695,6 +701,7 @@ GameObject:
   - component: {fileID: 114887682917394302}
   - component: {fileID: 114801789876463858}
   - component: {fileID: 114645067965257634}
+  - component: {fileID: 114697198585538982}
   m_Layer: 5
   m_Name: Buy Fan Button
   m_TagString: Fan
@@ -714,6 +721,7 @@ GameObject:
   - component: {fileID: 114576688057955636}
   - component: {fileID: 114326264314739900}
   - component: {fileID: 114446765648787410}
+  - component: {fileID: 114688918530645022}
   m_Layer: 5
   m_Name: Buy Conveyor Button
   m_TagString: Conveyor
@@ -934,6 +942,20 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114129856548246340
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1766472765842988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cac4550a2ceb41b4979562ca0aa3201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: The amount of money available to buy parts. You can only gain funds by selling
+    a bought object for half price.
+  toolTip: {fileID: 0}
 --- !u!114 &114143141532836156
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1405,6 +1427,20 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114333346839905434
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1848437889712004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cac4550a2ceb41b4979562ca0aa3201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: The Magnet is difficult to use but doesn't damage objects, packages take damage
+    if they hit the magnet directly.
+  toolTip: {fileID: 0}
 --- !u!114 &114334541091854696
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1481,6 +1517,20 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114379028370769564
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1591686647031508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cac4550a2ceb41b4979562ca0aa3201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: The Trampoline is very bouncy and packages takes reduced damage. It's also
+    pretty cheap but small.
+  toolTip: {fileID: 0}
 --- !u!114 &114389678147539240
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2076,6 +2126,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f3939aa10953483faa3f0d002589a6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114688918530645022
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1931003293139736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cac4550a2ceb41b4979562ca0aa3201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: The Conveyor is the most expensive part but can be very useful. With high
+    friction and the ability to push packages.
+  toolTip: {fileID: 0}
+--- !u!114 &114697198585538982
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1923312538799140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cac4550a2ceb41b4979562ca0aa3201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: The Fan is a tricky part to use, and should be used with caution. It's biggest
+    advantage is that it doesn't damage packages(unless they hit the fan directly).
+  toolTip: {fileID: 0}
 --- !u!114 &114705694887384786
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2472,6 +2550,20 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114867285391513142
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1882694556811516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cac4550a2ceb41b4979562ca0aa3201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: 'The Glue is small but very useful by slowing down packages while being moderately
+    priced. '
+  toolTip: {fileID: 0}
 --- !u!114 &114870502616302834
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2564,6 +2656,19 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114936576256501982
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1771685882347606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cac4550a2ceb41b4979562ca0aa3201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: You can guess what the funnel does, and it does it for a high price.
+  toolTip: {fileID: 0}
 --- !u!114 &114952418316403000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2646,6 +2751,20 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114974061590523652
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1071626113079324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cac4550a2ceb41b4979562ca0aa3201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: The Slide has low friction and low cost. It is the most basic part, but can
+    still be very useful.
+  toolTip: {fileID: 0}
 --- !u!114 &114990433352488182
 MonoBehaviour:
   m_ObjectHideFlags: 1

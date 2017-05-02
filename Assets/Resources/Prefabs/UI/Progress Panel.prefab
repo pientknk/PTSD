@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 224032948826650052}
   - component: {fileID: 222371731271480932}
   - component: {fileID: 114444761001037270}
+  - component: {fileID: 114471192887359810}
   m_Layer: 5
   m_Name: Objects Used Bar
   m_TagString: Untagged
@@ -221,6 +222,7 @@ GameObject:
   - component: {fileID: 224542075225423304}
   - component: {fileID: 222754904596893212}
   - component: {fileID: 114233100782773108}
+  - component: {fileID: 114495487186984366}
   m_Layer: 5
   m_Name: Package Progress Bar
   m_TagString: Untagged
@@ -304,6 +306,7 @@ GameObject:
   - component: {fileID: 224935966116994726}
   - component: {fileID: 222778139829574110}
   - component: {fileID: 114226957378522264}
+  - component: {fileID: 114375944914619624}
   m_Layer: 5
   m_Name: Money Progress Bar
   m_TagString: Untagged
@@ -378,7 +381,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1917854841609782
 GameObject:
   m_ObjectHideFlags: 1
@@ -677,6 +680,19 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 10 Item(s) Left
+--- !u!114 &114375944914619624
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1797975798238814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cac4550a2ceb41b4979562ca0aa3201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: Tracks money earned from delivered packages.
+  toolTip: {fileID: 0}
 --- !u!114 &114444761001037270
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -731,6 +747,32 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114471192887359810
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1087923151221284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cac4550a2ceb41b4979562ca0aa3201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: Tracks how many parts you can buy.
+  toolTip: {fileID: 0}
+--- !u!114 &114495487186984366
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1465580146699824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cac4550a2ceb41b4979562ca0aa3201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: Tracks packages successfully delivered.
+  toolTip: {fileID: 0}
 --- !u!114 &114514515679379376
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1241,10 +1283,10 @@ RectTransform:
   m_Father: {fileID: 224419451157228118}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 115.5, y: -139}
+  m_SizeDelta: {x: 225, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224113411224851610
 RectTransform:
@@ -1490,10 +1532,10 @@ RectTransform:
   m_Father: {fileID: 224419451157228118}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 115.5, y: -84}
+  m_SizeDelta: {x: 225, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224603771319044066
 RectTransform:
@@ -1658,8 +1700,8 @@ RectTransform:
   m_Father: {fileID: 224419451157228118}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 115.5, y: -29}
+  m_SizeDelta: {x: 225, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}

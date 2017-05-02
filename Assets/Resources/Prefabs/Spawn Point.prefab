@@ -236,41 +236,18 @@ MonoBehaviour:
   infiniteCreate: 1
   spawnTime: 2.8
   allPackages:
-  - {fileID: 1990624977569622, guid: 6c991d1005b994bb0aaa95f8814f8a34, type: 2}
-  - {fileID: 1145781593532140, guid: 2c3990cafdfc2474e897c1575df1d197, type: 2}
-  - {fileID: 1062990845778250, guid: c66f67b6a181948edab26ef1ace326b6, type: 2}
-  - {fileID: 1145781593532140, guid: 2c3990cafdfc2474e897c1575df1d197, type: 2}
-  - {fileID: 1990624977569622, guid: 6c991d1005b994bb0aaa95f8814f8a34, type: 2}
-  - {fileID: 1145781593532140, guid: 2c3990cafdfc2474e897c1575df1d197, type: 2}
-  - {fileID: 1990624977569622, guid: 6c991d1005b994bb0aaa95f8814f8a34, type: 2}
-  - {fileID: 1145781593532140, guid: 2c3990cafdfc2474e897c1575df1d197, type: 2}
-  - {fileID: 1990624977569622, guid: 6c991d1005b994bb0aaa95f8814f8a34, type: 2}
-  - {fileID: 1990624977569622, guid: 6c991d1005b994bb0aaa95f8814f8a34, type: 2}
-  - {fileID: 1282100170459668, guid: 1053e2a8522374288bb426e0c1c9c09c, type: 2}
-  - {fileID: 1990624977569622, guid: 6c991d1005b994bb0aaa95f8814f8a34, type: 2}
-  - {fileID: 1145781593532140, guid: 2c3990cafdfc2474e897c1575df1d197, type: 2}
-  - {fileID: 1282100170459668, guid: 1053e2a8522374288bb426e0c1c9c09c, type: 2}
-  - {fileID: 1145781593532140, guid: 2c3990cafdfc2474e897c1575df1d197, type: 2}
-  - {fileID: 1282100170459668, guid: 1053e2a8522374288bb426e0c1c9c09c, type: 2}
-  - {fileID: 1145781593532140, guid: 2c3990cafdfc2474e897c1575df1d197, type: 2}
-  - {fileID: 1990624977569622, guid: 6c991d1005b994bb0aaa95f8814f8a34, type: 2}
-  - {fileID: 1145781593532140, guid: 2c3990cafdfc2474e897c1575df1d197, type: 2}
-  - {fileID: 1062990845778250, guid: c66f67b6a181948edab26ef1ace326b6, type: 2}
-  - {fileID: 1282100170459668, guid: 1053e2a8522374288bb426e0c1c9c09c, type: 2}
-  - {fileID: 1145781593532140, guid: 2c3990cafdfc2474e897c1575df1d197, type: 2}
-  - {fileID: 1062990845778250, guid: c66f67b6a181948edab26ef1ace326b6, type: 2}
-  - {fileID: 1282100170459668, guid: 1053e2a8522374288bb426e0c1c9c09c, type: 2}
-  - {fileID: 1990624977569622, guid: 6c991d1005b994bb0aaa95f8814f8a34, type: 2}
   - {fileID: 1062990845778250, guid: c66f67b6a181948edab26ef1ace326b6, type: 2}
   - {fileID: 1062990845778250, guid: c66f67b6a181948edab26ef1ace326b6, type: 2}
-  - {fileID: 1990624977569622, guid: 6c991d1005b994bb0aaa95f8814f8a34, type: 2}
-  - {fileID: 1282100170459668, guid: 1053e2a8522374288bb426e0c1c9c09c, type: 2}
+  - {fileID: 1062990845778250, guid: c66f67b6a181948edab26ef1ace326b6, type: 2}
+  - {fileID: 1062990845778250, guid: c66f67b6a181948edab26ef1ace326b6, type: 2}
+  - {fileID: 1062990845778250, guid: c66f67b6a181948edab26ef1ace326b6, type: 2}
+  - {fileID: 1062990845778250, guid: c66f67b6a181948edab26ef1ace326b6, type: 2}
+  - {fileID: 1062990845778250, guid: c66f67b6a181948edab26ef1ace326b6, type: 2}
+  - {fileID: 1062990845778250, guid: c66f67b6a181948edab26ef1ace326b6, type: 2}
+  - {fileID: 1062990845778250, guid: c66f67b6a181948edab26ef1ace326b6, type: 2}
   - {fileID: 1062990845778250, guid: c66f67b6a181948edab26ef1ace326b6, type: 2}
   packageTypes:
   - {fileID: 1062990845778250, guid: c66f67b6a181948edab26ef1ace326b6, type: 2}
-  - {fileID: 1145781593532140, guid: 2c3990cafdfc2474e897c1575df1d197, type: 2}
-  - {fileID: 1990624977569622, guid: 6c991d1005b994bb0aaa95f8814f8a34, type: 2}
-  - {fileID: 1282100170459668, guid: 1053e2a8522374288bb426e0c1c9c09c, type: 2}
 --- !u!212 &212431550738126302
 SpriteRenderer:
   m_ObjectHideFlags: 1
