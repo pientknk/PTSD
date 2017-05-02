@@ -7,6 +7,8 @@ public class PausePlayController : MonoBehaviour {
 
 	private Text speedLabel;
 	private Sprite playImage;
+	public Sprite muteImage;
+	public Sprite unmuteImage;
 
 	private GameObject pausePlayButton;
 	// Use this for initialization
@@ -19,6 +21,7 @@ public class PausePlayController : MonoBehaviour {
 		pausePlayButton = transform.GetChild (1).gameObject;
 		//start the game paused
 		Time.timeScale = LevelController.instance.PauseGameSpeed;
+
 	}
 
 	/// <summary>
@@ -26,6 +29,7 @@ public class PausePlayController : MonoBehaviour {
 	/// </summary>
 	/// <param name="buttonPressed">Button pressed.</param>
 	public void PauseOrPlay(Button buttonPressed){
+
 		if (buttonPressed.name == "Play Pause Button") {
 			LevelController.instance.IsPaused = !LevelController.instance.IsPaused;
 			if (LevelController.instance.IsPaused) {
@@ -39,6 +43,14 @@ public class PausePlayController : MonoBehaviour {
 			LevelController.instance.IsPaused = false;
 			pausePlayButton.GetComponent<Image> ().sprite = pauseImage;
 			Time.timeScale = LevelController.instance.FastGameSpeed;
+
+		} else if (buttonPressed.name == "Mute Music") {
+			print ("Mute Music Clicked");
+			if(buttonPressed.GetComponent<Image>().sprite == muteImage) {
+				buttonPressed.GetComponent<Image> ().sprite = unmuteImage;
+			} else {
+				buttonPressed.GetComponent<Image> ().sprite = muteImage;
+			}
 		} else {
 			LevelController.instance.IsPaused = false;
 			pausePlayButton.GetComponent<Image> ().sprite = pauseImage;
