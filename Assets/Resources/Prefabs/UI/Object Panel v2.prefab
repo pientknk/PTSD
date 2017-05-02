@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114636739468076522}
   - component: {fileID: 114135930276357254}
   - component: {fileID: 114561222464162838}
+  - component: {fileID: 114564894884171938}
   m_Layer: 5
   m_Name: Neutral Filter
   m_TagString: Untagged
@@ -42,6 +43,7 @@ GameObject:
   - component: {fileID: 114642012643082856}
   - component: {fileID: 114060086287903972}
   - component: {fileID: 114409328874956164}
+  - component: {fileID: 114601528585005642}
   m_Layer: 5
   m_Name: Rotate Right
   m_TagString: Untagged
@@ -100,7 +102,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1306263618191640
 GameObject:
   m_ObjectHideFlags: 1
@@ -130,6 +132,7 @@ GameObject:
   - component: {fileID: 114559069560743818}
   - component: {fileID: 114857230772045984}
   - component: {fileID: 114480192839357534}
+  - component: {fileID: 114373656905812118}
   m_Layer: 5
   m_Name: Sell Button
   m_TagString: Untagged
@@ -183,6 +186,7 @@ GameObject:
   - component: {fileID: 114947924922249482}
   - component: {fileID: 114880325937108484}
   - component: {fileID: 114609666696473660}
+  - component: {fileID: 114075454684224500}
   m_Layer: 5
   m_Name: Switch
   m_TagString: Untagged
@@ -202,6 +206,7 @@ GameObject:
   - component: {fileID: 114415939581712982}
   - component: {fileID: 114810994531823556}
   - component: {fileID: 114481172442890928}
+  - component: {fileID: 114090304574811002}
   m_Layer: 5
   m_Name: Duplicate
   m_TagString: Untagged
@@ -289,6 +294,7 @@ GameObject:
   - component: {fileID: 114632223992414550}
   - component: {fileID: 114304460954436484}
   - component: {fileID: 114233112527702210}
+  - component: {fileID: 114909536672030312}
   m_Layer: 5
   m_Name: Orange Filter
   m_TagString: Untagged
@@ -325,6 +331,7 @@ GameObject:
   - component: {fileID: 114438957132207222}
   - component: {fileID: 114489719352598850}
   - component: {fileID: 114467649521597350}
+  - component: {fileID: 114935569668173572}
   m_Layer: 5
   m_Name: Blue Filter
   m_TagString: Untagged
@@ -361,6 +368,7 @@ GameObject:
   - component: {fileID: 114647093846731048}
   - component: {fileID: 114747000426351362}
   - component: {fileID: 114021721229071598}
+  - component: {fileID: 114338140384518724}
   m_Layer: 5
   m_Name: Rotate Left
   m_TagString: Untagged
@@ -438,6 +446,34 @@ MonoBehaviour:
   switchRight: {fileID: 21300000, guid: 30436fed0e9e04630a4472fdfa9c8749, type: 3}
   switchLeft: {fileID: 21300000, guid: 5028fe05b93754ac7a6e6944fc4c7e57, type: 3}
   switchDisabled: {fileID: 21300000, guid: 6c221a504fd554b3bb1ddbaade9c1ed3, type: 3}
+--- !u!114 &114075454684224500
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1476623254170990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cac4550a2ceb41b4979562ca0aa3201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: 'Only applies to Conveyors, switches the direction it will push. Shortcut:
+    ''S'''
+  toolTip: {fileID: 0}
+--- !u!114 &114090304574811002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1480116193703704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cac4550a2ceb41b4979562ca0aa3201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: 'Dublicates the selected part, if enough funds are available. Shortcut: Space
+    Bar'
+  toolTip: {fileID: 0}
 --- !u!114 &114135930276357254
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -651,6 +687,33 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114338140384518724
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1943253437400342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cac4550a2ceb41b4979562ca0aa3201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: 'Rotates the selected part left by 15 degrees. Shortcut: Left Arrow, or ''A''
+    to free rotate.'
+  toolTip: {fileID: 0}
+--- !u!114 &114373656905812118
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1367057547330280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cac4550a2ceb41b4979562ca0aa3201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: 'Sell the currently selected part for half price. Shortcut: Delete or Backspace.'
+  toolTip: {fileID: 0}
 --- !u!114 &114409328874956164
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -898,6 +961,33 @@ MonoBehaviour:
   m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
   m_EffectDistance: {x: 0, y: 0}
   m_UseGraphicAlpha: 0
+--- !u!114 &114564894884171938
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1053996120883534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cac4550a2ceb41b4979562ca0aa3201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: 'Changes the selected part to hit both colors of packages. Shortcut: ''N'''
+  toolTip: {fileID: 0}
+--- !u!114 &114601528585005642
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1058724416578158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cac4550a2ceb41b4979562ca0aa3201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: 'Rotates the selected part right by 15 degrees. Shortcut: Right Arrow, or
+    ''D'' for free rotate.'
+  toolTip: {fileID: 0}
 --- !u!114 &114609666696473660
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1242,6 +1332,19 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114909536672030312
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1767529006968288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cac4550a2ceb41b4979562ca0aa3201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: 'Changes the selected part to hit orange packages. Shortcut: ''O'''
+  toolTip: {fileID: 0}
 --- !u!114 &114912075321811274
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1296,6 +1399,19 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114935569668173572
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1815718524854364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cac4550a2ceb41b4979562ca0aa3201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: 'Changes the selected part to hit blue packages. Shortcut: ''B'''
+  toolTip: {fileID: 0}
 --- !u!114 &114947924922249482
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1577,10 +1693,10 @@ RectTransform:
   m_Father: {fileID: 224109655084942594}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 40, y: 40}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &224162545115618352
 RectTransform:
@@ -1632,10 +1748,10 @@ RectTransform:
   m_Father: {fileID: 224109655084942594}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 132, y: -44}
-  m_SizeDelta: {x: 40, y: 40}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &224483994628864978
 RectTransform:
@@ -1705,10 +1821,10 @@ RectTransform:
   m_Father: {fileID: 224109655084942594}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 132, y: 0}
-  m_SizeDelta: {x: 40, y: 40}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &224646074682888690
 RectTransform:
@@ -1724,10 +1840,10 @@ RectTransform:
   m_Father: {fileID: 224109655084942594}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 44, y: 0}
-  m_SizeDelta: {x: 40, y: 40}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &224720690913688646
 RectTransform:
@@ -1743,10 +1859,10 @@ RectTransform:
   m_Father: {fileID: 224109655084942594}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 88, y: 0}
-  m_SizeDelta: {x: 40, y: 40}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &224763371895772554
 RectTransform:
@@ -1762,10 +1878,10 @@ RectTransform:
   m_Father: {fileID: 224109655084942594}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -44}
-  m_SizeDelta: {x: 40, y: 40}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &224765068366335462
 RectTransform:
@@ -1781,10 +1897,10 @@ RectTransform:
   m_Father: {fileID: 224109655084942594}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 88, y: -44}
-  m_SizeDelta: {x: 40, y: 40}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &224810167370157550
 RectTransform:
@@ -1836,10 +1952,10 @@ RectTransform:
   m_Father: {fileID: 224109655084942594}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 44, y: -44}
-  m_SizeDelta: {x: 40, y: 40}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &224904393075410614
 RectTransform:

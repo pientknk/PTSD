@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114551610766941488}
   - component: {fileID: 114864194447337716}
   - component: {fileID: 114790088414728692}
+  - component: {fileID: 114643435810389118}
   m_Layer: 5
   m_Name: Modify
   m_TagString: Modify
@@ -153,6 +154,19 @@ MonoBehaviour:
   m_Text: 'MODIFY
 
 '
+--- !u!114 &114643435810389118
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1010133495918670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cac4550a2ceb41b4979562ca0aa3201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: Toggles the buttons used to modify parts during the game.
+  toolTip: {fileID: 0}
 --- !u!114 &114790088414728692
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -274,7 +288,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 241.4, y: -3}
+  m_AnchoredPosition: {x: 241.4, y: 0}
   m_SizeDelta: {x: 120, y: 35}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &224966645192677908

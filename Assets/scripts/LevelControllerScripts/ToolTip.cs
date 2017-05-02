@@ -28,7 +28,7 @@ public class ToolTip : MonoBehaviour {
 		if (tooltipText.text != text) {
 			tooltipText.text = text;
 		}
-		transform.localPosition = pos;
+		gameObject.transform.localPosition = pos;
 		gameObject.SetActive (true);
 	}
 
