@@ -73,7 +73,7 @@ public class ProgressController : MonoBehaviour {
 			if (currentMoney == 0) {
 				moneyBarImage.fillAmount = 0;
 			} else {
-				moneyBarImage.fillAmount = currentMoney / moneyNeeded;
+				moneyBarImage.fillAmount = (float)currentMoney / (float)moneyNeeded;
 			}
 			moneyStatus.sprite = emptyStar;
 			moneyStatus.color = redXColor;
@@ -112,7 +112,7 @@ public class ProgressController : MonoBehaviour {
 		int curObjectCount = LevelController.instance.CurrentObjectCount;
 		int maxObjects = LevelController.instance.maxObjectsUsedFor1Star;
 		if (curObjectCount > maxObjects) {
-			objectBarImage.fillAmount = 0;
+			objectBarImage.fillAmount = 0.1f;
 			objectCountLabel.text = (maxObjects - curObjectCount) + " Item(s) Left";
 			objectStatus.sprite = emptyStar;
 			objectStatus.color = redXColor;

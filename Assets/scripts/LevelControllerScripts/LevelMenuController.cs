@@ -30,4 +30,9 @@ public class LevelMenuController : MonoBehaviour {
 		Time.timeScale = 1.0f;
 		SceneManager.LoadScene ("Settings");
 	}
+
+	public void LoadTutorial(){
+		Time.timeScale = 1.0f;
+		SceneManager.LoadScene ("Tutorial");
+	}
 }

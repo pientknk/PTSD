@@ -4,68 +4,54 @@ using System;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 
-//should be placed in only one scene
-public class GameController : MonoBehaviour {
+public static class GameController{
 
-	public static GameController controller;
-	public int totalStars;
-	public int money;
-	public int levelsUnlocked;
-	public int totalSuccessfulPackages;
-	public int totalFailurePackages;
+	public static bool tooltip;
+	public static bool music;
+	public static bool sounds;
 
-	public float health;
-	public float experience;
-	// Awake occurs before Start
-	// this makes it so that there can only be one of these objects in any scene
-	void Awake(){
-		if (controller == null) {
-			// makes it persist from scene to scene
-			DontDestroyOnLoad (gameObject);
-			controller = this;
-		} else if(controller != this){
-			Destroy (gameObject);
+	public static void DeleteAll(){
+		PlayerPrefs.DeleteKey ("tooltip");
+		PlayerPrefs.DeleteKey ("music");
+		PlayerPrefs.DeleteKey ("sound");
+	}
+
+	//saves data out to player prefs
+	public static void Save(int tool, int mus, int sound){
+		PlayerPrefs.SetInt("tooltip", tool);
+		PlayerPrefs.SetInt ("music", mus);
+		PlayerPrefs.SetInt ("sound", sound);
+
+	}
+
+	//loads data out of player prefs
+	public static void Load(){
+		if (PlayerPrefs.HasKey ("tooltip")) {
+			if (PlayerPrefs.GetInt ("tooltip") == 1) {
+				tooltip = true;
+			} else {
+				tooltip = false;
+			}
+		} else {
+			tooltip = true;
+		}
+		if (PlayerPrefs.HasKey ("music")) {
+			if (PlayerPrefs.GetInt ("music") == 1) {
+				music = true;
+			} else {
+				music = false;
+			}
+		} else {
+			music = true;
+		}
+		if (PlayerPrefs.HasKey ("sound")) {
+			if (PlayerPrefs.GetInt ("sound") == 1) {
+				sounds = true;
+			} else {
+				sounds = false;
+			}
+		} else {
+			sounds = true;
 		}
 	}
-
-	//saves data out to a binary file
-	public void Save(){
-		//open file where data will be saved
-		BinaryFormatter bf = new BinaryFormatter();
-		FileStream file = File.Create (Application.persistentDataPath + "/playerInfo.dat");
-
-		// update the file to be saved by getting current user data
-		UserData data = new UserData ();
-		data.health = health;
-		data.experience = experience;
-
-		//write to file and close it
-		bf.Serialize (file, data);
-		file.Close ();
-	}
-
-	public void Load(){
-		if (File.Exists (Application.persistentDataPath + "/playerInfo.dat")) {
-			BinaryFormatter bf = new BinaryFormatter ();
-			FileStream file = File.Open (Application.persistentDataPath + "/playerInfo.dat", FileMode.Open);
-			UserData data = (UserData)bf.Deserialize (file);
-			file.Close();
-
-			health = data.health;
-			experience = data.experience;
-		}
-	}
-
-
-}
-	
-// should reflect the instance variables and other data needed to save the game
-// needs to be serializable to be able to write to a file
-[Serializable]
-class UserData{
-	public int levelsUnlocked;
-	public int totalStars;
-	public int money;
-	public float health;
-	public float experience;
 }
