@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class MainMenuManager : MonoBehaviour {
 
-	public Button newgameButton;
 	public Button continueButton;
 
 	void Start () {
@@ -19,23 +18,5 @@ public class MainMenuManager : MonoBehaviour {
 		} else {
 			continueButton.interactable = false;
 		}
-		if (PlayerPrefs.HasKey ("tutorial")) {
-			string tutorialDone = PlayerPrefs.GetString ("tutorial");
-			print (tutorialDone);
-			if (tutorialDone == "yes") {
-				newgameButton.interactable = true;
-			} else {
-				newgameButton.interactable = false;
-				continueButton.interactable = false;
-			}
-		} else {
-			continueButton.interactable = false;
-			newgameButton.interactable = false;
-		}
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
 	}
 }

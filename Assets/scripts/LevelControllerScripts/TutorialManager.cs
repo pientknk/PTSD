@@ -4,8 +4,4 @@ using UnityEngine;
 
 public class TutorialManager : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		PlayerPrefs.SetString ("tutorial", "yes");
-	}
 }
