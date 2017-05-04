@@ -35,17 +35,18 @@ public class PausePlayController : MonoBehaviour {
 			if (LevelController.instance.IsPaused) {
 				buttonPressed.GetComponent<Image> ().sprite = playImage;
 				Time.timeScale = LevelController.instance.PauseGameSpeed;
+				speedLabel.text = "x" + Time.timeScale;
 			} else {
 				buttonPressed.GetComponent<Image> ().sprite = pauseImage;
 				Time.timeScale = LevelController.instance.RegularGameSpeed;
+				speedLabel.text = "x" + Time.timeScale;
 			}
 		} else if (buttonPressed.name == "Fast Forward Button") {
 			LevelController.instance.IsPaused = false;
 			pausePlayButton.GetComponent<Image> ().sprite = pauseImage;
 			Time.timeScale = LevelController.instance.FastGameSpeed;
-
+			speedLabel.text = "x" + Time.timeScale;
 		} else if (buttonPressed.name == "Mute Music") {
-			print ("Mute Music Clicked");
 			if(buttonPressed.GetComponent<Image>().sprite == muteImage) {
 				buttonPressed.GetComponent<Image> ().sprite = unmuteImage;
 			} else {
@@ -55,7 +56,8 @@ public class PausePlayController : MonoBehaviour {
 			LevelController.instance.IsPaused = false;
 			pausePlayButton.GetComponent<Image> ().sprite = pauseImage;
 			Time.timeScale = LevelController.instance.SuperGameSpeed;
+			speedLabel.text = "x" + Time.timeScale;
 		}
-		speedLabel.text = "x" + Time.timeScale;
+		//speedLabel.text = "x" + Time.timeScale;
 	}
 }
