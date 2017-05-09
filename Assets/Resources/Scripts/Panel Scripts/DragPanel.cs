@@ -31,7 +31,7 @@ public class DragPanel : MonoBehaviour, IPointerDownHandler, IDragHandler {
 			if (panelRectTransform == null)
 				return;
 
-			Vector2 pointerPostion = ClampToWindow (data);
+			Vector2 pointerPostion = data.position;
 			Vector2 localPointerPosition;
 			if (RectTransformUtility.ScreenPointToLocalPointInRectangle (
 				canvasRectTransform, pointerPostion, data.pressEventCamera, out localPointerPosition
@@ -43,7 +43,7 @@ public class DragPanel : MonoBehaviour, IPointerDownHandler, IDragHandler {
 				if (panelRectTransform == null)
 					return;
 
-				Vector2 pointerPostion = ClampToWindow (data);
+			Vector2 pointerPostion = data.position;
 
 				Vector2 localPointerPosition;
 				if (RectTransformUtility.ScreenPointToLocalPointInRectangle (
@@ -54,23 +54,5 @@ public class DragPanel : MonoBehaviour, IPointerDownHandler, IDragHandler {
 			}
 		}
 
-	}
-
-	/// <summary>
-	/// Clamps to window so that the panel cannot be drug past the screen with the mouse.
-	/// </summary>
-	/// <returns>The to window.</returns>
-	/// <param name="data">Data.</param>
-	Vector2 ClampToWindow (PointerEventData data) {
-		Vector2 rawPointerPosition = data.position;
-
-		Vector3[] canvasCorners = new Vector3[4];
-		canvasRectTransform.GetWorldCorners (canvasCorners);
-
-		float clampedX = Mathf.Clamp (rawPointerPosition.x, canvasCorners[0].x, canvasCorners[2].x);
-		float clampedY = Mathf.Clamp (rawPointerPosition.y, canvasCorners[0].y, canvasCorners[2].y);
-
-		Vector2 newPointerPosition = new Vector2 (clampedX, clampedY);
-		return newPointerPosition;
 	}
 }
