@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 114412819056051254}
   - component: {fileID: 212885933602640826}
   - component: {fileID: 114933591051621400}
+  - component: {fileID: 114445111101105050}
   m_Layer: 5
   m_Name: Package Counter
   m_TagString: Untagged
@@ -170,6 +171,19 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114445111101105050
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1679359164981420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cac4550a2ceb41b4979562ca0aa3201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: Shows the number of packages remaining for the level.
+  toolTip: {fileID: 0}
 --- !u!114 &114658812027669398
 MonoBehaviour:
   m_ObjectHideFlags: 1
