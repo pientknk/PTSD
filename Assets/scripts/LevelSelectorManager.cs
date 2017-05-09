@@ -20,6 +20,7 @@ public class LevelSelectorManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		//DeleteAll ();
 		if (button != null) {
 			FillList ();
 		}
@@ -68,15 +69,26 @@ public class LevelSelectorManager : MonoBehaviour {
 
 	void SaveAll(){
 		if (!PlayerPrefs.HasKey ("Level 1")) {
-			GameObject[] allButtons = GameObject.FindGameObjectsWithTag ("LevelButton(Clone)");
+			GameObject[] allButtons = GameObject.FindGameObjectsWithTag ("LevelButton");
 			foreach (GameObject button in allButtons) {
 				LevelSelector levelSelect = button.GetComponent<LevelSelector> ();
 				PlayerPrefs.SetInt (levelSelect.levelText.text, levelSelect.unlocked);
 			}
 		}
 	}
+		
+	/// <summary>
+	/// delete all keys related to the level selector, including stars and unlocked levels, can't delete
+	/// all PlayerPrefs because it would remove settings
+	/// </summary>
+	public void DeleteAll(){
+		for (int i = 1; i < 15; i++) {
+			PlayerPrefs.DeleteKey ("Level " + i + " stars");
+			PlayerPrefs.DeleteKey ("Level " + i);
+		}
+	}
 
-	void DeleteAll(){
+	public void DeleteAllPlayerPrefs(){
 		PlayerPrefs.DeleteAll ();
 	}
 

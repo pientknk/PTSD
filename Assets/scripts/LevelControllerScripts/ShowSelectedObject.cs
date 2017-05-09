@@ -27,9 +27,7 @@ public class ShowSelectedObject : MonoBehaviour {
 				}
 				showSelectedIndicator.SetActive (true);
 				gameObject.SetActive (true);
-				showSelectedIndicator.transform.position = Vector3.MoveTowards (
-					showSelectedIndicator.transform.position, 
-					LevelController.instance.selectedObject.transform.position, 15f);
+				showSelectedIndicator.transform.position = LevelController.instance.selectedObject.transform.position;
 			} 
 			//if selected object is null, hide the indicator
 			else {

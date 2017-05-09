@@ -90,9 +90,9 @@ public class LevelController : MonoBehaviour {
 	}
 
 	/// <summary>
-	/// The index of the level, starting at 1. e.g. level 1's levelIndex should be 1.
+	/// The index of the level, starting at 1. e.g. level 1's level should be 1.
 	/// </summary>
-	public int levelIndex = 0;
+	public int level = 0;
 
 /* =============== MONEY ================= */
 
@@ -270,41 +270,41 @@ public class LevelController : MonoBehaviour {
 
 /* =============== PANEL STATES ================= */
 
-	private bool isObjectPanelActive = false;
-	/// <summary>
-	/// True if the object panel should be active and showing, else false to hide it.
-	/// </summary>
-	public bool IsObjectPanelActive{
-		get{ return isObjectPanelActive; }
-		set{ isObjectPanelActive = value; }
-	}
-
-	private bool isShopPanelActive = true;
-	/// <summary>
-	/// True if the inventory panel should be active, else false to hide it.
-	/// </summary>
-	public bool IsShopPanelActive{
-		get{ return isShopPanelActive; }
-		set{ isObjectPanelActive = value; }
-	}
-
-	private bool isMenuPanelActive = false;
-	/// <summary>
-	/// True if the menu panel should be active, else false to hide it.
-	/// </summary>
-	public bool IsMenuPanelActive{
-		get{ return isMenuPanelActive; }
-		set{ isMenuPanelActive = value; }
-	}
-
-	private bool isProgressPanelActive = false;
-	/// <summary>
-	/// True if the progress panel should be active, else false to hide it.
-	/// </summary>
-	public bool IsProgressPanelActive{
-		get{ return isProgressPanelActive; }
-		set{ isProgressPanelActive = value; }
-	}
+//	private bool isObjectPanelActive = false;
+//	/// <summary>
+//	/// True if the object panel should be active and showing, else false to hide it.
+//	/// </summary>
+//	public bool IsObjectPanelActive{
+//		get{ return isObjectPanelActive; }
+//		set{ isObjectPanelActive = value; }
+//	}
+//
+//	private bool isShopPanelActive = true;
+//	/// <summary>
+//	/// True if the inventory panel should be active, else false to hide it.
+//	/// </summary>
+//	public bool IsShopPanelActive{
+//		get{ return isShopPanelActive; }
+//		set{ isObjectPanelActive = value; }
+//	}
+//
+//	private bool isMenuPanelActive = false;
+//	/// <summary>
+//	/// True if the menu panel should be active, else false to hide it.
+//	/// </summary>
+//	public bool IsMenuPanelActive{
+//		get{ return isMenuPanelActive; }
+//		set{ isMenuPanelActive = value; }
+//	}
+//
+//	private bool isProgressPanelActive = false;
+//	/// <summary>
+//	/// True if the progress panel should be active, else false to hide it.
+//	/// </summary>
+//	public bool IsProgressPanelActive{
+//		get{ return isProgressPanelActive; }
+//		set{ isProgressPanelActive = value; }
+//	}
 		
 /* ================== END OF MEMBER VARIABLES ==================== */
 
@@ -323,22 +323,11 @@ public class LevelController : MonoBehaviour {
 	/// Called when this script will be destroyed, used to check how many stars were earned.
 	/// </summary>
 	void OnDestroy(){
-		if (numPackagesLeft == 0) {
-			if (currentMoney >= moneyFor1Star) {
-				starsEarned += 1;
-			}
-			if (allBoughtObjects.Count <= maxObjectsUsedFor1Star) {
-				starsEarned += 1;
-			}
-			if (successfulPackages >= packagesFor1Star) {
-				starsEarned += 1;
-			}
-		} 
-		int previousStars = gameObject.GetComponent<LevelSelectorManager> ().starsEarnedForLevel (levelIndex);
+		int previousStars = gameObject.GetComponent<LevelSelectorManager> ().starsEarnedForLevel (level);
 		if (starsEarned > previousStars) {
-			gameObject.GetComponent<LevelSelectorManager> ().setStarsForLevel (levelIndex, starsEarned);
-			if (starsEarned > 1) {
-				gameObject.GetComponent<LevelSelectorManager> ().unlockNextLevel (levelIndex + 1);
+			gameObject.GetComponent<LevelSelectorManager> ().setStarsForLevel (level, starsEarned);
+			if (starsEarned >= 2) {
+				gameObject.GetComponent<LevelSelectorManager> ().unlockNextLevel (level + 1);
 			}
 		}
 	}
@@ -370,9 +359,6 @@ public class LevelController : MonoBehaviour {
 		data.successfulPackages = successfulPackages;
 		data.failurePackages = failurePackages;
 		data.selectedObject = null;
-		data.isObjectPanelActive = false;
-		data.isMenuPanelActive = false;
-		data.isShopPanelActive = false;
 
 
 		//write to file and close it
@@ -407,9 +393,6 @@ public class LevelController : MonoBehaviour {
 			successfulPackages = data.successfulPackages;
 			failurePackages = data.failurePackages;
 			selectedObject = data.selectedObject;
-			isObjectPanelActive = data.isObjectPanelActive;
-			isMenuPanelActive = data.isMenuPanelActive;
-			isShopPanelActive = data.isShopPanelActive;
 		} 
 		SceneManager.LoadScene (scene.name);
 	}

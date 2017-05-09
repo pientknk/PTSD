@@ -8,6 +8,7 @@ public class ToolTipTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 	public string text;
 	public GameObject toolTip;
 
+	private bool shouldShow;
 	private Vector2 cameraPos;
 	private float leftEdge;
 	private float rightEdge;
@@ -21,6 +22,7 @@ public class ToolTipTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 	private Vector2 tooltipCenter;
 
 	void Start(){
+		shouldShow = GameController.tooltip;
 		cameraPos = Camera.main.gameObject.transform.position;
 		leftEdge = cameraPos.x - (float)Screen.width / 2.0f;
 		rightEdge = cameraPos.x + (float)Screen.width / 2.0f;
@@ -34,34 +36,35 @@ public class ToolTipTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 	}
 
 	public void OnPointerEnter(PointerEventData eventData){
-		Vector3 pos = eventData.position; // x offset - 267, y offset - 251.8
-		Vector3 modPos = new Vector3 (pos.x - 267f, pos.y - 251.8f);
-		if (toolTip != null) {
-			//print ("Left Edge: " + tooltipRect.xMin + " right edge: " + tooltipRect.xMax + " top edge: " + tooltipRect.yMax + " bottom edge: " + tooltipRect.yMin
-			//	+ " width: " + tooltipRect.width);  
-			//correct position if part of the tooltip box will be offscreen
-			// if left edge of tooltip is off screen, move right
-			if (modPos.x - tooltipRect.xMax < leftEdge) {
-				modPos.x = leftEdge + tooltipRect.xMax;
+		if (shouldShow) {
+			Vector3 pos = eventData.position; // x offset - 267, y offset - 251.8
+			Vector3 modPos = new Vector3 (pos.x - 267f, pos.y - 251.8f);
+			if (toolTip != null) {
+				// if left edge of tooltip is off screen, move right
+				if (modPos.x - tooltipRect.xMax < leftEdge) {
+					modPos.x = leftEdge + tooltipRect.xMax;
+				}
+				// if right edge of tooltip is off screen, move left
+				if (modPos.x + tooltipRect.xMax > rightEdge) {
+					modPos.x = rightEdge - tooltipRect.xMax;
+				}
+				// if top edge of tooltip is off screen, move down
+				if (modPos.y + tooltipRect.yMax > topEdge) {
+					modPos.y = topEdge - tooltipRect.yMax;
+				}
+				// if bottom edge of tooltip is off screen, move up
+				if (modPos.y - tooltipRect.yMax < bottomEdge) {
+					modPos.y = bottomEdge + tooltipRect.yMax;
+				}
 			}
-			// if right edge of tooltip is off screen, move left
-			if (modPos.x + tooltipRect.xMax > rightEdge) {
-				modPos.x = rightEdge - tooltipRect.xMax;
-			}
-			// if top edge of tooltip is off screen, move down
-			if (modPos.y + tooltipRect.yMax > topEdge) {
-				modPos.y = topEdge - tooltipRect.yMax;
-			}
-			// if bottom edge of tooltip is off screen, move up
-			if (modPos.y - tooltipRect.yMax < bottomEdge) {
-				modPos.y = bottomEdge + tooltipRect.yMax;
-			}
+			StartHover (modPos);
 		}
-		StartHover (modPos);
 	}
 
 	public void OnSelect(BaseEventData eventData){
-		StartHover (transform.position);
+		if (shouldShow) {
+			StartHover (transform.position);
+		}
 	}
 
 	public void OnPointerExit(PointerEventData eventData){
