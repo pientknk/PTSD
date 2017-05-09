@@ -151,8 +151,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseImage: {fileID: 21300000, guid: 3c4c021181119a4469564fbde1165236, type: 3}
-  muteImage: {fileID: 21300000, guid: 4ba3822ab80091c408c23ae7befd7b58, type: 3}
-  unmuteImage: {fileID: 21300000, guid: 6a8675438021ee842899dc22e915555b, type: 3}
+  muteImage: {fileID: 21300000, guid: 6a8675438021ee842899dc22e915555b, type: 3}
+  unmuteImage: {fileID: 21300000, guid: 4ba3822ab80091c408c23ae7befd7b58, type: 3}
 --- !u!114 &114035461839162494
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -422,7 +422,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 0
+    m_Mode: 3
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
