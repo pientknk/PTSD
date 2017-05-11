@@ -16,9 +16,14 @@ public class ToggleSoundFX : MonoBehaviour {
 
 	void Start() {
 		mute = false;
+
 		explode = AssetDatabase.LoadAssetAtPath("Assets/Resources/Prefabs/Packages/Explosion.prefab", typeof(GameObject)) as GameObject; 
 		shatter = AssetDatabase.LoadAssetAtPath("Assets/Resources/Prefabs/Packages/Wrecked Orange Package.prefab", typeof(GameObject)) as GameObject;
 		shatter2 = AssetDatabase.LoadAssetAtPath("Assets/Resources/Prefabs/Packages/Wrecked Blue Package.prefab", typeof(GameObject)) as GameObject;
+	
+		explode.GetComponent<AudioSource>().playOnAwake = true;
+		shatter.GetComponent<AudioSource>().playOnAwake = true;
+		shatter2.GetComponent<AudioSource>().playOnAwake = true;
 	}
 
 	public void toggle (Button buttonPressed) {

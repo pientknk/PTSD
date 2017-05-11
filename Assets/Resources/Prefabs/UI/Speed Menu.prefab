@@ -113,8 +113,8 @@ GameObject:
   m_Component:
   - component: {fileID: 224884772583713924}
   - component: {fileID: 222131969772760664}
-  - component: {fileID: 114892151289221450}
   - component: {fileID: 114237764102791282}
+  - component: {fileID: 114862851394852738}
   m_Layer: 5
   m_Name: Mute Explosions
   m_TagString: Untagged
@@ -153,6 +153,8 @@ MonoBehaviour:
   pauseImage: {fileID: 21300000, guid: 3c4c021181119a4469564fbde1165236, type: 3}
   muteImage: {fileID: 21300000, guid: 6a8675438021ee842899dc22e915555b, type: 3}
   unmuteImage: {fileID: 21300000, guid: 4ba3822ab80091c408c23ae7befd7b58, type: 3}
+  mutedBombs: {fileID: 21300000, guid: b94e6dd4df8f39e41a13775556e80240, type: 3}
+  unmutedBombs: {fileID: 21300000, guid: ee0c62efc6c3138418842bfaf56f8639, type: 3}
 --- !u!114 &114035461839162494
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -312,7 +314,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0, g: 1, b: 0.047058824, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -327,10 +329,21 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 114892151289221450}
+  m_TargetGraphic: {fileID: 114862851394852738}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 114030596694592548}
+        m_MethodName: PauseOrPlay
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 114237764102791282}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: toggle();
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 0}
         m_MethodName: toggle
         m_Mode: 2
@@ -339,7 +352,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: toggle();
+          m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -620,7 +633,7 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114892151289221450
+--- !u!114 &114862851394852738
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -628,31 +641,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1742629688195644}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.83448267, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 1
-    m_BestFit: 1
-    m_MinSize: 1
-    m_MaxSize: 40
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Mute Boxes
+  m_Sprite: {fileID: 21300000, guid: ee0c62efc6c3138418842bfaf56f8639, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
 --- !u!212 &212197812513391718
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -817,8 +824,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 103, y: 1}
-  m_SizeDelta: {x: 41.600006, y: 30.1}
+  m_AnchoredPosition: {x: 99.6, y: 3.2}
+  m_SizeDelta: {x: 26.9, y: 31.55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224954790291370458
 RectTransform:
