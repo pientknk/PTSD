@@ -10,9 +10,15 @@ public class PausePlayController : MonoBehaviour {
 
 	private Text speedLabel;
 	private Sprite playImage;
+
 	public Sprite muteImage;
 	public Sprite unmuteImage;
-	private bool muted;
+
+	public Sprite mutedBombs;
+	public Sprite unmutedBombs;
+
+	private bool song_muted;
+	private bool explosion_muted;
 
 	private GameObject pausePlayButton;
 	// Use this for initialization
@@ -26,7 +32,8 @@ public class PausePlayController : MonoBehaviour {
 		//start the game paused
 		Time.timeScale = LevelController.instance.PauseGameSpeed;
 
-		muted = false;
+		song_muted = false;
+		explosion_muted = false;
 	}
 
 	/// <summary>
@@ -52,14 +59,20 @@ public class PausePlayController : MonoBehaviour {
 			Time.timeScale = LevelController.instance.FastGameSpeed;
 			speedLabel.text = "x" + Time.timeScale;
 		} else if (buttonPressed.name == "Mute Music") {
-			if(muted == false) {
-				print (unmuteImage.ToString());
+			if(song_muted == false) {
 				buttonPressed.GetComponent<Image> ().sprite = unmuteImage;
-				muted = true;
+				song_muted = true;
 			} else {
-				print (muteImage.ToString());
 				buttonPressed.GetComponent<Image> ().sprite = muteImage;
-				muted = false;
+				song_muted = false;
+			}
+		} else if (buttonPressed.name == "Mute Explosions") {
+			if(explosion_muted == false) {
+				buttonPressed.GetComponent<Image> ().sprite = mutedBombs;
+				explosion_muted = true;
+			} else {
+				buttonPressed.GetComponent<Image> ().sprite = unmutedBombs;
+				explosion_muted = false;
 			}
 		} else {
 			LevelController.instance.IsPaused = false;
