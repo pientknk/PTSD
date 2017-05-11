@@ -5559,12 +5559,22 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 409551120}
+    - target: {fileID: 114395325147771322, guid: f50417647bda045aba1e37d1916957c1,
+        type: 2}
+      propertyPath: toolTip
+      value: 
+      objectReference: {fileID: 1165685396}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f50417647bda045aba1e37d1916957c1, type: 2}
   m_IsPrefabParent: 0
 --- !u!224 &1165685395 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224954790291370458, guid: f50417647bda045aba1e37d1916957c1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1165685394}
+--- !u!1 &1165685396 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1010805388204180, guid: f50417647bda045aba1e37d1916957c1,
     type: 2}
   m_PrefabInternal: {fileID: 1165685394}
 --- !u!1 &1167675806
