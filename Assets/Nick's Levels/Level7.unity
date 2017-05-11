@@ -4726,7 +4726,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1342194153484704, guid: d0d55cecadb414b1fa4205f0196ebdbd, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d0d55cecadb414b1fa4205f0196ebdbd, type: 2}
@@ -5866,6 +5866,21 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114237764102791282, guid: f50417647bda045aba1e37d1916957c1,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 409551120}
+    - target: {fileID: 114531359120881006, guid: f50417647bda045aba1e37d1916957c1,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 409551121}
+    - target: {fileID: 114531359120881006, guid: f50417647bda045aba1e37d1916957c1,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: toggle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f50417647bda045aba1e37d1916957c1, type: 2}

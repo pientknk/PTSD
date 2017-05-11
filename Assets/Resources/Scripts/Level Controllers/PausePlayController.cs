@@ -10,8 +10,13 @@ public class PausePlayController : MonoBehaviour {
 
 	private Text speedLabel;
 	private Sprite playImage;
+
 	public Sprite muteImage;
 	public Sprite unmuteImage;
+
+	public Sprite mutedBombs;
+	public Sprite unmutedBombs;
+
 	private bool song_muted;
 	private bool explosion_muted;
 
@@ -63,8 +68,10 @@ public class PausePlayController : MonoBehaviour {
 			}
 		} else if (buttonPressed.name == "Mute Explosions") {
 			if(explosion_muted == false) {
+				buttonPressed.GetComponent<Image> ().sprite = mutedBombs;
 				explosion_muted = true;
 			} else {
+				buttonPressed.GetComponent<Image> ().sprite = unmutedBombs;
 				explosion_muted = false;
 			}
 		} else {
