@@ -13,14 +13,21 @@ public class ToggleMute : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		music = GetComponent<AudioSource> ();
+		if (GameController.music) {
+			music.UnPause ();
+		} else {
+			music.Pause ();
+		}
 	}
 	
 	// Update is called once per frame
 	public void toggle (Button buttonPressed) {
 		if(music.isPlaying) {
+			GameController.music = false;
 			music.Pause();
 		} else {
 			music.UnPause();
+			GameController.music = true;
 		}
 	}
 }
