@@ -4627,6 +4627,11 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!1 &1009545021 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1010805388204180, guid: f50417647bda045aba1e37d1916957c1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1165685394}
 --- !u!1001 &1015926088
 Prefab:
   m_ObjectHideFlags: 0
@@ -5882,6 +5887,11 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: toggle
       objectReference: {fileID: 0}
+    - target: {fileID: 114395325147771322, guid: f50417647bda045aba1e37d1916957c1,
+        type: 2}
+      propertyPath: toolTip
+      value: 
+      objectReference: {fileID: 1009545021}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f50417647bda045aba1e37d1916957c1, type: 2}
   m_IsPrefabParent: 0
