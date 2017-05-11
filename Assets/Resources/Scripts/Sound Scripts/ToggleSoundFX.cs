@@ -31,11 +31,13 @@ public class ToggleSoundFX : MonoBehaviour {
 			shatter.GetComponent<AudioSource>().playOnAwake = mute;
 			shatter2.GetComponent<AudioSource>().playOnAwake = mute;
 			mute = true;
+			GameController.sounds = mute;
 		} else {
 			explode.GetComponent<AudioSource>().playOnAwake = mute;
 			shatter.GetComponent<AudioSource>().playOnAwake = mute;
 			shatter2.GetComponent<AudioSource>().playOnAwake = mute;
 			mute = false;
+			GameController.sounds = mute;
 		}
 	}
 }
