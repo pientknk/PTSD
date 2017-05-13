@@ -16,7 +16,7 @@ public class ToggleSoundFX : MonoBehaviour {
 
 	void Start() {
 
-		mute = GameController.sounds;
+		mute = !GameController.sounds;
 		explode = AssetDatabase.LoadAssetAtPath("Assets/Resources/Prefabs/Packages/Explosion.prefab", typeof(GameObject)) as GameObject; 
 		shatter = AssetDatabase.LoadAssetAtPath("Assets/Resources/Prefabs/Packages/Wrecked Orange Package.prefab", typeof(GameObject)) as GameObject;
 		shatter2 = AssetDatabase.LoadAssetAtPath("Assets/Resources/Prefabs/Packages/Wrecked Blue Package.prefab", typeof(GameObject)) as GameObject;
@@ -31,13 +31,11 @@ public class ToggleSoundFX : MonoBehaviour {
 			shatter.GetComponent<AudioSource>().playOnAwake = mute;
 			shatter2.GetComponent<AudioSource>().playOnAwake = mute;
 			mute = true;
-			GameController.sounds = mute;
 		} else {
 			explode.GetComponent<AudioSource>().playOnAwake = mute;
 			shatter.GetComponent<AudioSource>().playOnAwake = mute;
 			shatter2.GetComponent<AudioSource>().playOnAwake = mute;
 			mute = false;
-			GameController.sounds = mute;
 		}
 	}
 }

@@ -10051,6 +10051,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1944713631}
     m_Modifications:
+    - target: {fileID: 114237764102791282, guid: f50417647bda045aba1e37d1916957c1,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 224954790291370458, guid: f50417647bda045aba1e37d1916957c1,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -10146,9 +10151,76 @@ Prefab:
       propertyPath: toolTip
       value: 
       objectReference: {fileID: 1787803326}
+    - target: {fileID: 114531359120881006, guid: f50417647bda045aba1e37d1916957c1,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2122030627}
+    - target: {fileID: 114531359120881006, guid: f50417647bda045aba1e37d1916957c1,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: toggle
+      objectReference: {fileID: 0}
+    - target: {fileID: 114237764102791282, guid: f50417647bda045aba1e37d1916957c1,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2122030626}
+    - target: {fileID: 114237764102791282, guid: f50417647bda045aba1e37d1916957c1,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: toggle
+      objectReference: {fileID: 0}
+    - target: {fileID: 114237764102791282, guid: f50417647bda045aba1e37d1916957c1,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114237764102791282, guid: f50417647bda045aba1e37d1916957c1,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114237764102791282, guid: f50417647bda045aba1e37d1916957c1,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114237764102791282, guid: f50417647bda045aba1e37d1916957c1,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2021716253}
+    - target: {fileID: 114237764102791282, guid: f50417647bda045aba1e37d1916957c1,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PauseOrPlay
+      objectReference: {fileID: 0}
+    - target: {fileID: 114237764102791282, guid: f50417647bda045aba1e37d1916957c1,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.UI.Button, UnityEngine.UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 114237764102791282, guid: f50417647bda045aba1e37d1916957c1,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 2021716252}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f50417647bda045aba1e37d1916957c1, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &2021716252 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114237764102791282, guid: f50417647bda045aba1e37d1916957c1,
+    type: 2}
+  m_PrefabInternal: {fileID: 2021716251}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &2021716253 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114030596694592548, guid: f50417647bda045aba1e37d1916957c1,
+    type: 2}
+  m_PrefabInternal: {fileID: 2021716251}
+  m_Script: {fileID: 11500000, guid: aacff5f1a432346fbb90dc307ed00b97, type: 3}
 --- !u!1 &2069255907
 GameObject:
   m_ObjectHideFlags: 0

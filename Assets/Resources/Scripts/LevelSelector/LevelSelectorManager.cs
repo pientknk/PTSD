@@ -139,10 +139,17 @@ public class LevelSelectorManager : MonoBehaviour {
 	/// </summary>
 	/// <param name="levelToUnlock">Level to unlock.</param>
 	public void unlockNextLevel(int levelToUnlock){
-		if (levelToUnlock != 0) {
+		if (levelToUnlock > 0) {
 			PlayerPrefs.SetInt ("Level " + levelToUnlock.ToString (), 1);
 			//set scores key so that way the stars can be activated accordingly
 			PlayerPrefs.SetInt("Level " + (levelToUnlock).ToString() + " stars", 0);
+		}
+	}
+
+	public void unlockAllLevels(){
+		for (int i = 1; i <= 15; i++) {
+			PlayerPrefs.SetInt ("Level " + i, 1);
+			PlayerPrefs.SetInt ("Level " + i + " stars", 0);
 		}
 	}
 }

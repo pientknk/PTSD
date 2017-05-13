@@ -23,11 +23,9 @@ public class ToggleMute : MonoBehaviour {
 	// Update is called once per frame
 	public void toggle (Button buttonPressed) {
 		if(music.isPlaying) {
-			GameController.music = false;
 			music.Pause();
 		} else {
 			music.UnPause();
-			GameController.music = true;
 		}
 	}
 }

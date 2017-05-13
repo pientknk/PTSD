@@ -422,7 +422,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: Controls the speed of the game. Parts can only be modified when the game is
     paused.
-  toolTip: {fileID: 0}
+  toolTip: {fileID: 1010805388204180}
 --- !u!114 &114531359120881006
 MonoBehaviour:
   m_ObjectHideFlags: 1

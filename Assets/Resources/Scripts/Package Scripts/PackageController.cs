@@ -101,11 +101,11 @@ public class PackageController : MonoBehaviour {
 				if (relVelocity > 4) {
 					// reduced damage taken from these objects
 					if (col.gameObject.tag == "Trampoline") {
-						TakeDamage (relVelocity / 5.0f);
+						TakeDamage (relVelocity / 7.0f);
 					} else if (col.gameObject.tag == "Conveyor") {
-						TakeDamage (relVelocity / 2.5f);
+						TakeDamage (relVelocity / 5.5f);
 					} else if (col.gameObject.tag == "Slide") {
-						TakeDamage (relVelocity / 1.5f);
+						TakeDamage (relVelocity / 4.5f);
 					}
 					TakeDamage (relVelocity);
 				}
