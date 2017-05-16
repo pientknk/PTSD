@@ -32,40 +32,65 @@ public class BuyObjectButtonManager : MonoBehaviour {
 	/// </summary>
 	private void CheckBuyButtons(){
 		float currentMoney = LevelController.instance.startingMoney;
-		if (currentMoney < LevelController.instance.SlideCost) {
-			allButtons [0].interactable = false;
-		} else {
-			allButtons [0].interactable = true;
+		for (int i = 0; i < allButtons.Length; i++) {
+			switch (i) {
+			case 0:
+				if (currentMoney < LevelController.instance.SlideCost) {
+					allButtons [i].interactable = false;
+				} else {
+					allButtons [i].interactable = true;
+				}
+				break;
+			case 1:
+				if (currentMoney < LevelController.instance.ConveyorCost) {
+					allButtons [i].interactable = false;
+				} else {
+					allButtons [i].interactable = true;
+				}
+				break;
+			case 2:
+				if (currentMoney < LevelController.instance.TrampolineCost) {
+					allButtons [i].interactable = false;
+				} else {
+					allButtons [i].interactable = true;
+				}
+				break;
+			case 3:
+				if (currentMoney < LevelController.instance.GlueCost) {
+					allButtons [i].interactable = false;
+				} else {
+					allButtons [i].interactable = true;
+				}
+				break;
+			case 4:
+				if (currentMoney < LevelController.instance.FunnelCost) {
+					allButtons [i].interactable = false;
+				} else {
+					allButtons [i].interactable = true;
+				}
+				break;
+			case 5:
+				if (currentMoney < LevelController.instance.FanCost) {
+					allButtons [i].interactable = false;
+				} else {
+					allButtons [i].interactable = true;
+				}
+				break;
+			case 6:
+				if (currentMoney < LevelController.instance.MagnetCost) {
+					allButtons [i].interactable = false;
+				} else {
+					allButtons [i].interactable = true;
+				}
+				break;
+			default:
+				break;
+			}
 		}
-		if (currentMoney < LevelController.instance.ConveyorCost) {
-			allButtons [1].interactable = false;
-		} else {
-			allButtons [1].interactable = true;
-		}
-		if (currentMoney < LevelController.instance.TrampolineCost) {
-			allButtons [2].interactable = false;
-		} else {
-			allButtons [2].interactable = true;
-		}
-		if (currentMoney < LevelController.instance.GlueCost) {
-			allButtons [3].interactable = false;
-		} else {
-			allButtons [3].interactable = true;
-		}
-		if (currentMoney < LevelController.instance.FunnelCost) {
-			allButtons [4].interactable = false;
-		} else {
-			allButtons [4].interactable = true;
-		}
-		if (currentMoney < LevelController.instance.FanCost) {
-			allButtons [5].interactable = false;
-		} else {
-			allButtons [5].interactable = true;
-		}
-		if (currentMoney < LevelController.instance.MagnetCost) {
-			allButtons [6].interactable = false;
-		} else {
-			allButtons [6].interactable = true;
-		}
+	
+
+
+
+
 	}
 }
