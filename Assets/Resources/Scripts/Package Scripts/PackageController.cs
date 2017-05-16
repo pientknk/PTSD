@@ -148,7 +148,8 @@ public class PackageController : MonoBehaviour {
 		} else {
 			print ("Health bar image not set in packagecontroller, you must set it on each package in the inspector.");
 		}
-		FloatingTextController.CreateFloatingText (amount.ToString("F1"), transform.position);
+		Vector2 randomPos = new Vector2 (transform.position.x + Random.Range (-25.0f, 25.0f), transform.position.y + Random.Range (-25.0f, 25.0f));
+		FloatingTextController.CreateFloatingText (amount.ToString("F1"), randomPos);
 		currentHealth -= amount;
 		CheckHealth ();
 	}

@@ -10,15 +10,15 @@ public static class GameController{
 	/// <summary>
 	/// Should the tooltips display over ui elements
 	/// </summary>
-	public static bool tooltip;
+	public static bool tooltip = true;
 	/// <summary>
 	/// Should there be background music playing
 	/// </summary>
-	public static bool music;
+	public static bool music = true;
 	/// <summary>
 	/// Should there be sound FX during gameplay
 	/// </summary>
-	public static bool sounds;
+	public static bool sounds = true;
 
 	/// <summary>
 	/// Deletes all the playerprefs related to settings.

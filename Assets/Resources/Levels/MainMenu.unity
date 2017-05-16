@@ -125,8 +125,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 118.899994, y: 27.2}
+  m_AnchoredPosition: {x: -0.5, y: 0}
+  m_SizeDelta: {x: 144, y: 27.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &45860834
 MonoBehaviour:
@@ -161,7 +161,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Continue
+  m_Text: 'Select Level
 
 
 
@@ -4125,7 +4125,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1953570369}
-  - component: {fileID: 1953570370}
   m_Layer: 0
   m_Name: Menu Manager
   m_TagString: Untagged
@@ -4146,18 +4145,6 @@ Transform:
   m_Father: {fileID: 1849100175}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1953570370
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1953570368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fe34d5261aa54bb6a27ac952577eaf3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  continueButton: {fileID: 359180884}
 --- !u!1 &2001683803
 GameObject:
   m_ObjectHideFlags: 0
