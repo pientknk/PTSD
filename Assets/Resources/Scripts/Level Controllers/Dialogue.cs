@@ -30,12 +30,18 @@ public class Dialogue : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		LevelController.instance.canvas.GetComponent<CanvasGroup> ().interactable = false;
+		for (int i = 0; i < dialogueParts.Count; i++) {
+			string text = dialogueParts [i];
+			text = text.Replace ("\\n", "\n");
+			dialogueParts [i] = text;
+
+		}
 		dialogue.text = dialogueParts [index];
 		if (spriteParts [index] != null) {
 			dialogueImage.sprite = spriteParts [index];
 		}
 		CheckForMoreText ();
-		LevelController.instance.canvas.GetComponent<CanvasGroup> ().interactable = false;
 	}
 	
 	// Update is called once per frame
