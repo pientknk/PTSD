@@ -6538,6 +6538,11 @@ Prefab:
       propertyPath: m_AnchoredPosition.y
       value: 0.14999962
       objectReference: {fileID: 0}
+    - target: {fileID: 114038443794404010, guid: c4ff84a1ce307491abdc30a1919bcf09,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c4ff84a1ce307491abdc30a1919bcf09, type: 2}
   m_IsPrefabParent: 0

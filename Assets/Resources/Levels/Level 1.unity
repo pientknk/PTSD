@@ -3598,12 +3598,17 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1120054021}
+    - target: {fileID: 114687900424321148, guid: c4ff84a1ce307491abdc30a1919bcf09,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1120054021}
     - target: {fileID: 114837909883102792, guid: c4ff84a1ce307491abdc30a1919bcf09,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1120054021}
-    - target: {fileID: 114687900424321148, guid: c4ff84a1ce307491abdc30a1919bcf09,
+    - target: {fileID: 114016568889772452, guid: c4ff84a1ce307491abdc30a1919bcf09,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -3611,26 +3616,6 @@ Prefab:
     - target: {fileID: 1570737665163558, guid: c4ff84a1ce307491abdc30a1919bcf09, type: 2}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224650798669020404, guid: c4ff84a1ce307491abdc30a1919bcf09,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 110.94998
-      objectReference: {fileID: 0}
-    - target: {fileID: 224650798669020404, guid: c4ff84a1ce307491abdc30a1919bcf09,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.0000047683716
-      objectReference: {fileID: 0}
-    - target: {fileID: 224323240007605918, guid: c4ff84a1ce307491abdc30a1919bcf09,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.14999962
-      objectReference: {fileID: 0}
-    - target: {fileID: 224627623544141860, guid: c4ff84a1ce307491abdc30a1919bcf09,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.14999962
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c4ff84a1ce307491abdc30a1919bcf09, type: 2}

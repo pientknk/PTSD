@@ -10,6 +10,10 @@ public class LevelMenuController : MonoBehaviour {
 	public void NewGame(){
 		SceneManager.LoadScene ("Level 1");
 	}
+
+	public void LoadNextLevel(int indexToUnlock){
+		SceneManager.LoadScene ("Level " + indexToUnlock);
+	}
 	
 	public void LoadLevelSelector(){
 		Time.timeScale = 1.0f;
