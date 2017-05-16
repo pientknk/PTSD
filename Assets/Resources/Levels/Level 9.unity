@@ -5558,6 +5558,16 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 510876701}
     m_Modifications:
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: spriteParts.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: dialogueParts.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 224253358171231108, guid: d0d55cecadb414b1fa4205f0196ebdbd,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -5650,7 +5660,100 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1342194153484704, guid: d0d55cecadb414b1fa4205f0196ebdbd, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: dialogueParts.Array.data[3]
+      value: The colors of the packages correspond to the trucks they must be delivered
+        to in order to be sent to the right place.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: dialogueParts.Array.data[4]
+      value: The shape of the packages correspond to what is in the packages, square
+        packages contain food while round packages contain something unknown...
+      objectReference: {fileID: 0}
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: dialogueParts.Array.data[5]
+      value: Delivering packages to the correct truck will earn you money!
+      objectReference: {fileID: 0}
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: dialogueParts.Array.data[6]
+      value: Be cautious about how you deliver packages because they take damage from
+        big drops and rough treatment. They can get destroyed and you won't earn as
+        much money.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: dialogueParts.Array.data[7]
+      value: Packages will come out of chutes at the top and need to be delivered
+        into the right trucks.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: dialogueParts.Array.data[8]
+      value: There's various parts you can use to deliver the packages. You start
+        with enough funds to buy parts, but money you earn from packages will not
+        add to your funds.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: dialogueParts.Array.data[0]
+      value: 'REGION: Lake Chad Basin\nCOUNTRY: Cameroon\nRELEVANT DATES: 2016-Current'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: dialogueParts.Array.data[1]
+      value: 'IPC RATINGS: 2.5 million food-insecure 300,000 severely food-insecure. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: dialogueParts.Array.data[2]
+      value: 'CAUSE OF CRISIS: Boko Haram Islamic terrorist attacks '
+      objectReference: {fileID: 0}
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: spriteParts.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 3400103e167ad4a208d05cc12bfcefea,
+        type: 3}
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: spriteParts.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: 712f8fb2756b4524e90d8427eea2afb7,
+        type: 3}
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: spriteParts.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: 9449649f8365b4c3c9e19e82d9e9f3ba,
+        type: 3}
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: spriteParts.Array.data[6]
+      value: 
+      objectReference: {fileID: 21300000, guid: 9449649f8365b4c3c9e19e82d9e9f3ba,
+        type: 3}
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: spriteParts.Array.data[7]
+      value: 
+      objectReference: {fileID: 21300000, guid: 4d60fa047f73e2443a727092efb669e8,
+        type: 3}
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: spriteParts.Array.data[8]
+      value: 
+      objectReference: {fileID: 21300000, guid: dc7661f8a458e4b2491081fdf990b50e,
+        type: 3}
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: spriteParts.Array.data[2]
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d0d55cecadb414b1fa4205f0196ebdbd, type: 2}
@@ -6723,7 +6826,7 @@ Prefab:
     - target: {fileID: 224602890842131500, guid: 7de3f895ea9164902af7e35ba9a3de7e,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 224987735243383496, guid: 7de3f895ea9164902af7e35ba9a3de7e,
         type: 2}
@@ -6743,7 +6846,7 @@ Prefab:
     - target: {fileID: 224987735243383496, guid: 7de3f895ea9164902af7e35ba9a3de7e,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -55.1
       objectReference: {fileID: 0}
     - target: {fileID: 224009090101393808, guid: 7de3f895ea9164902af7e35ba9a3de7e,
         type: 2}
@@ -6763,7 +6866,7 @@ Prefab:
     - target: {fileID: 224009090101393808, guid: 7de3f895ea9164902af7e35ba9a3de7e,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 224681759580417132, guid: 7de3f895ea9164902af7e35ba9a3de7e,
         type: 2}
@@ -6783,7 +6886,7 @@ Prefab:
     - target: {fileID: 224681759580417132, guid: 7de3f895ea9164902af7e35ba9a3de7e,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -55.1
       objectReference: {fileID: 0}
     - target: {fileID: 224429798711831426, guid: 7de3f895ea9164902af7e35ba9a3de7e,
         type: 2}
@@ -6803,7 +6906,7 @@ Prefab:
     - target: {fileID: 224429798711831426, guid: 7de3f895ea9164902af7e35ba9a3de7e,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 224327724715948450, guid: 7de3f895ea9164902af7e35ba9a3de7e,
         type: 2}
@@ -6823,7 +6926,7 @@ Prefab:
     - target: {fileID: 224327724715948450, guid: 7de3f895ea9164902af7e35ba9a3de7e,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -55.1
       objectReference: {fileID: 0}
     - target: {fileID: 224155628601905008, guid: 7de3f895ea9164902af7e35ba9a3de7e,
         type: 2}
@@ -6843,7 +6946,7 @@ Prefab:
     - target: {fileID: 224155628601905008, guid: 7de3f895ea9164902af7e35ba9a3de7e,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 224725800582271690, guid: 7de3f895ea9164902af7e35ba9a3de7e,
         type: 2}
@@ -6863,7 +6966,7 @@ Prefab:
     - target: {fileID: 224725800582271690, guid: 7de3f895ea9164902af7e35ba9a3de7e,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -55.1
       objectReference: {fileID: 0}
     - target: {fileID: 224421872569567552, guid: 7de3f895ea9164902af7e35ba9a3de7e,
         type: 2}
@@ -6883,7 +6986,7 @@ Prefab:
     - target: {fileID: 224421872569567552, guid: 7de3f895ea9164902af7e35ba9a3de7e,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 224998314551554238, guid: 7de3f895ea9164902af7e35ba9a3de7e,
         type: 2}
@@ -6903,7 +7006,7 @@ Prefab:
     - target: {fileID: 224998314551554238, guid: 7de3f895ea9164902af7e35ba9a3de7e,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -55.1
       objectReference: {fileID: 0}
     - target: {fileID: 224541219221248682, guid: 7de3f895ea9164902af7e35ba9a3de7e,
         type: 2}
@@ -6923,7 +7026,7 @@ Prefab:
     - target: {fileID: 224541219221248682, guid: 7de3f895ea9164902af7e35ba9a3de7e,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 224976414934867648, guid: 7de3f895ea9164902af7e35ba9a3de7e,
         type: 2}
@@ -6943,7 +7046,7 @@ Prefab:
     - target: {fileID: 224976414934867648, guid: 7de3f895ea9164902af7e35ba9a3de7e,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -55.1
       objectReference: {fileID: 0}
     - target: {fileID: 224100293833813538, guid: 7de3f895ea9164902af7e35ba9a3de7e,
         type: 2}
@@ -6963,7 +7066,7 @@ Prefab:
     - target: {fileID: 224100293833813538, guid: 7de3f895ea9164902af7e35ba9a3de7e,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 224705907472605956, guid: 7de3f895ea9164902af7e35ba9a3de7e,
         type: 2}
@@ -6983,7 +7086,7 @@ Prefab:
     - target: {fileID: 224705907472605956, guid: 7de3f895ea9164902af7e35ba9a3de7e,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -55.1
       objectReference: {fileID: 0}
     - target: {fileID: 224382596501199164, guid: 7de3f895ea9164902af7e35ba9a3de7e,
         type: 2}

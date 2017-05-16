@@ -2188,7 +2188,102 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1342194153484704, guid: d0d55cecadb414b1fa4205f0196ebdbd, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: spriteParts.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: spriteParts.Array.data[3]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: spriteParts.Array.data[4]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: spriteParts.Array.data[5]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: spriteParts.Array.data[6]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: spriteParts.Array.data[7]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: spriteParts.Array.data[8]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: dialogueParts.Array.data[0]
+      value: 'All over the world, people are struggling to feed themselves. Their
+        governments have failed them, and its time for the world to come together
+        to provide support to these communities. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: dialogueParts.Array.data[1]
+      value: 'Through a partnership with Global Airlines and Trucking we now have
+        a means of getting supplies to the furthest reaches of the world, and after
+        a successful crowd funding campaign, we also have the supplies to send! '
+      objectReference: {fileID: 0}
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: dialogueParts.Array.data[2]
+      value: 'But we overlooked a major problem! The manufacturers we received products
+        from are mixing them together! Vaccine bottles are breaking and food is getting
+        contaminated! '
+      objectReference: {fileID: 0}
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: dialogueParts.Array.data[3]
+      value: 'For this humanitarian project to save the world, we need you to be our
+        hero today. Use the tools at your disposal to route the shipments correctly.
+        Direct them safely to their respective distribution trucks. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: dialogueParts.Array.data[4]
+      value: 'The orange food supplies need to make it to the orange truck, and the
+        blue medical supplies need to reach the blue truck. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: dialogueParts.Array.data[5]
+      value: 'However, something strange is happening to our medical supplies. They
+        keep exploding when they break. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: dialogueParts.Array.data[6]
+      value: 'We were told these are innocent vaccines and bandages, and definitely
+        not weapons being sold to warlords. Just to be on the safe side, make sure
+        no packages break! '
+      objectReference: {fileID: 0}
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: dialogueParts.Array.data[7]
+      value: 'We can''t risk losing the food or vaccines. Each round of shipments
+        will be delivered to a different country in need. The source of packages shifts
+        as our suppliers are different for each country. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: dialogueParts.Array.data[8]
+      value: 'The obstacles in our warehouse also change as we shift our operation
+        around to account for new deliveries. '
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d0d55cecadb414b1fa4205f0196ebdbd, type: 2}
