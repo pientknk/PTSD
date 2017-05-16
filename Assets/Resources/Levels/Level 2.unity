@@ -1718,6 +1718,16 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 262142727}
     m_Modifications:
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: spriteParts.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: dialogueParts.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 224253358171231108, guid: d0d55cecadb414b1fa4205f0196ebdbd,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -1810,8 +1820,99 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1342194153484704, guid: d0d55cecadb414b1fa4205f0196ebdbd, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: dialogueParts.Array.data[0]
+      value: 'REGION: Eastern & Central Africa\nCOUNTRY: Somalia\nRELEVANT DATES:
+        Dec 2016-June 2017'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: dialogueParts.Array.data[1]
+      value: 'IPC RATINGS: [PHASE 3 OR 4 - Emergency] 2.9 Million, 25% of population.
+        [PHASE 2 - Stressed] 3.3 Million.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: dialogueParts.Array.data[2]
+      value: 'CAUSE OF CRISIS: Consecutive seasons of poor rainfall, total crop failures,
+        loss of livestock. Population displacement, trade disruption due to insecurity
+        and scarce employment opportunities. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: dialogueParts.Array.data[3]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: dialogueParts.Array.data[4]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: dialogueParts.Array.data[5]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: dialogueParts.Array.data[6]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: dialogueParts.Array.data[7]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: dialogueParts.Array.data[8]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: spriteParts.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 5a49f7573de7e4d8f9280463a3852139,
+        type: 3}
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: spriteParts.Array.data[3]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: spriteParts.Array.data[4]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: spriteParts.Array.data[5]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: spriteParts.Array.data[6]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: spriteParts.Array.data[7]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: spriteParts.Array.data[8]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114885240394898334, guid: d0d55cecadb414b1fa4205f0196ebdbd,
+        type: 2}
+      propertyPath: spriteParts.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 5a49f7573de7e4d8f9280463a3852139,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d0d55cecadb414b1fa4205f0196ebdbd, type: 2}
   m_IsPrefabParent: 0
