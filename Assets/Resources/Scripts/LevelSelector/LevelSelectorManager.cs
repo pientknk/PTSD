@@ -15,6 +15,7 @@ public class LevelSelectorManager : MonoBehaviour {
 		public string levelText;
 		public int unlocked;
 		public bool isInteractable;
+		public Sprite thumbnail;
 	}
 
 	public List<Level> levelList;
@@ -23,7 +24,6 @@ public class LevelSelectorManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		//DeleteAll ();
 		if (button != null) {
 			FillList ();
 		}
@@ -38,7 +38,7 @@ public class LevelSelectorManager : MonoBehaviour {
 			newButton.transform.SetParent (spacer, false);
 			LevelSelector levelSelect = newButton.GetComponent<LevelSelector> ();
 			levelSelect.levelText.text = level.levelText;
-
+			levelSelect.thumbnail.sprite = level.thumbnail;
 			if (PlayerPrefs.GetInt (levelSelect.levelText.text) == 1) {
 				level.unlocked = 1;
 				level.isInteractable = true;
@@ -84,6 +84,7 @@ public class LevelSelectorManager : MonoBehaviour {
 				PlayerPrefs.SetInt (levelSelect.levelText.text, levelSelect.unlocked);
 			}
 		}
+		PlayerPrefs.Save ();
 	}
 		
 	/// <summary>
@@ -95,6 +96,7 @@ public class LevelSelectorManager : MonoBehaviour {
 			PlayerPrefs.DeleteKey ("Level " + i + " stars");
 			PlayerPrefs.DeleteKey ("Level " + i);
 		}
+		PlayerPrefs.Save ();
 	}
 
 	/// <summary>
@@ -102,6 +104,7 @@ public class LevelSelectorManager : MonoBehaviour {
 	/// </summary>
 	public void DeleteAllPlayerPrefs(){
 		PlayerPrefs.DeleteAll ();
+		PlayerPrefs.Save ();
 	}
 
 	/// <summary>
@@ -132,6 +135,7 @@ public class LevelSelectorManager : MonoBehaviour {
 	/// <param name="stars">Stars.</param>
 	public void setStarsForLevel(int level, int stars){
 		PlayerPrefs.SetInt("Level " + (level).ToString() + " stars", stars);
+		PlayerPrefs.Save ();
 	}
 
 	/// <summary>
@@ -144,6 +148,7 @@ public class LevelSelectorManager : MonoBehaviour {
 			//set scores key so that way the stars can be activated accordingly
 			PlayerPrefs.SetInt("Level " + (levelToUnlock).ToString() + " stars", 0);
 		}
+		PlayerPrefs.Save ();
 	}
 
 	public void unlockAllLevels(){
@@ -151,5 +156,6 @@ public class LevelSelectorManager : MonoBehaviour {
 			PlayerPrefs.SetInt ("Level " + i, 1);
 			PlayerPrefs.SetInt ("Level " + i + " stars", 0);
 		}
+		PlayerPrefs.Save ();
 	}
 }

@@ -9,6 +9,7 @@ using UnityEngine.UI;
 /// </summary>
 public class LevelSelector : MonoBehaviour {
 
+	public Image thumbnail;
 	public Text levelText;
 	public int unlocked;
 	public GameObject star1;

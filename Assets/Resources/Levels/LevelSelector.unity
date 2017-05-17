@@ -296,40 +296,15 @@ Prefab:
       propertyPath: spacer
       value: 
       objectReference: {fileID: 872774531}
-    - target: {fileID: 114077374176647616, guid: f8f95cca008c84e00b148d54b40d390f,
-        type: 2}
-      propertyPath: levelList.Array.data[10].unlocked
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114077374176647616, guid: f8f95cca008c84e00b148d54b40d390f,
-        type: 2}
-      propertyPath: levelList.Array.data[10].isInteractable
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114077374176647616, guid: f8f95cca008c84e00b148d54b40d390f,
-        type: 2}
-      propertyPath: levelList.Array.data[3].levelText
-      value: Level 4
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f8f95cca008c84e00b148d54b40d390f, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &534124000 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1462507807834414, guid: f8f95cca008c84e00b148d54b40d390f,
+--- !u!114 &534124001 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114929072380860338, guid: f8f95cca008c84e00b148d54b40d390f,
     type: 2}
   m_PrefabInternal: {fileID: 534123999}
---- !u!114 &534124001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 534124000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 38150eb99bfe24adcbe1df7d7f328c09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &534124002 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114077374176647616, guid: f8f95cca008c84e00b148d54b40d390f,

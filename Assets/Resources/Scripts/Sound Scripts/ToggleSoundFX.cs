@@ -2,40 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEditor;
 
 /// <summary>
 /// Toggle SFX during gameplay
 /// </summary>
 public class ToggleSoundFX : MonoBehaviour {
 
-	bool mute;
-	GameObject explode;
-	GameObject shatter;
-	GameObject shatter2;
+	public AudioSource explode;
+	public AudioSource shatter;
+	public AudioSource shatter2;
 
 	void Start() {
-
-		mute = !GameController.sounds;
-		explode = AssetDatabase.LoadAssetAtPath("Assets/Resources/Prefabs/Packages/Explosion.prefab", typeof(GameObject)) as GameObject; 
-		shatter = AssetDatabase.LoadAssetAtPath("Assets/Resources/Prefabs/Packages/Wrecked Orange Package.prefab", typeof(GameObject)) as GameObject;
-		shatter2 = AssetDatabase.LoadAssetAtPath("Assets/Resources/Prefabs/Packages/Wrecked Blue Package.prefab", typeof(GameObject)) as GameObject;
-		explode.GetComponent<AudioSource>().playOnAwake = mute;
-		shatter.GetComponent<AudioSource>().playOnAwake = mute;
-		shatter2.GetComponent<AudioSource>().playOnAwake = mute;
+		explode.playOnAwake = GameController.sounds;
+		shatter.playOnAwake = GameController.sounds;
+		shatter2.playOnAwake = GameController.sounds;
 	}
 
 	public void toggle (Button buttonPressed) {
-		if (mute == false) {
-			explode.GetComponent<AudioSource>().playOnAwake = mute;
-			shatter.GetComponent<AudioSource>().playOnAwake = mute;
-			shatter2.GetComponent<AudioSource>().playOnAwake = mute;
-			mute = true;
+		if (!GameController.sounds) {
+			explode.playOnAwake = !GameController.sounds;
+			shatter.playOnAwake = !GameController.sounds;
+			shatter2.playOnAwake = !GameController.sounds;
+			GameController.sounds = !GameController.sounds;
 		} else {
-			explode.GetComponent<AudioSource>().playOnAwake = mute;
-			shatter.GetComponent<AudioSource>().playOnAwake = mute;
-			shatter2.GetComponent<AudioSource>().playOnAwake = mute;
-			mute = false;
+			explode.playOnAwake = GameController.sounds;
+			shatter.playOnAwake = GameController.sounds;
+			shatter2.playOnAwake = GameController.sounds;
+			GameController.sounds = !GameController.sounds;
 		}
 	}
 }

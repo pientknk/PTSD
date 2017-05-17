@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 222110864218110442}
   - component: {fileID: 114647870165839162}
   - component: {fileID: 114531359120881006}
+  - component: {fileID: 114893461753588984}
   m_Layer: 5
   m_Name: Mute Music
   m_TagString: Untagged
@@ -115,6 +116,7 @@ GameObject:
   - component: {fileID: 222131969772760664}
   - component: {fileID: 114237764102791282}
   - component: {fileID: 114862851394852738}
+  - component: {fileID: 114366875979454696}
   m_Layer: 5
   m_Name: Mute Explosions
   m_TagString: Untagged
@@ -409,6 +411,19 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114366875979454696
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1742629688195644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97c13c7e2f5b8455a9d60fb7fa975487, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 21300000, guid: ee0c62efc6c3138418842bfaf56f8639, type: 3}
+  muteSound: {fileID: 21300000, guid: b94e6dd4df8f39e41a13775556e80240, type: 3}
 --- !u!114 &114395325147771322
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -660,6 +675,19 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114893461753588984
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1714731141520608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aef486fbd90141608d53a0c1b96d544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  music: {fileID: 21300000, guid: 6a8675438021ee842899dc22e915555b, type: 3}
+  muteMusic: {fileID: 21300000, guid: 4ba3822ab80091c408c23ae7befd7b58, type: 3}
 --- !u!212 &212197812513391718
 SpriteRenderer:
   m_ObjectHideFlags: 1

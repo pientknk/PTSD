@@ -24,8 +24,10 @@ public class ToggleMute : MonoBehaviour {
 	public void toggle (Button buttonPressed) {
 		if(music.isPlaying) {
 			music.Pause();
+			GameController.music = !GameController.music;
 		} else {
 			music.UnPause();
+			GameController.music = !GameController.music;
 		}
 	}
 }
