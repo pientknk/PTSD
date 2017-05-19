@@ -24,7 +24,7 @@ public class ToolTipTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
 	public void OnPointerEnter(PointerEventData eventData){
 		if (shouldShow) {
-			Vector3 pos = eventData.position;
+			Vector3 pos = new Vector3(eventData.position.x, eventData.position.y - 250.0f);
 			StartHover (pos);
 		}
 	}
